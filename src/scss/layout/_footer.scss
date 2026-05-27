@@ -1,0 +1,96 @@
+// ============================================
+// FOOTER LAYOUT
+// ============================================
+
+@use '../abstracts' as *;
+
+.footer {
+  background-color: $brand-primary;
+  color: $text-invert;
+  padding: $spacing-xxl 0 $spacing-lg;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: $spacing-xl;
+  
+  @include breakpoint-down(xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @include breakpoint-down(md) {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+.footer__column {
+  @include breakpoint-down(md) {
+    border-bottom: $border-width solid rgba($neutral-50, 0.2);
+  }
+}
+
+.footer__title {
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-md;
+  
+  @include breakpoint-down(md) {
+    @include flex-between;
+    padding: $spacing-md 0;
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+}
+
+.footer__list {
+  @include flex-column;
+  gap: $spacing-sm;
+  
+  @include breakpoint-down(md) {
+    display: none;
+    padding-bottom: $spacing-md;
+    
+    &.is-open {
+      display: flex;
+    }
+  }
+}
+
+.footer__link {
+  font-size: $font-size-caption;
+  color: rgba($neutral-50, 0.8);
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: $neutral-50;
+  }
+}
+
+.footer__newsletter {
+  @include breakpoint-down(xl) {
+    grid-column: span 3;
+  }
+  
+  @include breakpoint-down(md) {
+    grid-column: span 1;
+    padding-top: $spacing-lg;
+    border-bottom: none;
+  }
+}
+
+.footer__social {
+  @include flex-center;
+  gap: $spacing-md;
+  margin-top: $spacing-lg;
+}
+
+.footer__bottom {
+  margin-top: $spacing-xxl;
+  padding-top: $spacing-lg;
+  border-top: $border-width solid rgba($neutral-50, 0.2);
+  text-align: center;
+  font-size: $font-size-caption;
+  color: rgba($neutral-50, 0.6);
+}

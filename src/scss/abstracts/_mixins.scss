@@ -1,0 +1,310 @@
+// ============================================
+// MIXINS
+// ============================================
+
+// --------------------------------------------
+// BREAKPOINTS
+// --------------------------------------------
+
+@use 'variables' as *;
+body{
+  background-color: $blue-800;
+}
+// Mobile first (min-width)
+@mixin breakpoint-up($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  } @else if $breakpoint == xxl {
+    @media (min-width: $breakpoint-xxl) { @content; }
+  } @else if $breakpoint == xxxl {
+    @media (min-width: $breakpoint-xxxl) { @content; }
+  }
+}
+
+// Desktop first (max-width)
+@mixin breakpoint-down($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: #{$breakpoint-sm - 1px}) { @content; }
+  } @else if $breakpoint == sm {
+    @media (max-width: #{$breakpoint-md - 1px}) { @content; }
+  } @else if $breakpoint == md {
+    @media (max-width: #{$breakpoint-lg - 1px}) { @content; }
+  } @else if $breakpoint == lg {
+    @media (max-width: #{$breakpoint-xl - 1px}) { @content; }
+  } @else if $breakpoint == xl {
+    @media (max-width: #{$breakpoint-xxl - 1px}) { @content; }
+  } @else if $breakpoint == xxl {
+    @media (max-width: #{$breakpoint-xxxl - 1px}) { @content; }
+  }
+}
+
+// --------------------------------------------
+// TYPOGRAPHY
+// --------------------------------------------
+
+@mixin heading-1 {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-base;
+  
+  @include breakpoint-down(md) {
+    font-size: 36px;
+  }
+  
+  @include breakpoint-down(sm) {
+    font-size: 28px;
+  }
+}
+
+@mixin heading-2 {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-base;
+  
+  @include breakpoint-down(md) {
+    font-size: 32px;
+  }
+  
+  @include breakpoint-down(sm) {
+    font-size: 24px;
+  }
+}
+
+@mixin heading-3 {
+  font-size: $font-size-h3;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-base;
+  
+  @include breakpoint-down(md) {
+    font-size: 28px;
+  }
+  
+  @include breakpoint-down(sm) {
+    font-size: 22px;
+  }
+}
+
+@mixin heading-4 {
+  font-size: $font-size-h4;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-base;
+  
+  @include breakpoint-down(md) {
+    font-size: 26px;
+  }
+  
+  @include breakpoint-down(sm) {
+    font-size: 20px;
+  }
+}
+
+@mixin heading-5 {
+  font-size: $font-size-h5;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-base;
+  
+  @include breakpoint-down(sm) {
+    font-size: 18px;
+  }
+}
+
+@mixin body-text {
+  font-size: $font-size-body;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+}
+
+@mixin body-text-semibold {
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-base;
+}
+
+@mixin body-text-light {
+  font-size: $font-size-body;
+  font-weight: $font-weight-light;
+  line-height: $line-height-base;
+}
+
+@mixin caption {
+  font-size: $font-size-caption;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+}
+
+// --------------------------------------------
+// LAYOUT
+// --------------------------------------------
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// --------------------------------------------
+// BUTTONS
+// --------------------------------------------
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $spacing-md $spacing-lg;
+  font-family: $font-family-base;
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  line-height: 1;
+  text-decoration: none;
+  border: none;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: all $transition-base;
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: $btn-primary;
+  color: $text-invert;
+  
+  &:hover:not(:disabled) {
+    background-color: $btn-primary-hover;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: $btn-primary-pressed;
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: $btn-secondary;
+  color: $text-invert;
+  
+  &:hover:not(:disabled) {
+    background-color: $btn-secondary-hover;
+  }
+  
+  &:active:not(:disabled) {
+    background-color: $btn-secondary-pressed;
+  }
+}
+
+@mixin button-outline {
+  @include button-base;
+  background-color: transparent;
+  color: $btn-primary;
+  border: $border-width-thick solid $btn-primary;
+  
+  &:hover:not(:disabled) {
+    background-color: $btn-primary;
+    color: $text-invert;
+  }
+}
+
+// --------------------------------------------
+// FORMS
+// --------------------------------------------
+
+@mixin input-base {
+  width: 100%;
+  padding: $spacing-md;
+  font-family: $font-family-base;
+  font-size: $font-size-body;
+  color: $text-primary;
+  background-color: $surface-primary;
+  border: $border-width solid $border-primary;
+  border-radius: $radius-md;
+  transition: border-color $transition-fast;
+  
+  &::placeholder {
+    color: $text-secondary;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: $border-brand;
+  }
+  
+  &:disabled {
+    background-color: $surface-secondary;
+    cursor: not-allowed;
+  }
+}
+
+// --------------------------------------------
+// UTILITIES
+// --------------------------------------------
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin truncate-lines($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin hover-lift {
+  transition: transform $transition-base, box-shadow $transition-base;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+@mixin overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($neutral-1000, 0.5);
+  z-index: $z-modal-backdrop;
+}

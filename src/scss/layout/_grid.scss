@@ -1,0 +1,107 @@
+// ============================================
+// LAYOUT - Grid & Container
+// ============================================
+
+@use '../abstracts' as *;
+
+// Container
+.container {
+  width: 100%;
+  max-width: $container-xxl;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  
+  @include breakpoint-up(md) {
+    padding: 0 $spacing-lg;
+  }
+  
+  @include breakpoint-up(xl) {
+    padding: 0 $spacing-xl;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 $spacing-md;
+  
+  @include breakpoint-up(md) {
+    padding: 0 $spacing-lg;
+  }
+}
+
+// Grid system
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 (-$spacing-md);
+}
+
+.col {
+  flex: 1;
+  padding: 0 $spacing-md;
+}
+
+// Column sizes
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 calc(100% / 12 * $i);
+    max-width: calc(100% / 12 * $i);
+    padding: 0 $spacing-md;
+  }
+}
+
+// Responsive columns
+@include breakpoint-up(md) {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      flex: 0 0 calc(100% / 12 * $i);
+      max-width: calc(100% / 12 * $i);
+    }
+  }
+}
+
+@include breakpoint-up(lg) {
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      flex: 0 0 calc(100% / 12 * $i);
+      max-width: calc(100% / 12 * $i);
+    }
+  }
+}
+
+@include breakpoint-up(xl) {
+  @for $i from 1 through 12 {
+    .col-xl-#{$i} {
+      flex: 0 0 calc(100% / 12 * $i);
+      max-width: calc(100% / 12 * $i);
+    }
+  }
+}
+
+// Gap utilities
+.gap-0 { gap: 0; }
+.gap-xs { gap: $spacing-xs; }
+.gap-sm { gap: $spacing-sm; }
+.gap-md { gap: $spacing-md; }
+.gap-lg { gap: $spacing-lg; }
+.gap-xl { gap: $spacing-xl; }
+
+// Sections
+.section {
+  padding: $spacing-xxl 0;
+  
+  @include breakpoint-down(md) {
+    padding: $spacing-xl 0;
+  }
+}
+
+// Page wrapper
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}

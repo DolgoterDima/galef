@@ -1,0 +1,84 @@
+// ============================================
+// TYPOGRAPHY - Base Styles
+// ============================================
+
+@use '../abstracts' as *;
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: 1.5;
+  color: $text-primary;
+}
+
+h1, .h1 {
+  @include heading-1;
+  color: $text-contrast;
+}
+
+h2, .h2 {
+  @include heading-2;
+  color: $text-contrast;
+}
+
+h3, .h3 {
+  @include heading-3;
+  color: $text-contrast;
+}
+
+h4, .h4 {
+  @include heading-4;
+  color: $text-contrast;
+}
+
+h5, .h5 {
+  @include heading-5;
+  color: $text-contrast;
+}
+
+p {
+  margin-bottom: $spacing-md;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: $text-link;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: $blue-300;
+  }
+}
+
+strong, b {
+  font-weight: $font-weight-bold;
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: $font-size-caption;
+}
+
+// Text utilities
+.text-primary { color: $text-primary; }
+.text-secondary { color: $text-secondary; }
+.text-contrast { color: $text-contrast; }
+.text-invert { color: $text-invert; }
+.text-link { color: $text-link; }
+.text-positive { color: $text-positive; }
+
+.text-light { font-weight: $font-weight-light; }
+.text-regular { font-weight: $font-weight-regular; }
+.text-semibold { font-weight: $font-weight-semibold; }
+.text-bold { font-weight: $font-weight-bold; }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }

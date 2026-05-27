@@ -1,0 +1,74 @@
+// ============================================
+// BASE STYLES
+// ============================================
+
+@use '../abstracts' as *;
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $surface-primary;
+  overflow-x: hidden;
+}
+
+// Selection
+::selection {
+  background-color: $brand-primary;
+  color: $text-invert;
+}
+
+// Focus visible
+:focus-visible {
+  outline: 2px solid $border-brand;
+  outline-offset: 2px;
+}
+
+// Skip link for accessibility
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: $spacing-md $spacing-lg;
+  background-color: $brand-primary;
+  color: $text-invert;
+  z-index: $z-tooltip;
+  
+  &:focus {
+    top: $spacing-md;
+  }
+}
+
+// Screen reader only
+.sr-only {
+  @include visually-hidden;
+}
+
+// Visibility utilities
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  visibility: visible !important;
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+// Responsive visibility
+@include breakpoint-down(md) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@include breakpoint-up(lg) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
