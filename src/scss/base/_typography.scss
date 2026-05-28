@@ -1,45 +1,26 @@
 // ============================================
-// TYPOGRAPHY - Base Styles
+// TYPOGRAPHY - Base Styles, Mixins & Utilities
 // ============================================
 
-@use '../abstracts' as *;
+@use "../abstracts" as *;
+
+// --------------------------------------------
+// GLOBAL BASE STYLES
+// --------------------------------------------
 
 body {
   font-family: $font-family-base;
-  font-size: $font-size-base;
+  font-size: $font-size-body; // 16px
   font-weight: $font-weight-regular;
-  line-height: 1.5;
+  line-height: 1.2; // 120% line-height from Figma
   color: $text-primary;
-}
-
-h1, .h1 {
-  @include heading-1;
-  color: $text-contrast;
-}
-
-h2, .h2 {
-  @include heading-2;
-  color: $text-contrast;
-}
-
-h3, .h3 {
-  @include heading-3;
-  color: $text-contrast;
-}
-
-h4, .h4 {
-  @include heading-4;
-  color: $text-contrast;
-}
-
-h5, .h5 {
-  @include heading-5;
-  color: $text-contrast;
+  background-color: $surface-primary;
+  -webkit-font-smoothing: antialiased;
 }
 
 p {
   margin-bottom: $spacing-md;
-  
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -47,38 +28,86 @@ p {
 
 a {
   color: $text-link;
+  text-decoration: none;
   transition: color $transition-fast;
-  
+
   &:hover {
     color: $blue-300;
   }
 }
 
-strong, b {
+// --------------------------------------------
+// SEMANTIC TAGS & UTILITY CLASSES GENERATION
+// --------------------------------------------
+
+h1,
+.title-h1 {
+  @include title-h1;
+  color: $text-contrast;
+}
+
+h2,
+.title-h2 {
+  @include title-h2;
+  color: $text-contrast;
+}
+
+h3,
+.title-h3 {
+  @include title-h3;
+  color: $text-contrast;
+}
+
+h4,
+.title-h4 {
+  @include title-h4;
+  color: $text-contrast;
+}
+
+h5,
+.title-h5 {
+  @include title-h5;
+  color: $text-contrast;
+}
+
+// Custom 24px paragraph from Figma
+.text-paragraph-lg {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+// Essential card text sizes (14px and 15px)
+.text-product-card {
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.text-product-preview {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+// Small caption (12px)
+small,
+.text-caption {
+  font-size: $font-size-caption;
+  line-height: 1.2;
+}
+
+// Global font weight & alignment modifiers
+.text-light {
+  font-weight: $font-weight-light;
+}
+.text-semibold {
+  font-weight: $font-weight-semibold;
+}
+.text-bold {
   font-weight: $font-weight-bold;
 }
 
-em, i {
-  font-style: italic;
+.text-center {
+  text-align: center;
 }
-
-small {
-  font-size: $font-size-caption;
+.text-right {
+  text-align: right;
 }
-
-// Text utilities
-.text-primary { color: $text-primary; }
-.text-secondary { color: $text-secondary; }
-.text-contrast { color: $text-contrast; }
-.text-invert { color: $text-invert; }
-.text-link { color: $text-link; }
-.text-positive { color: $text-positive; }
-
-.text-light { font-weight: $font-weight-light; }
-.text-regular { font-weight: $font-weight-regular; }
-.text-semibold { font-weight: $font-weight-semibold; }
-.text-bold { font-weight: $font-weight-bold; }
-
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }

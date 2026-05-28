@@ -3,44 +3,76 @@
 // ============================================
 
 // --------------------------------------------
-// BREAKPOINTS
+// BREAKPOINTS CONFIG
 // --------------------------------------------
 
-@use 'variables' as *;
-body{
-  background-color: $blue-800;
-}
-// Mobile first (min-width)
-@mixin breakpoint-up($breakpoint) {
-  @if $breakpoint == sm {
-    @media (min-width: $breakpoint-sm) { @content; }
-  } @else if $breakpoint == md {
-    @media (min-width: $breakpoint-md) { @content; }
-  } @else if $breakpoint == lg {
-    @media (min-width: $breakpoint-lg) { @content; }
-  } @else if $breakpoint == xl {
-    @media (min-width: $breakpoint-xl) { @content; }
-  } @else if $breakpoint == xxl {
-    @media (min-width: $breakpoint-xxl) { @content; }
-  } @else if $breakpoint == xxxl {
-    @media (min-width: $breakpoint-xxxl) { @content; }
-  }
-}
+@use "variables" as *;
 
-// Desktop first (max-width)
-@mixin breakpoint-down($breakpoint) {
-  @if $breakpoint == xs {
-    @media (max-width: #{$breakpoint-sm - 1px}) { @content; }
-  } @else if $breakpoint == sm {
-    @media (max-width: #{$breakpoint-md - 1px}) { @content; }
-  } @else if $breakpoint == md {
-    @media (max-width: #{$breakpoint-lg - 1px}) { @content; }
-  } @else if $breakpoint == lg {
-    @media (max-width: #{$breakpoint-xl - 1px}) { @content; }
-  } @else if $breakpoint == xl {
-    @media (max-width: #{$breakpoint-xxl - 1px}) { @content; }
-  } @else if $breakpoint == xxl {
-    @media (max-width: #{$breakpoint-xxxl - 1px}) { @content; }
+// Map of real pixel values for media queries
+$breakpoints-map: (
+  "mobile": $breakpoint-mobile,
+  "mobile-lg": $breakpoint-mobile-lg,
+  "tablet": $breakpoint-tablet,
+  "tablet-lg": $breakpoint-tablet-lg,
+  "desktop": $breakpoint-desktop,
+  "desktop-lg": $breakpoint-desktop-lg,
+);
+
+// Global pointer variables for IDE autocomplete
+$bp-mobile: (
+  max: #{$breakpoint-mobile-lg - 1px},
+); // 0px - 459px
+$bp-mobile-lg: (
+  min: $breakpoint-mobile-lg,
+  max: #{$breakpoint-tablet - 1px},
+); // 460px - 759px
+
+$bp-tablet: (
+  min: $breakpoint-tablet,
+); // 760px and up
+$bp-tablet-only: (
+  min: $breakpoint-tablet,
+  max: #{$breakpoint-tablet-lg - 1px},
+); // 760px - 959px
+
+$bp-tablet-lg: (
+  min: $breakpoint-tablet-lg,
+); // 960px and up
+$bp-tablet-lg-only: (
+  min: $breakpoint-tablet-lg,
+  max: #{$breakpoint-desktop - 1px},
+); // 960px - 1439px
+
+$bp-desktop: (
+  min: $breakpoint-desktop,
+); // 1440px and up
+$bp-desktop-only: (
+  min: $breakpoint-desktop,
+  max: #{$breakpoint-desktop-lg - 1px},
+); // 1440px - 1599px
+
+$bp-desktop-lg: (
+  min: $breakpoint-desktop-lg,
+); // 1600px and up
+
+// Unified media query manager
+@mixin breakpoint($map) {
+  $query: "";
+
+  @if map-has-key($map, min) {
+    $query: append($query, "(min-width: #{map-get($map, min)})");
+  }
+
+  @if map-has-key($map, min) and map-has-key($map, max) {
+    $query: append($query, "and");
+  }
+
+  @if map-has-key($map, max) {
+    $query: append($query, "(max-width: #{map-get($map, max)})");
+  }
+
+  @media screen and #{$query} {
+    @content;
   }
 }
 
@@ -52,90 +84,14 @@ body{
   font-size: $font-size-h1;
   font-weight: $font-weight-bold;
   line-height: $line-height-base;
-  
-  @include breakpoint-down(md) {
-    font-size: 36px;
+
+  @include breakpoint($bp-tablet-lg-only) {
+    font-size: 42px;
   }
-  
-  @include breakpoint-down(sm) {
+
+  @include breakpoint($bp-mobile) {
     font-size: 28px;
   }
-}
-
-@mixin heading-2 {
-  font-size: $font-size-h2;
-  font-weight: $font-weight-bold;
-  line-height: $line-height-base;
-  
-  @include breakpoint-down(md) {
-    font-size: 32px;
-  }
-  
-  @include breakpoint-down(sm) {
-    font-size: 24px;
-  }
-}
-
-@mixin heading-3 {
-  font-size: $font-size-h3;
-  font-weight: $font-weight-bold;
-  line-height: $line-height-base;
-  
-  @include breakpoint-down(md) {
-    font-size: 28px;
-  }
-  
-  @include breakpoint-down(sm) {
-    font-size: 22px;
-  }
-}
-
-@mixin heading-4 {
-  font-size: $font-size-h4;
-  font-weight: $font-weight-bold;
-  line-height: $line-height-base;
-  
-  @include breakpoint-down(md) {
-    font-size: 26px;
-  }
-  
-  @include breakpoint-down(sm) {
-    font-size: 20px;
-  }
-}
-
-@mixin heading-5 {
-  font-size: $font-size-h5;
-  font-weight: $font-weight-bold;
-  line-height: $line-height-base;
-  
-  @include breakpoint-down(sm) {
-    font-size: 18px;
-  }
-}
-
-@mixin body-text {
-  font-size: $font-size-body;
-  font-weight: $font-weight-regular;
-  line-height: $line-height-base;
-}
-
-@mixin body-text-semibold {
-  font-size: $font-size-body;
-  font-weight: $font-weight-semibold;
-  line-height: $line-height-base;
-}
-
-@mixin body-text-light {
-  font-size: $font-size-body;
-  font-weight: $font-weight-light;
-  line-height: $line-height-base;
-}
-
-@mixin caption {
-  font-size: $font-size-caption;
-  font-weight: $font-weight-regular;
-  line-height: $line-height-base;
 }
 
 // --------------------------------------------
@@ -152,17 +108,6 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-@mixin flex-start {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-@mixin flex-column {
-  display: flex;
-  flex-direction: column;
 }
 
 // --------------------------------------------
@@ -184,127 +129,75 @@ body{
   border-radius: $radius-md;
   cursor: pointer;
   transition: all $transition-base;
-  
+
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
   }
 }
 
-@mixin button-primary {
-  @include button-base;
-  background-color: $btn-primary;
-  color: $text-invert;
-  
-  &:hover:not(:disabled) {
-    background-color: $btn-primary-hover;
-  }
-  
-  &:active:not(:disabled) {
-    background-color: $btn-primary-pressed;
-  }
-}
-
-@mixin button-secondary {
-  @include button-base;
-  background-color: $btn-secondary;
-  color: $text-invert;
-  
-  &:hover:not(:disabled) {
-    background-color: $btn-secondary-hover;
-  }
-  
-  &:active:not(:disabled) {
-    background-color: $btn-secondary-pressed;
-  }
-}
-
-@mixin button-outline {
-  @include button-base;
-  background-color: transparent;
-  color: $btn-primary;
-  border: $border-width-thick solid $btn-primary;
-  
-  &:hover:not(:disabled) {
-    background-color: $btn-primary;
-    color: $text-invert;
-  }
-}
-
 // --------------------------------------------
-// FORMS
+// TYPOGRAPHY MIXINS (For cross-module use)
 // --------------------------------------------
 
-@mixin input-base {
-  width: 100%;
-  padding: $spacing-md;
-  font-family: $font-family-base;
-  font-size: $font-size-body;
-  color: $text-primary;
-  background-color: $surface-primary;
-  border: $border-width solid $border-primary;
-  border-radius: $radius-md;
-  transition: border-color $transition-fast;
-  
-  &::placeholder {
-    color: $text-secondary;
+@mixin title-h1 {
+  font-size: $font-size-h1; // 48px
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+
+  @include breakpoint($bp-tablet-lg-only) {
+    font-size: 42px;
   }
-  
-  &:focus {
-    outline: none;
-    border-color: $border-brand;
-  }
-  
-  &:disabled {
-    background-color: $surface-secondary;
-    cursor: not-allowed;
+  @include breakpoint($bp-mobile) {
+    font-size: 28px;
   }
 }
 
-// --------------------------------------------
-// UTILITIES
-// --------------------------------------------
+@mixin title-h2 {
+  font-size: $font-size-h2; // 40px
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
 
-@mixin visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-@mixin truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-@mixin truncate-lines($lines: 2) {
-  display: -webkit-box;
-  -webkit-line-clamp: $lines;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-@mixin hover-lift {
-  transition: transform $transition-base, box-shadow $transition-base;
-  
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: $shadow-lg;
+  @include breakpoint($bp-tablet-lg-only) {
+    font-size: 32px;
+  }
+  @include breakpoint($bp-mobile) {
+    font-size: 24px;
   }
 }
 
-@mixin overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba($neutral-1000, 0.5);
-  z-index: $z-modal-backdrop;
+@mixin title-h3 {
+  font-size: $font-size-h3; // 36px
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+
+  @include breakpoint($bp-tablet-lg-only) {
+    font-size: 28px;
+  }
+  @include breakpoint($bp-mobile) {
+    font-size: 22px;
+  }
+}
+
+@mixin title-h4 {
+  font-size: $font-size-h4; // 32px
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+
+  @include breakpoint($bp-tablet-lg-only) {
+    font-size: 26px;
+  }
+  @include breakpoint($bp-mobile) {
+    font-size: 20px;
+  }
+}
+
+@mixin title-h5 {
+  font-size: $font-size-h5; // 24px
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+
+  @include breakpoint($bp-mobile) {
+    font-size: 18px;
+  }
 }

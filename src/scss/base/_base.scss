@@ -2,8 +2,7 @@
 // BASE STYLES
 // ============================================
 
-@use '../abstracts' as *;
-
+@use "../abstracts" as *;
 
 html {
   scroll-behavior: smooth;
@@ -36,15 +35,10 @@ body {
   background-color: $brand-primary;
   color: $text-invert;
   z-index: $z-tooltip;
-  
+
   &:focus {
     top: $spacing-md;
   }
-}
-
-// Screen reader only
-.sr-only {
-  @include visually-hidden;
 }
 
 // Visibility utilities
@@ -58,17 +52,4 @@ body {
 
 .invisible {
   visibility: hidden !important;
-}
-
-// Responsive visibility
-@include breakpoint-down(md) {
-  .hide-mobile {
-    display: none !important;
-  }
-}
-
-@include breakpoint-up(lg) {
-  .hide-desktop {
-    display: none !important;
-  }
 }
