@@ -1,0 +1,72 @@
+@use '../abstracts' as *;
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($blue-300, 0.3);
+  width: 46px;
+  height: 46px;
+  position: relative;
+  padding: 0;
+
+  border: $border-width solid transparent;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: $transition-base;
+  color: $brand-primary;
+
+  &__label {
+    position: absolute;
+    top: 8%;
+    right: -2%;
+    padding: 2px;
+    border-radius: $radius-xs;
+    background-color: $brand-primary;
+    color: $white;
+    font-size: $font-size-caption-sm;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+    overflow: visible; // Важливо, щоб "ручка" лупи не обрізалася
+  }
+
+  &:hover {
+    border-color: $brand-primary;
+  }
+  &:has(.icon-btn__icon:nth-child(2)) {
+    // Приховуємо другу іконку за замовчуванням
+    .icon-btn__icon:nth-child(2) {
+      display: none;
+    }
+
+    // При ховері/фокусі міняємо їх місцями
+    &:active,
+    &:focus-visible {
+      .icon-btn__icon:nth-child(1) {
+        display: none;
+      }
+      .icon-btn__icon:nth-child(2) {
+        display: block;
+      }
+    }
+  }
+  &--primary {
+    background-color: $brand-primary;
+    color: $white;
+    border-color: $blue-300;
+    &:hover {
+      color: $brand-primary;
+      background-color: $blue-300;
+    }
+  }
+  &--rounded {
+    border-radius: $radius-full;
+  }
+}
