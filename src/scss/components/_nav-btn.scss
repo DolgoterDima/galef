@@ -1,72 +1,40 @@
 @use '../abstracts' as *;
 
-.icon-btn {
-  display: inline-flex;
+.nav-btn {
+  display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba($blue-300, 0.3);
-  width: 46px;
-  height: 46px;
-  position: relative;
-  padding: 0;
+  width: 100px;
+  height: 60px;
+  overflow: hidden;
+  padding: $spacing-xl $spacing-lg;
 
-  border: $border-width solid transparent;
+  background-color: transparent;
+  border: $border-width solid $brand-primary;
   border-radius: $radius-md;
+
   cursor: pointer;
   transition: $transition-base;
   color: $brand-primary;
 
-  &__label {
-    position: absolute;
-    top: 8%;
-    right: -2%;
-    padding: 2px;
-    border-radius: $radius-xs;
-    background-color: $brand-primary;
-    color: $white;
-    font-size: $font-size-caption-sm;
-  }
-
-  &__icon {
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
-    object-fit: contain;
-    flex-shrink: 0;
-    display: block;
-    overflow: visible; // Важливо, щоб "ручка" лупи не обрізалася
-  }
-
   &:hover {
-    border-color: $brand-primary;
-  }
-  &:has(.icon-btn__icon:nth-child(2)) {
-    // Приховуємо другу іконку за замовчуванням
-    .icon-btn__icon:nth-child(2) {
-      display: none;
-    }
-
-    // При ховері/фокусі міняємо їх місцями
-    &:active,
-    &:focus-visible {
-      .icon-btn__icon:nth-child(1) {
-        display: none;
-      }
-      .icon-btn__icon:nth-child(2) {
-        display: block;
-      }
-    }
-  }
-  &--primary {
-    background-color: $brand-primary;
+    background-color: $btn-primary-hover;
     color: $white;
-    border-color: $blue-300;
-    &:hover {
-      color: $brand-primary;
-      background-color: $blue-300;
-    }
+    border-color: $btn-primary-hover;
   }
-  &--rounded {
-    border-radius: $radius-full;
+
+  // Click/Tab
+  &:active,
+  &:focus-visible {
+    background-color: $btn-primary;
+    border-color: $btn-primary;
+    color: $white;
+  }
+
+  &:disabled {
+    background-color: $btn-disabled;
+    border-color: $btn-disabled;
+    cursor: not-allowed;
+    color: $white;
   }
 }

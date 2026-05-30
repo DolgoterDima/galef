@@ -1,0 +1,33 @@
+@use '../abstracts' as *;
+
+.menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: $blue-900;
+  transition: $transition-base;
+
+  &__icon {
+    width:36px;
+    height: 36px;
+    fill: currentColor;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  &:hover {
+    color: $blue-700;
+  }
+
+  &:active,
+  &:focus-visible {
+    color: $blue-800;
+  }
+}

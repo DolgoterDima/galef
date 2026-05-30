@@ -1,0 +1,84 @@
+@use '../abstracts' as *;
+
+.lang-selector {
+  position: relative;
+  font-size: $font-size-paragraph;
+  width: 86px;
+  &[disabled] {
+    pointer-events: none;
+    color: $neutral-900;
+    .lang-selector__trigger {
+      color: $neutral-900;
+      background-color: $btn-disabled;
+    }
+    .lang-selector__arrow {
+      color: $neutral-900;
+    }
+  }
+  &[open] {
+    .lang-selector__arrow {
+      transform: rotate(180deg);
+    }
+  }
+  &__arrow {
+    width: 14px;
+    height: 8px;
+    flex-shrink: 0;
+    display: block;
+    align-self: center;
+    color: $blue-900;
+  }
+  &__trigger {
+    color: $blue-900;
+    gap: $spacing-sm;
+    transition: $transition-base;
+    font-size: $font-size-paragraph;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid $surface-secondary;
+    background: $surface-secondary;
+    border-radius: $radius-md;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover {
+      border-color: $blue-900;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    background: $neutral-0;
+    border-radius: $radius-md;
+    list-style: none;
+    box-shadow: $shadow-md;
+    gap: $spacing-sm;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    font-size: $font-size-paragraph;
+    text-align: center;
+    cursor: pointer;
+    border-radius: $radius-md;
+    padding: $spacing-xs $spacing-md;
+    &.is-active {
+      background: $blue-700;
+      color: $white;
+    }
+    &:hover:not(.is-active) {
+      background: $blue-200;
+    }
+  }
+}

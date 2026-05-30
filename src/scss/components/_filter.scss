@@ -1,0 +1,125 @@
+@use '../abstracts' as *;
+
+.filter {
+  position: relative;
+  width: 100%;
+  font-family: $font-family-base;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    padding: 10px $spacing-sm;
+    background-color: $surface-secondary;
+    border: $border-width solid transparent;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    transition: all $transition-base;
+    outline: none;
+    font-family: inherit;
+
+    &:hover,
+    &.filter__header--hover {
+      color: $text-link;
+
+      .filter__arrow {
+        color: $text-link;
+      }
+    }
+
+    &:focus-visible,
+    &.filter__header--focus {
+      border-color: $border-primary;
+      color: $brand-primary;
+
+      .filter__arrow {
+        color: $brand-primary;
+      }
+    }
+
+    &:disabled,
+    &[disabled] {
+      color: $btn-disabled;
+      cursor: not-allowed;
+      background-color: $surface-secondary;
+      border-color: transparent;
+
+      .filter__arrow {
+        color: $btn-disabled;
+      }
+    }
+  }
+
+  &__title {
+    font-size: $font-size-caption;
+    font-weight: $font-weight-semibold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    flex-grow: 1;
+    margin-right: 10px;
+    color: inherit;
+    min-width: 0;
+  }
+
+  &__arrow {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    fill: currentColor;
+    color: $text-primary;
+    transition: transform $transition-base;
+  }
+
+  &--open &__arrow {
+    transform: rotate(180deg);
+  }
+
+  &--open &__header {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &__dropdown {
+    background-color: $surface-secondary;
+    border-radius: 0 0 $radius-sm $radius-sm;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transition-base;
+  }
+
+  &--open &__dropdown {
+    max-height: 400px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    max-height: 240px;
+    overflow-y: auto;
+    padding-bottom: $spacing-sm;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $neutral-300;
+      border-radius: $radius-sm;
+    }
+  }
+  &__item {
+    display: flex;
+    padding: $spacing-sm 12px;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: $blue-200;
+    }
+  }
+}

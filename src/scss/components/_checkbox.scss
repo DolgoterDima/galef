@@ -1,0 +1,70 @@
+@use '../abstracts' as *;
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .checkbox__box {
+      background-color: $text-link;
+      border-color: $text-link;
+
+      .checkbox__icon {
+        opacity: 1;
+      }
+    }
+
+    &:checked ~ .checkbox__label {
+      color: $text-link;
+    }
+
+    &:focus-visible + .checkbox__box {
+      box-shadow: 0 0 0 2px rgba($text-link, 0.3);
+    }
+  }
+
+  &__box {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid $neutral-400;
+    border-radius: $radius-xs;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all $transition-base;
+    position: relative;
+    background-color: $surface-secondary;
+  }
+
+  &__icon {
+    width: 10px;
+    height: 7px;
+    opacity: 0;
+    color: $surface-primary;
+    transition: opacity $transition-base;
+  }
+
+  &__label {
+    font-size: $font-size-caption;
+    color: $text-primary;
+    transition: color $transition-fast;
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    min-width: 0;
+    &:hover {
+      color: $btn-primary-hover;
+    }
+  }
+}

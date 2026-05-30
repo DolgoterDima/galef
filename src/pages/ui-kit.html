@@ -1,23 +1,486 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UI Kit - Golef</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="page-wrapper">
-    <main class="main-content">
-      <div class="container">
-        <h1>UI Kit</h1>
-        <p>Сторінка для компонентів - заповнити самостійно</p>
-      </div>
-    </main>
-  </div>
-  
-  <script type="module" src="/js/main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>UI Kit - Golef</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <main class="main-content">
+        <div class="container ui-kit">
+          <h1>UI Kit</h1>
+          <p>Сторінка для компонентів - заповнити самостійно</p>
+          <h2 class="ui-kit__title">Buttons</h2>
+          <div class="ui-kit-row">
+            <a class="btn" href="#">
+              Купити
+              <svg aria-hidden="true" class="btn__icon">
+                <use href="#icon-cart"></use>
+              </svg>
+            </a>
+
+            <a class="btn btn--outline" href="#">
+              Купити
+              <svg aria-hidden="true" class="btn__icon">
+                <use href="#icon-cart"></use>
+              </svg>
+            </a>
+            <a class="btn btn--disabled" href="#">
+              Неактивна
+              <svg aria-hidden="true" class="btn__icon">
+                <use href="#icon-cart"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="ui-kit__row">
+            <button class="btn btn--lg">Показати ще 6</button>
+
+            <button class="btn btn--outline btn--lg">Показати ще 6</button>
+            <button class="btn btn--lg" disabled>Показати ще 6</button>
+          </div>
+
+          <h2 class="ui-kit__title">Icon Buttons</h2>
+          <div class="ui-kit__row">
+            <button aria-label="Cart" class="icon-btn">
+              <svg class="icon-btn__icon">
+                <use href="#icon-cart"></use>
+              </svg>
+
+              <svg class="icon-btn__icon">
+                <use href="#icon-cart-filled"></use>
+              </svg>
+            </button>
+            <button aria-label="Cart" class="icon-btn">
+              <svg class="icon-btn__icon">
+                <use href="#icon-cart"></use>
+              </svg>
+
+              <svg class="icon-btn__icon">
+                <use href="#icon-cart-filled"></use>
+              </svg>
+              <span class="icon-btn__label">123</span>
+            </button>
+
+            <button aria-label="Search" class="icon-btn">
+              <svg class="icon-btn__icon">
+                <use href="#icon-search"></use>
+              </svg>
+
+              <svg class="icon-btn__icon">
+                <use href="#icon-search-filled"></use>
+              </svg>
+            </button>
+
+            <button aria-label="Close" class="icon-btn icon-btn--rounded">
+              <svg class="icon-btn__icon">
+                <use href="#icon-x"></use>
+              </svg>
+            </button>
+            <button
+              aria-label="Close"
+              class="icon-btn icon-btn--primary icon-btn--rounded"
+            >
+              <svg class="icon-btn__icon">
+                <use href="#icon-x"></use>
+              </svg>
+            </button>
+          </div>
+          <h2 class="ui-kit__title">Nav Buttons</h2>
+          <div class="ui-kit__row">
+            <button aria-label="Arrow left" class="nav-btn">
+              <svg class="nav-btn__icon">
+                <use href=" #icon-left-arrow"></use>
+              </svg>
+            </button>
+            <button aria-label="Arrow left" class="nav-btn">
+              <svg class="nav-btn__icon">
+                <use href=" #icon-right-arrow"></use>
+              </svg>
+            </button>
+          </div>
+          <h2 class="ui-kit__title">Lang selector</h2>
+          <div class="ui-kit__row">
+            <details class="lang-selector">
+              <summary class="lang-selector__trigger">
+                UA
+                <svg class="lang-selector__arrow">
+                  <use href="#icon-chevron-down"></use>
+                </svg>
+              </summary>
+              <ul class="lang-selector__menu">
+                <li class="lang-selector__item is-active">UA</li>
+                <li class="lang-selector__item">EN</li>
+                <li class="lang-selector__item">RU</li>
+              </ul>
+            </details>
+            <details class="lang-selector" disabled>
+              <summary class="lang-selector__trigger">
+                UA
+                <svg class="lang-selector__arrow">
+                  <use href="#icon-chevron-down"></use>
+                </svg>
+              </summary>
+              <ul class="lang-selector__menu">
+                <li class="lang-selector__item is-active">UA</li>
+                <li class="lang-selector__item">EN</li>
+                <li class="lang-selector__item">RU</li>
+              </ul>
+            </details>
+          </div>
+
+          <h2 class="ui-kit__title">Menu button</h2>
+          <div class="ui-kit__row">
+            <button aria-label="Search" class="menu-btn">
+              <svg class="menu-btn__icon">
+                <use href="#icon-search"></use>
+              </svg>
+            </button>
+            <button aria-label="Menu" class="menu-btn">
+              <svg class="menu-btn__icon">
+                <use href="#icon-bars"></use>
+              </svg>
+            </button>
+          </div>
+
+          <h2 class="ui-kit__title">Filter</h2>
+          <div
+            class="ui-kit__row"
+            style="flex-wrap: wrap; align-items: flex-start"
+          >
+            <div style="width: 100%; max-width: 310px">
+              <div class="filter">
+                <button aria-expanded="false" class="filter__header">
+                  <span class="filter__title">Матеріал оббивки</span>
+                  <svg class="filter__arrow">
+                    <use href="#icon-chevron-down"></use>
+                  </svg>
+                </button>
+                <div class="filter__dropdown">
+                  <div class="filter__list">
+                    <label class="checkbox filter__item">
+                      <input checked class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">Бархат</span>
+                    </label>
+                    <label class="checkbox filter__item">
+                      <input class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">Велюр, екошкіра</span>
+                    </label>
+                    <label class="checkbox filter__item">
+                      <input class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">Зносостійка тканина</span>
+                    </label>
+                    <label class="checkbox filter__item">
+                      <input class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">Перфорована тканина</span>
+                    </label>
+                    <label class="checkbox filter__item">
+                      <input class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">Сітка</span>
+                    </label>
+                    <label class="checkbox filter__item">
+                      <input class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">Тканина Air-Mesh</span>
+                    </label>
+                    <label class="checkbox filter__item">
+                      <input class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">
+                        Тканина водонепроникна з довгим текстом що переповнює
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="ui-kit__title">Filter Group</h2>
+          <div class="ui-kit__row" style="align-items: flex-start">
+            <div style="width: 100%; max-width: 310px">
+              <div class="filter-group">
+                <div class="filter-group__header">
+                  <span class="filter-group__title">Фільтрація</span>
+                  <svg aria-hidden="true" class="filter-group__icon">
+                    <use href="#icon-filter"></use>
+                  </svg>
+                </div>
+                <div class="filter-group__body">
+                  <div class="filter">
+                    <button aria-expanded="false" class="filter__header">
+                      <span class="filter__title">Серія</span>
+                      <svg class="filter__arrow">
+                        <use href="#icon-chevron-down"></use>
+                      </svg>
+                    </button>
+                    <div class="filter__dropdown">
+                      <div class="filter__list">
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Серія 1</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Серія 2</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Серія 3</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="filter">
+                    <button aria-expanded="false" class="filter__header">
+                      <span class="filter__title">Матеріал оббивки</span>
+                      <svg class="filter__arrow">
+                        <use href="#icon-chevron-down"></use>
+                      </svg>
+                    </button>
+                    <div class="filter__dropdown">
+                      <div class="filter__list">
+                        <label class="checkbox filter__item">
+                          <input
+                            checked
+                            class="checkbox__input"
+                            type="checkbox"
+                          />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Бархат</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Велюр, екошкіра</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">
+                            Зносостійка тканина
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="filter">
+                    <button aria-expanded="false" class="filter__header">
+                      <span class="filter__title">Підлокітники</span>
+                      <svg class="filter__arrow">
+                        <use href="#icon-chevron-down"></use>
+                      </svg>
+                    </button>
+                    <div class="filter__dropdown">
+                      <div class="filter__list">
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">З регулюванням</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Без регулювання</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Відкидні</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="filter">
+                    <button aria-expanded="false" class="filter__header">
+                      <span class="filter__title">Спинка</span>
+                      <svg class="filter__arrow">
+                        <use href="#icon-chevron-down"></use>
+                      </svg>
+                    </button>
+                    <div class="filter__dropdown">
+                      <div class="filter__list">
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Ортопедична</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Звичайна</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">З підголівником</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="filter">
+                    <button aria-expanded="false" class="filter__header">
+                      <span class="filter__title">Висувна підніжка</span>
+                      <svg class="filter__arrow">
+                        <use href="#icon-chevron-down"></use>
+                      </svg>
+                    </button>
+                    <div class="filter__dropdown">
+                      <div class="filter__list">
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Є</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Немає</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Знімний модуль</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-group__footer">
+                  <button class="btn btn--outline btn--wide">
+                    Застосувати
+                     
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/js/main.js" type="module"></script>
+    <style>
+      .ui-kit {
+        padding: 30px;
+      }
+
+      .ui-kit__title {
+        margin-top: 30px;
+      }
+
+      .ui-kit__row {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+    </style>
+  </body>
 </html>

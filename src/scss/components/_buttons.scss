@@ -1,0 +1,82 @@
+@use '../abstracts' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-md; // 8px 16px — замість magic number
+
+  font-family: $font-family-base;
+  font-size: $font-size-body;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-base;
+  letter-spacing: 0.02em;
+  color: $white;
+
+  background-color: $btn-primary;
+  border-radius: $radius-sm; // 4px замість 3px
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    background-color $transition-fast,
+    box-shadow $transition-fast;
+
+  &__icon {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background-color: $btn-primary-hover;
+  }
+
+  &:active {
+    background-color: $btn-primary-pressed;
+  }
+
+  &:focus-visible {
+    background-color: $btn-primary;
+  }
+
+  &:disabled,
+  &--disabled {
+    background-color: $btn-disabled;
+    color: $text-invert;
+    pointer-events: none;
+  }
+  &--wide {
+    width: 100%;
+  }
+  &--outline {
+    border: $border-width solid $brand-primary;
+    background-color: transparent;
+    color: $brand-primary;
+
+    &:hover {
+      background-color: $btn-primary-hover;
+      color: $white;
+      border-color: $btn-primary-hover;
+    }
+    &:disabled {}
+    &:focus-visible, &:active {
+      background-color: $btn-primary;  
+      border-color: $btn-primary;
+    }
+  }
+  &--rounded {
+    border-radius: $radius-full;
+  }
+
+  // Sizes
+  &--lg {
+    font-size: 24px;
+
+    padding: 12px 20px;
+
+    border-radius: $radius-md;
+  }
+}

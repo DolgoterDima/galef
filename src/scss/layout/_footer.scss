@@ -7,7 +7,6 @@
 .footer {
   background-color: $brand-primary;
   color: $text-invert;
-  padding: $spacing-xxl 0 $spacing-lg;
 }
 
 .footer__grid {
@@ -46,7 +45,6 @@
 }
 
 .footer__bottom {
-  margin-top: $spacing-xxl;
   padding-top: $spacing-lg;
   border-top: $border-width solid rgba($neutral-50, 0.2);
   text-align: center;

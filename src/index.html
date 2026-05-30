@@ -2,13 +2,13 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Golef - Офісні крісла</title>
-    <meta name="description" content="Golef - інтернет-магазин офісних крісел">
+    <meta content="Golef - інтернет-магазин офісних крісел" name="description">
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <!-- Note: Replace with actual Mont font or similar -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -21,33 +21,33 @@
         </div>
         <div class="container">
             <div class="header__inner">
-                <a href="/" class="header__logo">
-                    <img src="/assets/images/logo.svg" alt="Golef" width="120" height="40">
+                <a class="header__logo" href="/">
+                    <img alt="Golef" height="40" src="/assets/images/logo.svg" width="120">
                 </a>
 
                 <nav class="header__nav">
                     <ul class="nav">
-                        <li class="nav__item"><a href="/pages/catalog.html" class="nav__link">Каталог</a></li>
-                        <li class="nav__item"><a href="/pages/sales.html" class="nav__link">Акції</a></li>
-                        <li class="nav__item"><a href="/pages/text-page.html" class="nav__link">Про нас</a></li>
-                        <li class="nav__item"><a href="#" class="nav__link">Інформація</a></li>
+                        <li class="nav__item"><a class="nav__link" href="/pages/catalog.html">Каталог</a></li>
+                        <li class="nav__item"><a class="nav__link" href="/pages/sales.html">Акції</a></li>
+                        <li class="nav__item"><a class="nav__link" href="/pages/text-page.html">Про нас</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#">Інформація</a></li>
                     </ul>
                 </nav>
 
                 <div class="header__actions">
-                    <button class="header__icon" aria-label="Пошук">
+                    <button aria-label="Пошук" class="header__icon">
                         <!-- Search icon -->
                     </button>
-                    <button class="header__icon" aria-label="Профіль" data-modal-open="login">
+                    <button aria-label="Профіль" class="header__icon" data-modal-open="login">
                         <!-- Profile icon -->
                     </button>
-                    <a href="/pages/wishlist.html" class="header__icon" aria-label="Список бажань">
+                    <a aria-label="Список бажань" class="header__icon" href="/pages/wishlist.html">
                         <!-- Heart icon -->
                     </a>
-                    <a href="/pages/checkout.html" class="header__icon" aria-label="Кошик">
+                    <a aria-label="Кошик" class="header__icon" href="/pages/checkout.html">
                         <!-- Cart icon -->
                     </a>
-                    <button class="header__burger hide-desktop" data-burger aria-label="Меню">
+                    <button aria-label="Меню" class="header__burger hide-desktop" data-burger>
                         <!-- Burger icon -->
                     </button>
                 </div>
@@ -64,41 +64,41 @@
             </div>
         </section>
     </main>
- 
+
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__column">
                     <h4 class="footer__title">Про компанію</h4>
                     <ul class="footer__list">
-                        <li><a href="#" class="footer__link">Про компанію</a></li>
-                        <li><a href="#" class="footer__link">Контакти</a></li>
-                        <li><a href="#" class="footer__link">Каталог</a></li>
+                        <li><a class="footer__link" href="#">Про компанію</a></li>
+                        <li><a class="footer__link" href="#">Контакти</a></li>
+                        <li><a class="footer__link" href="#">Каталог</a></li>
                     </ul>
                 </div>
 
                 <div class="footer__column">
                     <h4 class="footer__title">Допомога</h4>
                     <ul class="footer__list">
-                        <li><a href="#" class="footer__link">Доставка та оплата</a></li>
-                        <li><a href="#" class="footer__link">Умови кредитування</a></li>
-                        <li><a href="#" class="footer__link">Гарантія</a></li>
+                        <li><a class="footer__link" href="#">Доставка та оплата</a></li>
+                        <li><a class="footer__link" href="#">Умови кредитування</a></li>
+                        <li><a class="footer__link" href="#">Гарантія</a></li>
                     </ul>
                 </div>
 
                 <div class="footer__column">
                     <h4 class="footer__title">Сервіс</h4>
                     <ul class="footer__list">
-                        <li><a href="#" class="footer__link">Подарункові сертифікати</a></li>
-                        <li><a href="#" class="footer__link">Корпоративним клієнтам</a></li>
+                        <li><a class="footer__link" href="#">Подарункові сертифікати</a></li>
+                        <li><a class="footer__link" href="#">Корпоративним клієнтам</a></li>
                     </ul>
                 </div>
 
                 <div class="footer__newsletter">
                     <h4 class="footer__title">Приєднуйтесь до нашої спільноти</h4>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="mail@support.com" class="newsletter-form__input">
-                        <button type="submit" class="newsletter-form__btn">Приєднуйся</button>
+                        <input class="newsletter-form__input" placeholder="mail@support.com" type="email">
+                        <button class="newsletter-form__btn" type="submit">Приєднуйся</button>
                     </form>
                     <div class="footer__social">
                         <!-- Social icons -->
@@ -112,18 +112,18 @@
 <!-- Modals -->
 <div class="modal" data-modal="login">
     <div class="modal__content">
-        <button class="modal__close" data-modal-close aria-label="Закрити">&times;</button>
+        <button aria-label="Закрити" class="modal__close" data-modal-close>&times;</button>
         <!-- Login form content -->
     </div>
 </div>
 
 <div class="modal" data-modal="register">
     <div class="modal__content">
-        <button class="modal__close" data-modal-close aria-label="Закрити">&times;</button>
+        <button aria-label="Закрити" class="modal__close" data-modal-close>&times;</button>
         <!-- Register form content -->
     </div>
 </div>
 
-<script type="module" src="/js/main.js"></script>
+<script src="/js/main.js" type="module"></script>
 </body>
 </html>
