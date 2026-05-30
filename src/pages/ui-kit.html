@@ -91,6 +91,11 @@
                 <use href="#icon-x"></use>
               </svg>
             </button>
+            <button aria-label="Transparent" class="icon-btn icon-btn--transparent">
+              <svg class="icon-btn__icon">
+                <use href="#icon-eye"></use>
+              </svg>
+            </button>
           </div>
           <h2 class="ui-kit__title">Nav Buttons</h2>
           <div class="ui-kit__row">
@@ -166,6 +171,73 @@
                 <li class="sort-dropdown__item">За рейтингом</li>
               </ul>
             </details>
+          </div>
+
+          <h2 class="ui-kit__title">Inputs (Light & Dark)</h2>
+          
+          <div style="display: flex; gap: 40px; margin-top: 20px;">
+            <!-- Світла тема -->
+            <div style="flex: 1; padding: 20px; background: #f6f6f6; border-radius: 8px;">
+              <h3 style="margin-bottom: 16px; font-size: 16px;">Light Theme</h3>
+              <div class="input">
+                <label class="input__label">Телефон*</label>
+                <div class="input__inner">
+                  <input class="input__field" placeholder="+38(093) 666 66 66" type="text" />
+                </div>
+              </div>
+              <div class="input" style="margin-top: 16px;">
+                <label class="input__label">E-mail*</label>
+                <div class="input__inner">
+                  <input class="input__field input__field--with-icon input__field--error" placeholder="thisismymail@gmail.com" type="email" />
+                  <button class="input__btn">
+                    <svg aria-hidden="true">
+                      <use href="#icon-pencil"></use>
+                    </svg>
+                  </button>
+                </div>
+                <span class="input__error">Невірний формат e-mail</span>
+              </div>
+              <div class="input" style="margin-top: 16px;">
+                <label class="input__label">Пароль*</label>
+                <div class="input__inner">
+                  <input class="input__field input__field--success input__field--with-icon" placeholder="Введіть пароль*" type="password" />
+                  <button type="button" class="icon-btn icon-btn--transparent input__btn js-password-toggle" aria-label="Toggle password visibility">
+                    <svg class="icon-btn__icon" aria-hidden="true">
+                      <use href="#icon-eye"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Темна тема -->
+            <div style="flex: 1; padding: 20px; background: #102c56; border-radius: 8px; color: white;">
+              <h3 style="margin-bottom: 16px; font-size: 16px;">Dark Theme</h3>
+              <div class="input input--light">
+                <label class="input__label">ПІБ*</label>
+                <div class="input__inner">
+                  <input class="input__field input__field--lg" placeholder="Карпенко Дмитро Осипович*" type="text" />
+                </div>
+              </div>
+              <div class="input input--light" style="margin-top: 16px;">
+                <label class="input__label">Телефон*</label>
+                <div class="input__inner">
+                  <input class="input__field input__field--lg input__field--error" placeholder="+38 (093) 444 55 66*" type="text" />
+                </div>
+                <span class="input__error">Обов'язкове поле</span>
+              </div>
+              <div class="input input--light" style="margin-top: 16px;">
+                <label class="input__label">Пароль*</label>
+                <div class="input__inner">
+                  <input class="input__field input__field--lg input__field--success input__field--with-icon" placeholder="Введіть пароль*" type="password" />
+                  <button type="button" class="icon-btn icon-btn--transparent input__btn js-password-toggle" aria-label="Toggle password visibility">
+                    <svg class="icon-btn__icon" aria-hidden="true">
+                      <use href="#icon-eye"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
 
           <h2 class="ui-kit__title">Filter</h2>

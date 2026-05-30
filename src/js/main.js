@@ -61,4 +61,34 @@ document.addEventListener('click', (event) => {
       });
     }
   }
+
+  // Sort dropdown logic
+  if (!event.target.closest('.sort-dropdown')) {
+    document.querySelectorAll('.sort-dropdown[open]').forEach(dropdown => {
+      dropdown.removeAttribute('open');
+    });
+  }
+
+  const sortItem = event.target.closest('.sort-dropdown__item');
+  if (sortItem) {
+    const dropdown = sortItem.closest('.sort-dropdown');
+    dropdown.querySelector('.sort-dropdown__item--active')?.classList.remove('sort-dropdown__item--active');
+    sortItem.classList.add('sort-dropdown__item--active');
+    dropdown.removeAttribute('open');
+  }
+
+  // Password toggle logic
+  const toggleBtn = event.target.closest('.js-password-toggle');
+  if (toggleBtn) {
+    const input = toggleBtn.closest('.input__inner').querySelector('.input__field');
+    const useTag = toggleBtn.querySelector('use');
+    
+    if (input.type === 'password') {
+      input.type = 'text';
+      useTag.setAttribute('href', '#icon-eye-cross');
+    } else {
+      input.type = 'password';
+      useTag.setAttribute('href', '#icon-eye');
+    }
+  }
 });
