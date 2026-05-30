@@ -26,8 +26,8 @@ selector.addEventListener('click', (event) => {
   const clickedItem = event.target.closest('.lang-selector__item');
 
   if (clickedItem) {
-    selector.querySelector('.is-active')?.classList.remove('is-active');
-    clickedItem.classList.add('is-active');
+    selector.querySelector('.lang-selector__item--active')?.classList.remove('lang-selector__item--active');
+    clickedItem.classList.add('lang-selector__item--active');
 
     trigger.firstChild.textContent = clickedItem.textContent;
     selector.removeAttribute('open');

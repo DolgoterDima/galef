@@ -73,11 +73,11 @@
     cursor: pointer;
     border-radius: $radius-md;
     padding: $spacing-xs $spacing-md;
-    &.is-active {
+    &--active {
       background: $blue-700;
       color: $white;
     }
-    &:hover:not(.is-active) {
+    &:hover:not(.lang-selector__item--active) {
       background: $blue-200;
     }
   }
