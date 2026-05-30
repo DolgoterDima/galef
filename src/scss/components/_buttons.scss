@@ -45,7 +45,7 @@
   &:disabled,
   &--disabled {
     background-color: $btn-disabled;
-    color: $text-invert;
+    color: $white;
     pointer-events: none;
   }
   &--wide {

@@ -25,12 +25,12 @@ $neutral-0: #edeff2;
 $neutral-50: #f6f6f6;
 $neutral-200: #e7e7e7;
 $neutral-300: #d1d1d1;
-$neutral-400: #b0b0b0;
+$neutral-400:  #B2BEC7;
 $neutral-500: #888888;
 $neutral-600: #5d5d5d;
 $neutral-700: #454545;
 $neutral-800: #3d3d3d;
-$neutral-900: #8698a6;
+$neutral-900: #8698a6; 
 $neutral-1000: #111111;
 
 // Green
@@ -90,7 +90,7 @@ $border-secondary-light: #edecef; // Exact hex from SVG
 // Icon
 $icon-primary: $red-500;
 $icon-invert: $blue-900;
-$icon-secondary: #4f4f4f; // Exact hex from SVG
+$icon-secondary: $neutral-700; // Exact hex from SVG
 
 // Status
 $status-positive: $green-400;
