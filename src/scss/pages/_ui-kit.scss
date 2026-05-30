@@ -1,0 +1,18 @@
+@use '../abstracts/mixins' as *;
+
+.demo-cards-grid {
+  display: grid;
+  gap: 10px;
+  /* Default Mobile up to 920px: 2 columns */
+  grid-template-columns: repeat(2, 1fr);
+
+  /* Custom breakpoint at 921px (or use $bp-tablet-lg for 960px) */
+  @include breakpoint((min: 921px)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Large Desktop (1440px+): 4 columns */
+  @include breakpoint($bp-desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
