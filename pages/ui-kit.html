@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>UI Kit - Golef</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/galef/assets/main-6WZNlpAx.js"></script>
+    <link rel="stylesheet" crossorigin href="/galef/assets/main-_s7eoSWZ.css">
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <main class="main-content">
+        <div class="container ui-kit">
+          <h1>UI Kit</h1>
+          <p>Сторінка для компонентів - заповнити самостійно</p>
+          <h2 class="ui-kit__title">Buttons</h2>
+          <div class="ui-kit-row">
+            <a class="btn" href="#">
+              Купити
+              <svg aria-hidden="true" class="btn__icon">
+                <use href="#icon-cart"></use>
+              </svg>
+            </a>
+
+            <a class="btn btn--outline" href="#">
+              Купити
+              <svg aria-hidden="true" class="btn__icon">
+                <use href="#icon-cart"></use>
+              </svg>
+            </a>
+            <a class="btn btn--disabled" href="#">
+              Неактивна
+              <svg aria-hidden="true" class="btn__icon">
+                <use href="#icon-cart"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="ui-kit__row">
+            <button class="btn btn--lg">Показати ще 6</button>
+
+            <button class="btn btn--outline btn--lg">Показати ще 6</button>
+            <button class="btn btn--lg" disabled>Показати ще 6</button>
+          </div>
+
+          <h2 class="ui-kit__title">Icon Buttons</h2>
+          <div class="ui-kit__row">
+            <button aria-label="Cart" class="icon-btn">
+              <svg class="icon-btn__icon">
+                <use href="#icon-cart"></use>
+              </svg>
+
+              <svg class="icon-btn__icon">
+                <use href="#icon-cart-filled"></use>
+              </svg>
+            </button>
+            <button aria-label="Cart" class="icon-btn">
+              <svg class="icon-btn__icon">
+                <use href="#icon-cart"></use>
+              </svg>
+
+              <svg class="icon-btn__icon">
+                <use href="#icon-cart-filled"></use>
+              </svg>
+              <span class="icon-btn__label">123</span>
+            </button>
+
+            <button aria-label="Search" class="icon-btn">
+              <svg class="icon-btn__icon">
+                <use href="#icon-search"></use>
+              </svg>
+
+              <svg class="icon-btn__icon">
+                <use href="#icon-search-filled"></use>
+              </svg>
+            </button>
+
+            <button aria-label="Close" class="icon-btn icon-btn--rounded">
+              <svg class="icon-btn__icon">
+                <use href="#icon-x"></use>
+              </svg>
+            </button>
+            <button
+              aria-label="Close"
+              class="icon-btn icon-btn--primary icon-btn--rounded"
+            >
+              <svg class="icon-btn__icon">
+                <use href="#icon-x"></use>
+              </svg>
+            </button>
+            <button aria-label="Transparent" class="icon-btn icon-btn--transparent">
+              <svg class="icon-btn__icon">
+                <use href="#icon-eye"></use>
+              </svg>
+            </button>
+          </div>
+          <h2 class="ui-kit__title">Nav Buttons</h2>
+          <div class="ui-kit__row">
+            <button aria-label="Arrow left" class="nav-btn">
+              <svg class="nav-btn__icon">
+                <use href=" #icon-left-arrow"></use>
+              </svg>
+            </button>
+            <button aria-label="Arrow left" class="nav-btn">
+              <svg class="nav-btn__icon">
+                <use href=" #icon-right-arrow"></use>
+              </svg>
+            </button>
+          </div>
+          <h2 class="ui-kit__title">Lang selector</h2>
+          <div class="ui-kit__row">
+            <details class="lang-selector">
+              <summary class="lang-selector__trigger">
+                UA
+                <svg class="lang-selector__arrow">
+                  <use href="#icon-chevron-down"></use>
+                </svg>
+              </summary>
+              <ul class="lang-selector__menu">
+                <li class="lang-selector__item lang-selector__item--active">UA</li>
+                <li class="lang-selector__item">EN</li>
+                <li class="lang-selector__item">RU</li>
+              </ul>
+            </details>
+            <details class="lang-selector" disabled>
+              <summary class="lang-selector__trigger">
+                UA
+                <svg class="lang-selector__arrow">
+                  <use href="#icon-chevron-down"></use>
+                </svg>
+              </summary>
+              <ul class="lang-selector__menu">
+                <li class="lang-selector__item lang-selector__item--active">UA</li>
+                <li class="lang-selector__item">EN</li>
+                <li class="lang-selector__item">RU</li>
+              </ul>
+            </details>
+          </div>
+
+          <h2 class="ui-kit__title">Menu button</h2>
+          <div class="ui-kit__row">
+            <button aria-label="Search" class="menu-btn">
+              <svg class="menu-btn__icon">
+                <use href="#icon-search"></use>
+              </svg>
+            </button>
+            <button aria-label="Menu" class="menu-btn">
+              <svg class="menu-btn__icon">
+                <use href="#icon-bars"></use>
+              </svg>
+            </button>
+          </div>
+
+          <h2 class="ui-kit__title">Sort dropdown</h2>
+          <div class="ui-kit__row">
+            <details class="sort-dropdown">
+              <summary class="sort-dropdown__trigger">
+                Сортування
+                <svg class="sort-dropdown__arrow">
+                  <use href="#icon-chevron-down"></use>
+                </svg>
+              </summary>
+              <ul class="sort-dropdown__menu">
+                <li class="sort-dropdown__item sort-dropdown__item--active">Від дешевих до дорогих</li>
+                <li class="sort-dropdown__item">Від дорогих до дешевих</li>
+                <li class="sort-dropdown__item">Новинки</li>
+                <li class="sort-dropdown__item">Передзамовлення</li>
+                <li class="sort-dropdown__item">За рейтингом</li>
+              </ul>
+            </details>
+          </div>
+
+          <h2 class="ui-kit__title">Inputs (Light & Dark)</h2>
+          
+          <div style="display: flex; gap: 40px; margin-top: 20px;">
+            <!-- Світла тема -->
+            <div style="flex: 1; padding: 20px; background: #f6f6f6; border-radius: 8px;">
+              <h3 style="margin-bottom: 16px; font-size: 16px;">Light Theme</h3>
+              <div class="input">
+                <label class="input__label">Телефон*</label>
+                <div class="input__inner">
+                  <input class="input__field" placeholder="+38(093) 666 66 66" type="text" />
+                </div>
+              </div>
+              <div class="input" style="margin-top: 16px;">
+                <label class="input__label">E-mail*</label>
+                <div class="input__inner">
+                  <input class="input__field input__field--with-icon input__field--error" placeholder="thisismymail@gmail.com" type="email" />
+                  <button class="input__btn">
+                    <svg aria-hidden="true">
+                      <use href="#icon-pencil"></use>
+                    </svg>
+                  </button>
+                </div>
+                <span class="input__error">Невірний формат e-mail</span>
+              </div>
+              <div class="input" style="margin-top: 16px;">
+                <label class="input__label">Пароль*</label>
+                <div class="input__inner">
+                  <input class="input__field input__field--success input__field--with-icon" placeholder="Введіть пароль*" type="password" />
+                  <button type="button" class="icon-btn icon-btn--transparent input__btn js-password-toggle" aria-label="Toggle password visibility">
+                    <svg class="icon-btn__icon" aria-hidden="true">
+                      <use href="#icon-eye"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Темна тема -->
+            <div style="flex: 1; padding: 20px; background: #102c56; border-radius: 8px; color: white;">
+              <h3 style="margin-bottom: 16px; font-size: 16px;">Dark Theme</h3>
+              <div class="input input--light">
+                <label class="input__label">ПІБ*</label>
+                <div class="input__inner">
+                  <input class="input__field input__field--lg" placeholder="Карпенко Дмитро Осипович*" type="text" />
+                </div>
+              </div>
+              <div class="input input--light" style="margin-top: 16px;">
+                <label class="input__label">Телефон*</label>
+                <div class="input__inner">
+                  <input class="input__field input__field--lg input__field--error" placeholder="+38 (093) 444 55 66*" type="text" />
+                </div>
+                <span class="input__error">Обов'язкове поле</span>
+              </div>
+              <div class="input input--light" style="margin-top: 16px;">
+                <label class="input__label">Пароль*</label>
+                <div class="input__inner">
+                  <input class="input__field input__field--lg input__field--success input__field--with-icon" placeholder="Введіть пароль*" type="password" />
+                  <button type="button" class="icon-btn icon-btn--transparent input__btn js-password-toggle" aria-label="Toggle password visibility">
+                    <svg class="icon-btn__icon" aria-hidden="true">
+                      <use href="#icon-eye"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="ui-kit__title">Breadcrumbs</h2>
+          <div class="ui-kit__row">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <ol class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Головна</a></li>
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Каталог</a></li>
+                <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Офісні крісла</span></li>
+              </ol>
+            </nav>
+          </div>
+
+          <h2 class="ui-kit__title">Pagination</h2>
+          <div class="ui-kit__row">
+            <nav aria-label="Pagination">
+              <ul class="pagination">
+                <li class="pagination__item">
+                  <a href="#" class="pagination__link" aria-label="Previous page">
+                    <svg class="pagination__icon" aria-hidden="true"><use href="#icon-chewron-left"></use></svg>
+                  </a>
+                </li>
+                <li class="pagination__item"><a href="#" class="pagination__link">1</a></li>
+                <li class="pagination__item"><a href="#" class="pagination__link pagination__link--active" aria-current="page">2</a></li>
+                <li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
+                <li class="pagination__item"><span class="pagination__link pagination__link--dots">...</span></li>
+                <li class="pagination__item"><a href="#" class="pagination__link">23</a></li>
+                <li class="pagination__item">
+                  <a href="#" class="pagination__link" aria-label="Next page">
+                    <svg class="pagination__icon" aria-hidden="true"><use href="#icon-chewron-right"></use></svg>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <h2 class="ui-kit__title">Product Cards</h2>
+          <div class="demo-cards-grid">
+            
+            <!-- Card 1: In Stock / Sale -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <div class="product-card__badges">
+                  <span class="product-card__badge product-card__badge--top">Топ продажів</span>
+                  <span class="product-card__badge product-card__badge--sale">-25%</span>
+                </div>
+                <div class="product-card__actions">
+                  <button class="product-card__action-btn" aria-label="Add to favorites">
+                    <svg><use href="#icon-heart"></use></svg>
+                  </button>
+                  <button class="product-card__action-btn" aria-label="Compare">
+                    <svg><use href="#icon-scale"></use></svg>
+                  </button>
+                </div>
+                <img src="/galef/assets/chair-CgcFVXka.png" alt="Офісне крісло" class="product-card__image">
+              </div>
+              <div class="product-card__content">
+                <div class="product-card__status product-card__status--available">
+                  <span>В наявності</span>
+                </div>
+                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
+                <div class="product-card__meta">
+                  <div class="product-card__rating">
+                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
+                    <span>5</span>
+                  </div>
+                  <div class="product-card__reviews">
+                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
+                    <span>300</span>
+                  </div>
+                </div>
+                <div class="product-card__footer">
+                  <div class="product-card__price-current product-card__price-current--available">10 599 ₴</div>
+                  <div class="product-card__price-old">13 999 ₴</div>
+                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                    <svg><use href="#icon-cart"></use></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Pre-order -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <div class="product-card__badges">
+                  <span class="product-card__badge product-card__badge--new">Новинка</span>
+                  <span class="product-card__badge product-card__badge--exclusive">Ексклюзив</span>
+                </div>
+                <div class="product-card__actions">
+                  <button class="product-card__action-btn" aria-label="Add to favorites">
+                    <svg><use href="#icon-heart"></use></svg>
+                  </button>
+                  <button class="product-card__action-btn" aria-label="Compare">
+                    <svg><use href="#icon-scale"></use></svg>
+                  </button>
+                </div>
+                <img src="/galef/assets/chair-CgcFVXka.png" alt="Офісне крісло" class="product-card__image">
+              </div>
+              <div class="product-card__content">
+                <div class="product-card__status product-card__status--preorder">
+                  <span>Передзамовлення зі знижкою</span>
+                </div>
+                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
+                <div class="product-card__meta">
+                  <div class="product-card__rating">
+                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
+                    <span>5</span>
+                  </div>
+                  <div class="product-card__reviews">
+                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
+                    <span>300</span>
+                  </div>
+                </div>
+                <div class="product-card__footer">
+                  <div class="product-card__price-current product-card__price-current--preorder">10 599 ₴</div>
+                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                    <svg><use href="#icon-cart"></use></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Out of stock -->
+            <article class="product-card product-card--out-of-stock">
+              <div class="product-card__image-wrapper">
+                <div class="product-card__actions">
+                  <button class="product-card__action-btn" aria-label="Add to favorites">
+                    <svg><use href="#icon-heart"></use></svg>
+                  </button>
+                  <button class="product-card__action-btn" aria-label="Compare">
+                    <svg><use href="#icon-scale"></use></svg>
+                  </button>
+                </div>
+                <img src="/galef/assets/chair-CgcFVXka.png" alt="Офісне крісло" class="product-card__image">
+              </div>
+              <div class="product-card__content">
+                <div class="product-card__status product-card__status--out-of-stock">
+                  <span>Немає в наявності</span>
+                </div>
+                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
+                <div class="product-card__meta">
+                  <div class="product-card__rating">
+                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
+                    <span>5</span>
+                  </div>
+                  <div class="product-card__reviews">
+                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
+                    <span>300</span>
+                  </div>
+                </div>
+                <div class="product-card__footer">
+                  <div class="product-card__price-current product-card__price-current--out-of-stock">10 599 ₴</div>
+                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                    <svg><use href="#icon-cart"></use></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: Sale Price -->
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <div class="product-card__badges">
+                  <span class="product-card__badge product-card__badge--sale">-25%</span>
+                </div>
+                <div class="product-card__actions">
+                  <button class="product-card__action-btn" aria-label="Add to favorites">
+                    <svg><use href="#icon-heart"></use></svg>
+                  </button>
+                  <button class="product-card__action-btn" aria-label="Compare">
+                    <svg><use href="#icon-scale"></use></svg>
+                  </button>
+                </div>
+                <img src="/galef/assets/chair-CgcFVXka.png" alt="Офісне крісло" class="product-card__image">
+              </div>
+              <div class="product-card__content">
+                <div class="product-card__status product-card__status--available">
+                  <span>В наявності</span>
+                </div>
+                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
+                <div class="product-card__meta">
+                  <div class="product-card__rating">
+                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
+                    <span>5</span>
+                  </div>
+                  <div class="product-card__reviews">
+                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
+                    <span>300</span>
+                  </div>
+                </div>
+                <div class="product-card__footer">
+                  <div class="product-card__price-current product-card__price-current--sale">10 599 ₴</div>
+                  <div class="product-card__price-old">13 999 ₴</div>
+                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                    <svg><use href="#icon-cart"></use></svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <h2 class="ui-kit__title">Filter</h2>
+          <div
+            class="ui-kit__row"
+            style="flex-wrap: wrap; align-items: flex-start"
+          >
+            <div style="width: 100%; max-width: 310px">
+              <div class="filter">
+                <button aria-expanded="false" class="filter__header">
+                  <span class="filter__title">Матеріал оббивки</span>
+                  <svg class="filter__arrow">
+                    <use href="#icon-chevron-down"></use>
+                  </svg>
+                </button>
+                <div class="filter__dropdown">
+                  <div class="filter__list">
+                    <label class="checkbox filter__item">
+                      <input checked class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">Бархат</span>
+                    </label>
+                    <label class="checkbox filter__item">
+                      <input class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">Велюр, екошкіра</span>
+                    </label>
+                    <label class="checkbox filter__item">
+                      <input class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">Зносостійка тканина</span>
+                    </label>
+                    <label class="checkbox filter__item">
+                      <input class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">Перфорована тканина</span>
+                    </label>
+                    <label class="checkbox filter__item">
+                      <input class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">Сітка</span>
+                    </label>
+                    <label class="checkbox filter__item">
+                      <input class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">Тканина Air-Mesh</span>
+                    </label>
+                    <label class="checkbox filter__item">
+                      <input class="checkbox__input" type="checkbox" />
+                      <span class="checkbox__box">
+                        <svg aria-hidden="true" class="checkbox__icon">
+                          <use href="#icon-check"></use>
+                        </svg>
+                      </span>
+                      <span class="checkbox__label">
+                        Тканина водонепроникна з довгим текстом що переповнює
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="ui-kit__title">Filter Group</h2>
+          <div class="ui-kit__row" style="align-items: flex-start">
+            <div style="width: 100%; max-width: 310px">
+              <div class="filter-group">
+                <div class="filter-group__header">
+                  <span class="filter-group__title">Фільтрація</span>
+                  <svg aria-hidden="true" class="filter-group__icon">
+                    <use href="#icon-filter"></use>
+                  </svg>
+                </div>
+                <div class="filter-group__body">
+                  <div class="filter">
+                    <button aria-expanded="false" class="filter__header">
+                      <span class="filter__title">Серія</span>
+                      <svg class="filter__arrow">
+                        <use href="#icon-chevron-down"></use>
+                      </svg>
+                    </button>
+                    <div class="filter__dropdown">
+                      <div class="filter__list">
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Серія 1</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Серія 2</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Серія 3</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="filter">
+                    <button aria-expanded="false" class="filter__header">
+                      <span class="filter__title">Матеріал оббивки</span>
+                      <svg class="filter__arrow">
+                        <use href="#icon-chevron-down"></use>
+                      </svg>
+                    </button>
+                    <div class="filter__dropdown">
+                      <div class="filter__list">
+                        <label class="checkbox filter__item">
+                          <input
+                            checked
+                            class="checkbox__input"
+                            type="checkbox"
+                          />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Бархат</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Велюр, екошкіра</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">
+                            Зносостійка тканина
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="filter">
+                    <button aria-expanded="false" class="filter__header">
+                      <span class="filter__title">Підлокітники</span>
+                      <svg class="filter__arrow">
+                        <use href="#icon-chevron-down"></use>
+                      </svg>
+                    </button>
+                    <div class="filter__dropdown">
+                      <div class="filter__list">
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">З регулюванням</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Без регулювання</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Відкидні</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="filter">
+                    <button aria-expanded="false" class="filter__header">
+                      <span class="filter__title">Спинка</span>
+                      <svg class="filter__arrow">
+                        <use href="#icon-chevron-down"></use>
+                      </svg>
+                    </button>
+                    <div class="filter__dropdown">
+                      <div class="filter__list">
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Ортопедична</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Звичайна</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">З підголівником</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="filter">
+                    <button aria-expanded="false" class="filter__header">
+                      <span class="filter__title">Висувна підніжка</span>
+                      <svg class="filter__arrow">
+                        <use href="#icon-chevron-down"></use>
+                      </svg>
+                    </button>
+                    <div class="filter__dropdown">
+                      <div class="filter__list">
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Є</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Немає</span>
+                        </label>
+                        <label class="checkbox filter__item">
+                          <input class="checkbox__input" type="checkbox" />
+                          <span class="checkbox__box">
+                            <svg aria-hidden="true" class="checkbox__icon">
+                              <use href="#icon-check"></use>
+                            </svg>
+                          </span>
+                          <span class="checkbox__label">Знімний модуль</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="filter-group__footer">
+                    <button class="btn btn--outline btn--wide">
+                    Застосувати
+                     
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <style>
+      .ui-kit {
+        padding: 30px;
+      }
+
+      .ui-kit__title {
+        margin-top: 30px;
+      }
+
+      .ui-kit__row {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+    </style>
+  </body>
+</html>
