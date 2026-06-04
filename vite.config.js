@@ -3,6 +3,7 @@ import { resolve } from "path";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 
 export default defineConfig({
+  base: "/galef/",
   root: "src",
   publicDir: "../public",
 
