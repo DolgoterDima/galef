@@ -15,12 +15,14 @@
   color: $white;
 
   background-color: $btn-primary;
+  border: $border-width solid $btn-primary;
   border-radius: $radius-sm; // 4px замість 3px
   cursor: pointer;
   user-select: none;
 
   transition:
     background-color $transition-fast,
+    border-color $transition-fast,
     box-shadow $transition-fast;
 
   &__icon {
@@ -32,20 +34,24 @@
 
   &:hover {
     background-color: $btn-primary-hover;
+    border-color: $btn-primary-hover;
     color: $white;
   }
 
   &:active {
     background-color: $btn-primary-pressed;
+    border-color: $btn-primary-pressed;
   }
 
   &:focus-visible {
     background-color: $btn-primary;
+    border-color: $btn-primary;
   }
 
   &:disabled,
   &--disabled {
     background-color: $btn-disabled;
+    border-color: $btn-disabled;
     color: $white;
     pointer-events: none;
   }
