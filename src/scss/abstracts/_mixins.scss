@@ -14,6 +14,7 @@ $breakpoints-map: (
   "mobile-lg": $breakpoint-mobile-lg,
   "tablet": $breakpoint-tablet,
   "tablet-lg": $breakpoint-tablet-lg,
+  "laptop": $breakpoint-laptop,
   "desktop": $breakpoint-desktop,
   "desktop-lg": $breakpoint-desktop-lg,
 );
@@ -38,10 +39,24 @@ $bp-tablet-only: (
 $bp-tablet-lg: (
   min: $breakpoint-tablet-lg,
 ); // 960px and up
+$bp-tablet-lg-down: (
+  max: #{$breakpoint-tablet-lg - 1px},
+); // 0px - 959px
 $bp-tablet-lg-only: (
   min: $breakpoint-tablet-lg,
+  max: #{$breakpoint-laptop - 1px},
+); // 960px - 1199px
+
+$bp-laptop: (
+  min: $breakpoint-laptop,
+); // 1200px and up
+$bp-laptop-down: (
+  max: #{$breakpoint-laptop - 1px},
+); // 0px - 1199px
+$bp-laptop-only: (
+  min: $breakpoint-laptop,
   max: #{$breakpoint-desktop - 1px},
-); // 960px - 1439px
+); // 1200px - 1439px
 
 $bp-desktop: (
   min: $breakpoint-desktop,

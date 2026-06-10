@@ -91,6 +91,24 @@ document.addEventListener('click', (event) => {
       useTag.setAttribute('href', '#icon-eye');
     }
   }
+
+  // Search overlay logic
+  const searchOpenBtn = event.target.closest('.js-search-open');
+  if (searchOpenBtn) {
+    const searchOverlay = document.getElementById('search-overlay');
+    if (searchOverlay) {
+      searchOverlay.classList.add('is-active');
+      setTimeout(() => searchOverlay.querySelector('input')?.focus(), 100);
+    }
+  }
+
+  const searchCloseBtn = event.target.closest('#search-close');
+  if (searchCloseBtn) {
+    const searchOverlay = document.getElementById('search-overlay');
+    if (searchOverlay) {
+      searchOverlay.classList.remove('is-active');
+    }
+  }
 });
 
 

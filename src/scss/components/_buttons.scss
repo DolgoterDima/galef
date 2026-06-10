@@ -67,8 +67,7 @@
       background-color: $btn-primary-hover;
       color: $white;
       border-color: $btn-primary-hover;
-    }
-    &:disabled {}
+    } 
     &:focus-visible, &:active {
       background-color: $btn-primary;  
       border-color: $btn-primary;
@@ -85,5 +84,9 @@
     padding: 12px 20px;
 
     border-radius: $radius-md;
+  }
+
+  &--search-button {
+    border-radius: 0 12px 12px 0;
   }
 }

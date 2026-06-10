@@ -4,7 +4,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba($blue-300, 0.3);
+  background-color: $btn-glass-bg;
   width: 46px;
   height: 46px;
   position: relative;
@@ -39,6 +39,7 @@
 
   &:hover {
     border-color: $brand-primary;
+    color: $brand-primary; // Prevent a:hover from changing the color
   }
   &:has(.icon-btn__icon:nth-child(2)) {
     // Приховуємо другу іконку за замовчуванням

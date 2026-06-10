@@ -74,6 +74,8 @@ $btn-secondary: $green-400;
 $btn-secondary-hover: $green-300;
 $btn-secondary-pressed: $green-500;
 $btn-disabled: $neutral-400;
+$btn-glass-bg: rgba($blue-300, 0.3);
+$btn-glass-hover: rgba($blue-300, 0.5);
 
 // Text
 $text-primary: $neutral-1000;
@@ -126,6 +128,7 @@ $font-size-h2: 40px;
 $font-size-h3: 36px;
 $font-size-h4: 32px;
 $font-size-h5: 24px;
+$font-size-h6: 20px;
 $font-size-paragraph: 24px;
 $font-size-body: 16px;
 $font-size-body-sm: 15px;
@@ -140,6 +143,7 @@ $breakpoint-mobile: 320px;
 $breakpoint-mobile-lg: 460px;
 $breakpoint-tablet: 760px;
 $breakpoint-tablet-lg: 960px;
+$breakpoint-laptop: 1200px;
 $breakpoint-desktop: 1440px;
 $breakpoint-desktop-lg: 1600px;
 
@@ -159,6 +163,7 @@ $spacing-base: 4px;
 $spacing-none: 0;
 $spacing-xs: $spacing-base * 1; // 4px
 $spacing-sm: $spacing-base * 2; // 8px
+$spacing-sm-alt: $spacing-base * 3; // 12px
 $spacing-md: $spacing-base * 4; // 16px
 $spacing-lg: $spacing-base * 6; // 24px
 $spacing-xl: $spacing-base * 8; // 32px
