@@ -1,0 +1,66 @@
+// ============================================
+// MODAL COMPONENT
+// ============================================
+
+@use "../abstracts" as *;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($neutral-1000, 0.5);
+  z-index: $z-modal;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  // Hide by default
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  
+  &--open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  &__content {
+    background-color: $neutral-0;
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    
+    // Add animation for content appearance if needed
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+  
+  &--open &__content {
+    transform: translateY(0);
+  }
+  
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    color: $neutral-500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: $neutral-1000;
+    }
+  }
+}

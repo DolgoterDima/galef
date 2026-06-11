@@ -9,8 +9,18 @@ html {
 }
 
 body {
-  background-color: $surface-primary;
+  background-color: $surface-primary; // back to original
   overflow-x: hidden;
+}
+
+.page-wrapper {
+  background-color: transparent;
+  max-width: 1440px; // 1360 + 40 + 40
+  margin: 0 auto;
+  padding: 0 40px; // Left/right padding 40px
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 // Selection

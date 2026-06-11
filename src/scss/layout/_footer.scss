@@ -5,49 +5,266 @@
 @use "../abstracts" as *;
 
 .footer {
-  background-color: $brand-primary;
-  color: $text-invert;
-}
+  margin-top: auto;
+  padding: 40px 0 12px; // 12px at the bottom
+  
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 18px;
+    width: 1360px;
+    max-width: 100%;
+    margin: 0 auto;
 
-.footer__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr) auto;
-  gap: $spacing-xl;
-}
-
-.footer__column {
-}
-
-.footer__title {
-  font-size: $font-size-body;
-  font-weight: $font-weight-semibold;
-  margin-bottom: $spacing-md;
-}
-
-.footer__list {
-  gap: $spacing-sm;
-}
-
-.footer__link {
-  font-size: $font-size-caption;
-  color: rgba($neutral-50, 0.8);
-  transition: color $transition-fast;
-
-  &:hover {
-    color: $neutral-50;
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      flex-direction: column-reverse;
+    }
   }
-}
 
-.footer__social {
-  @include flex-center;
-  gap: $spacing-md;
-  margin-top: $spacing-lg;
-}
+  &__nav-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: $neutral-1000;
+    border-radius: 20px;
 
-.footer__bottom {
-  padding-top: $spacing-lg;
-  border-top: $border-width solid rgba($neutral-50, 0.2);
-  text-align: center;
-  font-size: $font-size-caption;
-  color: rgba($neutral-50, 0.6);
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      flex: none;
+      width: 100%;
+    }
+  }
+
+  &__nav-border {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 40px;
+    gap: 24px;
+    
+    border: 1px solid $neutral-0;
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    flex: 1;
+
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: 
+        "col1 col2 col4"
+        "col1 col2 col3";
+      width: 100%;
+    }
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 212px;
+    
+    @include breakpoint((max: $breakpoint-desktop)) {
+      width: calc(50% - 12px);
+    }
+
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      width: auto;
+      
+      &:nth-child(1) { grid-area: col1; }
+      &:nth-child(2) { grid-area: col2; }
+      &:nth-child(3) { grid-area: col3; }
+      &:nth-child(4) { grid-area: col4; }
+    }
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-family: $font-family-base;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $neutral-0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    font-family: $font-family-base;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $neutral-0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: $blue-700;
+    }
+  }
+
+  &__marketing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 32px;
+    background-color: $neutral-1000;
+    border-radius: 20px;
+    width: 440px;
+    flex-shrink: 0;
+
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      width: 100%;
+      align-items: center;
+    }
+  }
+
+  &__marketing-title {
+    font-family: $font-family-base;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+    color: $neutral-0;
+    text-align: left;
+    max-width: 360px;
+
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      text-align: center;
+      max-width: 100%;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 360px;
+
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      align-items: center;
+      width: 100%;
+      max-width: 440px;
+    }
+  }
+
+  &__input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      align-items: center;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 52px;
+    background: $neutral-50;
+    border-radius: 100px;
+    padding: 14px 30px;
+    border: none;
+    outline: none;
+    font-family: $font-family-base;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $neutral-1000;
+    text-align: left;
+    margin-bottom: 24px;
+    
+    &::placeholder {
+      color: $neutral-600;
+    }
+
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      text-align: center;
+    }
+  }
+
+  &__submit {
+    align-self: center;
+    width: 210px;
+    height: 52px;
+    background: $blue-700;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    font-family: $font-family-base;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: $neutral-0;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover {
+      background: darken(#325C9B, 10%);
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 44px;
+    width: 100%;
+  }
+
+  &__social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: $neutral-0;
+    color: $neutral-1000;
+    transition: all 0.3s ease;
+    
+    svg {
+      width: 44px;
+      height: 44px;
+    }
+
+    &:hover {
+      background-color: $blue-700;
+      color: $neutral-0;
+    }
+
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      width: 44px;
+      height: 44px;
+      
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
 }
