@@ -9,7 +9,7 @@
   z-index: $z-modal;
   pointer-events: none;
   
-  &.is-open {
+  &--open {
     pointer-events: auto;
 
     .mobile-menu__overlay {
@@ -74,11 +74,11 @@
     will-change: transform;
     background: $neutral-50;
     
-    &.is-active {
+    &--active {
       transform: translate3d(0, 0, 0);
     }
     
-    &.is-left {
+    &--left {
       transform: translate3d(-50%, 0, 0);
     }
   }
@@ -115,6 +115,15 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    // Reset for nested navs
+    nav {
+      margin: 0;
+      padding: 0;
+    }
   }
 
   &__link {

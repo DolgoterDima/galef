@@ -10,9 +10,15 @@
   flex-direction: row;
   align-items: center;
   padding: 0px;
-  gap: 44px;
   margin: 0 auto;
+  gap: 44px;
   list-style: none;
+
+  &__dropdown {
+    list-style: none;
+    margin: 0;
+    padding: 20px $spacing-lg;
+  }
 
   @include breakpoint($bp-laptop-down) {
     gap: 25px;
@@ -23,7 +29,7 @@
     display: flex;
     align-items: center;
 
-    &:hover .nav__dropdown {
+    &:hover > .nav__dropdown {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
@@ -51,6 +57,26 @@
     z-index: $z-dropdown;
     box-shadow: $shadow-md;
 
+    &-item {
+      position: relative;
+      display: block;
+
+      &:hover > .nav__dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+    }
+
+    // Nested dropdown (Level 3+)
+    .nav__dropdown {
+      top: -20px; // Aligns with the parent's padding
+      left: 100%;
+      margin-top: 0;
+      margin-left: 20px; // Gap from the main dropdown
+      transform: translateX(-10px); // Slide in horizontally
+    }
+
     &-link {
       font-family: $font-family-base;
       font-style: normal;
@@ -61,6 +87,16 @@
       text-decoration: none;
       transition: color $transition-fast;
       white-space: nowrap;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      svg {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+      }
 
       &:hover {
         color: $blue-700;
@@ -182,7 +218,7 @@
   transform: translateY(-20px);
   transition: all $transition-base;
 
-  &.is-active {
+  &--active {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);

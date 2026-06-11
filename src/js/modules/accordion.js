@@ -12,19 +12,21 @@ export function initAccordions() {
     if (!trigger || !content) return;
     
     trigger.addEventListener('click', () => {
-      const isOpen = accordion.classList.contains('is-open');
+      const isOpen = accordion.classList.contains('accordion--open');
       
       // Close all accordions in the same group
       const group = accordion.closest('[data-accordion-group]');
       if (group) {
         group.querySelectorAll('[data-accordion]').forEach(item => {
-          item.classList.remove('is-open');
+          item.classList.remove('accordion--open');
         });
       }
       
       // Toggle current
       if (!isOpen) {
-        accordion.classList.add('is-open');
+        accordion.classList.add('accordion--open');
+      } else {
+        accordion.classList.remove('accordion--open');
       }
     });
   });

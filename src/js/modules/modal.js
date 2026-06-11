@@ -41,7 +41,7 @@ export function initModals() {
   // Close on Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      const openModal = document.querySelector('[data-modal].is-open');
+      const openModal = document.querySelector('[data-modal].modal--open');
       if (openModal) {
         closeModal(openModal);
       }
@@ -50,12 +50,12 @@ export function initModals() {
 }
 
 function openModal(modal) {
-  modal.classList.add('is-open');
+  modal.classList.add('modal--open');
   document.body.style.overflow = 'hidden';
 }
 
 function closeModal(modal) {
-  modal.classList.remove('is-open');
+  modal.classList.remove('modal--open');
   document.body.style.overflow = '';
 }
 

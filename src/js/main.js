@@ -97,7 +97,7 @@ document.addEventListener('click', (event) => {
   if (searchOpenBtn) {
     const searchOverlay = document.getElementById('search-overlay');
     if (searchOverlay) {
-      searchOverlay.classList.add('is-active');
+      searchOverlay.classList.add('search-overlay--active');
       setTimeout(() => searchOverlay.querySelector('input')?.focus(), 100);
     }
   }
@@ -106,9 +106,7 @@ document.addEventListener('click', (event) => {
   if (searchCloseBtn) {
     const searchOverlay = document.getElementById('search-overlay');
     if (searchOverlay) {
-      searchOverlay.classList.remove('is-active');
+      searchOverlay.classList.remove('search-overlay--active');
     }
   }
 });
-
-

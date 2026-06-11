@@ -26,14 +26,33 @@
                     <nav class="header__nav nav">
                         <div class="nav__item">
                             <a class="nav__link nav__link--catalog" href="/pages/catalog.html">Каталог</a>
-                            <div class="nav__dropdown">
-                                <a class="nav__dropdown-link" href="#">Геймерські крісла</a>
-                                <a class="nav__dropdown-link" href="#">Офісні крісла</a>
-                            </div>
+                            <nav class="nav__dropdown">
+                                <div class="nav__dropdown-item">
+                                    <a class="nav__dropdown-link" href="#">
+                                        Геймерські крісла
+                                        <svg><use href="#icon-chewron-right"></use></svg>
+                                    </a>
+                                    <!-- Level 3 Submenu -->
+                                    <nav class="nav__dropdown">
+                                        <div class="nav__dropdown-item">
+                                            <a class="nav__dropdown-link" href="#">Corsair</a>
+                                        </div>
+                                        <div class="nav__dropdown-item">
+                                            <a class="nav__dropdown-link" href="#">Herman Miller</a>
+                                        </div>
+                                        <div class="nav__dropdown-item">
+                                            <a class="nav__dropdown-link" href="#">Secretlab</a>
+                                        </div>
+                                    </nav>
+                                </div>
+                                <div class="nav__dropdown-item">
+                                    <a class="nav__dropdown-link" href="#">Офісні крісла</a>
+                                </div>
+                            </nav>
                         </div>
-                        <a class="nav__link nav__link--sales" href="/pages/sales.html">Акції</a>
-                        <a class="nav__link nav__link--default" href="/pages/text-page.html">Про нас</a>
-                        <a class="nav__link nav__link--default" href="#">Інформація</a>
+                        <div class="nav__item"><a class="nav__link nav__link--sales" href="/pages/sales.html">Акції</a></div>
+                        <div class="nav__item"><a class="nav__link nav__link--default" href="/pages/text-page.html">Про нас</a></div>
+                        <div class="nav__item"><a class="nav__link nav__link--default" href="#">Інформація</a></div>
                     </nav>
 
                     <div class="header__actions">
@@ -81,7 +100,7 @@
                     <div class="mobile-menu__overlay" data-mobile-menu-overlay></div>
                     <div class="mobile-menu__inner">
                         <!-- Main Panel -->
-                        <div class="mobile-menu__panel is-active" data-mobile-panel="main">
+                        <div class="mobile-menu__panel mobile-menu__panel--active" data-mobile-panel="main">
                             <div class="mobile-menu__top">
                                 <span class="mobile-menu__title">Меню</span>
                                 <div class="mobile-menu__actions">
@@ -105,57 +124,44 @@
                                     </button>
                                 </div>
                             </div>
+                            
+                            <!-- OpenCart compatible nested structure -->
                             <nav class="mobile-menu__nav">
-                                <a class="mobile-menu__link mobile-menu__link--catalog" href="#" data-mobile-target="catalog">
-                                    Каталог
-                                    <svg class="mobile-menu__arrow"><use href="#icon-chewron-right"></use></svg>
-                                </a>
-                                <a class="mobile-menu__link mobile-menu__link--sales" href="/pages/sales.html">
-                                    Акції
-                                </a>
-                                <a class="mobile-menu__link" href="/pages/text-page.html">
-                                    Про нас
-                                </a>
-                                <a class="mobile-menu__link" href="#">
-                                    Інформація
-                                </a>
-                            </nav>
-                        </div>
-                        
-                        <!-- Catalog Submenu Panel -->
-                        <div class="mobile-menu__panel" data-mobile-panel="catalog">
-                            <div class="mobile-menu__top">
-                                <button aria-label="Назад" class="icon-btn icon-btn--transparent mobile-menu__btn" data-mobile-back="main">
-                                    <svg class="icon-btn__icon"><use href="#icon-chewron-left"></use></svg>
-                                </button>
-                                <div class="mobile-menu__actions">
-                                    <a class="icon-btn mobile-menu__btn" href="/pages/checkout.html">
-                                        <svg class="icon-btn__icon"><use href="#icon-cart"></use></svg>
-                                    </a>
-                                    <details class="lang-selector mobile-menu__lang-wrapper">
-                                        <summary class="lang-selector__trigger">
-                                            UA
-                                            <svg class="lang-selector__arrow">
-                                                <use href="#icon-chevron-down"></use>
-                                            </svg>
-                                        </summary>
-                                        <ul class="lang-selector__menu">
-                                            <li class="lang-selector__item lang-selector__item--active">UA</li>
-                                            <li class="lang-selector__item">EN</li>
-                                        </ul>
-                                    </details>
-                                    <button aria-label="Закрити" class="icon-btn mobile-menu__btn" data-mobile-menu-close>
-                                        <svg class="icon-btn__icon"><use href="#icon-x"></use></svg>
-                                    </button>
+                                <div>
+                                    <a class="mobile-menu__link" href="#">Каталог</a>
+                                    <nav>
+                                        <div>
+                                            <a class="mobile-menu__link" href="#">Геймерські крісла</a>
+                                            <nav>
+                                                <div>
+                                                    <a class="mobile-menu__link" href="#">Рівень 3</a>
+                                                    <nav>
+                                                        <div>
+                                                            <a class="mobile-menu__link" href="#">Рівень 4</a>
+                                                            <nav>
+                                                                <div>
+                                                                    <a class="mobile-menu__link" href="#">Рівень 5</a>
+                                                                    <nav>
+                                                                        <div>
+                                                                            <a class="mobile-menu__link" href="#">Рівень 6</a>
+                                                                            <nav>
+                                                                                <div><a class="mobile-menu__link" href="#">Кінцевий пункт</a></div>
+                                                                            </nav>
+                                                                        </div>
+                                                                    </nav>
+                                                                </div>
+                                                            </nav>
+                                                        </div>
+                                                    </nav>
+                                                </div>
+                                                <div><a class="mobile-menu__link" href="#">Офісні крісла</a></div>
+                                            </nav>
+                                        </div>
+                                    </nav>
                                 </div>
-                            </div>
-                            <nav class="mobile-menu__nav">
-                                <a class="mobile-menu__link" href="#">
-                                    Геймерські крісла
-                                </a>
-                                <a class="mobile-menu__link" href="#">
-                                    Офісні крісла
-                                </a>
+                                <div><a class="mobile-menu__link mobile-menu__link--sales" href="/pages/sales.html">Акції</a></div>
+                                <div><a class="mobile-menu__link" href="/pages/text-page.html">Про нас</a></div>
+                                <div><a class="mobile-menu__link" href="#">Інформація</a></div>
                             </nav>
                         </div>
                     </div>
