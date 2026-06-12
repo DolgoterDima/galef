@@ -74,7 +74,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    margin-top: -16px; // Pull it up slightly to overlap with the map's bottom fade if needed, or 0
+    margin-top: 24px; // Added top margin
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
     border: none;
     padding: 16px;
