@@ -9,11 +9,14 @@ import { initMobileMenu } from './modules/mobile-menu.js';
 import { initAccordions } from './modules/accordion.js';
 import { initModals } from './modules/modal.js';
 
+import { initHeroSlider } from './modules/hero-slider.js';
+
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initAccordions();
   initModals();
+  initHeroSlider();
 
   console.log('Golef site initialized');
 });
