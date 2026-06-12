@@ -10,6 +10,7 @@ import { initAccordions } from './modules/accordion.js';
 import { initModals } from './modules/modal.js';
 
 import { initHeroSlider } from './modules/hero-slider.js';
+import { initProductSlider } from './modules/product-slider.js';
 
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordions();
   initModals();
   initHeroSlider();
+  initProductSlider();
 
   console.log('Golef site initialized');
 });

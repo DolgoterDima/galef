@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.new-arrivals {
+  padding: 60px 0;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    font-family: $font-family-base;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $neutral-1000;
+    margin: 0;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      font-size: 28px;
+    }
+  }
+
+}

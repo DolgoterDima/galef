@@ -26,21 +26,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px;
-    
-    // Instead of forcing the card height, we use aspect-ratio on the image block!
-    aspect-ratio: 1 / 1.1; // proportional wrapper for image
+    padding: 12px 16px 0; // matching top 12px, left/right 16px
+    height: 232px; // 220px image + 12px padding top
   }
 
   &__image {
     max-width: 100%;
-    height: 100%; // ensures it doesn't overflow wrapper
+    height: 220px;
     object-fit: contain;
   }
 
   &__badges {
     position: absolute;
-    top: 16px;
+    top: 12px;
     left: 16px;
     display: flex;
     flex-direction: column;
@@ -78,7 +76,7 @@
 
   &__actions {
     position: absolute;
-    top: 16px;
+    top: 12px;
     right: 16px;
     display: flex;
     flex-direction: column;
@@ -94,7 +92,7 @@
     height: 32px;
     background: transparent;
     border: none;
-    color: $blue-900; // #102C56 is used in the SVG
+    color: $blue-900;
     cursor: pointer;
     transition: color $transition-base;
 
@@ -111,7 +109,8 @@
   &__content {
     display: flex;
     flex-direction: column;
-    padding: 0 16px 16px;
+    padding: 8px 16px 16px; // 8px from image wrapper, 16px sides/bottom
+    gap: 8px; // exactly 8px between all text elements as per Figma
     flex-grow: 1;
   }
 
@@ -121,35 +120,34 @@
     align-items: center;
     font-family: $font-family-base;
     font-weight: $font-weight-bold;
-    font-size: 15px;
-    line-height: 1.2;
-    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.5;
 
     &--available {
-      color: $green-300; // #009B67
+      color: $green-300;
     }
     &--preorder {
-      color: $blue-700; // #325C9B
+      color: $blue-700;
     }
     &--out-of-stock {
-      color: $neutral-400; // #B2BEC7
+      color: $neutral-400;
     }
   }
 
   &__title {
     font-family: $font-family-base;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
     color: $neutral-1000;
-    margin: 0 0 12px 0;
+    margin: 0;
     
-    // Line clamp
+    // Line clamp (height 42px -> 2 lines)
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    min-height: calc(16px * 1.4 * 2);
+    min-height: 42px;
   }
 
   &__meta {
@@ -157,7 +155,6 @@
     flex-direction: row;
     align-items: center;
     gap: 14px;
-    margin-bottom: auto;
   }
 
   &__rating,
@@ -168,7 +165,7 @@
     gap: 6px;
     font-family: $font-family-base;
     font-weight: $font-weight-bold;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
     color: $neutral-1000;
   }
@@ -192,15 +189,16 @@
     justify-content: center;
     width: 16px;
     height: 16px;
-    color: $neutral-700; // #454545
+    color: $neutral-700;
   }
 
-  &__footer {
+  &__price-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 16px;
+    gap: 32px;
+    width: 100%;
+    margin-top: auto; // pushes the bottom elements down to align perfectly across all cards
   }
 
   &__price-current {
@@ -209,29 +207,27 @@
     justify-content: center;
     align-items: center;
     padding: 0 8px;
-    height: 32px;
+    height: 30px;
+    width: max-content;
+    white-space: nowrap;
     border-radius: 4px;
     font-family: $font-family-base;
     font-weight: 900;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.5;
     color: $white;
 
-    @media (max-width: 1199px) {
-      font-size: 20px;
-    }
-
     &--available {
-      background: $green-300; // #009B67
+      background: $green-300;
     }
     &--preorder {
-      background: $blue-700; // #325C9B
+      background: $blue-700;
     }
     &--sale {
       background: #FF2630;
     }
     &--out-of-stock {
-      background: $neutral-400; // #B2BEC7
+      background: $neutral-400;
     }
   }
 
@@ -240,21 +236,21 @@
     font-weight: $font-weight-bold;
     font-size: 15px;
     line-height: 1.5;
-    color: $neutral-700; // #454545
+    color: $neutral-700;
     text-decoration: line-through;
-    margin-right: auto;
-    margin-left: 12px;
   }
 
   &__cart-btn {
+    align-self: flex-end; // Right align as per Figma
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: $blue-900; // #102C56
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    background: $blue-900;
     border: none;
-    border-radius: $radius-md; // 8px
+    border-radius: 4px;
     color: $white;
     cursor: pointer;
     transition: background-color $transition-base;
@@ -297,6 +293,73 @@
       
       &:hover {
         background: $neutral-400;
+      }
+    }
+  }
+
+  // Tablet and Mobile adjustments based on Figma card_tab (960_760)
+  @include breakpoint((max: $breakpoint-tablet-lg)) {
+    &__image-wrapper {
+      padding: 8px;
+      aspect-ratio: auto;
+      height: 220px;
+    }
+
+    &__content {
+      padding: 0 8px 16px;
+    }
+
+    &__badges {
+      top: 8px;
+      left: 8px;
+    }
+
+    &__actions {
+      top: 8px;
+      right: 8px;
+    }
+
+    &__status {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    &__title {
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-line-clamp: 4; // 84px height / 21px line-height = 4 lines
+      min-height: 84px;
+      margin-bottom: 8px;
+    }
+
+    &__rating,
+    &__reviews {
+      font-size: 15px;
+    }
+
+    &__footer {
+      margin-top: 12px;
+    }
+
+    &__price-current {
+      font-size: 20px;
+      height: 30px;
+      padding: 0 8px;
+    }
+
+    &__price-old {
+      font-size: 15px;
+    }
+
+    &__cart-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      padding: 4px;
+      
+      svg {
+        width: 24px;
+        height: 24px;
       }
     }
   }
