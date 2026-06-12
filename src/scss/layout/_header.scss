@@ -140,6 +140,7 @@
     max-width: 1200px; // 1120px content + 80px padding
     margin: 0 auto;
     width: 100%;
+    padding-bottom: 12px;
 
 
     @include breakpoint($bp-desktop) {
