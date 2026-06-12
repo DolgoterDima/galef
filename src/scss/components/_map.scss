@@ -3,6 +3,10 @@
 .section-map {
   padding: 60px 0;
 
+  &__container {
+    position: relative;
+  }
+
   &__inner {
     position: relative;
     width: 100%;
@@ -37,15 +41,11 @@
     }
 
     @include breakpoint((max: $breakpoint-tablet)) {
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      background: none;
+      height: 300px; // Visible map height on mobile
 
       iframe {
-        position: relative;
         height: 400px; // 300px visible + 100px hidden at the top
-        margin-top: -100px;
+        margin-top: 0;
       }
     }
   }
@@ -74,9 +74,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    margin-top: 24px;
+    margin-top: -16px; // Pull it up slightly to overlap with the map's bottom fade if needed, or 0
     box-shadow: none;
-    border: 1px solid $neutral-400;
+    border: none;
+    padding: 24px;
   }
 
   &__title {
@@ -101,6 +102,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    max-width: 187px; // align times
   }
 
   &__row {
