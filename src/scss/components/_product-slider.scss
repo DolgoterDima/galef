@@ -2,7 +2,19 @@
 
 .product-slider {
   position: relative;
-  overflow: visible; // allows drop shadows if any
+  overflow: hidden;
+
+  @include breakpoint((max: $breakpoint-tablet)) {
+    margin-left: -16px;
+    margin-right: -16px;
+    
+    // add padding to the wrapper to keep initial cards aligned with the header
+    .swiper-wrapper {
+      padding-left: 16px;
+      padding-right: 16px;
+      box-sizing: border-box;
+    }
+  }
 
   .swiper-wrapper {
     align-items: stretch;

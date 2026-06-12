@@ -21,6 +21,10 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  @include breakpoint((max: $breakpoint-tablet)) {
+    padding: 0 16px;
+  }
 }
 
 // Selection
