@@ -11,6 +11,21 @@
     border-radius: 12px;
     overflow: hidden;
 
+    // Gradient overlay to fade out the edges
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; // let clicks pass through to iframe
+      z-index: 1;
+      background: 
+        linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 15%, rgba(255,255,255,0) 85%, #ffffff 100%),
+        linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0) 10%, rgba(255,255,255,0) 90%, #ffffff 100%);
+    }
+
     iframe {
       position: absolute;
       top: 0;
@@ -18,6 +33,7 @@
       width: 100%;
       height: 100%;
       border: none;
+      z-index: 0;
     }
 
     @include breakpoint((max: $breakpoint-tablet)) {
