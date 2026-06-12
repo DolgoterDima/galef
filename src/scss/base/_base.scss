@@ -15,11 +15,22 @@ body {
 
 .page-wrapper {
   background-color: $white;
-  max-width: 1440px; // 1360 max content + we will add padding to internal sections
+  max-width: 1440px;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+// Reusable container for sections to align content while allowing full-bleed backgrounds or sliders
+.container {
+  width: 100%;
+  padding: 0 40px;
+  margin: 0 auto;
+
+  @include breakpoint((max: $breakpoint-tablet)) {
+    padding: 0 16px;
+  }
 }
 
 // Selection
