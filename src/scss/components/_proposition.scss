@@ -45,19 +45,19 @@
     flex-direction: column;
     text-decoration: none;
 
+    // For smaller image cards to stretch properly in auto height mode
+    @include breakpoint((max: $breakpoint-tablet)) {
+      min-height: 204px;
+    }
+
     &--large {
       grid-row: span 2;
 
       @include breakpoint((max: $breakpoint-tablet)) {
         grid-column: span 2;
         grid-row: span 1;
-        min-height: 340px;
+        min-height: 460px;
       }
-    }
-    
-    // For smaller image cards to stretch properly in auto height mode
-    @include breakpoint((max: $breakpoint-tablet)) {
-      min-height: 204px;
     }
   }
 
@@ -189,10 +189,11 @@
       }
     }
 
-    .btn--outline {
+    &-btn {
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
       border: 1px solid $white;
       color: $white;
       background: transparent;
