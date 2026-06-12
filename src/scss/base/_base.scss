@@ -15,16 +15,11 @@ body {
 
 .page-wrapper {
   background-color: $white;
-  max-width: 1440px; // 1360 + 40 + 40
+  max-width: 1440px; // 1360 max content + we will add padding to internal sections
   margin: 0 auto;
-  padding: 0 40px; // Left/right padding 40px
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
-  @include breakpoint((max: $breakpoint-tablet)) {
-    padding: 0 16px;
-  }
 }
 
 // Selection

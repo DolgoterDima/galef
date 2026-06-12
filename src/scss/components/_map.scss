@@ -5,6 +5,11 @@
 
   &__container {
     position: relative;
+    padding: 0 40px;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      padding: 0 16px;
+    }
   }
 
   &__inner {
