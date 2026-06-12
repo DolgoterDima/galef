@@ -1,0 +1,79 @@
+// ============================================
+// BENEFITS COMPONENT
+// ============================================
+
+@use "../abstracts" as *;
+
+.benefits {
+  margin-bottom: 80px;
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    background-color: $blue-900;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      padding: 24px 40px;
+    }
+    
+    @include breakpoint((max: $breakpoint-mobile-lg)) {
+      padding: 20px;
+      gap: 16px;
+    }
+  }
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    
+    @media (max-width: $breakpoint-laptop) and (min-width: 961px) {
+      width: 62px;
+      height: 62px;
+    }
+    
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__title {
+    flex: 1;
+    font-family: $font-family-base;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $neutral-0;
+    text-align: center;
+    margin: 0;
+    
+    @include breakpoint((max: $breakpoint-laptop)) {
+      font-size: 20px;
+    }
+    
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      text-align: left;
+    }
+    
+    @include breakpoint((max: $breakpoint-mobile-lg)) {
+      font-size: 18px;
+    }
+  }
+}
