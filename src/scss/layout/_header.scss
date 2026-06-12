@@ -134,7 +134,7 @@
   position: sticky;
   top: 0;
   z-index: $z-sticky;
-  background-color: $white;
+  background-color: $surface-primary;
 
   &__container {
     max-width: 1200px; // 1120px content + 80px padding
