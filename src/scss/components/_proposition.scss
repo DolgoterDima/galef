@@ -1,0 +1,213 @@
+// ============================================
+// PROPOSITION COMPONENT
+// ============================================
+
+@use "../abstracts" as *;
+
+.proposition {
+  padding-bottom: 80px;
+
+  &__title {
+    font-family: $font-family-base;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-h3; // 36px
+    color: $text-primary;
+    margin-bottom: $spacing-lg; // 24px
+    
+    @include breakpoint((max: $breakpoint-tablet)) {
+      font-size: $font-size-h4;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 24px;
+    height: 700px;
+
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      height: 420px;
+    }
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      height: auto;
+    }
+  }
+
+  &__card {
+    border-radius: $radius-lg;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+
+    &--large {
+      grid-row: span 2;
+
+      @include breakpoint((max: $breakpoint-tablet)) {
+        grid-column: span 2;
+        grid-row: span 1;
+        min-height: 340px;
+      }
+    }
+    
+    // For smaller image cards to stretch properly in auto height mode
+    @include breakpoint((max: $breakpoint-tablet)) {
+      min-height: 204px;
+    }
+  }
+
+  &__image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transition: transform $transition-base;
+  }
+  
+  &__card:hover &__image-bg {
+    transform: scale(1.05);
+  }
+
+  &__glass {
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    margin-bottom: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 12px;
+    background: linear-gradient(92.98deg, rgba(255, 255, 255, 0.9) -33.29%, rgba(255, 255, 255, 0.2) 99.93%);
+    border: 1px solid $white;
+    backdrop-filter: blur(4px);
+    border-radius: $radius-lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 84px;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      margin-bottom: 8px;
+      margin-left: 8px;
+      margin-right: 8px;
+      padding: 8px;
+      min-height: 60px;
+    }
+
+    .proposition__card--large & {
+      min-height: 132px;
+      
+      @include breakpoint((max: $breakpoint-tablet)) {
+        min-height: 84px;
+      }
+    }
+
+    &-title {
+      font-family: $font-family-base;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-h5; // 24px
+      color: $text-primary;
+      text-align: center;
+      margin: 0;
+
+      @include breakpoint((max: $breakpoint-tablet)) {
+        font-size: 18px;
+      }
+
+      &--sm {
+        font-weight: $font-weight-semibold;
+        font-size: 14px;
+        
+        @include breakpoint((max: $breakpoint-tablet)) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  &__text-card {
+    background-color: $blue-900;
+    border-radius: $radius-lg;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 20px;
+    text-decoration: none;
+    transition: background-color $transition-base;
+    
+    &:hover {
+      background-color: $blue-800;
+    }
+    
+    @include breakpoint((max: $breakpoint-tablet)) {
+      padding: 16px 12px;
+      gap: 12px;
+    }
+
+    &-title {
+      font-family: $font-family-base;
+      font-weight: $font-weight-bold; // 700
+      font-size: $font-size-h5; // 24px
+      line-height: 1.5;
+      color: $white;
+      margin: 0;
+      
+      @include breakpoint((max: $breakpoint-tablet)) {
+        font-size: $font-size-h6; // 20px
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      
+      @include breakpoint((max: $breakpoint-tablet)) {
+        gap: 12px;
+      }
+    }
+
+    &-desc {
+      font-family: $font-family-base;
+      font-weight: $font-weight-semibold;
+      font-size: 14px;
+      line-height: 1.5;
+      color: $white;
+      margin: 0;
+      
+      @include breakpoint((max: $breakpoint-tablet)) {
+        font-size: 12px;
+      }
+    }
+
+    .btn--outline {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $white;
+      color: $white;
+      background: transparent;
+      border-radius: 100px;
+      padding: 4px 8px;
+      font-size: 14px;
+      font-weight: $font-weight-semibold;
+      line-height: 1.5;
+      align-self: stretch;
+      transition: $transition-base;
+      text-decoration: none;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
