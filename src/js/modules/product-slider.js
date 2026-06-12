@@ -5,34 +5,39 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 export const initProductSlider = () => {
-    const sliderContainer = document.querySelector('.product-slider');
+    const sliders = document.querySelectorAll('.product-slider');
     
-    if (!sliderContainer) return;
+    if (!sliders.length) return;
 
-    new Swiper(sliderContainer, {
-        modules: [Navigation],
-        slidesPerView: 4,
-        spaceBetween: 24,
-        navigation: {
-            nextEl: '.product-slider__btn--next',
-            prevEl: '.product-slider__btn--prev',
-        },
-        breakpoints: {
-            // 0 - 749px: 2.5 slides (user requested "менше 750 то 2.5")
-            0: {
-                slidesPerView: 2.5,
-                spaceBetween: 16
+    sliders.forEach(sliderContainer => {
+        // Find the navigation buttons relative to this specific slider's parent wrapper
+        // The buttons are next to the slider container in the DOM tree
+        const wrapper = sliderContainer.parentElement;
+        const nextBtn = wrapper.querySelector('.product-slider__btn--next');
+        const prevBtn = wrapper.querySelector('.product-slider__btn--prev');
+
+        new Swiper(sliderContainer, {
+            modules: [Navigation],
+            slidesPerView: 4,
+            spaceBetween: 24,
+            navigation: {
+                nextEl: nextBtn,
+                prevEl: prevBtn,
             },
-            // 750px - 960px: 3 slides (user requested "960 і менше 3 штуки")
-            750: {
-                slidesPerView: 3,
-                spaceBetween: 20
-            },
-            // 961px+: 4 slides
-            961: {
-                slidesPerView: 4,
-                spaceBetween: 24
+            breakpoints: {
+                0: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 16
+                },
+                750: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+                961: {
+                    slidesPerView: 4,
+                    spaceBetween: 24
+                }
             }
-        }
+        });
     });
 };
