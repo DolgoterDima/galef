@@ -1,18 +1,13 @@
 @use '../abstracts' as *;
 
 .product-slider {
-  position: relative;
-  overflow: hidden;
-
-  // Add padding to the wrapper to keep initial cards aligned with the header
-  .swiper-wrapper {
-    padding-left: 40px;
-    padding-right: 40px;
-    box-sizing: border-box;
+  &.swiper {
+    position: relative;
+    overflow: hidden;
+    margin: 0 40px;
 
     @include breakpoint((max: $breakpoint-tablet)) {
-      padding-left: 16px;
-      padding-right: 16px;
+      margin: 0 0 0 16px;
     }
   }
 

@@ -26,13 +26,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 16px 0; // matching top 12px, left/right 16px
-    height: 232px; // 220px image + 12px padding top
+    padding: 24px 16px 0; // Increased padding for better proportions
+    aspect-ratio: 322 / 435; // Responsive height based on Figma width/height
   }
 
   &__image {
     max-width: 100%;
-    height: 220px;
+    height: 100%;
     object-fit: contain;
   }
 
