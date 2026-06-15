@@ -151,7 +151,7 @@
 
   &__inner {
     position: relative;
-    padding: $spacing-sm-alt 0;
+    padding-bottom: 8px;
     border-bottom: $border-width solid $neutral-200; // soft border
   }
 
@@ -178,9 +178,9 @@
   &__logo {
     display: flex;
     align-items: center;
-    img {
-      height: 40px;
-      width: auto;
+    &-main {
+      width: 161px;
+      height: auto;
     }
   }
 
@@ -199,15 +199,17 @@
 .search-overlay {
   position: absolute;
   top: 100%;
+  left: 0;
   right: 0;
   margin-top: 8px; // Slight gap below header
-  width: 100%;
+  width: auto;
   max-width: 1120px;
   background-color: $neutral-50; // #F8F9FA
   padding: 20px;
   border-radius: 12px;
   box-shadow: none;
   z-index: 10;
+  box-sizing: border-box; // Prevents padding from causing overflow
   
   display: flex;
   flex-direction: column;
@@ -255,6 +257,7 @@
 
   &__input {
     flex-grow: 1;
+    min-width: 0; // Fixes flex item overflow
     height: 60px;
     padding: 0 0 0 24px;
     border: 1px solid $blue-200; // #E3E5E8
@@ -267,16 +270,31 @@
     &:focus {
       border-color: $brand-primary;
     }
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      height: 48px;
+      font-size: 16px;
+      padding-left: 16px;
+    }
   }
 
   &__submit {
     flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 136px;
     height: 60px;
-    padding: 18px 24px;
+    padding: 0;
     background: $brand-primary; // #102C56
     border-radius: 0 12px 12px 0;
     font-size: 24px;
     font-weight: 600;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      height: 48px;
+      width: 100px;
+      font-size: 16px;
+    }
   }
 }

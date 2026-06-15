@@ -5,7 +5,7 @@
 @use "../abstracts" as *;
 
 .proposition {
-  padding-bottom: 80px;
+  margin-bottom: 60px;
 
   &__title {
     font-family: $font-family-base;
@@ -24,16 +24,17 @@
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr 1fr;
     gap: 24px;
-    height: 700px;
+    aspect-ratio: 1120 / 700;
 
     @include breakpoint((max: $breakpoint-tablet-lg)) {
-      height: 420px;
+      grid-template-columns: repeat(4, 1fr);
+      aspect-ratio: auto;
+      gap: 12px;
     }
 
     @include breakpoint((max: $breakpoint-tablet)) {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
-      height: auto;
     }
   }
 
@@ -46,19 +47,33 @@
     text-decoration: none;
     grid-column: span 2;
 
-    @include breakpoint((max: $breakpoint-tablet)) {
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
+      grid-column: span 1;
+      height: 204px;
       min-height: 204px;
-      grid-column: span 2;
+    }
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      grid-column: span 1;
+      height: auto;
     }
 
     &--large {
       grid-row: span 2;
       grid-column: span 3;
 
-      @include breakpoint((max: $breakpoint-tablet)) {
+      @include breakpoint((max: $breakpoint-tablet-lg)) {
         grid-column: span 2;
+        grid-row: span 2;
+        height: 420px;
+        min-height: 420px;
+      }
+
+      @include breakpoint((max: $breakpoint-tablet)) {
+        height: auto;
+        min-height: 320px;
         grid-row: span 1;
-        min-height: 460px;
+        grid-column: span 2;
       }
     }
   }
@@ -94,6 +109,13 @@
     align-items: center;
     justify-content: center;
     min-height: 84px;
+
+    @media (max-width: 960px) {
+      margin-bottom: 8px;
+      margin-left: 8px;
+      margin-right: 8px;
+      padding: 8px;
+    }
 
     @include breakpoint((max: $breakpoint-tablet)) {
       margin-bottom: 8px;
@@ -151,10 +173,14 @@
       background-color: $blue-800;
     }
     
+    @media (max-width: 960px) {
+      padding: 8px;
+    }
+    
     @include breakpoint((max: $breakpoint-tablet)) {
-      padding: 16px 12px;
+      padding: 8px;
       gap: 12px;
-      grid-column: span 2;
+      grid-column: span 1;
     }
 
     &-title {

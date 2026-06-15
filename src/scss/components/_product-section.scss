@@ -1,13 +1,7 @@
 @use '../abstracts' as *;
 
 .product-section {
-  padding: 60px 0;
-
-  // When two such sections are adjacent, set the gap exactly to 24px
-  & + & {
-    margin-top: -60px; // offset the bottom padding of the previous section
-    padding-top: 24px; // exact gap requested
-  }
+  margin-bottom: 60px;
 
   &__header {
     display: flex;
