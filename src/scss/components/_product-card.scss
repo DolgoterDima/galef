@@ -48,14 +48,14 @@ $base-card-width: 322;
 .product-card {
   position: relative;
   width: 100%;
-  min-height: cqw(610.5);
+  
   background: #F8F9FA;
   border: cqw(1) solid $neutral-350; // #E9ECEF
   border-radius: cqw(8);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding:  cqw(16)  ;
+  padding:  cqw(16);
   transition: box-shadow $transition-base;
   
   height: 100%; // ensures equal height in a grid row
