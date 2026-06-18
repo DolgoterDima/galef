@@ -137,22 +137,17 @@
     line-height: 1.5;
     text-decoration: none;
     color: $brand-primary; // usually maps to #102c56
-    transition: color $transition-fast, text-decoration-color $transition-fast;
+    transition: color $transition-fast;
 
     &:hover {
       color: $blue-700;
-      text-decoration: underline;
-      text-decoration-color: $blue-700;
-      text-underline-offset: 8px;
-      text-decoration-thickness: 2px;
-      text-decoration-skip-ink: none;
     }
 
     &--sales {
       color: $red-700;
+
       &:hover {
         color: $red-500;
-        text-decoration-color: $red-500;
       }
     }
   }

@@ -6,15 +6,23 @@
 @use "../abstracts" as *;
 
 $base-prop-width: 428;
+$base-desktop-width: 1120;
 
 @function prop-cqw($px) {
   @return math.div($px, $base-prop-width) * 100cqw;
 }
 
+@function desk-cqw($px) {
+  @return math.div($px, $base-desktop-width) * 100cqw;
+}
+
 .proposition {
   margin-bottom: 60px;
-  container-type: inline-size;
-  container-name: proposition;
+
+  & > .container {
+    container-type: inline-size;
+    container-name: proposition;
+  }
 
   &__title {
     font-family: $font-family-base;
@@ -30,66 +38,106 @@ $base-prop-width: 428;
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 1fr 1fr;
-    gap: 24px;
+    grid-template-columns: 548fr 461fr;
+    gap: desk-cqw(24);
     aspect-ratio: 1120 / 700;
-
-    @include breakpoint((max: $breakpoint-tablet-lg)) {
-      grid-template-columns: repeat(4, 1fr);
-      aspect-ratio: auto;
-      gap: 12px;
-    }
 
     @include breakpoint((max: $breakpoint-tablet)) {
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: prop-cqw(12);
-      margin: 0 -16px;
-      width: calc(100% + 32px);
       height: auto;
     }
   }
 
+  &__right-col {
+    display: flex;
+    flex-direction: column;
+    gap: desk-cqw(24);
+    height: 100%;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      display: flex;
+      flex-direction: column;
+      gap: prop-cqw(12);
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__row {
+    display: flex;
+    gap: desk-cqw(24);
+    height: calc(50% - #{desk-cqw(12)});
+    width: 100%;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      display: flex;
+      flex-direction: row;
+      gap: prop-cqw(12);
+      width: 100%;
+      height: auto;
+    }
+
+    @include breakpoint((max: $breakpoint-mobile-lg)) {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &:nth-child(2) {
+      @include breakpoint((max: $breakpoint-mobile-lg)) {
+        .proposition__card {
+          order: 1;
+        }
+        .proposition__text-card {
+          order: 2;
+        }
+      }
+    }
+  }
+
   &__card {
-    border-radius: $radius-lg;
+    border-radius: desk-cqw(12);
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    grid-column: span 2;
-
-    @include breakpoint((max: $breakpoint-tablet-lg)) {
-      grid-column: span 1;
-      height: 204px;
-      min-height: 204px;
-    }
+    flex: 1 1 auto;
 
     @include breakpoint((max: $breakpoint-tablet)) {
+      flex: 0 0 prop-cqw(243);
       width: prop-cqw(243);
       height: prop-cqw(204);
       min-height: prop-cqw(204);
       border-radius: prop-cqw(12);
     }
 
-    &--large {
-      grid-row: span 2;
-      grid-column: span 3;
+    @include breakpoint((max: $breakpoint-mobile-lg)) {
+      flex: 0 0 auto;
+      width: 100%;
+      height: 204px;
+      min-height: 204px;
+      border-radius: 12px;
+    }
 
-      @include breakpoint((max: $breakpoint-tablet-lg)) {
-        grid-column: span 2;
-        grid-row: span 2;
-        height: 420px;
-        min-height: 420px;
-      }
+    &--large {
+      grid-column: 1;
+      grid-row: 1;
+      height: 100%;
+      flex: none;
 
       @include breakpoint((max: $breakpoint-tablet)) {
         width: 100%;
         height: prop-cqw(420);
         min-height: prop-cqw(420);
         border-radius: prop-cqw(12);
+      }
+
+      @include breakpoint((max: $breakpoint-mobile-lg)) {
+        height: 320px;
+        min-height: 320px;
+        border-radius: 12px;
       }
     }
   }
@@ -113,25 +161,18 @@ $base-prop-width: 428;
     position: relative;
     z-index: 2;
     margin-top: auto;
-    margin-bottom: 12px;
-    margin-left: 12px;
-    margin-right: 12px;
-    padding: 12px;
+    margin-bottom: desk-cqw(12);
+    margin-left: desk-cqw(12);
+    margin-right: desk-cqw(12);
+    padding: desk-cqw(12);
     background: linear-gradient(92.98deg, rgba(255, 255, 255, 0.9) -33.29%, rgba(255, 255, 255, 0.2) 99.93%);
     border: 1px solid $white;
     backdrop-filter: blur(4px);
-    border-radius: $radius-lg;
+    border-radius: desk-cqw(12);
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 84px;
-
-    @include breakpoint((max: $breakpoint-tablet-lg)) {
-      margin-bottom: 8px;
-      margin-left: 8px;
-      margin-right: 8px;
-      padding: 8px;
-    }
+    min-height: desk-cqw(84);
 
     @include breakpoint((max: $breakpoint-tablet)) {
       margin-bottom: prop-cqw(8);
@@ -143,8 +184,18 @@ $base-prop-width: 428;
       border-radius: prop-cqw(12);
     }
 
+    @include breakpoint((max: $breakpoint-mobile-lg)) {
+      margin-bottom: 12px;
+      margin-left: 12px;
+      margin-right: 12px;
+      padding: 12px;
+      height: auto;
+      min-height: 64px;
+      border-radius: 12px;
+    }
+
     .proposition__card--large & {
-      min-height: 132px;
+      min-height: desk-cqw(132);
       
       @include breakpoint((max: $breakpoint-tablet)) {
         width: prop-cqw(404);
@@ -156,12 +207,23 @@ $base-prop-width: 428;
         margin-right: prop-cqw(12);
         border-radius: prop-cqw(12);
       }
+
+      @include breakpoint((max: $breakpoint-mobile-lg)) {
+        width: calc(100% - 24px);
+        height: auto;
+        min-height: 80px;
+        padding: 12px;
+        margin-bottom: 12px;
+        margin-left: 12px;
+        margin-right: 12px;
+        border-radius: 12px;
+      }
     }
 
     &-title {
       font-family: $font-family-base;
       font-weight: $font-weight-bold;
-      font-size: $font-size-h5; // 24px
+      font-size: desk-cqw(24);
       color: $text-primary;
       text-align: center;
       margin: 0;
@@ -170,12 +232,20 @@ $base-prop-width: 428;
         font-size: prop-cqw(24);
       }
 
+      @include breakpoint((max: $breakpoint-mobile-lg)) {
+        font-size: 20px;
+      }
+
       &--sm {
         font-weight: $font-weight-semibold;
-        font-size: 14px;
+        font-size: desk-cqw(14);
         
         @include breakpoint((max: $breakpoint-tablet)) {
           font-size: prop-cqw(14);
+        }
+
+        @include breakpoint((max: $breakpoint-mobile-lg)) {
+          font-size: 14px;
         }
       }
     }
@@ -183,38 +253,48 @@ $base-prop-width: 428;
 
   &__text-card {
     background-color: $blue-900;
-    border-radius: $radius-lg;
-    padding: 24px 16px;
+    border-radius: desk-cqw(12);
+    padding: desk-cqw(24) desk-cqw(16);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    gap: 20px;
+    gap: desk-cqw(20);
     text-decoration: none;
     transition: background-color $transition-base;
-    grid-column: span 1;
+    flex: 0 0 desk-cqw(207);
+    width: desk-cqw(207);
+    max-width: 207px;
     
     &:hover {
       background-color: $blue-800;
     }
     
-    @include breakpoint((max: $breakpoint-tablet-lg)) {
-      padding: 8px;
-    }
-    
     @include breakpoint((max: $breakpoint-tablet)) {
+      flex: 0 0 prop-cqw(173);
       padding: prop-cqw(8);
       gap: prop-cqw(12);
       width: prop-cqw(173);
+      max-width: none;
       height: prop-cqw(204);
       min-height: prop-cqw(204);
       border-radius: prop-cqw(12);
     }
 
+    @include breakpoint((max: $breakpoint-mobile-lg)) {
+      flex: 0 0 auto;
+      width: 100%;
+      height: auto;
+      min-height: 204px;
+      border-radius: 12px;
+      padding: 16px;
+      gap: 16px;
+    }
+
     &-title {
       font-family: $font-family-base;
       font-weight: $font-weight-bold; // 700
-      font-size: $font-size-h5; // 24px
+      font-size: desk-cqw(24);
       line-height: 1.5;
       color: $white;
       margin: 0;
@@ -222,28 +302,40 @@ $base-prop-width: 428;
       @include breakpoint((max: $breakpoint-tablet)) {
         font-size: prop-cqw(24);
       }
+
+      @include breakpoint((max: $breakpoint-mobile-lg)) {
+        font-size: 20px;
+      }
     }
 
     &-content {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: desk-cqw(16);
       
       @include breakpoint((max: $breakpoint-tablet)) {
         gap: prop-cqw(12);
+      }
+
+      @include breakpoint((max: $breakpoint-mobile-lg)) {
+        gap: 16px;
       }
     }
 
     &-desc {
       font-family: $font-family-base;
       font-weight: $font-weight-semibold;
-      font-size: 14px;
+      font-size: desk-cqw(14);
       line-height: 1.5;
       color: $white;
       margin: 0;
       
       @include breakpoint((max: $breakpoint-tablet)) {
         font-size: prop-cqw(14);
+      }
+
+      @include breakpoint((max: $breakpoint-mobile-lg)) {
+        font-size: 14px;
       }
     }
 
@@ -256,8 +348,8 @@ $base-prop-width: 428;
       color: $white;
       background: transparent;
       border-radius: 100px;
-      padding: 4px 8px;
-      font-size: 14px;
+   padding:  4px 8px;
+      font-size: 14px; 
       font-weight: $font-weight-semibold;
       line-height: 1.5;
       align-self: stretch;
@@ -269,11 +361,10 @@ $base-prop-width: 428;
         color: $blue-700;
       }
 
-      @include breakpoint((max: $breakpoint-tablet)) {
-        padding: prop-cqw(4) prop-cqw(8);
-        font-size: prop-cqw(12);
-        height: prop-cqw(26);
-      }
+      @include breakpoint((max: $breakpoint-tablet-lg)) {
+        padding:  4px 8px;
+        font-size: 12px;
+     }
     }
   }
 }
