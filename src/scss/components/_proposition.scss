@@ -55,7 +55,8 @@
 
     @include breakpoint((max: $breakpoint-tablet)) {
       grid-column: span 1;
-      height: auto;
+      height: 204px;
+      min-height: 204px;
     }
 
     &--large {
@@ -70,8 +71,8 @@
       }
 
       @include breakpoint((max: $breakpoint-tablet)) {
-        height: auto;
-        min-height: 320px;
+        height: 420px;
+        min-height: 420px;
         grid-row: span 1;
         grid-column: span 2;
       }
@@ -110,7 +111,7 @@
     justify-content: center;
     min-height: 84px;
 
-    @media (max-width: 960px) {
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
       margin-bottom: 8px;
       margin-left: 8px;
       margin-right: 8px;
@@ -173,7 +174,7 @@
       background-color: $blue-800;
     }
     
-    @media (max-width: 960px) {
+    @include breakpoint((max: $breakpoint-tablet-lg)) {
       padding: 8px;
     }
     
@@ -181,6 +182,8 @@
       padding: 8px;
       gap: 12px;
       grid-column: span 1;
+      height: 204px;
+      min-height: 204px;
     }
 
     &-title {
