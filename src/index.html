@@ -23,36 +23,38 @@
                         
                     </a>
 
-                    <nav class="header__nav nav">
-                        <div class="nav__item">
-                            <a class="nav__link nav__link--catalog" href="/pages/catalog.html">Каталог</a>
-                            <nav class="nav__dropdown">
-                                <div class="nav__dropdown-item">
-                                    <a class="nav__dropdown-link" href="#">
-                                        Геймерські крісла
-                                        <svg><use href="#icon-chewron-right"></use></svg>
-                                    </a>
-                                    <!-- Level 3 Submenu -->
-                                    <nav class="nav__dropdown">
-                                        <div class="nav__dropdown-item">
-                                            <a class="nav__dropdown-link" href="#">Corsair</a>
-                                        </div>
-                                        <div class="nav__dropdown-item">
-                                            <a class="nav__dropdown-link" href="#">Herman Miller</a>
-                                        </div>
-                                        <div class="nav__dropdown-item">
-                                            <a class="nav__dropdown-link" href="#">Secretlab</a>
-                                        </div>
-                                    </nav>
-                                </div>
-                                <div class="nav__dropdown-item">
-                                    <a class="nav__dropdown-link" href="#">Офісні крісла</a>
-                                </div>
-                            </nav>
-                        </div>
-                        <div class="nav__item"><a class="nav__link nav__link--sales" href="/pages/sales.html">Акції</a></div>
-                        <div class="nav__item"><a class="nav__link nav__link--default" href="/pages/text-page.html">Про нас</a></div>
-                        <div class="nav__item"><a class="nav__link nav__link--default" href="#">Інформація</a></div>
+                    <nav class="header__nav">
+                        <ul class="nav">
+                            <li class="nav__item">
+                                <a class="nav__link" href="/pages/catalog.html">Каталог</a>
+                                <ul class="nav__dropdown">
+                                    <li class="nav__dropdown-item">
+                                        <a class="nav__dropdown-link" href="#">
+                                            Геймерські крісла
+                                            <svg><use href="#icon-chewron-right"></use></svg>
+                                        </a>
+                                        <!-- Level 3 Submenu -->
+                                        <ul class="nav__dropdown">
+                                            <li class="nav__dropdown-item">
+                                                <a class="nav__dropdown-link" href="#">Corsair</a>
+                                            </li>
+                                            <li class="nav__dropdown-item">
+                                                <a class="nav__dropdown-link" href="#">Herman Miller</a>
+                                            </li>
+                                            <li class="nav__dropdown-item">
+                                                <a class="nav__dropdown-link" href="#">Secretlab</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav__dropdown-item">
+                                        <a class="nav__dropdown-link" href="#">Офісні крісла</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item"><a class="nav__link nav__link--sales" href="/pages/sales.html">Акції</a></li>
+                            <li class="nav__item"><a class="nav__link" href="/pages/text-page.html">Про нас</a></li>
+                            <li class="nav__item"><a class="nav__link" href="#">Інформація</a></li>
+                        </ul>
                     </nav>
 
                     <div class="header__actions">
@@ -67,7 +69,7 @@
                         </button>
                         <details class="lang-selector">
                             <summary class="lang-selector__trigger">
-                                UA
+                                <span class="lang-selector__text">UA</span>
                                 <svg class="lang-selector__arrow">
                                     <use href="#icon-chevron-down"></use>
                                 </svg>
@@ -109,7 +111,7 @@
                                     </a>
                                     <details class="lang-selector mobile-menu__lang-wrapper">
                                         <summary class="lang-selector__trigger">
-                                            UA
+                                            <span class="lang-selector__text">UA</span>
                                             <svg class="lang-selector__arrow">
                                                 <use href="#icon-chevron-down"></use>
                                             </svg>
@@ -336,10 +338,10 @@
                                 </div>
                                 <div class="product-card__price-wrapper">
                                   <div class="product-card__price-current product-card__price-current--available">10 599 ₴</div>
+                                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                                    <svg><use href="#icon-cart"></use></svg>
+                                  </button>
                                 </div>
-                                <button class="product-card__cart-btn" aria-label="Add to cart">
-                                  <svg><use href="#icon-cart"></use></svg>
-                                </button>
                               </div>
                             </article>
                         </div>
@@ -376,10 +378,10 @@
                                 <div class="product-card__price-wrapper">
                                   <div class="product-card__price-current product-card__price-current--preorder">10 599 ₴</div>
                                   <div class="product-card__price-old">13 999 ₴</div>
+                                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                                    <svg><use href="#icon-cart"></use></svg>
+                                  </button>
                                 </div>
-                                <button class="product-card__cart-btn" aria-label="Add to cart">
-                                  <svg><use href="#icon-cart"></use></svg>
-                                </button>
                               </div>
                             </article>
                         </div>
@@ -418,10 +420,10 @@
                                 </div>
                                 <div class="product-card__price-wrapper">
                                   <div class="product-card__price-current product-card__price-current--available">10 599 ₴</div>
+                                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                                    <svg><use href="#icon-cart"></use></svg>
+                                  </button>
                                 </div>
-                                <button class="product-card__cart-btn" aria-label="Add to cart">
-                                  <svg><use href="#icon-cart"></use></svg>
-                                </button>
                               </div>
                             </article>
                         </div>
@@ -458,10 +460,10 @@
                                 <div class="product-card__price-wrapper">
                                   <div class="product-card__price-current product-card__price-current--preorder">10 599 ₴</div>
                                   <div class="product-card__price-old">13 999 ₴</div>
+                                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                                    <svg><use href="#icon-cart"></use></svg>
+                                  </button>
                                 </div>
-                                <button class="product-card__cart-btn" aria-label="Add to cart">
-                                  <svg><use href="#icon-cart"></use></svg>
-                                </button>
                               </div>
                             </article>
                         </div>
@@ -500,10 +502,10 @@
                                 </div>
                                 <div class="product-card__price-wrapper">
                                   <div class="product-card__price-current product-card__price-current--available">10 599 ₴</div>
+                                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                                    <svg><use href="#icon-cart"></use></svg>
+                                  </button>
                                 </div>
-                                <button class="product-card__cart-btn" aria-label="Add to cart">
-                                  <svg><use href="#icon-cart"></use></svg>
-                                </button>
                               </div>
                             </article>
                         </div>
@@ -559,10 +561,10 @@
                                 <div class="product-card__price-wrapper">
                                   <div class="product-card__price-current product-card__price-current--sale">10 599 ₴</div>
                                   <div class="product-card__price-old">13 999 ₴</div>
+                                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                                    <svg><use href="#icon-cart"></use></svg>
+                                  </button>
                                 </div>
-                                <button class="product-card__cart-btn" aria-label="Add to cart">
-                                  <svg><use href="#icon-cart"></use></svg>
-                                </button>
                               </div>
                             </article>
                         </div>
@@ -599,10 +601,10 @@
                                 <div class="product-card__price-wrapper">
                                   <div class="product-card__price-current product-card__price-current--sale">10 599 ₴</div>
                                   <div class="product-card__price-old">13 999 ₴</div>
+                                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                                    <svg><use href="#icon-cart"></use></svg>
+                                  </button>
                                 </div>
-                                <button class="product-card__cart-btn" aria-label="Add to cart">
-                                  <svg><use href="#icon-cart"></use></svg>
-                                </button>
                               </div>
                             </article>
                         </div>
@@ -639,10 +641,10 @@
                                 <div class="product-card__price-wrapper">
                                   <div class="product-card__price-current product-card__price-current--sale">10 599 ₴</div>
                                   <div class="product-card__price-old">13 999 ₴</div>
+                                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                                    <svg><use href="#icon-cart"></use></svg>
+                                  </button>
                                 </div>
-                                <button class="product-card__cart-btn" aria-label="Add to cart">
-                                  <svg><use href="#icon-cart"></use></svg>
-                                </button>
                               </div>
                             </article>
                         </div>
@@ -679,10 +681,10 @@
                                 <div class="product-card__price-wrapper">
                                   <div class="product-card__price-current product-card__price-current--sale">10 599 ₴</div>
                                   <div class="product-card__price-old">13 999 ₴</div>
+                                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                                    <svg><use href="#icon-cart"></use></svg>
+                                  </button>
                                 </div>
-                                <button class="product-card__cart-btn" aria-label="Add to cart">
-                                  <svg><use href="#icon-cart"></use></svg>
-                                </button>
                               </div>
                         </div>
 
@@ -718,10 +720,10 @@
                                 <div class="product-card__price-wrapper">
                                   <div class="product-card__price-current product-card__price-current--sale">10 599 ₴</div>
                                   <div class="product-card__price-old">13 999 ₴</div>
+                                  <button class="product-card__cart-btn" aria-label="Add to cart">
+                                    <svg><use href="#icon-cart"></use></svg>
+                                  </button>
                                 </div>
-                                <button class="product-card__cart-btn" aria-label="Add to cart">
-                                  <svg><use href="#icon-cart"></use></svg>
-                                </button>
                               </div>
                             </article>
                         </div>

@@ -111,21 +111,24 @@
     font-size: 24px;
     line-height: 150%;
     text-decoration: none;
-    transition: color $transition-fast;
+    color: $blue-900; // #102c56
+    transition: color $transition-fast, text-decoration-color $transition-fast;
 
-    &--catalog {
+    &:hover {
       color: $blue-700; // #325c9b
-      &:hover { color: $blue-900; }
+      text-decoration: underline;
+      text-decoration-color: $blue-700;
+      text-underline-offset: 8px;
+      text-decoration-thickness: 2px;
+      text-decoration-skip-ink: none;
     }
 
     &--sales {
       color: $red-700; // #cc0009
-      &:hover { color: $red-500; }
-    }
-
-    &--default {
-      color: $blue-900; // #102c56
-      &:hover { color: $blue-700; }
+      &:hover { 
+        color: $red-500; 
+        text-decoration-color: $red-500;
+      }
     }
   }
 }

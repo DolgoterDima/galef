@@ -24,19 +24,27 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // change lang
-const selector = document.querySelector('.lang-selector');
-const trigger = selector.querySelector('.lang-selector__trigger');
+const langSelectors = document.querySelectorAll('.lang-selector');
 
-selector.addEventListener('click', (event) => {
-  const clickedItem = event.target.closest('.lang-selector__item');
+langSelectors.forEach(selector => {
+  const trigger = selector.querySelector('.lang-selector__trigger');
+  const triggerText = selector.querySelector('.lang-selector__text');
 
-  if (clickedItem) {
-    selector.querySelector('.lang-selector__item--active')?.classList.remove('lang-selector__item--active');
-    clickedItem.classList.add('lang-selector__item--active');
+  selector.addEventListener('click', (event) => {
+    const clickedItem = event.target.closest('.lang-selector__item');
 
-    trigger.firstChild.textContent = clickedItem.textContent;
-    selector.removeAttribute('open');
-  }
+    if (clickedItem) {
+      selector.querySelector('.lang-selector__item--active')?.classList.remove('lang-selector__item--active');
+      clickedItem.classList.add('lang-selector__item--active');
+
+      if (triggerText) {
+        triggerText.textContent = clickedItem.textContent;
+      } else {
+        trigger.firstChild.textContent = clickedItem.textContent;
+      }
+      selector.removeAttribute('open');
+    }
+  });
 });
 
 // Filter logic
@@ -71,6 +79,13 @@ document.addEventListener('click', (event) => {
   if (!event.target.closest('.sort-dropdown')) {
     document.querySelectorAll('.sort-dropdown[open]').forEach(dropdown => {
       dropdown.removeAttribute('open');
+    });
+  }
+
+  // Language selector click outside logic
+  if (!event.target.closest('.lang-selector')) {
+    document.querySelectorAll('.lang-selector[open]').forEach(selector => {
+      selector.removeAttribute('open');
     });
   }
 

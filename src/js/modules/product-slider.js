@@ -27,13 +27,17 @@ export const initProductSlider = () => {
             breakpoints: {
                 0: {
                     slidesPerView: 2.5,
-                    spaceBetween: 16
+                    spaceBetween: 8
                 },
-                750: {
+                760: {
                     slidesPerView: 3,
-                    spaceBetween: 20
+                    spaceBetween: 8
                 },
                 961: {
+                    slidesPerView: 4,
+                    spaceBetween: 12
+                },
+                1200: {
                     slidesPerView: 4,
                     spaceBetween: 24
                 }

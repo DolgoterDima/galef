@@ -50,7 +50,11 @@
 
     &:hover {
       background: $btn-glass-hover;
-      border-color: transparent; // remove previous blue border on hover to match glass style
+      border-color: $blue-700;
+
+      .lang-selector__arrow {
+        color: $blue-700 !important;
+      }
     }
   }
 
@@ -76,11 +80,11 @@
     border-radius: $radius-md;
     padding: $spacing-xs $spacing-md;
     &--active {
+      display: none;
+    }
+    &:hover {
       background: $blue-700;
       color: $white;
-    }
-    &:hover:not(.lang-selector__item--active) {
-      background: $blue-200;
     }
   }
 }

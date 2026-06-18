@@ -35,6 +35,10 @@
     background-color: $neutral-1000;
     border-radius: 20px;
 
+    @include breakpoint((max: $breakpoint-laptop)) {
+      padding: 16px;
+    }
+
     @include breakpoint((max: $breakpoint-tablet-lg)) {
       flex: none;
       width: 100%;
