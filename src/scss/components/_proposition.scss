@@ -2,10 +2,19 @@
 // PROPOSITION COMPONENT
 // ============================================
 
+@use "sass:math";
 @use "../abstracts" as *;
+
+$base-prop-width: 428;
+
+@function prop-cqw($px) {
+  @return math.div($px, $base-prop-width) * 100cqw;
+}
 
 .proposition {
   margin-bottom: 60px;
+  container-type: inline-size;
+  container-name: proposition;
 
   &__title {
     font-family: $font-family-base;
@@ -33,8 +42,12 @@
     }
 
     @include breakpoint((max: $breakpoint-tablet)) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(416, 1fr);
       grid-template-rows: auto;
+      gap: prop-cqw(12);
+      aspect-ratio: auto;
+      width: 100%;
+      height: prop-cqw(852);
     }
   }
 
@@ -54,9 +67,10 @@
     }
 
     @include breakpoint((max: $breakpoint-tablet)) {
-      grid-column: span 1;
-      height: 204px;
-      min-height: 204px;
+      grid-column: span 243;
+      height: prop-cqw(204);
+      min-height: prop-cqw(204);
+      border-radius: prop-cqw(12);
     }
 
     &--large {
@@ -71,10 +85,11 @@
       }
 
       @include breakpoint((max: $breakpoint-tablet)) {
-        height: 420px;
-        min-height: 420px;
+        height: prop-cqw(420);
+        min-height: prop-cqw(420);
         grid-row: span 1;
-        grid-column: span 2;
+        grid-column: span 416;
+        border-radius: prop-cqw(12);
       }
     }
   }
@@ -119,18 +134,27 @@
     }
 
     @include breakpoint((max: $breakpoint-tablet)) {
-      margin-bottom: 8px;
-      margin-left: 8px;
-      margin-right: 8px;
-      padding: 8px;
-      min-height: 60px;
+      margin-bottom: prop-cqw(8);
+      margin-left: prop-cqw(8);
+      margin-right: prop-cqw(8);
+      padding: prop-cqw(8);
+      height: prop-cqw(67);
+      min-height: prop-cqw(67);
+      border-radius: prop-cqw(12);
     }
 
     .proposition__card--large & {
       min-height: 132px;
       
       @include breakpoint((max: $breakpoint-tablet)) {
-        min-height: 84px;
+        width: prop-cqw(404);
+        height: prop-cqw(96);
+        min-height: prop-cqw(96);
+        padding: prop-cqw(12);
+        margin-bottom: prop-cqw(12);
+        margin-left: prop-cqw(12);
+        margin-right: prop-cqw(12);
+        border-radius: prop-cqw(12);
       }
     }
 
@@ -143,7 +167,7 @@
       margin: 0;
 
       @include breakpoint((max: $breakpoint-tablet)) {
-        font-size: 18px;
+        font-size: prop-cqw(24);
       }
 
       &--sm {
@@ -151,7 +175,7 @@
         font-size: 14px;
         
         @include breakpoint((max: $breakpoint-tablet)) {
-          font-size: 12px;
+          font-size: prop-cqw(14);
         }
       }
     }
@@ -179,11 +203,12 @@
     }
     
     @include breakpoint((max: $breakpoint-tablet)) {
-      padding: 8px;
-      gap: 12px;
-      grid-column: span 1;
-      height: 204px;
-      min-height: 204px;
+      padding: prop-cqw(8);
+      gap: prop-cqw(12);
+      grid-column: span 173;
+      height: prop-cqw(204);
+      min-height: prop-cqw(204);
+      border-radius: prop-cqw(12);
     }
 
     &-title {
@@ -195,7 +220,7 @@
       margin: 0;
       
       @include breakpoint((max: $breakpoint-tablet)) {
-        font-size: $font-size-h6; // 20px
+        font-size: prop-cqw(24);
       }
     }
 
@@ -205,7 +230,7 @@
       gap: 16px;
       
       @include breakpoint((max: $breakpoint-tablet)) {
-        gap: 12px;
+        gap: prop-cqw(12);
       }
     }
 
@@ -218,7 +243,7 @@
       margin: 0;
       
       @include breakpoint((max: $breakpoint-tablet)) {
-        font-size: 12px;
+        font-size: prop-cqw(14);
       }
     }
 
@@ -242,6 +267,12 @@
       &:hover {
         background: $white;
         color: $blue-700;
+      }
+
+      @include breakpoint((max: $breakpoint-tablet)) {
+        padding: prop-cqw(4) prop-cqw(8);
+        font-size: prop-cqw(12);
+        height: prop-cqw(26);
       }
     }
   }
