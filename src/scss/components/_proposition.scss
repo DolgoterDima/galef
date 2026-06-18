@@ -42,12 +42,13 @@ $base-prop-width: 428;
     }
 
     @include breakpoint((max: $breakpoint-tablet)) {
-      grid-template-columns: repeat(416, 1fr);
-      grid-template-rows: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
       gap: prop-cqw(12);
       aspect-ratio: auto;
       width: 100%;
-      height: prop-cqw(852);
+      height: auto;
     }
   }
 
@@ -67,7 +68,7 @@ $base-prop-width: 428;
     }
 
     @include breakpoint((max: $breakpoint-tablet)) {
-      grid-column: span 243;
+      width: prop-cqw(243);
       height: prop-cqw(204);
       min-height: prop-cqw(204);
       border-radius: prop-cqw(12);
@@ -85,10 +86,9 @@ $base-prop-width: 428;
       }
 
       @include breakpoint((max: $breakpoint-tablet)) {
+        width: 100%;
         height: prop-cqw(420);
         min-height: prop-cqw(420);
-        grid-row: span 1;
-        grid-column: span 416;
         border-radius: prop-cqw(12);
       }
     }
@@ -205,7 +205,7 @@ $base-prop-width: 428;
     @include breakpoint((max: $breakpoint-tablet)) {
       padding: prop-cqw(8);
       gap: prop-cqw(12);
-      grid-column: span 173;
+      width: prop-cqw(173);
       height: prop-cqw(204);
       min-height: prop-cqw(204);
       border-radius: prop-cqw(12);
