@@ -46,8 +46,8 @@ $base-prop-width: 428;
       flex-direction: row;
       flex-wrap: wrap;
       gap: prop-cqw(12);
-      aspect-ratio: auto;
-      width: 100%;
+      margin: 0 -16px;
+      width: calc(100% + 32px);
       height: auto;
     }
   }
