@@ -1,16 +1,31 @@
+@use 'sass:math';
 @use '../abstracts' as *;
+
+$base-card-width: 322;
+
+@function cqw($px) {
+  @return math.div($px, $base-card-width) * 100cqw;
+}
+
+.product-card-container,
+.product-slider .swiper-slide {
+  container-type: inline-size;
+  container-name: product-card;
+  width: 100%;
+  height: 100%;
+}
 
 .product-card {
   position: relative;
   width: 100%;
-  min-height: 596px;
+  min-height: cqw(596);
   background: #F8F9FA;
-  border: 1px solid $neutral-350; // #E9ECEF
-  border-radius: 8px;
+  border: cqw(1) solid $neutral-350; // #E9ECEF
+  border-radius: cqw(8);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: cqw(16);
   transition: box-shadow $transition-base;
   
   height: 100%; // ensures equal height in a grid row
@@ -22,17 +37,17 @@
   &__image-wrapper {
     position: relative;
     width: 100%;
-    height: 390px;
+    aspect-ratio: 322 / 390;
     background: #F8F9FA;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
-    margin-bottom: 8px;
+    margin-bottom: cqw(8);
   }
 
   &__image {
-    max-width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: contain;
   }
@@ -44,7 +59,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: cqw(8);
     z-index: 2;
   }
 
@@ -53,12 +68,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 1px 8px;
+    padding: cqw(1) cqw(8);
     border-radius: 100px;
     font-family: $font-family-base;
     font-weight: $font-weight-semibold;
-    font-size: 10px;
-    line-height: 13px;
+    font-size: cqw(10);
+    line-height: cqw(13);
     color: $white;
 
     &--top {
@@ -81,7 +96,7 @@
     right: 0;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: cqw(16);
     z-index: 2;
   }
 
@@ -89,9 +104,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    padding: 8px;
+    width: cqw(40);
+    height: cqw(40);
+    padding: cqw(8);
     background: transparent;
     border: none;
     color: $blue-900;
@@ -103,8 +118,8 @@
     }
 
     svg {
-      width: 24px;
-      height: 24px;
+      width: cqw(24);
+      height: cqw(24);
     }
   }
 
@@ -119,10 +134,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 18px;
+    height: cqw(18);
     font-family: $font-family-base;
     font-weight: 700;
-    font-size: 15px;
+    font-size: cqw(15);
     line-height: 1.2;
 
     &--available {
@@ -138,27 +153,27 @@
 
   &__title {
     font-family: $font-family-base;
-    font-size: 15px;
+    font-size: cqw(15);
     font-weight: 600;
     line-height: 1.2;
     color: $neutral-1000;
-    margin: 8px 0 0;
+    margin: cqw(8) 0 0;
     
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    height: 36px;
-    min-height: 36px;
+    height: cqw(36);
+    min-height: cqw(36);
   }
 
   &__meta {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 14px;
-    height: 24px;
-    margin-top: 18px;
+    gap: cqw(14);
+    height: cqw(24);
+    margin-top: cqw(18);
   }
 
   &__rating,
@@ -166,10 +181,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 6px;
+    gap: cqw(6);
     font-family: $font-family-base;
     font-weight: 700;
-    font-size: 16px;
+    font-size: cqw(16);
     line-height: 1.5;
     color: $neutral-1000;
   }
@@ -178,12 +193,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
+    width: cqw(16);
+    height: cqw(16);
     
     svg {
-      width: 16px;
-      height: 16px;
+      width: cqw(16);
+      height: cqw(16);
     }
   }
 
@@ -191,8 +206,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
+    width: cqw(16);
+    height: cqw(16);
     color: $neutral-700;
   }
 
@@ -203,7 +218,7 @@
     align-items: center;
     align-content: flex-end;
     margin-top: auto;
-    height: 54px;
+    height: cqw(54);
     width: 100%;
   }
 
@@ -213,12 +228,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0 8px;
-    height: 32px;
-    border-radius: 4px;
+    padding: 0 cqw(8);
+    height: cqw(32);
+    border-radius: cqw(4);
     font-family: $font-family-base;
     font-weight: 900;
-    font-size: 24px;
+    font-size: cqw(24);
     line-height: 1.5;
     color: $white;
     white-space: nowrap;
@@ -240,11 +255,11 @@
   &__price-old {
     order: 1;
     width: 100%;
-    height: 18px;
-    margin-bottom: 4px;
+    height: cqw(18);
+    margin-bottom: cqw(4);
     font-family: $font-family-base;
     font-weight: 700;
-    font-size: 15px;
+    font-size: cqw(15);
     line-height: 1.2;
     color: #495057;
   }
@@ -255,12 +270,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    padding: 4px;
+    width: cqw(32);
+    height: cqw(32);
+    padding: cqw(4);
+    border-radius: cqw(4);
     background: #102C56;
     border: none;
-    border-radius: 4px;
     color: $white;
     cursor: pointer;
     transition: background-color $transition-base;
@@ -270,8 +285,8 @@
     }
 
     svg {
-      width: 24px;
-      height: 24px;
+      width: cqw(24);
+      height: cqw(24);
       fill: currentColor;
     }
   }
@@ -301,76 +316,6 @@
       
       &:hover {
         background: $neutral-400;
-      }
-    }
-  }
-
-  // Tablet and Mobile adjustments based on Figma card_tab (960_760)
-  @include breakpoint((max: $breakpoint-tablet-lg)) {
-    min-height: auto;
-    padding: 8px;
-
-    &__image-wrapper {
-      padding: 0;
-      aspect-ratio: auto;
-      height: 220px;
-    }
-
-    &__content {
-      padding: 0;
-    }
-
-    &__badges {
-      top: 0;
-      left: 0;
-    }
-
-    &__actions {
-      top: 0;
-      right: 0;
-    }
-
-    &__status {
-      font-size: 14px;
-    }
-
-    &__title {
-      font-size: 14px;
-      line-height: 1.5;
-      -webkit-line-clamp: 4;
-      min-height: 84px;
-      margin-top: 8px;
-    }
-
-    &__rating,
-    &__reviews {
-      font-size: 15px;
-    }
-
-    &__price-wrapper {
-      height: 52px;
-      margin-top: auto;
-    }
-
-    &__price-current {
-      font-size: 20px;
-      height: 30px;
-      padding: 0 8px;
-    }
-
-    &__price-old {
-      font-size: 15px;
-    }
-
-    &__cart-btn {
-      width: 32px;
-      height: 32px;
-      border-radius: 4px;
-      padding: 4px;
-      
-      svg {
-        width: 24px;
-        height: 24px;
       }
     }
   }
