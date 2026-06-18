@@ -48,14 +48,14 @@ $base-card-width: 322;
 .product-card {
   position: relative;
   width: 100%;
-  min-height: cqw(596);
+  min-height: cqw(610.5);
   background: #F8F9FA;
   border: cqw(1) solid $neutral-350; // #E9ECEF
   border-radius: cqw(8);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: cqw(16);
+  padding:  cqw(16)  ;
   transition: box-shadow $transition-base;
   
   height: 100%; // ensures equal height in a grid row
@@ -67,13 +67,13 @@ $base-card-width: 322;
   &__image-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 322 / 390;
+    aspect-ratio: 290 / 390;
     background: #F8F9FA;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
-    margin-bottom: cqw(8);
+    margin-bottom: cqw(22.25);
   }
 
   &__image {
@@ -158,6 +158,7 @@ $base-card-width: 322;
     flex-direction: column;
     padding: 0;
     flex-grow: 1;
+    gap: cqw(8);
   }
 
   &__status {
@@ -178,7 +179,7 @@ $base-card-width: 322;
     font-weight: 600;
     line-height: 1.2;
     color: $neutral-1000;
-    margin: cqw(8) 0 0;
+    margin: 0;
     
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -194,7 +195,6 @@ $base-card-width: 322;
     align-items: center;
     gap: cqw(14);
     height: cqw(24);
-    margin-top: cqw(18);
   }
 
   &__rating,
@@ -238,7 +238,6 @@ $base-card-width: 322;
     flex-wrap: wrap;
     align-items: center;
     align-content: flex-end;
-    margin-top: auto;
     height: cqw(54);
     width: 100%;
   }
@@ -255,7 +254,7 @@ $base-card-width: 322;
     font-family: $font-family-base;
     font-weight: 900;
     font-size: cqw(24);
-    line-height: 1.5;
+    line-height: 1.2;
     color: $white;
     white-space: nowrap;
     background: $green-300;
@@ -378,7 +377,6 @@ $base-card-width: 322;
       width: cqw(120);
       height: cqw(24);
       border-radius: cqw(4);
-      margin-bottom: cqw(8);
       @extend %skeleton-animation;
     }
 
@@ -386,7 +384,6 @@ $base-card-width: 322;
       width: cqw(290);
       height: cqw(24);
       border-radius: cqw(4);
-      margin-bottom: cqw(8);
       @extend %skeleton-animation;
     }
 
@@ -394,7 +391,6 @@ $base-card-width: 322;
       width: cqw(120);
       height: cqw(24);
       border-radius: cqw(4);
-      margin-bottom: cqw(8);
       @extend %skeleton-animation;
     }
 
@@ -402,7 +398,6 @@ $base-card-width: 322;
       width: cqw(290);
       height: cqw(24);
       border-radius: cqw(4);
-      margin-bottom: cqw(8);
       @extend %skeleton-animation;
     }
 
