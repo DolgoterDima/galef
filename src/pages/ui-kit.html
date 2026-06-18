@@ -279,7 +279,7 @@
             
             <!-- Card 1: In Stock / Sale -->
             <div class="product-card-container">
-              <article class="product-card">
+              <article class="product-card product-card--sale">
                 <div class="product-card__image-wrapper">
                   <div class="product-card__badges">
                     <span class="product-card__badge product-card__badge--top">Топ продажів</span>
@@ -296,7 +296,7 @@
                   <img src="../assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
                 </div>
                 <div class="product-card__content">
-                  <div class="product-card__status product-card__status--available">
+                  <div class="product-card__status">
                     <span>В наявності</span>
                   </div>
                   <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
@@ -311,7 +311,7 @@
                     </div>
                   </div>
                   <div class="product-card__price-wrapper">
-                    <div class="product-card__price-current product-card__price-current--available">10 599 ₴</div>
+                    <div class="product-card__price-current">10 599 ₴</div>
                     <div class="product-card__price-old">13 999 ₴</div>
                     <button class="product-card__cart-btn" aria-label="Add to cart">
                       <svg><use href="#icon-cart"></use></svg>
@@ -323,7 +323,7 @@
 
             <!-- Card 2: Pre-order -->
             <div class="product-card-container">
-              <article class="product-card">
+              <article class="product-card product-card--preorder">
                 <div class="product-card__image-wrapper">
                   <div class="product-card__badges">
                     <span class="product-card__badge product-card__badge--new">Новинка</span>
@@ -340,7 +340,7 @@
                   <img src="../assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
                 </div>
                 <div class="product-card__content">
-                  <div class="product-card__status product-card__status--preorder">
+                  <div class="product-card__status">
                     <span>Передзамовлення зі знижкою</span>
                   </div>
                   <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
@@ -355,7 +355,7 @@
                     </div>
                   </div>
                   <div class="product-card__price-wrapper">
-                    <div class="product-card__price-current product-card__price-current--preorder">10 599 ₴</div>
+                    <div class="product-card__price-current">10 599 ₴</div>
                     <button class="product-card__cart-btn" aria-label="Add to cart">
                       <svg><use href="#icon-cart"></use></svg>
                     </button>
@@ -379,7 +379,7 @@
                   <img src="../assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
                 </div>
                 <div class="product-card__content">
-                  <div class="product-card__status product-card__status--out-of-stock">
+                  <div class="product-card__status">
                     <span>Немає в наявності</span>
                   </div>
                   <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
@@ -394,7 +394,7 @@
                     </div>
                   </div>
                   <div class="product-card__price-wrapper">
-                    <div class="product-card__price-current product-card__price-current--out-of-stock">10 599 ₴</div>
+                    <div class="product-card__price-current">10 599 ₴</div>
                     <button class="product-card__cart-btn" aria-label="Add to cart">
                       <svg><use href="#icon-cart"></use></svg>
                     </button>
@@ -405,7 +405,7 @@
 
             <!-- Card 4: Sale Price -->
             <div class="product-card-container">
-              <article class="product-card">
+              <article class="product-card product-card--sale">
                 <div class="product-card__image-wrapper">
                   <div class="product-card__badges">
                     <span class="product-card__badge product-card__badge--sale">-25%</span>
@@ -421,7 +421,7 @@
                   <img src="../assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
                 </div>
                 <div class="product-card__content">
-                  <div class="product-card__status product-card__status--available">
+                  <div class="product-card__status">
                     <span>В наявності</span>
                   </div>
                   <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
@@ -436,12 +436,30 @@
                     </div>
                   </div>
                   <div class="product-card__price-wrapper">
-                    <div class="product-card__price-current product-card__price-current--sale">10 599 ₴</div>
+                    <div class="product-card__price-current">10 599 ₴</div>
                     <div class="product-card__price-old">13 999 ₴</div>
                     <button class="product-card__cart-btn" aria-label="Add to cart">
                       <svg><use href="#icon-cart"></use></svg>
                     </button>
                   </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Card 5: Skeleton Card -->
+            <div class="product-card-container">
+              <article class="product-card product-card--skeleton">
+                <div class="product-card__image-wrapper">
+                  <div class="product-card__image-skeleton">
+                    <svg><use href="#icon-chair-skeleton"></use></svg>
+                  </div>
+                </div>
+                <div class="product-card__content">
+                  <div class="product-card__status-skeleton"></div>
+                  <div class="product-card__title-skeleton"></div>
+                  <div class="product-card__rating-skeleton"></div>
+                  <div class="product-card__price-skeleton"></div>
+                  <div class="product-card__btn-skeleton"></div>
                 </div>
               </article>
             </div>
