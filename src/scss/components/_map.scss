@@ -3,6 +3,18 @@
 .section-map {
   margin-bottom: 60px;
 
+  @include breakpoint((max: $breakpoint-desktop - 1px)) {
+    margin-bottom: 44px;
+  }
+
+  @include breakpoint($bp-laptop-down) {
+    margin-bottom: 24px;
+  }
+
+  @include breakpoint((max: $breakpoint-tablet)) {
+    margin-bottom: 16px;
+  }
+
   &__container {
     position: relative;
   }

@@ -19,6 +19,18 @@ $base-desktop-width: 1120;
 .proposition {
   margin-bottom: 60px;
 
+  @include breakpoint((max: $breakpoint-desktop - 1px)) {
+    margin-bottom: 44px;
+  }
+
+  @include breakpoint($bp-laptop-down) {
+    margin-bottom: 24px;
+  }
+
+  @include breakpoint((max: $breakpoint-tablet)) {
+    margin-bottom: 16px;
+  }
+
   & > .container {
     container-type: inline-size;
     container-name: proposition;
@@ -301,6 +313,7 @@ $base-desktop-width: 1120;
       
       @include breakpoint((max: $breakpoint-tablet)) {
         font-size: prop-cqw(24);
+        font-weight: $font-weight-semibold;
       }
 
       @include breakpoint((max: $breakpoint-mobile-lg)) {

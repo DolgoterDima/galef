@@ -9,7 +9,16 @@
   margin-bottom: 80px;
   padding: 0 40px;
 
+  @include breakpoint((min: $breakpoint-laptop, max: $breakpoint-desktop)) {
+    margin-bottom: 60px;
+  }
+
+  @include breakpoint($bp-laptop-down) {
+    margin-bottom: 24px;
+  }
+
   @include breakpoint((max: $breakpoint-tablet)) {
+    margin-bottom: 16px;
     padding: 0 16px;
   }
   

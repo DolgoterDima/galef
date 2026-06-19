@@ -7,12 +7,28 @@
 .benefits {
   margin-bottom: 60px;
 
+  @include breakpoint((max: $breakpoint-desktop - 1px)) {
+    margin-bottom: 44px;
+  }
+
+  @include breakpoint($bp-laptop-down) {
+    margin-bottom: 24px;
+  }
+
+  @include breakpoint((max: $breakpoint-tablet)) {
+    margin-bottom: 16px;
+  }
+
   &__inner {
     display: flex;
     flex-direction: row;
     gap: 24px;
     
     @include breakpoint((max: $breakpoint-tablet-lg)) {
+      gap: 12px;
+    }
+    
+    @include breakpoint((max: $breakpoint-tablet)) {
       flex-direction: column;
     }
   }
@@ -21,7 +37,7 @@
     flex: 1;
     background-color: $blue-900;
     border-radius: 12px;
-    padding: 24px;
+    padding:28px 24px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -29,7 +45,8 @@
     gap: 24px;
     
     @include breakpoint((max: $breakpoint-tablet-lg)) {
-      padding: 24px 40px;
+      padding: 24px 16px;
+      gap: 16px;
     }
     
     @include breakpoint((max: $breakpoint-mobile-lg)) {
