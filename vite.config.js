@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import injectHTML from "vite-plugin-html-inject";
 
 export default defineConfig({
   base: "/galef/",
@@ -9,6 +10,7 @@ export default defineConfig({
 
   // Додано масив плагінів
   plugins: [
+    injectHTML(),
     createSvgIconsPlugin({
       // Шлях до папки з іконками (створи її, якщо немає: src/assets/icons)
       iconDirs: [resolve(__dirname, "src/assets/icons")],

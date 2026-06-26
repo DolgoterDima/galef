@@ -14,156 +14,7 @@
 </head>
 <body>
        <!-- Header -->
-    <header class="header">
-        <div class="container header__container">
-            <div class="header__inner">
-                <div class="header__desktop">
-                    <a class="header__logo" href="/">
-                        <img alt="Galef" src="./assets/icons/logo.svg" class="header__logo-main">
-                        
-                    </a>
-
-                    <nav class="header__nav">
-                        <ul class="nav">
-                            <li class="nav__item">
-                                <a class="nav__link" href="/pages/catalog.html">Каталог</a>
-                                <ul class="nav__dropdown">
-                                    <li class="nav__dropdown-item">
-                                        <a class="nav__dropdown-link" href="#">Геймерські крісла</a>
-                                    </li>
-                                    <li class="nav__dropdown-item">
-                                        <a class="nav__dropdown-link" href="#">Офісні крісла</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav__item"><a class="nav__link nav__link--sales" href="/pages/sales.html">Акції</a></li>
-                            <li class="nav__item"><a class="nav__link" href="/pages/text-page.html">Про нас</a></li>
-                             <li class="nav__item">
-                                <a class="nav__link" href="#">Інформація</a>
-                                <ul class="nav__dropdown">
-                                    <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="#">Контакти</a></li>
-                                    <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="#">Доставка і оплата</a></li>
-                                    <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="#">Повернення та обмін</a></li>
-                                    <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="#">Блог</a></li>
-                                    <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="#">Де можна придбати наші крісла</a></li>
-                                    <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="#">Політика безпеки</a></li>
-                                    <li class="nav__dropdown-item"><a class="nav__dropdown-link" href="#">Користувацька угода</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <div class="header__actions">
-                        <a aria-label="Кошик" class="icon-btn" href="/pages/checkout.html">
-                            <svg class="icon-btn__icon"><use href="#icon-cart"></use></svg>
-                        </a>
-                        <button aria-label="Профіль" class="icon-btn" data-modal-open="login">
-                            <svg class="icon-btn__icon"><use href="#icon-user"></use></svg>
-                         </button>
-                        <button aria-label="Пошук" class="icon-btn js-search-open">
-                            <svg class="icon-btn__icon"><use href="#icon-search"></use></svg>
-                        </button>
-                        <details class="lang-selector">
-                            <summary class="lang-selector__trigger">
-                                <span class="lang-selector__text">UA</span>
-                                <svg class="lang-selector__arrow">
-                                    <use href="#icon-chevron-down"></use>
-                                </svg>
-                            </summary>
-                            <ul class="lang-selector__menu">
-                                <li class="lang-selector__item lang-selector__item--active">UA</li>
-                                <li class="lang-selector__item">EN</li>
-                            </ul>
-                        </details>
-                    </div>
-                </div>
-
-                <!-- Mobile Menu Header -->
-                <div class="header__mobile">
-                    <a class="header__logo" href="/">
-                        <img alt="Galef" src="./assets/icons/logo-g.svg">
-                    </a>
-                    <div class="header__actions">
-                        <button aria-label="Пошук" class="icon-btn js-search-open">
-                            <svg class="icon-btn__icon"><use href="#icon-search"></use></svg>
-                        </button>
-                        <button aria-label="Меню" class="icon-btn" data-burger>
-                            <svg class="icon-btn__icon"><use href="#icon-bars"></use></svg>
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Mobile Menu -->
-                <div class="mobile-menu" data-mobile-menu>
-                    <div class="mobile-menu__overlay" data-mobile-menu-overlay></div>
-                    <div class="mobile-menu__inner">
-                        <!-- Main Panel -->
-                        <div class="mobile-menu__panel mobile-menu__panel--active" data-mobile-panel="main">
-                            <div class="mobile-menu__top">
-                                <span class="mobile-menu__title">Меню</span>
-                                <div class="mobile-menu__actions">
-                                    <a class="icon-btn mobile-menu__btn" href="/pages/checkout.html">
-                                        <svg class="icon-btn__icon"><use href="#icon-cart"></use></svg>
-                                    </a>
-                                    <details class="lang-selector mobile-menu__lang-wrapper">
-                                        <summary class="lang-selector__trigger">
-                                            <span class="lang-selector__text">UA</span>
-                                            <svg class="lang-selector__arrow">
-                                                <use href="#icon-chevron-down"></use>
-                                            </svg>
-                                        </summary>
-                                        <ul class="lang-selector__menu">
-                                            <li class="lang-selector__item lang-selector__item--active">UA</li>
-                                            <li class="lang-selector__item">EN</li>
-                                        </ul>
-                                    </details>
-                                    <button aria-label="Закрити" class="icon-btn mobile-menu__btn" data-mobile-menu-close>
-                                        <svg class="icon-btn__icon"><use href="#icon-x"></use></svg>
-                                    </button>
-                                </div>
-                            </div>
-                            
-                            <!-- OpenCart compatible nested structure -->
-                            <nav class="mobile-menu__nav">
-                                <div>
-                                    <a class="mobile-menu__link" href="#">Каталог</a>
-                                    <nav>
-                                        <div><a class="mobile-menu__link" href="#">Геймерські крісла</a></div>
-                                        <div><a class="mobile-menu__link" href="#">Офісні крісла</a></div>
-                                    </nav>
-                                </div>
-                                <div><a class="mobile-menu__link mobile-menu__link--sales" href="/pages/sales.html">Акції</a></div>
-                                <div><a class="mobile-menu__link" href="/pages/text-page.html">Про нас</a></div>
-                                <div>
-                                    <a class="mobile-menu__link" href="#">Інформація</a>
-                                    <nav>
-                                        <div><a class="mobile-menu__link" href="#">Контакти</a></div>
-                                        <div><a class="mobile-menu__link" href="#">Доставка і оплата</a></div>
-                                        <div><a class="mobile-menu__link" href="#">Повернення та обмін</a></div>
-                                        <div><a class="mobile-menu__link" href="#">Блог</a></div>
-                                        <div><a class="mobile-menu__link" href="#">Де можна придбати наші крісла</a></div>
-                                        <div><a class="mobile-menu__link" href="#">Політика безпеки</a></div>
-                                        <div><a class="mobile-menu__link" href="#">Користувацька угода</a></div>
-                                    </nav>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Search Overlay -->
-                <div class="search-overlay" id="search-overlay">
-                    <button class="icon-btn search-overlay__close" id="search-close" type="button" aria-label="Закрити пошук">
-                        <svg class="icon-btn__icon"><use href="#icon-x"></use></svg>
-                    </button>
-                    <form class="search-overlay__form" action="/search">
-                        <input type="text" class="search-overlay__input" placeholder="Я шукаю..." required>
-                        <button type="submit" class="btn btn--primary btn--lg btn--search-button search-overlay__submit">Знайти</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </header>
+    <load src="/parts/header.html" />
 
 <div class="page-wrapper">
     <!-- Main Content -->
@@ -294,211 +145,27 @@
                     <div class="swiper-wrapper">
                         <!-- Slide 1 -->
                         <div class="swiper-slide">
-                            <article class="product-card">
-                              <div class="product-card__image-wrapper">
-                                <div class="product-card__badges">
-                                  <span class="product-card__badge product-card__badge--top">Топ продажів</span>
-                                </div>
-                                <div class="product-card__actions">
-                                  <button class="product-card__action-btn" aria-label="Add to favorites">
-                                    <svg><use href="#icon-heart"></use></svg>
-                                  </button>
-                                  <button class="product-card__action-btn" aria-label="Compare">
-                                    <svg><use href="#icon-scale"></use></svg>
-                                  </button>
-                                </div>
-                                <img src="./assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
-                              </div>
-                              <div class="product-card__content">
-                                <div class="product-card__status">
-                                  <span>В наявності</span>
-                                </div>
-                                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
-                                <div class="product-card__meta">
-                                  <div class="product-card__rating">
-                                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
-                                    <span>5</span>
-                                  </div>
-                                  <div class="product-card__reviews">
-                                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
-                                    <span>300</span>
-                                  </div>
-                                </div>
-                                <div class="product-card__price-wrapper">
-                                  <div class="product-card__price-current">10 599 ₴</div>
-                                  <button class="product-card__cart-btn" aria-label="Add to cart">
-                                    <svg><use href="#icon-cart"></use></svg>
-                                  </button>
-                                </div>
-                              </div>
-                            </article>
+                            <load src="/parts/product-card.html" />
                         </div>
                         
                         <!-- Slide 2 -->
                         <div class="swiper-slide">
-                            <article class="product-card product-card--preorder">
-                              <div class="product-card__image-wrapper">
-                                <div class="product-card__actions">
-                                  <button class="product-card__action-btn" aria-label="Add to favorites">
-                                    <svg><use href="#icon-heart"></use></svg>
-                                  </button>
-                                  <button class="product-card__action-btn" aria-label="Compare">
-                                    <svg><use href="#icon-scale"></use></svg>
-                                  </button>
-                                </div>
-                                <img src="./assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
-                              </div>
-                              <div class="product-card__content">
-                                <div class="product-card__status">
-                                  <span>Передзамовлення зі знижкою</span>
-                                </div>
-                                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
-                                <div class="product-card__meta">
-                                  <div class="product-card__rating">
-                                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
-                                    <span>5</span>
-                                  </div>
-                                  <div class="product-card__reviews">
-                                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
-                                    <span>300</span>
-                                  </div>
-                                </div>
-                                <div class="product-card__price-wrapper">
-                                  <div class="product-card__price-current">10 599 ₴</div>
-                                  <div class="product-card__price-old">13 999 ₴</div>
-                                  <button class="product-card__cart-btn" aria-label="Add to cart">
-                                    <svg><use href="#icon-cart"></use></svg>
-                                  </button>
-                                </div>
-                              </div>
-                            </article>
+                            <load src="/parts/product-card.html" modifier="product-card--preorder" />
                         </div>
                         
                         <!-- Slide 3 -->
                         <div class="swiper-slide">
-                            <article class="product-card product-card--out-of-stock">
-                              <div class="product-card__image-wrapper">
-                                <div class="product-card__badges">
-                                  <span class="product-card__badge product-card__badge--top">Топ продажів</span>
-                                </div>
-                                <div class="product-card__actions">
-                                  <button class="product-card__action-btn" aria-label="Add to favorites">
-                                    <svg><use href="#icon-heart"></use></svg>
-                                  </button>
-                                  <button class="product-card__action-btn" aria-label="Compare">
-                                    <svg><use href="#icon-scale"></use></svg>
-                                  </button>
-                                </div>
-                                <img src="./assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
-                              </div>
-                              <div class="product-card__content">
-                                <div class="product-card__status">
-                                  <span>Немає в наявності</span>
-                                </div>
-                                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
-                                <div class="product-card__meta">
-                                  <div class="product-card__rating">
-                                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
-                                    <span>5</span>
-                                  </div>
-                                  <div class="product-card__reviews">
-                                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
-                                    <span>300</span>
-                                  </div>
-                                </div>
-                                <div class="product-card__price-wrapper">
-                                  <div class="product-card__price-current">10 599 ₴</div>
-                                  <button class="product-card__cart-btn" aria-label="Add to cart">
-                                    <svg><use href="#icon-cart"></use></svg>
-                                  </button>
-                                </div>
-                              </div>
-                            </article>
+                            <load src="/parts/product-card.html" modifier="product-card--out-of-stock" />
                         </div>
 
                         <!-- Slide 4 -->
                         <div class="swiper-slide">
-                            <article class="product-card product-card--sale">
-                              <div class="product-card__image-wrapper">
-                                <div class="product-card__badges">
-                                  <span class="product-card__badge product-card__badge--sale">-25%</span>
-                                </div>
-                                <div class="product-card__actions">
-                                  <button class="product-card__action-btn" aria-label="Add to favorites">
-                                    <svg><use href="#icon-heart"></use></svg>
-                                  </button>
-                                  <button class="product-card__action-btn" aria-label="Compare">
-                                    <svg><use href="#icon-scale"></use></svg>
-                                  </button>
-                                </div>
-                                <img src="./assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
-                              </div>
-                              <div class="product-card__content">
-                                <div class="product-card__status">
-                                  <span>В наявності</span>
-                                </div>
-                                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
-                                <div class="product-card__meta">
-                                  <div class="product-card__rating">
-                                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
-                                    <span>5</span>
-                                  </div>
-                                  <div class="product-card__reviews">
-                                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
-                                    <span>300</span>
-                                  </div>
-                                </div>
-                                <div class="product-card__price-wrapper">
-                                  <div class="product-card__price-current">10 599 ₴</div>
-                                  <div class="product-card__price-old">13 999 ₴</div>
-                                  <button class="product-card__cart-btn" aria-label="Add to cart">
-                                    <svg><use href="#icon-cart"></use></svg>
-                                  </button>
-                                </div>
-                              </div>
-                            </article>
+                            <load src="/parts/product-card.html" modifier="product-card--sale" />
                         </div>
 
                         <!-- Slide 5 -->
                         <div class="swiper-slide">
-                            <article class="product-card">
-                              <div class="product-card__image-wrapper">
-                                <div class="product-card__badges">
-                                  <span class="product-card__badge product-card__badge--top">Топ продажів</span>
-                                </div>
-                                <div class="product-card__actions">
-                                  <button class="product-card__action-btn" aria-label="Add to favorites">
-                                    <svg><use href="#icon-heart"></use></svg>
-                                  </button>
-                                  <button class="product-card__action-btn" aria-label="Compare">
-                                    <svg><use href="#icon-scale"></use></svg>
-                                  </button>
-                                </div>
-                                <img src="./assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
-                              </div>
-                              <div class="product-card__content">
-                                <div class="product-card__status">
-                                  <span>В наявності</span>
-                                </div>
-                                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
-                                <div class="product-card__meta">
-                                  <div class="product-card__rating">
-                                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
-                                    <span>5</span>
-                                  </div>
-                                  <div class="product-card__reviews">
-                                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
-                                    <span>300</span>
-                                  </div>
-                                </div>
-                                <div class="product-card__price-wrapper">
-                                  <div class="product-card__price-current">10 599 ₴</div>
-                                  <button class="product-card__cart-btn" aria-label="Add to cart">
-                                    <svg><use href="#icon-cart"></use></svg>
-                                  </button>
-                                </div>
-                              </div>
-                            </article>
+                            <load src="/parts/product-card.html" />
                         </div>
                     </div>
                     
@@ -522,202 +189,27 @@
                     <div class="swiper-wrapper">
                         <!-- Slide 1 -->
                         <div class="swiper-slide">
-                            <article class="product-card product-card--sale">
-                              <div class="product-card__image-wrapper">
-                                <div class="product-card__actions">
-                                  <button class="product-card__action-btn" aria-label="Add to favorites">
-                                    <svg><use href="#icon-heart"></use></svg>
-                                  </button>
-                                  <button class="product-card__action-btn" aria-label="Compare">
-                                    <svg><use href="#icon-scale"></use></svg>
-                                  </button>
-                                </div>
-                                <img src="./assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
-                              </div>
-                              <div class="product-card__content">
-                                <div class="product-card__status">
-                                  <span>В наявності</span>
-                                </div>
-                                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
-                                <div class="product-card__meta">
-                                  <div class="product-card__rating">
-                                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
-                                    <span>5</span>
-                                  </div>
-                                  <div class="product-card__reviews">
-                                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
-                                    <span>300</span>
-                                  </div>
-                                </div>
-                                <div class="product-card__price-wrapper">
-                                  <div class="product-card__price-current">10 599 ₴</div>
-                                  <div class="product-card__price-old">13 999 ₴</div>
-                                  <button class="product-card__cart-btn" aria-label="Add to cart">
-                                    <svg><use href="#icon-cart"></use></svg>
-                                  </button>
-                                </div>
-                              </div>
-                            </article>
+                            <load src="/parts/product-card.html" modifier="product-card--sale" />
                         </div>
                         
                         <!-- Slide 2 -->
                         <div class="swiper-slide">
-                            <article class="product-card product-card--sale">
-                              <div class="product-card__image-wrapper">
-                                <div class="product-card__actions">
-                                  <button class="product-card__action-btn" aria-label="Add to favorites">
-                                    <svg><use href="#icon-heart"></use></svg>
-                                  </button>
-                                  <button class="product-card__action-btn" aria-label="Compare">
-                                    <svg><use href="#icon-scale"></use></svg>
-                                  </button>
-                                </div>
-                                <img src="./assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
-                              </div>
-                              <div class="product-card__content">
-                                <div class="product-card__status">
-                                  <span>В наявності</span>
-                                </div>
-                                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
-                                <div class="product-card__meta">
-                                  <div class="product-card__rating">
-                                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
-                                    <span>5</span>
-                                  </div>
-                                  <div class="product-card__reviews">
-                                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
-                                    <span>300</span>
-                                  </div>
-                                </div>
-                                <div class="product-card__price-wrapper">
-                                  <div class="product-card__price-current">10 599 ₴</div>
-                                  <div class="product-card__price-old">13 999 ₴</div>
-                                  <button class="product-card__cart-btn" aria-label="Add to cart">
-                                    <svg><use href="#icon-cart"></use></svg>
-                                  </button>
-                                </div>
-                              </div>
-                            </article>
+                            <load src="/parts/product-card.html" modifier="product-card--preorder" />
                         </div>
                         
                         <!-- Slide 3 -->
                         <div class="swiper-slide">
-                            <article class="product-card product-card--sale">
-                              <div class="product-card__image-wrapper">
-                                <div class="product-card__actions">
-                                  <button class="product-card__action-btn" aria-label="Add to favorites">
-                                    <svg><use href="#icon-heart"></use></svg>
-                                  </button>
-                                  <button class="product-card__action-btn" aria-label="Compare">
-                                    <svg><use href="#icon-scale"></use></svg>
-                                  </button>
-                                </div>
-                                <img src="./assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
-                              </div>
-                              <div class="product-card__content">
-                                <div class="product-card__status">
-                                  <span>В наявності</span>
-                                </div>
-                                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
-                                <div class="product-card__meta">
-                                  <div class="product-card__rating">
-                                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
-                                    <span>5</span>
-                                  </div>
-                                  <div class="product-card__reviews">
-                                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
-                                    <span>300</span>
-                                  </div>
-                                </div>
-                                <div class="product-card__price-wrapper">
-                                  <div class="product-card__price-current">10 599 ₴</div>
-                                  <div class="product-card__price-old">13 999 ₴</div>
-                                  <button class="product-card__cart-btn" aria-label="Add to cart">
-                                    <svg><use href="#icon-cart"></use></svg>
-                                  </button>
-                                </div>
-                              </div>
-                            </article>
+                            <load src="/parts/product-card.html" />
                         </div>
 
                         <!-- Slide 4 -->
                         <div class="swiper-slide">
-                            <article class="product-card product-card--sale">
-                              <div class="product-card__image-wrapper">
-                                <div class="product-card__actions">
-                                  <button class="product-card__action-btn" aria-label="Add to favorites">
-                                    <svg><use href="#icon-heart"></use></svg>
-                                  </button>
-                                  <button class="product-card__action-btn" aria-label="Compare">
-                                    <svg><use href="#icon-scale"></use></svg>
-                                  </button>
-                                </div>
-                                <img src="./assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
-                              </div>
-                              <div class="product-card__content">
-                                <div class="product-card__status">
-                                  <span>В наявності</span>
-                                </div>
-                                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
-                                <div class="product-card__meta">
-                                  <div class="product-card__rating">
-                                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
-                                    <span>5</span>
-                                  </div>
-                                  <div class="product-card__reviews">
-                                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
-                                    <span>300</span>
-                                  </div>
-                                </div>
-                                <div class="product-card__price-wrapper">
-                                  <div class="product-card__price-current">10 599 ₴</div>
-                                  <div class="product-card__price-old">13 999 ₴</div>
-                                  <button class="product-card__cart-btn" aria-label="Add to cart">
-                                    <svg><use href="#icon-cart"></use></svg>
-                                  </button>
-                                </div>
-                              </div>
-                            </article>
+                            <load src="/parts/product-card.html" modifier="product-card--out-of-stock" />
                         </div>
 
                         <!-- Slide 5 -->
                         <div class="swiper-slide">
-                            <article class="product-card product-card--sale">
-                              <div class="product-card__image-wrapper">
-                                <div class="product-card__actions">
-                                  <button class="product-card__action-btn" aria-label="Add to favorites">
-                                    <svg><use href="#icon-heart"></use></svg>
-                                  </button>
-                                  <button class="product-card__action-btn" aria-label="Compare">
-                                    <svg><use href="#icon-scale"></use></svg>
-                                  </button>
-                                </div>
-                                <img src="./assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
-                              </div>
-                              <div class="product-card__content">
-                                <div class="product-card__status">
-                                  <span>В наявності</span>
-                                </div>
-                                <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
-                                <div class="product-card__meta">
-                                  <div class="product-card__rating">
-                                    <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
-                                    <span>5</span>
-                                  </div>
-                                  <div class="product-card__reviews">
-                                    <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
-                                    <span>300</span>
-                                  </div>
-                                </div>
-                                <div class="product-card__price-wrapper">
-                                  <div class="product-card__price-current">10 599 ₴</div>
-                                  <div class="product-card__price-old">13 999 ₴</div>
-                                  <button class="product-card__cart-btn" aria-label="Add to cart">
-                                    <svg><use href="#icon-cart"></use></svg>
-                                  </button>
-                                </div>
-                              </div>
-                            </article>
+                            <load src="/parts/product-card.html" modifier="product-card--sale" />
                         </div>
                     </div>
                     
@@ -775,88 +267,7 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__inner">
-                <div class="footer__nav-wrapper">
-                    <div class="footer__nav-border">
-                        <div class="footer__column">
-                            <h4 class="footer__title">Про компанію</h4>
-                            <nav class="footer__list">
-                                <div class="footer__item"><a class="footer__link" href="#">Про компанію</a></div>
-                                <div class="footer__item"><a class="footer__link" href="#">Політика безпеки</a></div>
-                                <div class="footer__item"><a class="footer__link" href="#">Контакти</a></div>
-                                <div class="footer__item"><a class="footer__link" href="#">Каталог</a></div>
-                                <div class="footer__item"><a class="footer__link" href="#">Мапа сайту</a></div>
-                            </nav>
-                        </div>
-        
-                        <div class="footer__column">
-                            <h4 class="footer__title">Допомога</h4>
-                            <nav class="footer__list">
-                                <div class="footer__item"><a class="footer__link" href="#">Доставка та оплата</a></div>
-                                <div class="footer__item"><a class="footer__link" href="#">Умови кредитування</a></div>
-                                <div class="footer__item"><a class="footer__link" href="#">Гарантія</a></div>
-                                <div class="footer__item"><a class="footer__link" href="#">Повернення та обмін</a></div>
-                                <div class="footer__item"><a class="footer__link" href="#">Угода користувача</a></div>
-                            </nav>
-                        </div>
-        
-                        <div class="footer__column">
-                            <h4 class="footer__title">Сервіс</h4>
-                            <nav class="footer__list">
-                                <div class="footer__item"><a class="footer__link" href="#">Подарункові сертифікати</a></div>
-                                <div class="footer__item"><a class="footer__link" href="#">Корпоративним клієнтам</a></div>
-                            </nav>
-                        </div>
-
-                        <div class="footer__column">
-                            <h4 class="footer__title">Партнерам</h4>
-                            <nav class="footer__list">
-                                <div class="footer__item"><a class="footer__link" href="#">Співпраця з нами</a></div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer__marketing">
-                    <h3 class="footer__marketing-title">Приєднуйтесь до нашої спільноти</h3>
-                    <form class="footer__form">
-                        <div class="footer__input-group">
-                            <input class="footer__input" placeholder="mailsupport@gmail.com" type="email">
-                            <button class="footer__submit" type="submit">Приєднуйся</button>
-                        </div>
-                    </form>
-                    <div class="footer__social">
-                        <a href="#" class="footer__social-link" aria-label="TikTok">
-                            <svg><use href="#icon-tt"></use></svg>
-                        </a>
-                        <a href="#" class="footer__social-link" aria-label="Instagram">
-                            <svg><use href="#icon-inst"></use></svg>
-                        </a>
-                        <a href="#" class="footer__social-link" aria-label="Facebook">
-                            <svg><use href="#icon-fb"></use></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
-
-<!-- Modals -->
-<div class="modal" data-modal="login">
-    <div class="modal__content">
-        <button aria-label="Закрити" class="modal__close" data-modal-close>&times;</button>
-        <!-- Login form content -->
-    </div>
-</div>
-
-<div class="modal" data-modal="register">
-    <div class="modal__content">
-        <button aria-label="Закрити" class="modal__close" data-modal-close>&times;</button>
-        <!-- Register form content -->
-    </div>
+    <load src="/parts/footer.html" />
 </div>
 
 <script src="/js/main.js" type="module"></script>

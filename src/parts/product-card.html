@@ -1,0 +1,99 @@
+<style>
+  /* Тимчасові стилі для демонстрації варіацій товару */
+  .product-card__badge--new,
+  .product-card__badge--sale {
+    display: none;
+  }
+  .product-card__badge--top {
+    display: flex;
+  }
+
+  .product-card__status-in-stock {
+    display: inline;
+  }
+  .product-card__status-preorder,
+  .product-card__status-out-of-stock {
+    display: none;
+  }
+
+  .product-card__price-old {
+    display: none;
+  }
+
+  .product-card--sale .product-card__badge--sale {
+    display: flex;
+  }
+  .product-card--sale .product-card__badge--top {
+    display: none;
+  }
+  .product-card--sale .product-card__price-old {
+    display: block;
+  }
+
+  .product-card--preorder .product-card__badge--new {
+    display: flex;
+  }
+  .product-card--preorder .product-card__badge--top {
+    display: none;
+  }
+  .product-card--preorder .product-card__status-in-stock {
+    display: none;
+  }
+  .product-card--preorder .product-card__status-preorder {
+    display: inline;
+  }
+  .product-card--preorder .product-card__price-old {
+    display: block;
+  }
+
+  .product-card--out-of-stock .product-card__status-in-stock {
+    display: none;
+  }
+  .product-card--out-of-stock .product-card__status-out-of-stock {
+    display: inline;
+  }
+</style>
+
+<article class="product-card {=$modifier}">
+  <div class="product-card__image-wrapper">
+    <div class="product-card__badges">
+      <span class="product-card__badge product-card__badge--top">Топ продажів</span>
+      <span class="product-card__badge product-card__badge--sale">-25%</span>
+      <span class="product-card__badge product-card__badge--new">Новинка</span>
+    </div>
+    <div class="product-card__actions">
+      <button class="product-card__action-btn" aria-label="Add to favorites">
+        <svg><use href="#icon-heart"></use></svg>
+      </button>
+      <button class="product-card__action-btn" aria-label="Compare">
+        <svg><use href="#icon-scale"></use></svg>
+      </button>
+    </div>
+    <img src="/assets/images/chair.png" alt="Офісне крісло" class="product-card__image">
+  </div>
+  <div class="product-card__content">
+    <div class="product-card__status">
+      <span class="product-card__status-in-stock">В наявності</span>
+      <span class="product-card__status-preorder">Передзамовлення зі знижкою</span>
+      <span class="product-card__status-out-of-stock">Немає в наявності</span>
+    </div>
+    <h3 class="product-card__title">Офісне крісло GT Racer B-2115 Beige/Brown (leather)</h3>
+    <div class="product-card__meta">
+      <div class="product-card__rating">
+        <div class="product-card__rating-icon"><svg><use href="#icon-star"></use></svg></div>
+        <span>5</span>
+      </div>
+      <div class="product-card__reviews">
+        <div class="product-card__reviews-icon"><svg><use href="#icon-comment"></use></svg></div>
+        <span>300</span>
+      </div>
+    </div>
+    <div class="product-card__price-wrapper">
+      <div class="product-card__price-current">10 599 ₴</div>
+      <div class="product-card__price-old">13 999 ₴</div>
+      <button class="product-card__cart-btn" aria-label="Add to cart">
+        <svg><use href="#icon-cart"></use></svg>
+      </button>
+    </div>
+  </div>
+</article>
