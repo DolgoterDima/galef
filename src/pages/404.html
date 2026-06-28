@@ -9,13 +9,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <load src="/parts/header.html" />
+
   <div class="page-wrapper">
     <main class="main-content">
-      <div class="container">
-        <h1>404</h1>
-        <p>Сторінку не знайдено</p>
+      <div class="page">
+        <div class="container page__container">
+          
+          <!-- Breadcrumbs -->
+          <div class="page__breadcrumbs">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="/" class="breadcrumbs__link">Головна</a>
+              <span class="breadcrumbs__current" aria-current="page">page 404</span>
+            </nav>
+          </div>
+
+          <!-- 404 Content -->
+          <div class="error-page">
+            <div class="error-page__visual">
+              <img src="/assets/icons/page-404.svg" alt="404 - Сторінку не знайдено" class="error-page__image">
+            </div>
+            <div class="error-page__text-block">
+              <h1 class="error-page__title">Ой! Здається, у нас щось зламалося.</h1>
+              <a href="/" class="error-page__button">На головну</a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </main>
+    <load src="/parts/footer.html" />
   </div>
   <script type="module" src="/js/main.js"></script>
 </body>

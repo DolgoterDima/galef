@@ -138,7 +138,11 @@
   top: 0;
   z-index: $z-sticky;
   background-color: $surface-primary;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+
+  @media (min-width: 960px) {
+    margin-bottom: 24px;
+  }
 
   &__container {
     max-width: 1200px; // 1120px content + 80px padding
