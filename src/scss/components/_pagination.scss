@@ -32,24 +32,28 @@
     cursor: pointer;
 
     &:hover {
-      background-color: $neutral-200;
+      background-color: $blue-500;
+      color: $white;
     }
 
-    &--active {
-      background-color: $blue-500; // #7692bc
+    &--active,
+    &:active {
+      background-color: $blue-700;
       color: $white;
 
       &:hover {
-        background-color: $blue-600; // Darker on hover
+        background-color: $blue-700;
       }
     }
     
     &--dots {
-      background-color: transparent;
       color: $neutral-850;
       pointer-events: none;
-      padding: 0 4px;
-      min-width: auto;
+
+      &:hover {
+        background-color: $neutral-0;
+        color: $neutral-850;
+      }
     }
   }
 

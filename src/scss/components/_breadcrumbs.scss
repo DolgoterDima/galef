@@ -2,32 +2,13 @@
 
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  &__item {
-    display: flex;
-    align-items: center;
-    font-family: $font-family-base;
-    font-size: 12px;
-    font-weight: $font-weight-semibold; // 600
-    line-height: 15px;
-    color: $neutral-550;
-
-    &:not(:last-child)::after {
-      content: "/";
-      margin: 0 4px;
-      color: inherit;
-    }
-  }
+  font-family: $font-family-base;
+  font-size: 12px;
+  font-weight: $font-weight-semibold; // 600
+  line-height: 15px;
+  color: $neutral-550;
 
   &__link {
     color: inherit;
@@ -36,6 +17,13 @@
 
     &:hover {
       color: $brand-primary;
+    }
+
+    &::after {
+      content: "/";
+      margin: 0 4px;
+      color: inherit;
+      display: inline-block;
     }
   }
 

@@ -57,7 +57,8 @@
   &__menu {
     position: absolute;
     top: calc(100% + 4px);
-    left: 0;
+    right: 0;
+    left: auto;
     min-width: 100%;
     width: max-content;
     padding: 8px;
