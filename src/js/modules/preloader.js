@@ -46,7 +46,11 @@ export function initPreloader() {
     // Switch transitions to animation mode
     logoContainer.classList.add('is-animating');
 
-    // Get positions
+    // Get layout dimensions for scale calculation (ignores transforms)
+    const targetWidth = targetLogo.offsetWidth;
+    const logoWidth = logoImg.offsetWidth;
+
+    // Get positions for translation (includes viewport scroll offsets)
     const containerRect = logoContainer.getBoundingClientRect();
     const targetRect = targetLogo.getBoundingClientRect();
 
@@ -54,15 +58,8 @@ export function initPreloader() {
     const deltaX = targetRect.left + (targetRect.width / 2) - (containerRect.left + (containerRect.width / 2));
     const deltaY = targetRect.top + (targetRect.height / 2) - (containerRect.top + (containerRect.height / 2));
     
-    // Calculate scale factor based on container width
-    let scale = targetRect.width / containerRect.width;
-    
-    // Fine-tune scale factor to prevent preloader logo from appearing slightly larger than the real logo
-    if (window.innerWidth < 960) {
-      scale *= 0.607;
-    } else {
-      scale *= 0.82;
-    }
+    // Calculate scale factor using layout widths (which is extremely stable and precise)
+    const scale = targetWidth / logoWidth;
 
     // Apply translation to container, and scale to the image (which scales down faster)
     logoContainer.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
