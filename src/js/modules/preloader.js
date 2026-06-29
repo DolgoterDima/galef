@@ -79,8 +79,12 @@ export function initPreloader() {
     }, 1250);
   };
 
-  // Run transition on window load
-  window.addEventListener('load', onPageReady);
+  // Run transition on DOMContentLoaded (with instant execution if already loaded)
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    onPageReady();
+  } else {
+    document.addEventListener('DOMContentLoaded', onPageReady);
+  }
 
   // Fallback timeout to prevent infinite loader if resource fails to load (3500ms)
   setTimeout(onPageReady, 3500);
