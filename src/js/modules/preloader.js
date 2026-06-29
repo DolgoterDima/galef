@@ -55,7 +55,12 @@ export function initPreloader() {
     const deltaY = targetRect.top + (targetRect.height / 2) - (containerRect.top + (containerRect.height / 2));
     
     // Calculate scale factor based on container width
-    const scale = targetRect.width / containerRect.width;
+    let scale = targetRect.width / containerRect.width;
+    
+    // Scale down even more on mobile (< 960px) to match the visually smaller mobile logo
+    if (window.innerWidth < 960) {
+      scale *= 0.72;
+    }
 
     // Apply translation to container, and scale to the image (which scales down faster)
     logoContainer.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
