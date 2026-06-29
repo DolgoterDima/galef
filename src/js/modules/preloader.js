@@ -57,9 +57,11 @@ export function initPreloader() {
     // Calculate scale factor based on container width
     let scale = targetRect.width / containerRect.width;
     
-    // Scale down even more on mobile (< 960px) to match the visually smaller mobile logo
+    // Fine-tune scale factor to prevent preloader logo from appearing slightly larger than the real logo
     if (window.innerWidth < 960) {
-      scale *= 0.72;
+      scale *= 0.65;
+    } else {
+      scale *= 0.95;
     }
 
     // Apply translation to container, and scale to the image (which scales down faster)

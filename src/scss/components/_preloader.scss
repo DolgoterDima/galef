@@ -78,9 +78,9 @@
       transform: scale(1);
     }
 
-    // Scale down simultaneously with translation, completing at 92% of translation time (5% left)
+    // Scale down simultaneously with translation, completing at 90% of translation time (5% path left)
     .preloader__logo-container.is-animating & {
-      transition: transform 0.92s cubic-bezier(0.85, 0, 0.15, 1);
+      transition: transform 0.9s cubic-bezier(0.85, 0, 0.15, 1);
     }
   }
 
