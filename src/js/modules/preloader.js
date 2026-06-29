@@ -49,14 +49,13 @@ export function initPreloader() {
     // Get positions
     const containerRect = logoContainer.getBoundingClientRect();
     const targetRect = targetLogo.getBoundingClientRect();
-    const logoImgRect = logoImg.getBoundingClientRect();
 
     // Calculate translation delta relative to current center position
     const deltaX = targetRect.left + (targetRect.width / 2) - (containerRect.left + (containerRect.width / 2));
     const deltaY = targetRect.top + (targetRect.height / 2) - (containerRect.top + (containerRect.height / 2));
     
-    // Calculate scale factor based on actual logo image width
-    const scale = targetRect.width / logoImgRect.width;
+    // Calculate scale factor based on container width
+    const scale = targetRect.width / containerRect.width;
 
     // Apply translation to container, and scale to the image (which scales down faster)
     logoContainer.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
@@ -80,7 +79,7 @@ export function initPreloader() {
     }, 1250);
   };
 
-  // Run transition on DOMContentLoaded (with instant execution if already loaded)
+  // Run transition on DOMContentLoaded
   if (document.readyState === 'interactive' || document.readyState === 'complete') {
     onPageReady();
   } else {
