@@ -5,12 +5,16 @@ import 'virtual:svg-icons-register';
 import '../scss/main.scss';
 
 // Import modules
+import { initPreloader } from './modules/preloader.js';
 import { initMobileMenu } from './modules/mobile-menu.js';
 import { initAccordions } from './modules/accordion.js';
 import { initModals } from './modules/modal.js';
 
 import { initHeroSlider } from './modules/hero-slider.js';
 import { initProductSlider } from './modules/product-slider.js';
+
+// Initialize preloader as early as possible
+initPreloader();
 
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {

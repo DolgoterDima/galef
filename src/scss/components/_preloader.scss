@@ -1,0 +1,103 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+
+  &__blue-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #102C56;
+    z-index: 1;
+    transition: opacity 1s cubic-bezier(0.85, 0, 0.15, 1);
+  }
+
+  &__white-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 1.2s cubic-bezier(0.85, 0, 0.15, 1), opacity 1s cubic-bezier(0.85, 0, 0.15, 1);
+    z-index: 2;
+  }
+
+  &__logo-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    opacity: 0;
+    transform: translate(0, 0);
+    transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    width: 90vw;
+    max-width: 1200px;
+
+    &.is-visible {
+      opacity: 1;
+    }
+
+    &.is-animating {
+      transition: transform 1s cubic-bezier(0.85, 0, 0.15, 1);
+    }
+  }
+
+  &__logo {
+    width: 100%;
+    height: auto;
+    display: block;
+    will-change: transform;
+    transform: scale(0.6);
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: center center;
+
+    .preloader__logo-container.is-visible & {
+      transform: scale(1);
+    }
+
+    // Scale down simultaneously with translation, completing at 92% of translation time (5% left)
+    .preloader__logo-container.is-animating & {
+      transition: transform 0.92s cubic-bezier(0.85, 0, 0.15, 1);
+    }
+  }
+
+  // When we start hiding preloader backgrounds
+  &--hidden {
+    pointer-events: none;
+
+    .preloader__white-bg {
+      opacity: 0;
+    }
+
+    .preloader__blue-bg {
+      opacity: 0;
+    }
+  }
+}
+
+// Hide the actual header logo when loading to allow transition
+body.is-loading {
+  overflow: hidden;
+  height: 100vh;
+
+  .header__logo img {
+    opacity: 0 !important;
+  }
+}
+
+.header__logo img {
+  transition: opacity 0.1s ease;
+}
