@@ -54,15 +54,14 @@ export function initPreloader() {
     const containerRect = logoContainer.getBoundingClientRect();
     const targetRect = targetLogo.getBoundingClientRect();
 
-    // Calculate translation delta relative to current center position
-    let deltaX = targetRect.left + (targetRect.width / 2) - (containerRect.left + (containerRect.width / 2));
-    let deltaY = targetRect.top + (targetRect.height / 2) - (containerRect.top + (containerRect.height / 2));
+    // Calculate translation delta relative to current center position and round to nearest pixel
+    let deltaX = Math.round(targetRect.left + (targetRect.width / 2) - (containerRect.left + (containerRect.width / 2)));
+    let deltaY = Math.round(targetRect.top + (targetRect.height / 2) - (containerRect.top + (containerRect.height / 2)));
+    const isDesktop = window.innerWidth >= 960;
+
+
     
-    // Shift desktop translation horizontally by +2px for pixel-perfect visual overlap
-    if (window.innerWidth >= 960) {
-      deltaX += 2;
-    }
-    
+
     // Calculate scale factor using layout widths (which is extremely stable and precise)
     const scale = targetWidth / logoWidth;
 
@@ -73,19 +72,19 @@ export function initPreloader() {
     // Fade out preloader background (1s transition)
     preloader.classList.add('preloader--hidden');
 
-    // Remove is-loading slightly before transition ends (720ms) to fade-in real logo early and avoid flicker
+    // Remove is-loading later to delay the appearance of the real header logo
     setTimeout(() => {
       document.body.classList.remove('is-loading');
-    }, 720);
+    }, 1220);
 
-    // Hide preloader logo container exactly when transition completes (950ms)
+    // Hide preloader logo container 1 second after transition completes
     setTimeout(() => {
       logoContainer.style.display = 'none';
-    }, 950);
+    }, 1850);
 
     setTimeout(() => {
       preloader.style.display = 'none';
-    }, 1150);
+    }, 2050);
   };
 
   // Run transition on DOMContentLoaded
