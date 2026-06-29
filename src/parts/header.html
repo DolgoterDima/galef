@@ -2,7 +2,10 @@
   <div class="preloader__blue-bg"></div>
   <div class="preloader__white-bg"></div>
   <div class="preloader__logo-container" id="preloader-logo-container">
-    <img src="/assets/icons/logo.svg" alt="Galef" class="preloader__logo">
+    <picture class="preloader__logo">
+      <source media="(max-width: 959px)" srcset="/assets/icons/logo-g.svg">
+      <img src="/assets/icons/logo.svg" alt="Galef">
+    </picture>
   </div>
 </div>
 <script>
