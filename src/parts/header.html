@@ -8,6 +8,65 @@
     </picture>
   </div>
 </div>
+<style>
+  body.is-loading {
+    overflow: hidden !important;
+    height: 100vh !important;
+  }
+  .preloader {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 99999 !important;
+    background-color: #102C56 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .preloader__white-bg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #ffffff !important;
+    clip-path: circle(0% at 50% 50%);
+    z-index: 2 !important;
+  }
+  .preloader__logo-container {
+    position: absolute !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 10 !important;
+    opacity: 0;
+    transform: scale(0.6);
+    width: 90vw;
+    max-width: 1200px;
+  }
+  @media (max-width: 959px) {
+    .preloader__logo-container {
+      width: 30vw;
+      min-width: 100px;
+    }
+  }
+  .preloader__logo {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+  .preloader__logo img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+  body.is-loading .header__logo img {
+    opacity: 0 !important;
+  }
+</style>
 <script>
   document.body.classList.add('is-loading');
 </script>
