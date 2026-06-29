@@ -59,7 +59,7 @@ export function initPreloader() {
     
     // Fine-tune scale factor to prevent preloader logo from appearing slightly larger than the real logo
     if (window.innerWidth < 960) {
-      scale *= 0.58;
+      scale *= 0.607;
     } else {
       scale *= 0.90;
     }
@@ -78,7 +78,6 @@ export function initPreloader() {
 
     // Hide preloader logo container exactly when transition completes (1050ms)
     setTimeout(() => {
-      debugger; // Added for devtools debugging to inspect sizes before hiding
       logoContainer.style.display = 'none';
     }, 1050);
 
