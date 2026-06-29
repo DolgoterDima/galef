@@ -78,6 +78,7 @@ export function initPreloader() {
 
     // Hide preloader logo container exactly when transition completes (1050ms)
     setTimeout(() => {
+      debugger; // Added for devtools debugging to inspect sizes before hiding
       logoContainer.style.display = 'none';
     }, 1050);
 
