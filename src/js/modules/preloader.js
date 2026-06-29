@@ -59,9 +59,9 @@ export function initPreloader() {
     
     // Fine-tune scale factor to prevent preloader logo from appearing slightly larger than the real logo
     if (window.innerWidth < 960) {
-      scale *= 0.65;
+      scale *= 0.58;
     } else {
-      scale *= 0.95;
+      scale *= 0.90;
     }
 
     // Apply translation to container, and scale to the image (which scales down faster)
