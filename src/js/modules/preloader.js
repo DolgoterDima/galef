@@ -73,14 +73,14 @@ export function initPreloader() {
       document.body.classList.remove('is-loading');
     }, 720);
 
-    // Hide preloader logo container exactly when transition completes (850ms)
+    // Hide preloader logo container exactly when transition completes (950ms)
     setTimeout(() => {
       logoContainer.style.display = 'none';
-    }, 850);
+    }, 950);
 
     setTimeout(() => {
       preloader.style.display = 'none';
-    }, 1050);
+    }, 1150);
   };
 
   // Run transition on DOMContentLoaded
