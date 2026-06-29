@@ -55,8 +55,13 @@ export function initPreloader() {
     const targetRect = targetLogo.getBoundingClientRect();
 
     // Calculate translation delta relative to current center position
-    const deltaX = targetRect.left + (targetRect.width / 2) - (containerRect.left + (containerRect.width / 2));
-    const deltaY = targetRect.top + (targetRect.height / 2) - (containerRect.top + (containerRect.height / 2));
+    let deltaX = targetRect.left + (targetRect.width / 2) - (containerRect.left + (containerRect.width / 2));
+    let deltaY = targetRect.top + (targetRect.height / 2) - (containerRect.top + (containerRect.height / 2));
+    
+    // Shift desktop translation horizontally by +2px for pixel-perfect visual overlap
+    if (window.innerWidth >= 960) {
+      deltaX += 2;
+    }
     
     // Calculate scale factor using layout widths (which is extremely stable and precise)
     const scale = targetWidth / logoWidth;
