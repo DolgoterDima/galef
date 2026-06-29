@@ -55,7 +55,7 @@
     }
 
     &.is-animating {
-      transition: transform 1s linear;
+      transition: transform 0.8s linear;
     }
   }
 
@@ -80,7 +80,7 @@
 
     // Scale down simultaneously with translation, completing at 90% of translation time (5% path left)
     .preloader__logo-container.is-animating & {
-      transition: transform 0.9s linear;
+      transition: transform 0.72s linear;
     }
   }
 

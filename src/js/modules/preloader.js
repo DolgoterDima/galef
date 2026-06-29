@@ -68,19 +68,19 @@ export function initPreloader() {
     // Fade out preloader background (1s transition)
     preloader.classList.add('preloader--hidden');
 
-    // Remove is-loading slightly before transition ends (900ms) to fade-in real logo early and avoid flicker
+    // Remove is-loading slightly before transition ends (720ms) to fade-in real logo early and avoid flicker
     setTimeout(() => {
       document.body.classList.remove('is-loading');
-    }, 900);
+    }, 720);
 
-    // Hide preloader logo container exactly when transition completes (1050ms)
+    // Hide preloader logo container exactly when transition completes (850ms)
     setTimeout(() => {
       logoContainer.style.display = 'none';
-    }, 1050);
+    }, 850);
 
     setTimeout(() => {
       preloader.style.display = 'none';
-    }, 1250);
+    }, 1050);
   };
 
   // Run transition on DOMContentLoaded
