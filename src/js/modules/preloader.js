@@ -61,7 +61,7 @@ export function initPreloader() {
     if (window.innerWidth < 960) {
       scale *= 0.607;
     } else {
-      scale *= 0.90;
+      scale *= 0.82;
     }
 
     // Apply translation to container, and scale to the image (which scales down faster)
