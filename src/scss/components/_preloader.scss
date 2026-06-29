@@ -46,6 +46,11 @@
     width: 90vw;
     max-width: 1200px;
 
+    @media (max-width: 959px) {
+      width: 50vw;
+      min-width: 300px;
+    }
+
     &.is-visible {
       opacity: 1;
     }
