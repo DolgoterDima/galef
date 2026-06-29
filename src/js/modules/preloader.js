@@ -6,20 +6,27 @@ export function initPreloader() {
 
   if (!preloader || !logoContainer || !logoImg || !whiteBg) return;
 
-  // Step 1: Start phase 1 (white circle expansion) and logo container reveal
-  setTimeout(() => {
+  let loaded = false;
+
+  // Start Phase 1 (reveal white circle and show preloader logo) only after page is ready
+  const onPageReady = () => {
+    if (loaded) return;
+    loaded = true;
+
+    // Step 1: Start phase 1 (white circle expansion)
     whiteBg.style.clipPath = 'circle(150% at 50% 50%)';
     
     // Logo pops in slightly after the reveal begins (300ms)
     setTimeout(() => {
       logoContainer.classList.add('is-visible');
     }, 300);
-  }, 100);
 
-  // Step 2: Handle transition once page is loaded
+    // Step 2: Wait for Phase 1 to complete (1500ms), then start Phase 2 & 3 (flight)
+    setTimeout(startTransition, 1500);
+  };
+
+  // Phase 2 & 3: Flight translation and scaling transition
   const startTransition = () => {
-    if (preloader.classList.contains('preloader--hidden')) return; // already run
-
     // Determine target logo (desktop or mobile) depending on viewport
     const desktopLogo = document.querySelector('.header__desktop .header__logo img');
     const mobileLogo = document.querySelector('.header__mobile .header__logo img');
@@ -72,12 +79,9 @@ export function initPreloader() {
     }, 1250);
   };
 
-  // Run transition on window load or fallback timeout
-  window.addEventListener('load', () => {
-    // Small delay to ensure layout is fully drawn and stable (800ms)
-    setTimeout(startTransition, 800);
-  });
+  // Run transition on window load
+  window.addEventListener('load', onPageReady);
 
   // Fallback timeout to prevent infinite loader if resource fails to load (3500ms)
-  setTimeout(startTransition, 3500);
+  setTimeout(onPageReady, 3500);
 }
