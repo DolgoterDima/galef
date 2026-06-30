@@ -56,6 +56,9 @@ export function initPreloader() {
 
     // Step 2: Wait for Phase 1 to complete (1500ms), then start Phase 2 & 3 (flight back to layout)
     setTimeout(() => {
+      // Remove loading class so that the header background and menu links fade in smoothly during flight
+      document.body.classList.remove('is-loading');
+
       // Apply the transition style inline to ensure it overrides 'none'
       targetLogo.style.transition = 'transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)';
       
@@ -69,9 +72,8 @@ export function initPreloader() {
       preloader.classList.add('preloader--hidden');
     }, 1500);
 
-    // Step 3: Remove loading state and clean up classes after flight completes
+    // Step 3: Clean up classes and inline styles after flight completes
     setTimeout(() => {
-      document.body.classList.remove('is-loading');
       // Clean up inline styles so browser default layout rules take over
       targetLogo.style.transform = '';
       targetLogo.style.transition = '';
