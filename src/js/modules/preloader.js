@@ -78,10 +78,6 @@ export function initPreloader() {
       logoLink.style.opacity = '';
     }, 2720); // 1500ms delay + 1220ms animation time
 
-    // Debugger 2 seconds before the end of the preloader flow (2950ms - 2000ms = 950ms)
-    setTimeout(() => {
-      debugger;
-    }, 950);
 
     // Final clean up: hide preloader wrapper completely
     setTimeout(() => {
