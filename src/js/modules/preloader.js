@@ -56,10 +56,13 @@ export function initPreloader() {
 
     // Step 2: Wait for Phase 1 to complete (1500ms), then start Phase 2 & 3 (flight back to layout)
     setTimeout(() => {
-      // Switch logo to animation mode (enables transition styles via CSS class)
-      targetLogo.classList.add('is-animating');
+      // Apply the transition style inline to ensure it overrides 'none'
+      targetLogo.style.transition = 'transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)';
+      
+      // Force a browser reflow/repaint to apply the transition before we reset transform
+      targetLogo.offsetHeight;
 
-      // Reset transform to 'none' to let the CSS transition glide it back to its exact natural layout position
+      // Reset transform to 'none' to let the transition glide it back to its exact natural layout position
       targetLogo.style.transform = 'none';
 
       // Fade out the preloader backgrounds
@@ -69,7 +72,6 @@ export function initPreloader() {
     // Step 3: Remove loading state and clean up classes after flight completes
     setTimeout(() => {
       document.body.classList.remove('is-loading');
-      targetLogo.classList.remove('is-animating');
       // Clean up inline styles so browser default layout rules take over
       targetLogo.style.transform = '';
       targetLogo.style.transition = '';
