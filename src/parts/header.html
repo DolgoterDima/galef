@@ -39,11 +39,27 @@
     z-index: 2;
   }
   
-  /* Elevate the real header logo above the preloader during page loading */
+  /* Elevate the real header logo above the preloader during page loading, and hide other header contents */
+  body.is-loading .header {
+    z-index: 100000 !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  body.is-loading .header__inner {
+    border: none !important;
+  }
   body.is-loading .header__logo {
     position: relative;
     z-index: 100000;
+    opacity: 0;
     pointer-events: none; /* prevent clicks during transition */
+  }
+  body.is-loading .header__nav,
+  body.is-loading .header__actions,
+  body.is-loading .header__mobile .icon-btn {
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 
   .header__logo img {
