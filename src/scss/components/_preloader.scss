@@ -71,9 +71,11 @@ body.is-loading {
 
   .header__nav,
   .header__actions,
-  .header__mobile .icon-btn {
+  .header__mobile .icon-btn,
+  .mobile-menu {
     opacity: 0 !important;
     pointer-events: none !important;
+    visibility: hidden !important;
   }
 
   .header__logo img {
