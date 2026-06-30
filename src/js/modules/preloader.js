@@ -1,94 +1,88 @@
 export function initPreloader() {
   const preloader = document.getElementById('preloader');
-  const logoContainer = document.getElementById('preloader-logo-container');
-  const logoImg = logoContainer?.querySelector('.preloader__logo');
   const whiteBg = preloader?.querySelector('.preloader__white-bg');
 
-  if (!preloader || !logoContainer || !logoImg || !whiteBg) return;
+  if (!preloader || !whiteBg) return;
 
   let loaded = false;
 
-  // Start Phase 1 (reveal white circle and show preloader logo) only after page is ready
   const onPageReady = () => {
     if (loaded) return;
     loaded = true;
 
-    // Step 1: Start phase 1 (white circle expansion)
-    whiteBg.style.clipPath = 'circle(150% at 50% 50%)';
-    
-    // Logo pops in slightly after the reveal begins (300ms)
-    setTimeout(() => {
-      logoContainer.classList.add('is-visible');
-    }, 300);
-
-    // Step 2: Wait for Phase 1 to complete (1500ms), then start Phase 2 & 3 (flight)
-    setTimeout(startTransition, 1500);
-  };
-
-  // Phase 2 & 3: Flight translation and scaling transition
-  const startTransition = () => {
-    // Determine target logo (desktop or mobile) depending on viewport
+    // Determine the active header logo (desktop or mobile) depending on viewport width
     const desktopLogo = document.querySelector('.header__desktop .header__logo img');
     const mobileLogo = document.querySelector('.header__mobile .header__logo img');
     let targetLogo = window.innerWidth >= 960 ? desktopLogo : mobileLogo;
-    
+
     if (!targetLogo) {
       targetLogo = desktopLogo || mobileLogo;
     }
 
-    if (!targetLogo) {
-      // Fallback: if header logo is not found, just fade out preloader
+    const logoLink = targetLogo?.closest('.header__logo');
+
+    if (!targetLogo || !logoLink) {
+      // Fallback: if header logo elements are not found, just fade out preloader
       preloader.classList.add('preloader--hidden');
       document.body.classList.remove('is-loading');
       return;
     }
 
-    // Switch transitions to animation mode
-    logoContainer.classList.add('is-animating');
-
-    // Get layout dimensions for scale calculation (ignores transforms)
-    const targetWidth = targetLogo.offsetWidth;
-    const logoWidth = logoImg.offsetWidth;
-
     // Get positions for translation (includes viewport scroll offsets)
-    const containerRect = logoContainer.getBoundingClientRect();
     const targetRect = targetLogo.getBoundingClientRect();
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
 
-    // Calculate translation delta relative to current center position
-    let deltaX = targetRect.left + (targetRect.width / 2) - (containerRect.left + (containerRect.width / 2));
-    let deltaY = targetRect.top + (targetRect.height / 2) - (containerRect.top + (containerRect.height / 2));
-    const isDesktop = window.innerWidth >= 960;
+    // Center of target logo in its natural state
+    const logoCenterX = targetRect.left + targetRect.width / 2;
+    const logoCenterY = targetRect.top + targetRect.height / 2;
 
-    if (isDesktop) {
-      deltaX += targetRect.width * 0.0005; // horizontal fine-tuning (shifted right by 0.5% from previous -0.45%)
-      deltaY += targetRect.height * 0.0117; // vertical fine-tuning (shifted up by 1% from previous 2.17%)
-    }
+    // Calculate translation delta to move the logo to the center of the viewport
+    const translateX = centerX - logoCenterX;
+    const translateY = centerY - logoCenterY;
 
-    // Calculate scale factor using layout widths (which is extremely stable and precise)
-    const scale = targetWidth / logoWidth;
+    // Calculate scale factor: we want the centered logo to be prominent (e.g. ~540px wide on desktop, ~50% viewport width on mobile)
+    const scale = (window.innerWidth >= 960 ? Math.min(600, window.innerWidth * 0.45) : window.innerWidth * 0.5) / targetRect.width;
 
-    // Apply translation to container, and scale to the image (which scales down faster)
-    logoContainer.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-    logoImg.style.transform = `scale(${scale})`;
-    
-    // Fade out preloader background (1s transition)
-    preloader.classList.add('preloader--hidden');
+    // Apply the centered and scaled transform immediately before making it visible
+    targetLogo.style.transition = 'none';
+    targetLogo.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
 
-    // Remove is-loading later to delay the appearance of the real header logo
+    // Show the logo link (which starts at opacity: 0 in CSS to prevent flicker)
+    logoLink.style.opacity = '1';
+
+    // Step 1: Start Phase 1 (reveal white circle behind the centered logo)
+    whiteBg.style.clipPath = 'circle(150% at 50% 50%)';
+
+    // Step 2: Wait for Phase 1 to complete (1500ms), then start Phase 2 & 3 (flight back to layout)
+    setTimeout(() => {
+      // Switch logo to animation mode (enables transition styles via CSS class)
+      targetLogo.classList.add('is-animating');
+
+      // Reset transform to 'none' to let the CSS transition glide it back to its exact natural layout position
+      targetLogo.style.transform = 'none';
+
+      // Fade out the preloader backgrounds
+      preloader.classList.add('preloader--hidden');
+    }, 1500);
+
+    // Step 3: Remove loading state and clean up classes after flight completes
     setTimeout(() => {
       document.body.classList.remove('is-loading');
-    }, 1220);
-    // Hide preloader logo container 1 second after transition completes
-    setTimeout(() => {
-      logoContainer.style.display = 'none';
-    }, 1850);
+      targetLogo.classList.remove('is-animating');
+      // Clean up inline styles so browser default layout rules take over
+      targetLogo.style.transform = '';
+      targetLogo.style.transition = '';
+      logoLink.style.opacity = '';
+    }, 2720); // 1500ms delay + 1220ms animation time
 
+    // Final clean up: hide preloader wrapper completely
     setTimeout(() => {
       preloader.style.display = 'none';
-    }, 2050);
+    }, 2950);
   };
 
-  // Run transition on DOMContentLoaded
+  // Run transition on DOMContentLoaded or immediately if already loaded
   if (document.readyState === 'interactive' || document.readyState === 'complete') {
     onPageReady();
   } else {

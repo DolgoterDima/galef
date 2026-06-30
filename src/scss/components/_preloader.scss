@@ -34,56 +34,6 @@
     z-index: 2;
   }
 
-  &__logo-container {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    opacity: 0;
-    transform: translate(0, 0);
-    transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-    width: 90vw;
-    max-width: 1200px;
-
-    @media (max-width: 959px) {
-      width: 30vw;
-    }
-
-    &.is-visible {
-      opacity: 1;
-    }
-
-    &.is-animating {
-      transition: transform 0.8s linear;
-    }
-  }
-
-  &__logo {
-    width: 100%;
-    height: auto;
-    display: block;
-    will-change: transform;
-    transform: scale(0.6);
-    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-    transform-origin: center center;
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .preloader__logo-container.is-visible & {
-      transform: scale(1);
-    }
-
-    // Scale down simultaneously with translation
-    .preloader__logo-container.is-animating & {
-      transition: transform 0.8s linear;
-    }
-  }
-
   // When we start hiding preloader backgrounds
   &--hidden {
     pointer-events: none;
@@ -98,16 +48,23 @@
   }
 }
 
-// Hide the actual header logo when loading to allow transition
+// Style the actual header logo to sit above preloader during loading state
 body.is-loading {
   overflow: hidden;
   height: 100vh;
 
-  .header__logo img {
-    opacity: 0 !important;
+  .header__logo {
+    position: relative;
+    z-index: 100000;
+    pointer-events: none;
   }
-}
 
-.header__logo img {
-  transition: opacity 0.1s ease;
+  .header__logo img {
+    transform-origin: center center;
+    will-change: transform;
+    
+    &.is-animating {
+      transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+  }
 }

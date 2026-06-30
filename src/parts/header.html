@@ -1,12 +1,6 @@
 <div id="preloader" class="preloader">
   <div class="preloader__blue-bg"></div>
   <div class="preloader__white-bg"></div>
-  <div class="preloader__logo-container" id="preloader-logo-container">
-    <picture class="preloader__logo">
-      <source media="(max-width: 959px)" srcset="/assets/icons/logo-g.svg">
-      <img src="/assets/icons/logo.svg" alt="Galef">
-    </picture>
-  </div>
 </div>
 <style>
   body.is-loading {
@@ -44,34 +38,17 @@
     clip-path: circle(0% at 50% 50%);
     z-index: 2;
   }
-  .preloader__logo-container {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    opacity: 0;
-    transform: scale(0.6);
-    width: 90vw;
-    max-width: 1200px;
+  
+  /* Elevate the real header logo above the preloader during page loading */
+  body.is-loading .header__logo {
+    position: relative;
+    z-index: 100000;
+    pointer-events: none; /* prevent clicks during transition */
   }
-  @media (max-width: 959px) {
-    .preloader__logo-container {
-      width: 30vw;
-    }
-  }
-  .preloader__logo {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .preloader__logo img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  body.is-loading .header__logo img {
-    opacity: 0;
+
+  .header__logo img {
+    transform-origin: center center;
+    will-change: transform;
   }
 </style>
 <script>
