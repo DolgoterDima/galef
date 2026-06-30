@@ -19,7 +19,7 @@
     height: 100%;
     background-color: #102C56;
     z-index: 1;
-    transition: opacity 1.08s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   &__white-bg {
@@ -30,7 +30,7 @@
     height: 100%;
     background-color: #ffffff;
     clip-path: circle(0% at 50% 50%);
-    transition: clip-path 1.2s cubic-bezier(0.85, 0, 0.15, 1), opacity 1.08s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: clip-path 1.2s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1);
     z-index: 2;
   }
 
