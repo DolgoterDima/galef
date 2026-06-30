@@ -54,13 +54,15 @@ export function initPreloader() {
     const containerRect = logoContainer.getBoundingClientRect();
     const targetRect = targetLogo.getBoundingClientRect();
 
-    // Calculate translation delta relative to current center position and round to nearest pixel
-    let deltaX = Math.round(targetRect.left + (targetRect.width / 2) - (containerRect.left + (containerRect.width / 2)));
-    let deltaY = Math.round(targetRect.top + (targetRect.height / 2) - (containerRect.top + (containerRect.height / 2)));
+    // Calculate translation delta relative to current center position
+    let deltaX = targetRect.left + (targetRect.width / 2) - (containerRect.left + (containerRect.width / 2));
+    let deltaY = targetRect.top + (targetRect.height / 2) - (containerRect.top + (containerRect.height / 2));
     const isDesktop = window.innerWidth >= 960;
 
-
-    
+    if (isDesktop) {
+      deltaX += targetRect.width * 0.0005; // horizontal fine-tuning (shifted right by 0.5% from previous -0.45%)
+      deltaY += targetRect.height * 0.0117; // vertical fine-tuning (shifted up by 1% from previous 2.17%)
+    }
 
     // Calculate scale factor using layout widths (which is extremely stable and precise)
     const scale = targetWidth / logoWidth;
@@ -76,7 +78,6 @@ export function initPreloader() {
     setTimeout(() => {
       document.body.classList.remove('is-loading');
     }, 1220);
-
     // Hide preloader logo container 1 second after transition completes
     setTimeout(() => {
       logoContainer.style.display = 'none';
