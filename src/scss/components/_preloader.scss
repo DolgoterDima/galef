@@ -72,7 +72,9 @@ body.is-loading {
   .header__nav,
   .header__actions,
   .header__mobile .icon-btn,
-  .mobile-menu {
+  .mobile-menu,
+  .search-overlay,
+  .modal {
     opacity: 0 !important;
     pointer-events: none !important;
     visibility: hidden !important;
