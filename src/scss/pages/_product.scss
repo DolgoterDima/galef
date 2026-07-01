@@ -227,19 +227,21 @@
     }
   }
 
-  &__price-wrapper {
+  &__price-left {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
+    align-items: center;
+    gap: 16px;
   }
 
   &__price-old {
+    display: inline-block;
+    min-width: 75px;
     font-family: $font-family-base;
     font-size: 14px;
     font-weight: 600;
     color: $neutral-550;
     text-decoration: line-through;
+    text-align: right;
   }
 
   &__price-current {
