@@ -20,18 +20,36 @@
 // --------------------------------------------
 .product-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 40px;
+  grid-template-columns: 1fr;
+  gap: 24px;
   margin-bottom: 60px;
 
-  @include breakpoint((max: 960px)) {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  @media (min-width: 960px) {
+    grid-template-columns: 1fr 501px;
+    grid-template-rows: auto 1fr;
+    gap: 24px 32px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-left: -40px;
+    margin-right: -40px;
+    grid-template-columns: 780px 419px;
+    justify-content: space-between;
+    gap: 24px 0;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: 937px 501px;
   }
 
   // Left side: Gallery
   &__gallery {
     width: 100%;
+
+    @media (min-width: 960px) {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
   }
 
   // Right side: Details
@@ -39,18 +57,29 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @media (min-width: 960px) {
+      grid-column: 2;
+      grid-row: 2;
+      align-self: start;
+    }
   }
 
   &__title {
     font-family: $font-family-base;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1.2;
     color: $black;
     margin: 26px 0;
 
-    @include breakpoint((max: $breakpoint-tablet)) {
-      font-size: 24px;
+    @media (min-width: 960px) {
+      grid-column: 2;
+      grid-row: 1;
+      font-size: 36px;
+      align-self: start;
+      margin-top: 0;
+      margin-bottom: 26px;
     }
   }
 
