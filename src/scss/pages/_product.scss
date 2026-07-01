@@ -348,62 +348,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    background-color: $neutral-200;
+    width: 60px;
+    height: 40px;
+    background-color: $white;
+    border: 1px solid $neutral-300;
     border-radius: $radius-sm;
     cursor: pointer;
     overflow: hidden;
-    transition: opacity $transition-fast;
+    transition: border-color $transition-fast, opacity $transition-fast;
+    padding: 4px;
 
     &:hover {
-      opacity: 0.8;
+      border-color: $neutral-400;
+      opacity: 0.9;
     }
-  }
 
-  &__bank-badge {
-    font-family: $font-family-base;
-    font-size: 10px;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1;
-
-    &.mono {
-      color: #ffffff;
-      background: #111111;
-      padding: 4px 6px;
-      border-radius: 4px;
-    }
-    &.privat {
-      color: #ffffff;
-      background: #73B433;
-      padding: 4px 6px;
-      border-radius: 4px;
-    }
-    &.oschad {
-      color: #ffffff;
-      background: #007D56;
-      padding: 4px 6px;
-      border-radius: 4px;
-    }
-    &.abank {
-      color: #111111;
-      background: #A0C516;
-      padding: 4px 6px;
-      border-radius: 4px;
-    }
-    &.pumb {
-      color: #ffffff;
-      background: #FF2630;
-      padding: 4px 6px;
-      border-radius: 4px;
-    }
-    &.sense {
-      color: #ffffff;
-      background: #E30613;
-      padding: 4px 6px;
-      border-radius: 4px;
+    svg {
+      width: 100%;
+      height: 100%;
+      max-height: 28px;
+      object-fit: contain;
     }
   }
 
