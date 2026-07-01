@@ -27,23 +27,7 @@ export function initProductTabs() {
     });
   });
 
-  // Handle click on the reviews link in the hero section
-  const reviewsLink = document.querySelector('.product-hero__reviews-link');
-  if (reviewsLink) {
-    reviewsLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      
-      const reviewsTabBtn = document.querySelector('.product-nav__tab-btn[data-tab="reviews"]');
-      if (reviewsTabBtn) {
-        reviewsTabBtn.click();
-      }
 
-      const reviewsSection = document.getElementById('reviews');
-      if (reviewsSection) {
-        reviewsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    });
-  }
 
   // Handle click on the video review shortcut in the sticky nav
   const videoReviewLink = document.querySelector('.product-nav__link[href="#video-review"]');

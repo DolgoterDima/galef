@@ -141,13 +141,7 @@
     font-family: $font-family-base;
     font-size: 14px;
     font-weight: 600;
-    color: $neutral-1000;
-    text-decoration: underline;
-    transition: color $transition-fast;
-
-    &:hover {
-      color: $blue-700;
-    }
+    color: $neutral-600;
   }
 
   // Colors list selector
