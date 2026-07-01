@@ -3,19 +3,596 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Товар - Golef</title>
+  <title>Офісне крісло GT Racer B-8995 Blue - Golef</title>
+  <meta name="description" content="Купити офісне крісло GT Racer B-8995 Blue за вигідною ціною 15 000 ₴ в магазині Golef. Гарантія 12 місяців, безкоштовна доставка, кредит та оплата частинами.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <load src="/parts/header.html" />
+
   <div class="page-wrapper">
     <main class="main-content">
-      <div class="container">
-        <h1>Сторінка товару</h1>
+      <div class="product-page">
+        <div class="container">
+          
+          <!-- Breadcrumbs -->
+          <div class="product-page__breadcrumbs">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="/galef/" class="breadcrumbs__link">Головна</a>
+              <a href="/galef/pages/catalog.html" class="breadcrumbs__link">Каталог</a>
+              <a href="/galef/pages/catalog.html" class="breadcrumbs__link">Офісні крісла</a>
+              <span class="breadcrumbs__current" aria-current="page">GT Racer B-8995 Blue</span>
+            </nav>
+          </div>
+
+          <!-- Product Hero Section -->
+          <div class="product-hero">
+            
+            <!-- Left Side: Images Gallery -->
+            <div class="product-hero__gallery">
+              <div class="product-gallery">
+                
+                <!-- Main Slider -->
+                <div class="swiper product-gallery-main">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="product-gallery-main__img-wrapper">
+                        <img src="/assets/images/chair.png" alt="Офісне крісло GT Racer B-8995 Blue" class="product-gallery-main__img">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="product-gallery-main__img-wrapper">
+                        <img src="/assets/images/prop_office.png" alt="Офісне крісло GT Racer B-8995 Blue - вигляд в офісі" class="product-gallery-main__img">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="product-gallery-main__img-wrapper">
+                        <img src="/assets/images/prop_gaming.png" alt="Офісне крісло GT Racer B-8995 Blue - для ігор" class="product-gallery-main__img">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="product-gallery-main__img-wrapper">
+                        <img src="/assets/images/prop_main.png" alt="Офісне крісло GT Racer B-8995 Blue - деталі" class="product-gallery-main__img">
+                      </div>
+                    </div>
+                    <div class="swiper-slide product-gallery-main__slide--video">
+                      <div class="product-gallery-main__video-wrapper">
+                        <!-- Custom video placeholder, replaces with iframe/video on play -->
+                        <div class="product-gallery-main__video-cover js-video-cover">
+                          <img src="/assets/images/prop_office.png" alt="Відеоогляд крісла" class="product-gallery-main__img">
+                          <button class="product-gallery-main__video-play-btn js-video-play-btn" aria-label="Дивитись відео" data-video-id="dQw4w9WgXcQ">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                              <path d="M8 5v14l11-7z"/>
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="product-gallery-main__video-container js-video-container"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Thumbs Slider -->
+                <div class="product-gallery-thumbs-container">
+                  <button class="product-gallery-thumbs-btn product-gallery-thumbs-btn--prev" aria-label="Попередній слайд">
+                    <svg><use href="#icon-chewron-left"></use></svg>
+                  </button>
+                  <div class="swiper product-gallery-thumbs">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="product-gallery-thumbs__item">
+                          <img src="/assets/images/chair.png" alt="Thumbnail 1">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="product-gallery-thumbs__item">
+                          <img src="/assets/images/prop_office.png" alt="Thumbnail 2">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="product-gallery-thumbs__item">
+                          <img src="/assets/images/prop_gaming.png" alt="Thumbnail 3">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="product-gallery-thumbs__item">
+                          <img src="/assets/images/prop_main.png" alt="Thumbnail 4">
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="product-gallery-thumbs__item product-gallery-thumbs__item--video">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="product-gallery-thumbs__video-icon">
+                            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                            <polygon points="12 12 12 17 16 14.5 12 12"></polygon>
+                            <circle cx="12" cy="12" r="10"></circle>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="product-gallery-thumbs-btn product-gallery-thumbs-btn--next" aria-label="Наступний слайд">
+                    <svg><use href="#icon-chewron-right"></use></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Details & Actions -->
+            <div class="product-hero__info">
+              <h1 class="product-hero__title">Офісне крісло GT Racer B-8995 Blue</h1>
+              
+              <!-- Rating & Reviews Card -->
+              <div class="product-hero__rating-card">
+                <span class="product-hero__rating-title">Рейтинг вашої любові</span>
+                <div class="product-hero__rating-stars">
+                  <div class="product-hero__stars-row">
+                    <svg class="product-hero__star"><use href="#icon-star"></use></svg>
+                    <svg class="product-hero__star"><use href="#icon-star"></use></svg>
+                    <svg class="product-hero__star"><use href="#icon-star"></use></svg>
+                    <svg class="product-hero__star"><use href="#icon-star"></use></svg>
+                    <svg class="product-hero__star"><use href="#icon-star"></use></svg>
+                  </div>
+                  <a href="#reviews" class="product-hero__reviews-link">600 відгуків</a>
+                </div>
+              </div>
+
+              <!-- Colors Selector -->
+              <div class="product-hero__colors">
+                <span class="product-hero__colors-title">Кольори моделі:</span>
+                <div class="product-hero__colors-list">
+                  <button class="product-hero__color-btn product-hero__color-btn--active" aria-label="Синій" style="--swatch-color: #325c9b;"></button>
+                  <button class="product-hero__color-btn" aria-label="Жовтий" style="--swatch-color: #f9c43f;"></button>
+                  <button class="product-hero__color-btn" aria-label="Червоний" style="--swatch-color: #ff2630;"></button>
+                  <button class="product-hero__color-btn" aria-label="Зелений" style="--swatch-color: #009b67;"></button>
+                  <button class="product-hero__color-btn" aria-label="Фіолетовий" style="--swatch-color: #8A38F5;"></button>
+                  <button class="product-hero__color-btn" aria-label="Темно-сірий" style="--swatch-color: #3d3d3d;"></button>
+                  <button class="product-hero__color-btn" aria-label="Сірий" style="--swatch-color: #888888;"></button>
+                  <button class="product-hero__color-btn" aria-label="Світло-сірий" style="--swatch-color: #c3cad5;"></button>
+                  <button class="product-hero__color-btn" aria-label="Чорний" style="--swatch-color: #111111;"></button>
+                </div>
+              </div>
+
+              <!-- Purchase & Price Block -->
+              <div class="product-hero__purchase-card">
+                <div class="product-hero__price-header">
+                  <div class="product-hero__availability">
+                    <span class="product-hero__availability-status product-hero__availability-status--in-stock">Є в наявності</span>
+                  </div>
+                  
+                  <div class="product-hero__price-wrapper">
+                    <span class="product-hero__price-old">20 000 ₴</span>
+                    <span class="product-hero__price-current">15 000 ₴</span>
+                  </div>
+
+                  <!-- Actions (Favorites & Compare) -->
+                  <div class="product-hero__actions">
+                    <button class="product-hero__action-btn" aria-label="Додати в обране">
+                      <svg><use href="#icon-heart"></use></svg>
+                    </button>
+                    <button class="product-hero__action-btn" aria-label="Порівняти">
+                      <svg><use href="#icon-scale"></use></svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Buy Buttons -->
+                <div class="product-hero__buy-actions">
+                  <button class="btn btn--primary product-hero__btn-buy">
+                    <span>Купити</span>
+                    <svg><use href="#icon-cart"></use></svg>
+                  </button>
+                  <button class="btn btn--outline product-hero__btn-credit">
+                    <span>Купити в кредит</span>
+                  </button>
+                </div>
+
+                <!-- Installment/Bank Cards -->
+                <div class="product-hero__banks">
+                  <div class="product-hero__banks-title">Оплата частинами:</div>
+                  <div class="product-hero__banks-list">
+                    <div class="product-hero__bank-logo" title="Монобанк">
+                      <span class="product-hero__bank-badge mono">mono</span>
+                    </div>
+                    <div class="product-hero__bank-logo" title="Приватбанк">
+                      <span class="product-hero__bank-badge privat">pb</span>
+                    </div>
+                    <div class="product-hero__bank-logo" title="Ощадбанк">
+                      <span class="product-hero__bank-badge oschad">ощад</span>
+                    </div>
+                    <div class="product-hero__bank-logo" title="А-Банк">
+                      <span class="product-hero__bank-badge abank">а-банк</span>
+                    </div>
+                    <div class="product-hero__bank-logo" title="ПУМБ">
+                      <span class="product-hero__bank-badge pumb">пумб</span>
+                    </div>
+                    <div class="product-hero__bank-logo" title="Sense Bank">
+                      <span class="product-hero__bank-badge sense">sense</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Conditions & Details -->
+              <div class="product-hero__conditions">
+                <div class="product-hero__condition-item">
+                  <strong>Оплата:</strong>
+                  <span>Картою онлайн, Оплата під час отримання товару, Оплата карткою у відділенні, Apple Pay, Google Pay, Безготівковий розрахунок.</span>
+                </div>
+                <div class="product-hero__condition-item">
+                  <strong>Гарантія:</strong>
+                  <span>12 місяців. Обмін/повернення товару впродовж 14 днів.</span>
+                </div>
+              </div>
+
+              <!-- Delivery Information Card -->
+              <div class="product-hero__delivery">
+                <div class="product-hero__delivery-header">
+                  <svg class="product-hero__delivery-icon"><use href="#icon-file-text"></use></svg>
+                  <strong>Доставка:</strong>
+                </div>
+                <ul class="product-hero__delivery-list">
+                  <li class="product-hero__delivery-item">
+                    <span>Самовивіз з нашого магазину</span>
+                    <strong class="free">Безкоштовно</strong>
+                  </li>
+                  <li class="product-hero__delivery-item">
+                    <span>Кур'єр на вашу адресу (м. Київ)</span>
+                    <strong class="free">Безкоштовно</strong>
+                  </li>
+                  <li class="product-hero__delivery-item">
+                    <span>Самовивіз з Нової Пошти</span>
+                    <strong class="free">Безкоштовно</strong>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div> <!-- End of Product Hero -->
+
+          <!-- Navigation & Tabs Header Bar -->
+          <div class="product-nav">
+            <div class="product-nav__left">
+              <a href="#video-review" class="product-nav__link">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+                <span>Відеоогляд</span>
+              </a>
+              <a href="/assets/files/instruction.pdf" download class="product-nav__link">
+                <svg><use href="#icon-file-text"></use></svg>
+                <span>Інструкція 12 Мб</span>
+              </a>
+            </div>
+            
+            <div class="product-nav__right">
+              <button class="product-nav__tab-btn product-nav__tab-btn--active" data-tab="desc">Опис товару</button>
+              <button class="product-nav__tab-btn" data-tab="specs">Характеристики</button>
+              <button class="product-nav__tab-btn" data-tab="reviews">Відгуки та питання</button>
+            </div>
+          </div>
+
+          <!-- Product Details Tabs Content -->
+          <div class="product-content">
+            
+            <!-- Tab: Description -->
+            <div class="product-content__tab-pane product-content__tab-pane--active" id="tab-desc">
+              <div class="product-description">
+                <h2 class="product-description__title">Опис товару</h2>
+                
+                <!-- Alternating Rows -->
+                <div class="product-description__row">
+                  <div class="product-description__media">
+                    <img src="/assets/images/prop_main.png" alt="Ергономіка крісла" class="product-description__img">
+                  </div>
+                  <div class="product-description__info">
+                    <h3 class="product-description__subtitle">Ергономіка та комфорт</h3>
+                    <p class="product-description__text">
+                      Крісло виготовлено з високоякісних матеріалів, які забезпечують довговічність та зручність у використанні. Тканина, якою покрите крісло, не лише приємна на дотик, але й стійка до зносу, що робить його ідеальним вибором для тривалих ігрових або робочих сесій.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-description__row product-description__row--reverse">
+                  <div class="product-description__media">
+                    <img src="/assets/images/prop_gaming.png" alt="Підтримка спини" class="product-description__img">
+                  </div>
+                  <div class="product-description__info">
+                    <h3 class="product-description__subtitle">Анатомічна підтримка</h3>
+                    <p class="product-description__text">
+                      Спеціальна анатомічна спинка підтримує ваш хребет у правильному положенні, зводячи до мінімуму навантаження на поперек та плечі. Регульовані підлокітники та механізм гойдання дозволяють налаштувати крісло під ваші індивідуальні потреби.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Large Video Promo Banner -->
+                <div class="product-description__promo-banner" id="video-review">
+                  <img src="/assets/images/banner.png" alt="Огляд нового крісла" class="product-description__banner-img">
+                  <div class="product-description__banner-overlay">
+                    <div class="product-description__banner-text">
+                      <span>МИ ПІКЛУЄМОСЬ ПРО ВАШ КОМФОРТ</span>
+                      <h2>ОГЛЯД НОВОГО КРІСЛА</h2>
+                    </div>
+                    <button class="product-description__banner-play-btn js-banner-video-play" data-video-id="dQw4w9WgXcQ" aria-label="Play promo video">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="product-description__banner-video-container js-banner-video-container"></div>
+                </div>
+
+                <!-- Video Thumbnails Grid -->
+                <div class="product-description__video-thumbs">
+                  <a href="#" class="product-description__video-thumb js-video-thumb-trigger" data-video-id="dQw4w9WgXcQ">
+                    <div class="product-description__video-thumb-preview">
+                      <img src="/assets/images/prop_office.png" alt="Повний огляд">
+                      <span class="play-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+                      </span>
+                    </div>
+                    <span class="product-description__video-thumb-title">Дивитись повний огляд крісла</span>
+                  </a>
+                  
+                  <a href="#" class="product-description__video-thumb js-video-thumb-trigger" data-video-id="dQw4w9WgXcQ">
+                    <div class="product-description__video-thumb-preview">
+                      <img src="/assets/images/prop_gaming.png" alt="Збирання крісла">
+                      <span class="play-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+                      </span>
+                    </div>
+                    <span class="product-description__video-thumb-title">Дивитись як збирати крісло</span>
+                  </a>
+
+                  <a href="#" class="product-description__video-thumb js-video-thumb-trigger" data-video-id="dQw4w9WgXcQ">
+                    <div class="product-description__video-thumb-preview">
+                      <img src="/assets/images/prop_main.png" alt="Відео-інструкція">
+                      <span class="play-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8 5v14l11-7z"/></svg>
+                      </span>
+                    </div>
+                    <span class="product-description__video-thumb-title">Дивитись відео-інструкцію</span>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Tab: Specifications -->
+            <div class="product-content__tab-pane" id="tab-specs">
+              <div class="product-specifications">
+                <h2 class="product-specifications__title">Характеристики</h2>
+                
+                <div class="product-specifications__table">
+                  <div class="product-specifications__row">
+                    <span class="product-specifications__label">Країна-виробник</span>
+                    <span class="product-specifications__value">Україна</span>
+                  </div>
+                  <div class="product-specifications__row">
+                    <span class="product-specifications__label">Максимальне навантаження</span>
+                    <span class="product-specifications__value">120 кг</span>
+                  </div>
+                  <div class="product-specifications__row">
+                    <span class="product-specifications__label">Матеріал оббивки</span>
+                    <span class="product-specifications__value">Зносостійка дихаюча тканина</span>
+                  </div>
+                  <div class="product-specifications__row">
+                    <span class="product-specifications__label">Матеріал хрестовини</span>
+                    <span class="product-specifications__value">Хромована сталь</span>
+                  </div>
+                  <div class="product-specifications__row">
+                    <span class="product-specifications__label">Регулювання</span>
+                    <span class="product-specifications__value">Висота сидіння, кут нахилу спинки, висота підлокітників</span>
+                  </div>
+                  <div class="product-specifications__row">
+                    <span class="product-specifications__label">Основа</span>
+                    <span class="product-specifications__value">Коліщатка з прогумованим покриттям (безпечні для паркету)</span>
+                  </div>
+                  <div class="product-specifications__row">
+                    <span class="product-specifications__label">Розміри спинки (ШхВ)</span>
+                    <span class="product-specifications__value">52 х 85 см</span>
+                  </div>
+                  <div class="product-specifications__row">
+                    <span class="product-specifications__label">Вага крісла</span>
+                    <span class="product-specifications__value">18.5 кг</span>
+                  </div>
+                  <div class="product-specifications__row">
+                    <span class="product-specifications__label">Механізм гойдання</span>
+                    <span class="product-specifications__value">Anyfix (з можливістю фіксації в будь-якому положенні)</span>
+                  </div>
+                  <div class="product-specifications__row">
+                    <span class="product-specifications__label">Гарантія</span>
+                    <span class="product-specifications__value">12 місяців</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Tab: Reviews -->
+            <div class="product-content__tab-pane" id="tab-reviews">
+              <div class="product-reviews" id="reviews">
+                <h2 class="product-reviews__title">Відгуки та питання</h2>
+                
+                <!-- Summary Card -->
+                <div class="product-reviews__summary">
+                  <div class="product-reviews__score-box">
+                    <span class="product-reviews__score-num">4.8</span>
+                    <div class="product-reviews__score-stars">
+                      <svg class="active"><use href="#icon-star"></use></svg>
+                      <svg class="active"><use href="#icon-star"></use></svg>
+                      <svg class="active"><use href="#icon-star"></use></svg>
+                      <svg class="active"><use href="#icon-star"></use></svg>
+                      <svg class="active"><use href="#icon-star"></use></svg>
+                    </div>
+                    <span class="product-reviews__score-total">На основі 600 відгуків</span>
+                  </div>
+
+                  <div class="product-reviews__bars">
+                    <div class="product-reviews__bar-item">
+                      <span>5 зірок</span>
+                      <div class="progress-bar"><div class="progress-bar__fill" style="width: 82%;"></div></div>
+                      <span>82%</span>
+                    </div>
+                    <div class="product-reviews__bar-item">
+                      <span>4 зірки</span>
+                      <div class="progress-bar"><div class="progress-bar__fill" style="width: 12%;"></div></div>
+                      <span>12%</span>
+                    </div>
+                    <div class="product-reviews__bar-item">
+                      <span>3 зірки</span>
+                      <div class="progress-bar"><div class="progress-bar__fill" style="width: 4%;"></div></div>
+                      <span>4%</span>
+                    </div>
+                    <div class="product-reviews__bar-item">
+                      <span>2 зірки</span>
+                      <div class="progress-bar"><div class="progress-bar__fill" style="style-width: 1%;"></div></div>
+                      <span>1%</span>
+                    </div>
+                    <div class="product-reviews__bar-item">
+                      <span>1 зірка</span>
+                      <div class="progress-bar"><div class="progress-bar__fill" style="style-width: 1%;"></div></div>
+                      <span>1%</span>
+                    </div>
+                  </div>
+
+                  <div class="product-reviews__action">
+                    <button class="btn btn--secondary product-reviews__write-btn">Залишити відгук</button>
+                  </div>
+                </div>
+
+                <!-- Reviews Filters -->
+                <div class="product-reviews__filters">
+                  <button class="product-reviews__filter-btn product-reviews__filter-btn--active">Усі відгуки (600)</button>
+                  <button class="product-reviews__filter-btn">З фото та відео (142)</button>
+                  <button class="product-reviews__filter-btn">Живі питання (15)</button>
+                </div>
+
+                <!-- Reviews List -->
+                <div class="product-reviews__list">
+                  
+                  <!-- Review 1 -->
+                  <article class="review-card">
+                    <div class="review-card__header">
+                      <div class="review-card__user">
+                        <strong>Дмитро К.</strong>
+                        <span class="review-card__date">20 жовтня 2025 р.</span>
+                      </div>
+                      <div class="review-card__rating">
+                        <svg class="active"><use href="#icon-star"></use></svg>
+                        <svg class="active"><use href="#icon-star"></use></svg>
+                        <svg class="active"><use href="#icon-star"></use></svg>
+                        <svg class="active"><use href="#icon-star"></use></svg>
+                        <svg class="active"><use href="#icon-star"></use></svg>
+                      </div>
+                    </div>
+                    <div class="review-card__meta">
+                      <span class="review-card__badge review-card__badge--verified">Перевірений покупець</span>
+                      <span class="review-card__badge review-card__badge--recommend">Рекомендую товар</span>
+                    </div>
+                    <p class="review-card__text">
+                      Крісло перевершило мої очікування! Дуже м'яке, але водночас добре тримає поставу. Механізм Anyfix працює плавно, регулюється без зусиль. Колеса дійсно прогумовані і не дряпають ламінат. Збирання зайняло всього 20 хвилин за інструкцією. Рекомендую всім!
+                    </p>
+                    <div class="review-card__gallery">
+                      <img src="/assets/images/prop_office.png" alt="Фото від покупця" class="review-card__gallery-img">
+                      <img src="/assets/images/prop_gaming.png" alt="Фото від покупця" class="review-card__gallery-img">
+                      <img src="/assets/images/chair.png" alt="Фото від покупця" class="review-card__gallery-img">
+                    </div>
+                    <div class="review-card__footer">
+                      <span>Вам допоміг цей відгук?</span>
+                      <div class="review-card__feedback-btns">
+                        <button class="review-card__feedback-btn" aria-label="Так">
+                          <span>Так</span> (12)
+                        </button>
+                        <button class="review-card__feedback-btn" aria-label="Ні">
+                          <span>Ні</span> (1)
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+
+                  <!-- Review 2 -->
+                  <article class="review-card">
+                    <div class="review-card__header">
+                      <div class="review-card__user">
+                        <strong>Ольга В.</strong>
+                        <span class="review-card__date">18 жовтня 2025 р.</span>
+                      </div>
+                      <div class="review-card__rating">
+                        <svg class="active"><use href="#icon-star"></use></svg>
+                        <svg class="active"><use href="#icon-star"></use></svg>
+                        <svg class="active"><use href="#icon-star"></use></svg>
+                        <svg class="active"><use href="#icon-star"></use></svg>
+                        <svg class="active"><use href="#icon-star"></use></svg>
+                      </div>
+                    </div>
+                    <div class="review-card__meta">
+                      <span class="review-card__badge review-card__badge--verified">Перевірений покупець</span>
+                      <span class="review-card__badge review-card__badge--recommend">Рекомендую товар</span>
+                    </div>
+                    <p class="review-card__text">
+                      Дуже гарний блакитний колір, чудово вписався в інтер'єр домашнього офісу. Спина взагалі не втомлюється за весь робочий день. Тканина дихає, влітку сидіти комфортно. Дякую магазину за швидку доставку!
+                    </p>
+                    <div class="review-card__footer">
+                      <span>Вам допоміг цей відгук?</span>
+                      <div class="review-card__feedback-btns">
+                        <button class="review-card__feedback-btn" aria-label="Так">
+                          <span>Так</span> (5)
+                        </button>
+                        <button class="review-card__feedback-btn" aria-label="Ні">
+                          <span>Ні</span> (0)
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+
+                </div>
+              </div>
+            </div>
+
+          </div> <!-- End of Tabs Content -->
+
+          <!-- Related Products Carousel -->
+          <div class="product-related">
+            <div class="product-related__header">
+              <h2 class="product-related__title">Також вас може зацікавити</h2>
+              <div class="product-related__nav">
+                <button class="product-slider__btn product-slider__btn--prev" aria-label="Назад">
+                  <svg><use href="#icon-chewron-left"></use></svg>
+                </button>
+                <button class="product-slider__btn product-slider__btn--next" aria-label="Вперед">
+                  <svg><use href="#icon-chewron-right"></use></svg>
+                </button>
+              </div>
+            </div>
+            
+            <div class="swiper product-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <load src="/parts/product-card.html" />
+                </div>
+                <div class="swiper-slide">
+                  <load src="/parts/product-card.html" modifier="product-card--sale" />
+                </div>
+                <div class="swiper-slide">
+                  <load src="/parts/product-card.html" modifier="product-card--preorder" />
+                </div>
+                <div class="swiper-slide">
+                  <load src="/parts/product-card.html" />
+                </div>
+                <div class="swiper-slide">
+                  <load src="/parts/product-card.html" modifier="product-card--out-of-stock" />
+                </div>
+              </div>
+            </div>
+          </div> <!-- End of Related Products -->
+
+        </div>
       </div>
     </main>
+
+    <load src="/parts/footer.html" />
   </div>
+
   <script type="module" src="/js/main.js"></script>
 </body>
 </html>

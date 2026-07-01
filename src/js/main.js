@@ -12,6 +12,8 @@ import { initModals } from './modules/modal.js';
 
 import { initHeroSlider } from './modules/hero-slider.js';
 import { initProductSlider } from './modules/product-slider.js';
+import { initProductGallery } from './modules/product-gallery.js';
+import { initProductTabs } from './modules/product-tabs.js';
 
 // Initialize preloader as early as possible
 initPreloader();
@@ -23,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initHeroSlider();
   initProductSlider();
+  initProductGallery();
+  initProductTabs();
 
   console.log('Golef site initialized');
 });

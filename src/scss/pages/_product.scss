@@ -1,0 +1,1511 @@
+// ============================================
+// PRODUCT PAGE STYLES - Golef Design System
+// ============================================
+
+@use 'sass:math';
+@use '../abstracts' as *;
+
+.product-page {
+  background-color: $white;
+
+  &__breadcrumbs {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+// --------------------------------------------
+// PRODUCT HERO (Top Info & Gallery)
+// --------------------------------------------
+.product-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+
+  @include breakpoint((max: 960px)) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  // Left side: Gallery
+  &__gallery {
+    width: 100%;
+  }
+
+  // Right side: Details
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__title {
+    font-family: $font-family-base;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $black;
+    margin: 0;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      font-size: 24px;
+    }
+  }
+
+  // Rating & Reviews Card
+  &__rating-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 16px;
+    background-color: $neutral-50;
+    border-radius: $radius-md;
+  }
+
+  &__rating-title {
+    font-family: $font-family-base;
+    font-size: 16px;
+    font-weight: 600;
+    color: $neutral-1000;
+  }
+
+  &__rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__stars-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    color: $yellow-500;
+    fill: currentColor;
+  }
+
+  &__reviews-link {
+    font-family: $font-family-base;
+    font-size: 14px;
+    font-weight: 600;
+    color: $neutral-1000;
+    text-decoration: underline;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $blue-700;
+    }
+  }
+
+  // Colors list selector
+  &__colors {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__colors-title {
+    font-family: $font-family-base;
+    font-size: 16px;
+    font-weight: 600;
+    color: $neutral-1000;
+  }
+
+  &__colors-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__color-btn {
+    width: 34px;
+    height: 34px;
+    padding: 5px;
+    border-radius: $radius-sm;
+    background-color: $neutral-200;
+    border: 1px solid transparent;
+    cursor: pointer;
+    position: relative;
+    transition: border-color $transition-fast, transform $transition-fast;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: $radius-xs;
+      background-color: var(--swatch-color);
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      border-color: $neutral-400;
+    }
+
+    &--active {
+      border-color: $blue-900;
+      box-shadow: 0 0 0 2px rgba($blue-900, 0.2);
+    }
+  }
+
+  // Purchase Panel
+  &__purchase-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: $spacing-md;
+    background-color: $neutral-50;
+    border-radius: $radius-md;
+  }
+
+  &__price-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-md;
+  }
+
+  &__availability {
+    display: flex;
+    align-items: center;
+  }
+
+  &__availability-status {
+    font-family: $font-family-base;
+    font-size: 14px;
+    font-weight: 700;
+    
+    &--in-stock {
+      color: $green-300;
+    }
+  }
+
+  &__price-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  &__price-old {
+    font-family: $font-family-base;
+    font-size: 14px;
+    font-weight: 600;
+    color: $neutral-550;
+    text-decoration: line-through;
+  }
+
+  &__price-current {
+    font-family: $font-family-base;
+    font-size: 24px;
+    font-weight: 700;
+    color: $red-500;
+    line-height: 1.2;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    border-radius: $radius-sm;
+    background-color: rgba($blue-300, 0.3);
+    border: none;
+    color: $neutral-550;
+    cursor: pointer;
+    transition: background-color $transition-fast, color $transition-fast;
+
+    &:hover {
+      background-color: rgba($blue-300, 0.6);
+      color: $blue-900;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+  }
+
+  &__buy-actions {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 16px;
+
+    @include breakpoint((max: $breakpoint-mobile-lg)) {
+      grid-template-columns: 1fr;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      height: 48px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: $radius-sm;
+      cursor: pointer;
+    }
+
+    .btn--primary {
+      background-color: $blue-900;
+      color: $white;
+      border: none;
+      transition: background-color $transition-fast;
+
+      &:hover {
+        background-color: $blue-700;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+      }
+    }
+
+    .btn--outline {
+      background-color: $white;
+      color: $blue-900;
+      border: 1px solid $blue-900;
+      transition: background-color $transition-fast, color $transition-fast;
+
+      &:hover {
+        background-color: $blue-900;
+        color: $white;
+      }
+    }
+  }
+
+  // Banks Block
+  &__banks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid rgba($neutral-500, 0.1);
+    padding-top: 16px;
+  }
+
+  &__banks-title {
+    font-family: $font-family-base;
+    font-size: 14px;
+    font-weight: 600;
+    color: $neutral-1000;
+  }
+
+  &__banks-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__bank-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: $neutral-200;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    overflow: hidden;
+    transition: opacity $transition-fast;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__bank-badge {
+    font-family: $font-family-base;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+
+    &.mono {
+      color: #ffffff;
+      background: #111111;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+    &.privat {
+      color: #ffffff;
+      background: #73B433;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+    &.oschad {
+      color: #ffffff;
+      background: #007D56;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+    &.abank {
+      color: #111111;
+      background: #A0C516;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+    &.pumb {
+      color: #ffffff;
+      background: #FF2630;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+    &.sense {
+      color: #ffffff;
+      background: #E30613;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+  }
+
+  // Delivery & Conditions
+  &__conditions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background-color: $neutral-50;
+    border-radius: $radius-md;
+  }
+
+  &__condition-item {
+    font-family: $font-family-base;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $neutral-1000;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  &__delivery {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background-color: $neutral-50;
+    border-radius: $radius-md;
+  }
+
+  &__delivery-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: $font-family-base;
+    font-size: 14px;
+    color: $neutral-1000;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  &__delivery-icon {
+    width: 18px;
+    height: 18px;
+    color: $neutral-1000;
+  }
+
+  &__delivery-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__delivery-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: $font-family-base;
+    font-size: 14px;
+    font-weight: 600;
+    color: $neutral-1000;
+
+    .free {
+      color: $green-400;
+      font-weight: 700;
+    }
+  }
+}
+
+// --------------------------------------------
+// GALLERY COMPONENT (Main + Thumbs Swipers)
+// --------------------------------------------
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-gallery-main {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: $neutral-50;
+  border: 1px solid $neutral-350;
+  border-radius: $radius-lg;
+  overflow: hidden;
+
+  &__img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+  }
+
+  &__img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  // Video Slide Inside Main Swiper
+  &__video-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: $black;
+  }
+
+  &__video-cover {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 24px;
+    background-color: $neutral-50;
+    z-index: 2;
+
+    img {
+      opacity: 0.6;
+    }
+  }
+
+  &__video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba($blue-900, 0.9);
+    border: none;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform $transition-fast, background-color $transition-fast;
+    z-index: 3;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+      background-color: $blue-700;
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+      margin-left: 4px;
+    }
+  }
+
+  &__video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}
+
+.product-gallery-thumbs-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.product-gallery-thumbs {
+  flex-grow: 1;
+  overflow: hidden;
+
+  .swiper-slide {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity $transition-fast;
+
+    &-thumb-active {
+      opacity: 1;
+
+      .product-gallery-thumbs__item {
+        border-color: $blue-900;
+        box-shadow: 0 0 0 2px rgba($blue-900, 0.15);
+      }
+    }
+  }
+}
+
+.product-gallery-thumbs__item {
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  padding: 4px;
+  border-radius: $radius-sm;
+  background-color: $neutral-50;
+  border: 1px solid $neutral-300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: border-color $transition-fast;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  &--video {
+    background-color: $neutral-200;
+    color: $blue-900;
+
+    .product-gallery-thumbs__video-icon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+.product-gallery-thumbs-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba($blue-300, 0.3);
+  border: none;
+  color: $blue-900;
+  cursor: pointer;
+  transition: background-color $transition-fast, color $transition-fast;
+
+  &:hover {
+    background-color: rgba($blue-300, 0.6);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
+// --------------------------------------------
+// STICKY NAVIGATION BAR
+// --------------------------------------------
+.product-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  background-color: $white;
+  border-bottom: 1px solid rgba($blue-700, 0.3);
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  @include breakpoint((max: $breakpoint-tablet)) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    position: relative;
+    top: auto;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      justify-content: center;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: $font-family-base;
+    font-size: 16px;
+    font-weight: 600;
+    color: $blue-900;
+    text-decoration: none;
+    padding: 8px 12px;
+    background-color: $neutral-50;
+    border: 1px solid $neutral-300;
+    border-radius: $radius-sm;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: $neutral-200;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      justify-content: center;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+  }
+
+  &__tab-btn {
+    font-family: $font-family-base;
+    font-size: 16px;
+    font-weight: 600;
+    color: $neutral-550;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 8px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color $transition-fast, border-color $transition-fast;
+
+    &:hover {
+      color: $blue-900;
+    }
+
+    &--active {
+      color: $blue-900;
+      border-color: $blue-900;
+    }
+  }
+}
+
+// --------------------------------------------
+// TABS CONTENT PANES
+// --------------------------------------------
+.product-content {
+  margin-bottom: 60px;
+
+  &__tab-pane {
+    display: none;
+
+    &--active {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// --------------------------------------------
+// TAB: DESCRIPTION
+// --------------------------------------------
+.product-description {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  &__title {
+    font-family: $font-family-base;
+    font-size: 32px;
+    font-weight: 700;
+    color: $neutral-1000;
+    margin: 0;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      font-size: 24px;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    align-items: center;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    &--reverse {
+      grid-template-columns: 1fr 1.1fr;
+
+      @include breakpoint((max: $breakpoint-tablet)) {
+        grid-template-columns: 1fr;
+      }
+
+      .product-description__media {
+        grid-column: 2;
+
+        @include breakpoint((max: $breakpoint-tablet)) {
+          grid-column: 1;
+        }
+      }
+      .product-description__info {
+        grid-column: 1;
+
+        @include breakpoint((max: $breakpoint-tablet)) {
+          grid-column: 1;
+        }
+      }
+    }
+  }
+
+  &__media {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    background-color: $neutral-50;
+    border: 1px solid $neutral-300;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: $spacing-xl;
+    background-color: $neutral-50;
+    border-radius: $radius-lg;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      padding: 16px;
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-family-base;
+    font-size: 24px;
+    font-weight: 700;
+    color: $black;
+    margin: 0;
+  }
+
+  &__text {
+    font-family: $font-family-base;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: $black;
+    margin: 0;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      font-size: 16px;
+    }
+  }
+
+  // Large Video Promo Banner
+  &__promo-banner {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    position: relative;
+    background-color: $black;
+    box-shadow: $shadow-lg;
+
+    &.js-banner-playing {
+      .product-description__banner-overlay {
+        display: none;
+      }
+    }
+  }
+
+  &__banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+  }
+
+  &__banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 32px;
+    text-align: center;
+    z-index: 2;
+  }
+
+  &__banner-text {
+    color: $white;
+
+    span {
+      font-family: $font-family-base;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-family: $font-family-base;
+      font-size: 40px;
+      font-weight: 700;
+      margin: 8px 0 0;
+
+      @include breakpoint((max: $breakpoint-tablet)) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__banner-play-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: $red-500;
+    border: none;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba($red-500, 0.4);
+    transition: transform $transition-fast, background-color $transition-fast;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: $red-600;
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+      margin-left: 4px;
+    }
+  }
+
+  &__banner-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+
+  // Video Thumbnails Grid
+  &__video-thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  &__video-thumb {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform $transition-fast;
+
+    &:hover {
+      transform: translateY(-4px);
+
+      .play-badge {
+        background-color: $red-500;
+      }
+    }
+  }
+
+  &__video-thumb-preview {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    border-radius: $radius-md;
+    overflow: hidden;
+    background-color: $neutral-50;
+    border: 1px solid $neutral-300;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .play-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: rgba($blue-900, 0.85);
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      transition: background-color $transition-fast;
+
+      svg {
+        margin-left: 2px;
+      }
+    }
+  }
+
+  &__video-thumb-title {
+    font-family: $font-family-base;
+    font-size: 16px;
+    font-weight: 600;
+    color: $blue-900;
+    line-height: 1.25;
+  }
+}
+
+// --------------------------------------------
+// TAB: SPECIFICATIONS
+// --------------------------------------------
+.product-specifications {
+  &__title {
+    font-family: $font-family-base;
+    font-size: 32px;
+    font-weight: 700;
+    color: $neutral-1000;
+    margin: 0 0 24px;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      font-size: 24px;
+    }
+  }
+
+  &__table {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $neutral-300;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    background-color: $white;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    padding: 16px 24px;
+    border-bottom: 1px solid $neutral-300;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      grid-template-columns: 1fr;
+      gap: 4px;
+      padding: 12px 16px;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:nth-child(even) {
+      background-color: $neutral-50;
+    }
+  }
+
+  &__label {
+    font-family: $font-family-base;
+    font-size: 16px;
+    font-weight: 600;
+    color: $neutral-1000;
+  }
+
+  &__value {
+    font-family: $font-family-base;
+    font-size: 16px;
+    font-weight: 400;
+    color: $neutral-850;
+    line-height: 1.4;
+  }
+}
+
+// --------------------------------------------
+// TAB: REVIEWS
+// --------------------------------------------
+.product-reviews {
+  &__title {
+    font-family: $font-family-base;
+    font-size: 32px;
+    font-weight: 700;
+    color: $neutral-1000;
+    margin: 0 0 24px;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      font-size: 24px;
+    }
+  }
+
+  // Summary Card
+  &__summary {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.2fr;
+    gap: 32px;
+    align-items: center;
+    padding: 32px;
+    background-color: $neutral-50;
+    border-radius: $radius-lg;
+    margin-bottom: 40px;
+
+    @include breakpoint((max: 960px)) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 20px;
+    }
+  }
+
+  &__score-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid rgba($neutral-500, 0.15);
+    padding-right: 32px;
+
+    @include breakpoint((max: 960px)) {
+      border-right: none;
+      padding-right: 0;
+      border-bottom: 1px solid rgba($neutral-500, 0.15);
+      padding-bottom: 16px;
+    }
+  }
+
+  &__score-num {
+    font-family: $font-family-base;
+    font-size: 64px;
+    font-weight: 900;
+    color: $neutral-1000;
+    line-height: 1;
+  }
+
+  &__score-stars {
+    display: flex;
+    gap: 4px;
+    margin: 12px 0 8px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: $neutral-300;
+      fill: currentColor;
+
+      &.active {
+        color: $yellow-500;
+      }
+    }
+  }
+
+  &__score-total {
+    font-family: $font-family-base;
+    font-size: 14px;
+    font-weight: 600;
+    color: $neutral-550;
+  }
+
+  &__bars {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-right: 1px solid rgba($neutral-500, 0.15);
+    padding-right: 32px;
+
+    @include breakpoint((max: 960px)) {
+      border-right: none;
+      padding-right: 0;
+      border-bottom: 1px solid rgba($neutral-500, 0.15);
+      padding-bottom: 16px;
+    }
+  }
+
+  &__bar-item {
+    display: grid;
+    grid-template-columns: 60px 1fr 40px;
+    align-items: center;
+    gap: 12px;
+    font-family: $font-family-base;
+    font-size: 14px;
+    font-weight: 600;
+    color: $neutral-1000;
+
+    .progress-bar {
+      height: 6px;
+      background-color: $neutral-200;
+      border-radius: 3px;
+      overflow: hidden;
+
+      &__fill {
+        height: 100%;
+        background-color: $yellow-500;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  &__action {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__write-btn {
+    width: 100%;
+    max-width: 240px;
+    height: 48px;
+    background-color: $yellow-500;
+    color: $neutral-1000;
+    border: none;
+    border-radius: $radius-sm;
+    font-family: $font-family-base;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: $yellow-300;
+    }
+  }
+
+  // Reviews Filtering Tabs
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  &__filter-btn {
+    font-family: $font-family-base;
+    font-size: 14px;
+    font-weight: 600;
+    color: $neutral-850;
+    background-color: $neutral-50;
+    border: 1px solid $neutral-300;
+    padding: 8px 16px;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    transition: background-color $transition-fast, color $transition-fast;
+
+    &:hover {
+      background-color: $neutral-200;
+      color: $neutral-1000;
+    }
+
+    &--active {
+      background-color: $blue-900;
+      color: $white;
+      border-color: $blue-900;
+
+      &:hover {
+        background-color: $blue-700;
+        color: $white;
+      }
+    }
+  }
+
+  // Reviews List
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+// Review Card Component
+.review-card {
+  padding: 24px;
+  border: 1px solid $neutral-300;
+  border-radius: $radius-lg;
+  background-color: $white;
+  box-shadow: $shadow-sm;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  &__user {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    strong {
+      font-family: $font-family-base;
+      font-size: 16px;
+      font-weight: 700;
+      color: $neutral-1000;
+    }
+  }
+
+  &__date {
+    font-family: $font-family-base;
+    font-size: 12px;
+    color: $neutral-550;
+  }
+
+  &__rating {
+    display: flex;
+    gap: 2px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+      color: $neutral-300;
+      fill: currentColor;
+
+      &.active {
+        color: $yellow-500;
+      }
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  &__badge {
+    font-family: $font-family-base;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 100px;
+
+    &--verified {
+      background-color: rgba($green-300, 0.1);
+      color: $green-400;
+    }
+
+    &--recommend {
+      background-color: rgba($blue-500, 0.1);
+      color: $blue-700;
+    }
+  }
+
+  &__text {
+    font-family: $font-family-base;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $neutral-850;
+    margin: 0 0 16px;
+  }
+
+  &__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  &__gallery-img {
+    width: 60px;
+    height: 60px;
+    border-radius: $radius-sm;
+    object-fit: cover;
+    border: 1px solid $neutral-300;
+    cursor: pointer;
+    transition: opacity $transition-fast;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-top: 1px solid rgba($neutral-500, 0.1);
+    padding-top: 16px;
+    font-family: $font-family-base;
+    font-size: 14px;
+    color: $neutral-550;
+  }
+
+  &__feedback-btns {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__feedback-btn {
+    background: transparent;
+    border: none;
+    font-family: $font-family-base;
+    font-size: 14px;
+    font-weight: 600;
+    color: $neutral-550;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: $radius-sm;
+    transition: background-color $transition-fast, color $transition-fast;
+
+    &:hover {
+      background-color: $neutral-50;
+      color: $neutral-1000;
+    }
+  }
+}
+
+// --------------------------------------------
+// RELATED PRODUCTS CAROUSEL
+// --------------------------------------------
+.product-related {
+  border-top: 1px solid rgba($neutral-500, 0.15);
+  padding-top: 60px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-family: $font-family-base;
+    font-size: 32px;
+    font-weight: 700;
+    color: $neutral-1000;
+    margin: 0;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      font-size: 24px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .product-slider__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: $neutral-50;
+      border: 1px solid $neutral-300;
+      color: $neutral-850;
+      cursor: pointer;
+      transition: background-color $transition-fast, color $transition-fast;
+
+      &:hover {
+        background-color: $blue-900;
+        color: $white;
+        border-color: $blue-900;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        stroke: currentColor;
+        stroke-width: 2;
+        fill: none;
+      }
+
+      &.swiper-button-disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+        background-color: $neutral-50;
+        color: $neutral-850;
+        border-color: $neutral-300;
+      }
+    }
+  }
+}
