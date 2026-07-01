@@ -130,20 +130,18 @@
     width: 34px;
     height: 34px;
     border-radius: 3px;
-    background-color: transparent;
-    border: 1px solid transparent;
+    background-color: #DEE2E6;
+    border: none;
     cursor: pointer;
     padding: 0;
-    transition: border-color $transition-fast, box-shadow $transition-fast, transform $transition-fast;
+    transition: background-color $transition-fast, transform $transition-fast;
 
     &:hover {
       transform: scale(1.05);
-      border-color: $neutral-400;
     }
 
     &--active {
-      border-color: $blue-900;
-      box-shadow: 0 0 0 2px $white, 0 0 0 4px $blue-900;
+      background-color: #102C56;
     }
   }
 
@@ -152,7 +150,7 @@
     height: 24px;
     border-radius: 3px;
     display: block;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
   }
 
   // Purchase Panel
