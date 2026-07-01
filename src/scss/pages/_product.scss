@@ -134,10 +134,10 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    transition: background-color $transition-fast, transform $transition-fast;
+    transition: background-color $transition-fast;
 
     &:hover {
-      transform: scale(1.05);
+      background-color: #325C9B;
     }
 
     &--active {
