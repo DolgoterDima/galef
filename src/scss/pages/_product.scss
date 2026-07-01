@@ -354,12 +354,22 @@
     border-radius: 3px;
     padding: 4px;
 
+    @media (max-width: 1199px) {
+      width: 40px;
+      height: 40px;
+    }
+
     svg {
       width: 40px;
       height: 40px;
       border-radius: 3px;
       display: block;
       object-fit: contain;
+
+      @media (max-width: 1199px) {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
 
