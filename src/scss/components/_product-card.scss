@@ -197,6 +197,11 @@ $base-card-width: 322;
   &__link {
     color: inherit;
     text-decoration: none;
+    transition: color $transition-base;
+
+    &:hover {
+      color: inherit;
+    }
 
     &::after {
       content: "";
