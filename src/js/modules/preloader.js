@@ -1,99 +1,142 @@
 export function initPreloader() {
-  const preloader = document.getElementById('preloader');
-  const whiteBg = preloader?.querySelector('.preloader__white-bg');
+  const isFirstLaunch = !localStorage.getItem('firstLaunchDone');
 
-  if (!preloader || !whiteBg) return;
+  if (isFirstLaunch) {
+    const preloaderLogo = document.getElementById('preloader-logo');
+    const whiteBg = preloaderLogo?.querySelector('.preloader-logo__white-bg');
+    if (!preloaderLogo || !whiteBg) return;
 
-  let loaded = false;
+    let loaded = false;
 
-  const onPageReady = () => {
-    if (loaded) return;
-    loaded = true;
+    const onPageReady = () => {
+      if (loaded) return;
+      loaded = true;
 
-    // Determine the active header logo (desktop or mobile) depending on viewport width
-    const desktopLogo = document.querySelector('.header__desktop .header__logo img');
-    const mobileLogo = document.querySelector('.header__mobile .header__logo img');
-    let targetLogo = window.innerWidth >= 960 ? desktopLogo : mobileLogo;
+      // Determine the active header logo (desktop or mobile) depending on viewport width
+      const desktopLogo = document.querySelector('.header__desktop .header__logo img');
+      const mobileLogo = document.querySelector('.header__mobile .header__logo img');
+      let targetLogo = window.innerWidth >= 960 ? desktopLogo : mobileLogo;
 
-    if (!targetLogo) {
-      targetLogo = desktopLogo || mobileLogo;
-    }
+      if (!targetLogo) {
+        targetLogo = desktopLogo || mobileLogo;
+      }
 
-    const logoLink = targetLogo?.closest('.header__logo');
+      const logoLink = targetLogo?.closest('.header__logo');
 
-    if (!targetLogo || !logoLink) {
-      // Fallback: if header logo elements are not found, just fade out preloader
-      preloader.classList.add('preloader--hidden');
-      document.body.classList.remove('is-loading');
-      return;
-    }
+      if (!targetLogo || !logoLink) {
+        // Fallback: if header logo elements are not found, just fade out preloader
+        preloaderLogo.classList.add('preloader-logo--hidden');
+        document.body.classList.remove('is-loading-logo');
+        localStorage.setItem('firstLaunchDone', 'true');
+        return;
+      }
 
-    // Get positions for translation (includes viewport scroll offsets)
-    const targetRect = targetLogo.getBoundingClientRect();
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
+      // Get positions for translation (includes viewport scroll offsets)
+      const targetRect = targetLogo.getBoundingClientRect();
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
 
-    // Center of target logo in its natural state
-    const logoCenterX = targetRect.left + targetRect.width / 2;
-    const logoCenterY = targetRect.top + targetRect.height / 2;
+      // Center of target logo in its natural state
+      const logoCenterX = targetRect.left + targetRect.width / 2;
+      const logoCenterY = targetRect.top + targetRect.height / 2;
 
-    // Calculate translation delta to move the logo to the center of the viewport
-    const translateX = centerX - logoCenterX;
-    const translateY = centerY - logoCenterY;
+      // Calculate translation delta to move the logo to the center of the viewport
+      const translateX = centerX - logoCenterX;
+      const translateY = centerY - logoCenterY;
 
-    // Calculate scale factor: we want the centered logo to be prominent (e.g. ~540px wide on desktop, ~50% viewport width on mobile)
-    const scale = (window.innerWidth >= 960 ? Math.min(600, window.innerWidth * 0.45) : window.innerWidth * 0.5) / targetRect.width;
+      // Calculate scale factor: we want the centered logo to be prominent (e.g. ~540px wide on desktop, ~50% viewport width on mobile)
+      const scale = (window.innerWidth >= 960 ? Math.min(600, window.innerWidth * 0.45) : window.innerWidth * 0.5) / targetRect.width;
 
-    // Apply the centered and scaled transform immediately before making it visible
-    targetLogo.style.transition = 'none';
-    targetLogo.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+      // Apply the centered and scaled transform immediately before making it visible
+      targetLogo.style.transition = 'none';
+      targetLogo.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
 
-    // Show the logo link (which starts at opacity: 0 in CSS to prevent flicker)
-    logoLink.style.opacity = '1';
+      // Show the logo link (which starts at opacity: 0 in CSS to prevent flicker)
+      logoLink.style.opacity = '1';
 
-    // Step 1: Start Phase 1 (reveal white circle behind the centered logo)
-    whiteBg.style.clipPath = 'circle(150% at 50% 50%)';
+      // Step 1: Start Phase 1 (reveal white circle behind the centered logo)
+      whiteBg.style.clipPath = 'circle(150% at 50% 50%)';
 
-    // Step 2: Wait for Phase 1 to complete (1500ms), then start Phase 2 & 3 (flight back to layout)
-    setTimeout(() => {
-      // Remove loading class so that the header background and menu links fade in smoothly during flight
-      document.body.classList.remove('is-loading');
-
-      // Apply the transition style inline to ensure it overrides 'none'
-      targetLogo.style.transition = 'transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)';
+      // Step 2: Wait for Phase 1 to complete (1500ms), then start Phase 2 & 3 (flight back to layout)
+      setTimeout(() => {
       
-      // Force a browser reflow/repaint to apply the transition before we reset transform
-      targetLogo.offsetHeight;
 
-      // Reset transform to 'none' to let the transition glide it back to its exact natural layout position
-      targetLogo.style.transform = 'none';
+        // Remove loading class so that the header background and menu links fade in smoothly during flight
+        document.body.classList.remove('is-loading-logo');
+        document.body.classList.add('is-loading-logo-fadeout');
 
-      // Fade out the preloader backgrounds
-      preloader.classList.add('preloader--hidden');
-    }, 1500);
+        // Apply the transition style inline to ensure it overrides 'none'
+        targetLogo.style.transition = 'transform 1.3s cubic-bezier(0.65, 0, 0.35, 1)';
+        
+        // Force a browser reflow/repaint to apply the transition before we reset transform
+        targetLogo.offsetHeight;
 
-    // Step 3: Clean up classes and inline styles after flight completes
-    setTimeout(() => {
-      // Clean up inline styles so browser default layout rules take over
-      targetLogo.style.transform = '';
-      targetLogo.style.transition = '';
-      logoLink.style.opacity = '';
-    }, 2720); // 1500ms delay + 1220ms animation time
+        // Reset transform to 'none' to let the transition glide it back to its exact natural layout position
+        targetLogo.style.transform = 'none';
+
+        // Save visit flag
+        localStorage.setItem('firstLaunchDone', 'true');
+      }, 1500);
+
+      // Trigger fadeout of the backgrounds only when the logo is 70% through its flight (after 800ms of flight)
+      setTimeout(() => {
+        preloaderLogo.classList.add('preloader-logo--hidden');
+      }, 2300); // 1500ms delay + 800ms of flight
+ 
+      // Step 3: Clean up classes and inline styles after flight completes
+      setTimeout(() => {
+        // Clean up inline styles so browser default layout rules take over
+        targetLogo.style.transform = '';
+        targetLogo.style.transition = '';
+        logoLink.style.opacity = '';
+      }, 2820); // 1500ms delay + 1320ms animation time
 
 
-    // Final clean up: hide preloader wrapper completely
-    setTimeout(() => {
-      preloader.style.display = 'none';
-    }, 2950);
-  };
+      // Final clean up: hide preloader wrapper completely
+      setTimeout(() => {
+        document.body.classList.remove('is-loading-logo-fadeout');
+        preloaderLogo.style.display = 'none';
+      }, 3100);
+    };
 
-  // Run transition on DOMContentLoaded or immediately if already loaded
-  if (document.readyState === 'interactive' || document.readyState === 'complete') {
-    onPageReady();
+    // Run transition on DOMContentLoaded or immediately if already loaded
+    if (document.readyState === 'interactive' || document.readyState === 'complete') {
+      onPageReady();
+    } else {
+      document.addEventListener('DOMContentLoaded', onPageReady);
+    }
+
+    // Fallback timeout to prevent infinite loader if resource fails to load (4500ms)
+    setTimeout(onPageReady, 4500);
   } else {
-    document.addEventListener('DOMContentLoaded', onPageReady);
-  }
+    // RUN SIMPLE SPINNER PRELOADER (Subsequent launches)
+    const preloaderSimple = document.getElementById('preloader-simple');
+    if (!preloaderSimple) return;
 
-  // Fallback timeout to prevent infinite loader if resource fails to load (3500ms)
-  setTimeout(onPageReady, 3500);
+    let loaded = false;
+
+    const onPageReady = () => {
+      if (loaded) return;
+      loaded = true;
+
+      // Add hidden class to fade out the preloader (white bg + spinner)
+      preloaderSimple.classList.add('preloader-simple--hidden');
+
+      // Complete hiding after transition duration (800ms)
+      setTimeout(() => {
+        // Remove loading class from body to restore scroll only after fade completes
+        document.body.classList.remove('is-loading-simple');
+        preloaderSimple.style.display = 'none';
+      }, 800);
+    };
+
+    if (document.readyState === 'interactive' || document.readyState === 'complete') {
+      onPageReady();
+    } else {
+      document.addEventListener('DOMContentLoaded', onPageReady);
+    }
+
+    // A fallback timeout for subsequent page visits (e.g. 4 seconds)
+    setTimeout(onPageReady, 4000);
+  }
 }
