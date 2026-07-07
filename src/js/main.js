@@ -28,6 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductGallery();
   initProductTabs();
 
+  // Initialize sort dropdowns trigger text with the active item
+  document.querySelectorAll('.sort-dropdown').forEach(dropdown => {
+    const activeItem = dropdown.querySelector('.sort-dropdown__item--active');
+    const triggerText = dropdown.querySelector('.sort-dropdown__text');
+    if (activeItem && triggerText) {
+      triggerText.textContent = activeItem.textContent.trim();
+    }
+  });
+
   console.log('Golef site initialized');
 });
 
@@ -86,6 +95,13 @@ document.addEventListener('click', (event) => {
     const dropdown = sortItem.closest('.sort-dropdown');
     dropdown.querySelector('.sort-dropdown__item--active')?.classList.remove('sort-dropdown__item--active');
     sortItem.classList.add('sort-dropdown__item--active');
+    
+    // Update trigger text with the chosen option
+    const triggerText = dropdown.querySelector('.sort-dropdown__text');
+    if (triggerText) {
+      triggerText.textContent = sortItem.textContent.trim();
+    }
+    
     dropdown.removeAttribute('open');
   }
 
