@@ -1,5 +1,5 @@
 // ============================================
-// PRODUCT PAGE STYLES - Golef Design System
+// PRODUCT PAGE STYLES - Galef Design System
 // ============================================
 
 @use 'sass:math';
@@ -21,55 +21,52 @@
 .product-hero {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-bottom: 60px;
+  gap: 12px;
+  margin-bottom: 8px;
 
   @media (min-width: 960px) {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 32px;
-  }
-
-  @media (min-width: 1200px) {
-    gap: 0;
+    column-gap: 25px;
+    row-gap: 8px;
   }
 
   // Left side: Gallery
   &__gallery {
+    order: 1;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
 
     @media (min-width: 960px) {
-      width: 44.8%;
-      flex-shrink: 0;
-    }
-
-    @media (min-width: 1200px) {
-      width: 65%;
-    }
-
-    @media (min-width: 1440px) {
-      width: 65.07%;
+      flex: 1;
+      min-width: 0;
+      position: relative;
     }
   }
 
   // Right side: Details
   &__info {
+    order: 3;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 8px;
     width: 100%;
 
+    @media (min-width: 760px) {
+      order: 2;
+    }
+
     @media (min-width: 960px) {
-      width: 52.19%;
+      width: 100%;
+      max-width: 437px;
       flex-shrink: 0;
     }
 
     @media (min-width: 1200px) {
-      width: 34.92%;
-    }
-
-    @media (min-width: 1440px) {
-      width: 34.79%;
+      max-width: 350px;
     }
   }
 
@@ -78,7 +75,7 @@
     font-weight: 700;
     line-height: 1.2;
     color: $black;
-    margin: 26px 0;
+    margin: 0;
 
     &--mobile {
       font-size: 24px;
@@ -96,7 +93,7 @@
       @media (min-width: 960px) {
         display: block;
         margin-top: 0;
-        margin-bottom: 26px;
+        margin-bottom: 24px;
       }
     }
   }
@@ -114,8 +111,8 @@
   &__rating-title {
     font-family: $font-family-base;
     font-size: 16px;
-    font-weight: 600;
-    color: $neutral-1000;
+    font-weight: $font-weight-regular;
+    color: $black;
   }
 
   &__rating-stars {
@@ -140,8 +137,8 @@
   &__reviews-link {
     font-family: $font-family-base;
     font-size: 14px;
-    font-weight: 600;
-    color: $neutral-600;
+    font-weight: $font-weight-regular;
+    color: $black;
   }
 
   // Colors list selector
@@ -154,8 +151,8 @@
   &__colors-title {
     font-family: $font-family-base;
     font-size: 16px;
-    font-weight: 600;
-    color: $neutral-1000;
+    font-weight: $font-weight-regular;
+    color: $black;
   }
 
   &__colors-list {
@@ -198,7 +195,7 @@
   &__purchase-card {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
     padding: $spacing-md;
     background-color: $neutral-50;
     border-radius: $radius-md;
@@ -220,10 +217,10 @@
   &__availability-status {
     font-family: $font-family-base;
     font-size: 14px;
-    font-weight: 700;
-    
+    font-weight: $font-weight-regular;
+
     &--in-stock {
-      color: $green-300;
+      color: $text-positive;
     }
   }
 
@@ -238,100 +235,110 @@
     min-width: 75px;
     font-family: $font-family-base;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: $font-weight-regular;
     color: $neutral-550;
-    text-decoration: line-through;
     text-align: right;
   }
 
   &__price-current {
     font-family: $font-family-base;
     font-size: 24px;
-    font-weight: 700;
-    color: $red-500;
+    font-weight: $font-weight-semibold;
+    color: $red-700;
     line-height: 1.2;
   }
 
   &__actions {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    padding: 0;
     gap: 12px;
-  }
+    width: 76px;
+    height: 32px;
+    margin: 0;
 
-  &__action-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    padding: 6px;
-    border-radius: $radius-sm;
-    background-color: rgba($blue-300, 0.3);
-    border: none;
-    color: $neutral-550;
-    cursor: pointer;
-    transition: background-color $transition-fast, color $transition-fast;
+    .icon-btn {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 8px;
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      background-color: transparent;
+      border: none;
+      
+      &:hover {
+        background-color: $neutral-50;
+      }
 
-    &:hover {
-      background-color: rgba($blue-300, 0.6);
-      color: $blue-900;
-    }
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: currentColor;
+      }
 
-    svg {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
+      &:first-child {
+        color: #FF3637;
+      }
+
+      &:last-child {
+        color: #6C6D74;
+      }
     }
   }
 
   &__buy-actions {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    height: 33px;
 
     @include breakpoint((max: $breakpoint-mobile-lg)) {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+      height: auto;
+      width: 100%;
+      gap: 16px;
     }
 
     .btn {
       display: flex;
-      align-items: center;
+      flex-direction: row;
       justify-content: center;
-      gap: 10px;
-      height: 48px;
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
+      align-items: center;
+      padding: 8px 24px;
+      gap: 8px;
+      height: 33px;
+      border-radius: 3px;
+      font-family: $font-family-base;
       font-weight: 500;
-      border-radius: $radius-sm;
-      cursor: pointer;
+      font-size: 16px;
+      line-height: 19px;
+
+      @include breakpoint((max: $breakpoint-mobile-lg)) {
+        width: 100%;
+      }
     }
 
     .btn--primary {
-      background-color: $blue-900;
-      color: $white;
-      border: none;
-      transition: background-color $transition-fast;
-
-      &:hover {
-        background-color: $blue-700;
+      
+      @include breakpoint((max: $breakpoint-mobile-lg)) {
+        width: 100%;
       }
 
       svg {
-        width: 20px;
-        height: 20px;
-        fill: currentColor;
+        width: 24px;
+        height: 24px;
       }
     }
 
     .btn--outline {
-      background-color: $white;
-      color: $blue-900;
-      border: 1px solid $blue-900;
-      transition: background-color $transition-fast, color $transition-fast;
 
-      &:hover {
-        background-color: $blue-900;
-        color: $white;
+      @include breakpoint((max: $breakpoint-mobile-lg)) {
+        width: 100%;
       }
     }
   }
@@ -341,8 +348,6 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    border-top: 1px solid rgba($neutral-500, 0.1);
-    padding-top: 16px;
   }
 
   &__banks-title {
@@ -364,11 +369,11 @@
     justify-content: center;
     width: 48px;
     height: 48px;
-    background-color: #CED4DA;
+    background-color: $neutral-400;
     border-radius: 3px;
     padding: 4px;
 
-    @media (max-width: 1199px) {
+    @include breakpoint($bp-laptop-down) {
       width: 40px;
       height: 40px;
     }
@@ -380,7 +385,7 @@
       display: block;
       object-fit: contain;
 
-      @media (max-width: 1199px) {
+      @include breakpoint($bp-laptop-down) {
         width: 32px;
         height: 32px;
       }
@@ -399,12 +404,12 @@
 
   &__condition-item {
     font-family: $font-family-base;
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: $font-size-caption;
+    line-height: 1.5;
     color: $neutral-1000;
 
     strong {
-      font-weight: 700;
+      font-weight: $font-weight-bold;
     }
   }
 
@@ -451,13 +456,128 @@
     justify-content: space-between;
     gap: 12px;
     font-family: $font-family-base;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: $font-size-caption;
+    font-weight: $font-weight-semibold;
     color: $neutral-1000;
 
     .free {
-      color: $green-400;
-      font-weight: 700;
+      color: $text-positive;
+      font-weight: $font-weight-semibold;
+    }
+  }
+}
+
+// --------------------------------------------
+// SECTION PREV TOVAR
+// --------------------------------------------
+.section-prev-tovar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+  order: 2;
+  
+  @media (min-width: 760px) {
+    margin-bottom: 60px;
+    order: 3;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (min-width: 960px) {
+    width: 100%;
+  }
+
+  &__left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__video-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #F8F9FA;
+    border: 1px solid #DEE2E6;
+    border-radius: 3px;
+    color: #102C56;
+    cursor: pointer;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: darken(#F8F9FA, 5%);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__doc-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 12px;
+    height: 36px;
+    background-color: #F8F9FA;
+    border: 1px solid #DEE2E6;
+    border-radius: 3px;
+    color: #102C56;
+    text-decoration: none;
+    font-family: $font-family-base;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: darken(#F8F9FA, 5%);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__nav-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 12px;
+    height: 36px;
+    background-color: transparent;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    color: #000000;
+    text-decoration: none;
+    font-family: $font-family-base;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: $neutral-50;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2px;
     }
   }
 }
@@ -469,12 +589,29 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  height: 100%;
+  flex-grow: 1;
+  min-height: 0;
+
+  @media (min-width: 960px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .product-gallery-main {
   width: 100%;
-  aspect-ratio: 1 / 1;
   background-color: transparent;
+  flex-grow: 1;
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+
+  @media (min-width: 960px) {
+    aspect-ratio: auto;
+  }
   border: none;
   overflow: hidden;
 
@@ -484,12 +621,11 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 24px;
   }
 
   &__img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
   }
 
@@ -568,12 +704,16 @@
 .product-gallery-thumbs-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   position: relative;
 }
 
 .product-gallery-thumbs {
-  flex-grow: 1;
+  width: max-content;
+  max-width: calc(100% - 88px);
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   overflow: hidden;
 
   .swiper-slide {
@@ -619,157 +759,73 @@
     color: $blue-900;
 
     .product-gallery-thumbs__video-icon {
-      width: 28px;
-      height: 28px;
+      width: 23px;
+      height: auto;
     }
   }
 }
 
 .product-gallery-thumbs-btn {
-  display: flex;
+  display: none;
+  
+  @media (min-width: 960px) {
+    display: flex;
+  }
+
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background-color: rgba($blue-300, 0.3);
+  background-color: #EDF9FF;
   border: none;
   color: $blue-900;
   cursor: pointer;
-  transition: background-color $transition-fast, color $transition-fast;
+  transition: background-color $transition-fast, color $transition-fast, opacity $transition-fast;
 
-  &:hover {
-    background-color: rgba($blue-300, 0.6);
-  }
+  &.swiper-button-lock {
+    display: none !important;
 
-  svg {
-    width: 16px;
-    height: 16px;
-    stroke: currentColor;
-    stroke-width: 2;
+    @media (min-width: 960px) {
+      display: flex !important;
+    }
   }
 
   &.swiper-button-disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-  }
-}
-
-// --------------------------------------------
-// STICKY NAVIGATION BAR
-// --------------------------------------------
-.product-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 0;
-  background-color: $white;
-  border-bottom: 1px solid rgba($blue-700, 0.3);
-  margin-top: 40px;
-  margin-bottom: 40px;
-
-  @include breakpoint((max: $breakpoint-tablet)) {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    position: relative;
-    top: auto;
-  }
-
-  &__left {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-
-    @include breakpoint((max: $breakpoint-tablet)) {
-      justify-content: center;
-    }
-  }
-
-  &__link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: $font-family-base;
-    font-size: 16px;
-    font-weight: 600;
+    opacity: 1 !important;
+    background-color: #EDF9FF;
     color: $blue-900;
-    text-decoration: none;
-    padding: 8px 12px;
-    background-color: $neutral-50;
-    border: 1px solid $neutral-300;
-    border-radius: $radius-sm;
-    transition: background-color $transition-fast;
-
-    &:hover {
-      background-color: $neutral-200;
-    }
-
-    svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
-  }
-
-  &__right {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-
-    @include breakpoint((max: $breakpoint-tablet)) {
-      justify-content: center;
-      overflow-x: auto;
-      padding-bottom: 4px;
-    }
-  }
-
-  &__tab-btn {
-    font-family: $font-family-base;
-    font-size: 16px;
-    font-weight: 600;
-    color: $neutral-550;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid transparent;
-    padding: 8px 16px;
     cursor: pointer;
-    white-space: nowrap;
-    transition: color $transition-fast, border-color $transition-fast;
+    pointer-events: auto !important;
+  }
 
-    &:hover {
-      color: $blue-900;
-    }
+  &:hover:not(.swiper-button-disabled) {
+    background-color: darken(#EDF9FF, 5%);
+  }
 
-    &--active {
-      color: $blue-900;
-      border-color: $blue-900;
-    }
+  svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2;
   }
 }
 
+
+
 // --------------------------------------------
-// TABS CONTENT PANES
+// PRODUCT SECTIONS
 // --------------------------------------------
 .product-content {
   margin-bottom: 60px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
 
-  &__tab-pane {
-    display: none;
-
-    &--active {
-      display: block;
-      animation: fadeIn 0.4s ease-in-out;
-    }
+  &__section {
+    scroll-margin-top: 40px;
   }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 // --------------------------------------------
@@ -778,14 +834,18 @@
 .product-description {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 24px;
+
+  @media (min-width: 760px) and (max-width: 1200px) {
+    gap: 12px;
+  }
 
   &__title {
     font-family: $font-family-base;
     font-size: 32px;
     font-weight: 700;
     color: $neutral-1000;
-    margin: 0;
+    margin: 0 0 24px 0;
 
     @include breakpoint((max: $breakpoint-tablet)) {
       font-size: 24px;
@@ -794,35 +854,40 @@
 
   &__row {
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
     align-items: center;
+
+    @media (min-width: 760px) and (max-width: 1200px) {
+      gap: 12px;
+    }
 
     @include breakpoint((max: $breakpoint-tablet)) {
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 16px;
+    }
+
+    @media (max-width: 760px) {
+      .product-description__info {
+        order: 1;
+      }
+      .product-description__media {
+        order: 2;
+      }
     }
 
     &--reverse {
-      grid-template-columns: 1fr 1.1fr;
+      grid-template-columns: 1fr 1fr;
 
       @include breakpoint((max: $breakpoint-tablet)) {
         grid-template-columns: 1fr;
       }
 
       .product-description__media {
-        grid-column: 2;
-
-        @include breakpoint((max: $breakpoint-tablet)) {
-          grid-column: 1;
-        }
+        order: 2;
       }
       .product-description__info {
-        grid-column: 1;
-
-        @include breakpoint((max: $breakpoint-tablet)) {
-          grid-column: 1;
-        }
+        order: 1;
       }
     }
   }
@@ -830,10 +895,13 @@
   &__media {
     width: 100%;
     aspect-ratio: 4 / 3;
-    border-radius: $radius-lg;
+    border-radius: $radius-md;
     overflow: hidden;
     background-color: $neutral-50;
-    border: 1px solid $neutral-300;
+
+    @media (min-width: 760px) {
+      min-height: 474px;
+    }
 
     img {
       width: 100%;
@@ -845,34 +913,44 @@
   &__info {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: $spacing-xl;
-    background-color: $neutral-50;
-    border-radius: $radius-lg;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    background-color: #F8F9FA;
+    border-radius: 8px;
+    height: 100%;
 
-    @include breakpoint((max: $breakpoint-tablet)) {
-      padding: 16px;
+    @media (max-width: 760px) {
+      padding: 16px 12px;
+      align-items: flex-start;
+    }
+
+    > * {
+      max-width: 506px;
+      width: 100%;
     }
   }
 
   &__subtitle {
-    font-family: $font-family-base;
+    font-family: 'Mont', sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: $black;
+    line-height: 1.5;
+    color: #000000;
     margin: 0;
   }
 
   &__text {
-    font-family: $font-family-base;
+    font-family: 'Mont', sans-serif;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.5;
-    color: $black;
+    color: #000000;
     margin: 0;
 
     @include breakpoint((max: $breakpoint-tablet)) {
-      font-size: 16px;
+      font-size: $font-size-body;
     }
   }
 
@@ -1059,59 +1137,71 @@
 .product-specifications {
   &__title {
     font-family: $font-family-base;
-    font-size: 32px;
-    font-weight: 700;
-    color: $neutral-1000;
-    margin: 0 0 24px;
+    font-size: $font-size-h4;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+    margin: 0 0 $spacing-lg;
 
     @include breakpoint((max: $breakpoint-tablet)) {
-      font-size: 24px;
+      font-size: $font-size-h5;
     }
   }
 
   &__table {
     display: flex;
     flex-direction: column;
-    border: 1px solid $neutral-300;
-    border-radius: $radius-lg;
+    background-color: $surface-primary;
+    border-radius: $radius-md;
     overflow: hidden;
-    background-color: $white;
   }
 
   &__row {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    padding: 16px 24px;
-    border-bottom: 1px solid $neutral-300;
+    padding: $spacing-md $spacing-lg;
+    border-bottom: 1px solid $neutral-350;
 
     @include breakpoint((max: $breakpoint-tablet)) {
       grid-template-columns: 1fr;
       gap: 4px;
-      padding: 12px 16px;
+      padding: 12px $spacing-md;
     }
 
     &:last-child {
       border-bottom: none;
     }
-
-    &:nth-child(even) {
-      background-color: $neutral-50;
-    }
   }
 
   &__label {
     font-family: $font-family-base;
-    font-size: 16px;
-    font-weight: 600;
-    color: $neutral-1000;
+    font-size: $font-size-body;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+    text-align: right;
+    padding-right: $spacing-xl;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      text-align: left;
+      padding-right: 0;
+    }
   }
 
   &__value {
     font-family: $font-family-base;
-    font-size: 16px;
-    font-weight: 400;
-    color: $neutral-850;
+    font-size: $font-size-body;
+    font-weight: $font-weight-semibold;
+    color: $text-primary;
     line-height: 1.4;
+
+    &--link {
+      color: $brand-primary;
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:hover {
+        color: $brand-contrast;
+      }
+    }
   }
 }
 

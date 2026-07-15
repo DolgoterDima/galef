@@ -14,24 +14,18 @@ export function initProductGallery() {
   // Initialize Thumbs Swiper
   const thumbsSwiper = new Swiper(thumbsSliderEl, {
     modules: [Navigation],
-    slidesPerView: 4,
+    slidesPerView: 'auto',
     spaceBetween: 8,
+    centerInsufficientSlides: true,
     watchSlidesProgress: true,
-    navigation: {
-      prevEl: '.product-gallery-thumbs-btn--prev',
-      nextEl: '.product-gallery-thumbs-btn--next',
-    },
     breakpoints: {
       0: {
-        slidesPerView: 4,
         spaceBetween: 8
       },
       459: {
-        slidesPerView: 4,
         spaceBetween: 10
       },
       760: {
-        slidesPerView: 5,
         spaceBetween: 12
       }
     }
@@ -39,8 +33,13 @@ export function initProductGallery() {
 
   // Initialize Main Swiper
   const mainSwiper = new Swiper(mainSliderEl, {
-    modules: [Thumbs],
+    modules: [Thumbs, Navigation],
     spaceBetween: 10,
+    rewind: true,
+    navigation: {
+      prevEl: '.product-gallery-thumbs-btn--prev',
+      nextEl: '.product-gallery-thumbs-btn--next',
+    },
     thumbs: {
       swiper: thumbsSwiper,
     },

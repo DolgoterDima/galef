@@ -13,7 +13,6 @@ import { initModals } from './modules/modal.js';
 import { initHeroSlider } from './modules/hero-slider.js';
 import { initProductSlider } from './modules/product-slider.js';
 import { initProductGallery } from './modules/product-gallery.js';
-import { initProductTabs } from './modules/product-tabs.js';
 
 // Initialize preloader as early as possible
 initPreloader();
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroSlider();
   initProductSlider();
   initProductGallery();
-  initProductTabs();
 
   // Initialize sort dropdowns trigger text with the active item
   document.querySelectorAll('.sort-dropdown').forEach(dropdown => {
@@ -37,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  console.log('Golef site initialized');
+  console.log('Galef site initialized');
 });
 
 // change lang

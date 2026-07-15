@@ -1,4 +1,4 @@
-# Golef Site
+# Galef Site
 
 ## Структура проекту
 
