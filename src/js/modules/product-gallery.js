@@ -91,7 +91,7 @@ export function initProductGallery() {
   }
 
   // Large Promo Video Banner (in description)
-  const promoBanner = document.querySelector('.product-description__promo-banner');
+  const promoBanner = document.querySelector('.product-video-block');
   let promoPlayBtn = null;
   let promoContainer = null;
 
@@ -115,22 +115,93 @@ export function initProductGallery() {
         }
       });
     }
+
+    // Video Slider Logic
+    const videoSwiperEl = promoBanner.querySelector('.js-video-slider-swiper');
+    const prevBtn = promoBanner.querySelector('.product-video-slider__nav--prev');
+    const nextBtn = promoBanner.querySelector('.product-video-slider__nav--next');
+
+    if (videoSwiperEl && typeof Swiper !== 'undefined') {
+      const thumbSwiper = new Swiper(videoSwiperEl, {
+        modules: [Navigation],
+        slidesPerView: 1.8,
+        spaceBetween: 20,
+        loop: true,
+        watchSlidesProgress: true,
+        slideToClickedSlide: true,
+        breakpoints: {
+          761: {
+            slidesPerView: 3.3,
+            spaceBetween: 20,
+          },
+          1200: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          }
+        }
+      });
+
+      const mainSwiperEl = promoBanner.querySelector('.js-video-main-swiper');
+      if (mainSwiperEl) {
+        new Swiper(mainSwiperEl, {
+          modules: [Thumbs, Navigation],
+          slidesPerView: 1,
+          loop: true,
+          navigation: {
+            prevEl: prevBtn,
+            nextEl: nextBtn,
+          },
+          thumbs: {
+            swiper: thumbSwiper
+          },
+          on: {
+            slideChange: function () {
+              // Stop any playing video when slide changes
+              const playingSlides = mainSwiperEl.querySelectorAll('.js-banner-playing');
+              playingSlides.forEach(slide => {
+                slide.classList.remove('js-banner-playing');
+                const container = slide.querySelector('.js-banner-video-container');
+                if (container) container.innerHTML = '';
+              });
+            }
+          }
+        });
+      }
+    }
+
+    // Play buttons logic for all slides
+    const playBtns = promoBanner.querySelectorAll('.js-banner-video-play');
+    playBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const videoId = btn.getAttribute('data-video-id');
+        if (videoId) {
+          const slide = btn.closest('.swiper-slide');
+          if (slide) {
+            slide.classList.add('js-banner-playing');
+            const container = slide.querySelector('.js-banner-video-container');
+            if (container) {
+              container.innerHTML = `
+                <iframe 
+                  src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
+                  allow="autoplay; encrypted-media" 
+                  allowfullscreen>
+                </iframe>
+              `;
+            }
+          }
+        }
+      });
+    });
   }
 
-  // Small Video Thumbnails (below promo banner)
+  // Small Video Thumbnails click scrolling
   const videoThumbTriggers = document.querySelectorAll('.js-video-thumb-trigger');
   videoThumbTriggers.forEach(trigger => {
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
-      const videoId = trigger.getAttribute('data-video-id');
-      
-      // Scroll to promo banner and play
-      if (promoBanner && promoPlayBtn && promoContainer && videoId) {
+      if (promoBanner) {
         promoBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
-        // Update video and trigger play
-        promoPlayBtn.setAttribute('data-video-id', videoId);
-        promoPlayBtn.click();
       }
     });
   });
@@ -141,6 +212,14 @@ export function initProductGallery() {
     }
     if (videoCover) {
       videoCover.style.display = 'flex';
+    }
+    if (promoBanner) {
+      const playingSlides = promoBanner.querySelectorAll('.js-banner-playing');
+      playingSlides.forEach(slide => {
+        slide.classList.remove('js-banner-playing');
+        const container = slide.querySelector('.js-banner-video-container');
+        if (container) container.innerHTML = '';
+      });
     }
   }
 }
