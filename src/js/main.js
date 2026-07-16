@@ -13,6 +13,8 @@ import { initModals } from './modules/modal.js';
 import { initHeroSlider } from './modules/hero-slider.js';
 import { initProductSlider } from './modules/product-slider.js';
 import { initProductGallery } from './modules/product-gallery.js';
+import { initProductSpecifications } from './modules/product-specifications.js';
+import { initProductReviews } from './modules/product-reviews.js';
 
 // Initialize preloader as early as possible
 initPreloader();
@@ -25,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroSlider();
   initProductSlider();
   initProductGallery();
+  initProductSpecifications();
+  initProductReviews();
 
   // Initialize sort dropdowns trigger text with the active item
   document.querySelectorAll('.sort-dropdown').forEach(dropdown => {

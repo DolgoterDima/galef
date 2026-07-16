@@ -22,7 +22,6 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 8px;
 
   @media (min-width: 960px) {
     flex-direction: row;
@@ -63,10 +62,6 @@
       width: 100%;
       max-width: 437px;
       flex-shrink: 0;
-    }
-
-    @media (min-width: 1200px) {
-      max-width: 350px;
     }
   }
 
@@ -474,11 +469,11 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
   order: 2;
   
   @media (min-width: 760px) {
-    margin-bottom: 60px;
+    margin-bottom: 32px;
     order: 3;
     flex-direction: row;
     justify-content: space-between;
@@ -817,14 +812,25 @@
 // PRODUCT SECTIONS
 // --------------------------------------------
 .product-content {
-  margin-bottom: 60px;
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
-  gap: 80px;
 
   &__section {
     scroll-margin-top: 40px;
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    font-family: 'Mont', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111111;
+    margin: 0 0 48px 0;
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      font-size: 24px;
+    }
   }
 }
 
@@ -856,7 +862,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    align-items: center;
+    align-items: stretch;
 
     @media (min-width: 760px) and (max-width: 1200px) {
       gap: 12px;
@@ -1297,7 +1303,7 @@
   &__btn-icon {
     width: 24px;
     height: 24px;
-    filter: brightness(0) invert(1); // Робить іконку повністю білою
+    filter: brightness(0) invert(1); // Р РѕР±РёС‚СЊ С–РєРѕРЅРєСѓ РїРѕРІРЅС–СЃС‚СЋ Р±С–Р»РѕСЋ
   }
 }
 
@@ -1305,72 +1311,184 @@
 // TAB: SPECIFICATIONS
 // --------------------------------------------
 .product-specifications {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "title"
+    "button"
+    "table";
+  gap: 32px;
+  background-color: #F8F9FA;
+  border-radius: 8px;
+  padding: 40px;
+  margin-bottom: 8px;
+
+  @include breakpoint((max: 960px)) {
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+      "title button"
+      "table table";
+    column-gap: 36px;
+    row-gap: 32px;
+    align-items: center;
+  }
+
+  @include breakpoint((max: $breakpoint-tablet)) {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "title"
+      "table"
+      "button";
+    gap: 24px;
+    padding: 24px;
+  }
+
   &__title {
-    font-family: $font-family-base;
-    font-size: $font-size-h4;
-    font-weight: $font-weight-bold;
-    color: $text-primary;
-    margin: 0 0 $spacing-lg;
+    grid-area: title;
+    font-family: 'Mont', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111111;
+    margin: 0;
 
     @include breakpoint((max: $breakpoint-tablet)) {
-      font-size: $font-size-h5;
+      font-size: 24px;
+    }
+  }
+
+  &.is-collapsible {
+    .product-specifications__table {
+      max-height: 300px;
+    }
+    
+    &:not(.is-expanded) {
+      .product-specifications__table {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+    
+    &.is-expanded {
+      .product-specifications__btn svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__btn {
+    grid-area: button;
+    justify-self: start;
+    display: none; // Hidden by default, shown via JS if needed
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid #495057;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+    color: #111111;
+    transition: background-color 0.2s;
+
+    &.is-visible {
+      display: flex;
+    }
+
+    &:hover {
+      background-color: #E9ECEF;
+    }
+
+    span {
+      font-family: 'Mont', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease;
+    }
+
+    @include breakpoint((max: $breakpoint-tablet)) {
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      color: #102c56;
+
+      &:hover {
+        background-color: transparent;
+        color: lighten(#102c56, 10%);
+      }
     }
   }
 
   &__table {
+    grid-area: table;
     display: flex;
     flex-direction: column;
-    background-color: $surface-primary;
-    border-radius: $radius-md;
+    gap: 12px;
     overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: linear-gradient(to bottom, rgba(248, 249, 250, 0) 0, #F8F9FA 18px, #F8F9FA 100%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
   }
 
   &__row {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    padding: $spacing-md $spacing-lg;
-    border-bottom: 1px solid $neutral-350;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: flex-start;
 
     @include breakpoint((max: $breakpoint-tablet)) {
       grid-template-columns: 1fr;
       gap: 4px;
-      padding: 12px $spacing-md;
-    }
-
-    &:last-child {
-      border-bottom: none;
     }
   }
 
   &__label {
-    font-family: $font-family-base;
-    font-size: $font-size-body;
-    font-weight: $font-weight-bold;
-    color: $text-primary;
+    font-family: 'Mont', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #111111;
     text-align: right;
-    padding-right: $spacing-xl;
-
+    
     @include breakpoint((max: $breakpoint-tablet)) {
       text-align: left;
-      padding-right: 0;
     }
   }
 
   &__value {
-    font-family: $font-family-base;
-    font-size: $font-size-body;
-    font-weight: $font-weight-semibold;
-    color: $text-primary;
-    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Mont', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #111111;
+  }
 
-    &--link {
-      color: $brand-primary;
-      text-decoration: underline;
-      cursor: pointer;
-
-      &:hover {
-        color: $brand-contrast;
-      }
+  &__item {
+    &--blue {
+      color: #102C56;
     }
   }
 }
@@ -1378,342 +1496,482 @@
 // --------------------------------------------
 // TAB: REVIEWS
 // --------------------------------------------
-.product-reviews {
-  &__title {
-    font-family: $font-family-base;
-    font-size: 32px;
-    font-weight: 700;
-    color: $neutral-1000;
-    margin: 0 0 24px;
+// --------------------------------------------
+// TAB: REVIEWS (NEW DESIGN)
+// --------------------------------------------
 
-    @include breakpoint((max: $breakpoint-tablet)) {
-      font-size: 24px;
-    }
-  }
-
-  // Summary Card
-  &__summary {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1.2fr;
-    gap: 32px;
-    align-items: center;
-    padding: 32px;
-    background-color: $neutral-50;
-    border-radius: $radius-lg;
-    margin-bottom: 40px;
-
-    @include breakpoint((max: 960px)) {
-      grid-template-columns: 1fr;
-      gap: 24px;
-      padding: 20px;
-    }
-  }
-
-  &__score-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-right: 1px solid rgba($neutral-500, 0.15);
-    padding-right: 32px;
-
-    @include breakpoint((max: 960px)) {
-      border-right: none;
-      padding-right: 0;
-      border-bottom: 1px solid rgba($neutral-500, 0.15);
-      padding-bottom: 16px;
-    }
-  }
-
-  &__score-num {
-    font-family: $font-family-base;
-    font-size: 64px;
-    font-weight: 900;
-    color: $neutral-1000;
-    line-height: 1;
-  }
-
-  &__score-stars {
-    display: flex;
-    gap: 4px;
-    margin: 12px 0 8px;
-
-    svg {
-      width: 20px;
-      height: 20px;
-      color: $neutral-300;
-      fill: currentColor;
-
-      &.active {
-        color: $yellow-500;
-      }
-    }
-  }
-
-  &__score-total {
-    font-family: $font-family-base;
-    font-size: 14px;
-    font-weight: 600;
-    color: $neutral-550;
-  }
-
-  &__bars {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border-right: 1px solid rgba($neutral-500, 0.15);
-    padding-right: 32px;
-
-    @include breakpoint((max: 960px)) {
-      border-right: none;
-      padding-right: 0;
-      border-bottom: 1px solid rgba($neutral-500, 0.15);
-      padding-bottom: 16px;
-    }
-  }
-
-  &__bar-item {
-    display: grid;
-    grid-template-columns: 60px 1fr 40px;
-    align-items: center;
-    gap: 12px;
-    font-family: $font-family-base;
-    font-size: 14px;
-    font-weight: 600;
-    color: $neutral-1000;
-
-    .progress-bar {
-      height: 6px;
-      background-color: $neutral-200;
-      border-radius: 3px;
-      overflow: hidden;
-
-      &__fill {
-        height: 100%;
-        background-color: $yellow-500;
-        border-radius: 3px;
-      }
-    }
-  }
-
-  &__action {
+.reviews-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  
+  &__top {
     display: flex;
     justify-content: center;
-  }
-
-  &__write-btn {
     width: 100%;
-    max-width: 240px;
-    height: 48px;
-    background-color: $yellow-500;
-    color: $neutral-1000;
-    border: none;
-    border-radius: $radius-sm;
-    font-family: $font-family-base;
-    font-size: 16px;
+  }
+  
+  &__link-all {
+    font-family: 'Mont', sans-serif;
     font-weight: 700;
-    cursor: pointer;
-    transition: background-color $transition-fast;
-
-    &:hover {
-      background-color: $yellow-300;
-    }
-  }
-
-  // Reviews Filtering Tabs
-  &__filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 32px;
-  }
-
-  &__filter-btn {
-    font-family: $font-family-base;
-    font-size: 14px;
-    font-weight: 600;
-    color: $neutral-850;
-    background-color: $neutral-50;
-    border: 1px solid $neutral-300;
+    font-size: 16px;
+    line-height: 20px;
+    color: #102C56;
+    text-decoration: none;
     padding: 8px 16px;
-    border-radius: $radius-sm;
-    cursor: pointer;
-    transition: background-color $transition-fast, color $transition-fast;
-
+    
     &:hover {
-      background-color: $neutral-200;
-      color: $neutral-1000;
+      text-decoration: underline;
     }
+  }
+}
 
+.reviews-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px;
+  padding-bottom: 80px;
+  gap: 24px;
+  width: 100%;
+  background: #F8F9FA;
+  border-radius: 8px;
+
+  @include breakpoint((max: $breakpoint-laptop)) {
+    padding-bottom: 48px;
+  }
+
+  @include breakpoint((max: $breakpoint-tablet)) {
+    padding: 20px;
+    padding-bottom: 36px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+    
+    @include breakpoint((max: 960px)) {
+      gap: 16px;
+    }
+  }
+  
+  &__title {
+    font-family: 'Mont', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 41px;
+    text-align: center;
+    color: #111111;
+    margin: 0;
+    
+    @include breakpoint((max: $breakpoint-tablet)) {
+      font-size: 24px;
+      line-height: 1.2;
+    }
+  }
+  
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    
+    @include breakpoint((max: $breakpoint-mobile-lg)) {
+      flex-direction: column;
+      width: 100%;
+      align-items: stretch;
+    }
+  }
+  
+  &__tab {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 10px;
+    background: #FFFFFF;
+    border: 1px solid #111111;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Mont', sans-serif;
+    color: #111111;
+    transition: all 0.2s ease;
+    
+    &-text {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      
+      @include breakpoint((max: $breakpoint-tablet)) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+    
+    &-count {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      
+      @include breakpoint((max: $breakpoint-tablet)) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+    
     &--active {
-      background-color: $blue-900;
-      color: $white;
-      border-color: $blue-900;
-
-      &:hover {
-        background-color: $blue-700;
-        color: $white;
+      border-color: #102C56;
+      color: #102C56;
+      
+      .reviews-block__tab-text,
+      .reviews-block__tab-count {
+        color: #102C56;
       }
     }
   }
+  
+  &__btn-write {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    background: #F2910E;
+    border-radius: 8px;
+    border: none;
+    font-family: 'Mont', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background: darken(#F2910E, 10%);
+    }
 
-  // Reviews List
+    @include breakpoint((max: $breakpoint-tablet)) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__photos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__photos-title {
+    font-family: 'Mont', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #111111;
+    margin: 0;
+    
+    @include breakpoint((max: $breakpoint-tablet)) {
+      font-size: 20px;
+    }
+  }
+
+  &__photos-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 2px;
+    }
+  }
+
+  &__photo-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    flex-shrink: 0;
+    
+    img {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
     gap: 24px;
-  }
-}
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    position: relative;
 
-// Review Card Component
-.review-card {
-  padding: 24px;
-  border: 1px solid $neutral-300;
-  border-radius: $radius-lg;
-  background-color: $white;
-  box-shadow: $shadow-sm;
-
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 12px;
-  }
-
-  &__user {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-
-    strong {
-      font-family: $font-family-base;
-      font-size: 16px;
-      font-weight: 700;
-      color: $neutral-1000;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: linear-gradient(to bottom, rgba(248, 249, 250, 0) 0, #F8F9FA 18px, #F8F9FA 100%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
-  }
 
-  &__date {
-    font-family: $font-family-base;
-    font-size: 12px;
-    color: $neutral-550;
-  }
-
-  &__rating {
-    display: flex;
-    gap: 2px;
-
-    svg {
-      width: 14px;
-      height: 14px;
-      color: $neutral-300;
-      fill: currentColor;
-
-      &.active {
-        color: $yellow-500;
+    &.is-collapsible:not(.is-expanded) {
+      &::after {
+        opacity: 1;
       }
     }
   }
+}
 
-  &__meta {
+.review-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 24px;
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 8px;
+  
+  @include breakpoint((max: $breakpoint-tablet)) {
+    display: grid;
+    grid-template-areas: 
+      "rating actions"
+      "content content";
+    grid-template-columns: 1fr auto;
+    padding: 16px;
+    gap: 16px;
+  }
+  
+  &__rating-col {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0px;
+    gap: 10px;
+    width: 153px;
+    flex-shrink: 0;
+    
+    @include breakpoint((max: $breakpoint-tablet)) {
+      grid-area: rating;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 6px;
+      width: auto;
+      padding: 0;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__date {
+    font-family: 'Mont', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #111111;
+  }
+
+  &__content-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    flex-grow: 1;
+    min-width: 0;
+    
+    @include breakpoint((max: $breakpoint-tablet)) {
+      grid-area: content;
+      width: 100%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 16px;
+  }
+
+  &__author {
+    font-family: 'Mont', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #111111;
   }
 
   &__badge {
-    font-family: $font-family-base;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px;
+    background: #009B67;
+    border-radius: 20px;
+    font-family: 'Mont', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 13px;
+    text-align: center;
+    color: #FFFFFF;
+  }
 
-    &--verified {
-      background-color: rgba($green-300, 0.1);
-      color: $green-400;
-    }
-
-    &--recommend {
-      background-color: rgba($blue-500, 0.1);
-      color: $blue-700;
-    }
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
   }
 
   &__text {
-    font-family: $font-family-base;
-    font-size: 16px;
+    font-family: 'Mont', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
     line-height: 1.5;
-    color: $neutral-850;
-    margin: 0 0 16px;
+    color: #111111;
+    margin: 0;
+  }
+
+  &__pros,
+  &__cons {
+    font-family: 'Mont', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #111111;
+    margin: 0;
+    
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  &__reply-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 2px solid transparent;
+    padding: 0;
+    font-family: 'Mont', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #484848;
+    cursor: pointer;
+    
+    svg {
+      color: #454545;
+    }
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__gallery {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
     gap: 8px;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    margin-top: 8px;
   }
 
   &__gallery-img {
-    width: 60px;
-    height: 60px;
-    border-radius: $radius-sm;
+    width: 56px;
+    height: 56px;
     object-fit: cover;
-    border: 1px solid $neutral-300;
-    cursor: pointer;
-    transition: opacity $transition-fast;
+    border-radius: 2px;
+    border: 1px solid #EAEAEA;
+  }
 
-    &:hover {
-      opacity: 0.8;
+  &__actions-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+    
+    @include breakpoint((max: $breakpoint-tablet)) {
+      grid-area: actions;
+      align-items: flex-end;
+      align-self: start;
+      width: auto;
     }
   }
 
-  &__footer {
+  &__reactions {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    border-top: 1px solid rgba($neutral-500, 0.1);
-    padding-top: 16px;
-    font-family: $font-family-base;
-    font-size: 14px;
-    color: $neutral-550;
+    gap: 16px;
   }
 
-  &__feedback-btns {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  &__feedback-btn {
+  &__reaction-btn {
     background: transparent;
     border: none;
-    font-family: $font-family-base;
-    font-size: 14px;
-    font-weight: 600;
-    color: $neutral-550;
+    padding: 4px;
     cursor: pointer;
-    padding: 4px 8px;
-    border-radius: $radius-sm;
-    transition: background-color $transition-fast, color $transition-fast;
-
+    color: #111111;
+    transition: transform 0.2s ease;
+    
     &:hover {
-      background-color: $neutral-50;
-      color: $neutral-1000;
+      transform: scale(1.1);
     }
   }
 }
-
 // --------------------------------------------
 // RELATED PRODUCTS CAROUSEL
 // --------------------------------------------
 .product-related {
-  border-top: 1px solid rgba($neutral-500, 0.15);
-  padding-top: 60px;
+  margin-bottom: 60px;
+
+  @include breakpoint((max: 960px)) {
+    margin-bottom: 44px;
+  }
+
+  @include breakpoint((max: $breakpoint-tablet)) {
+    margin-bottom: 24px;
+  }
 
   &__header {
     display: flex;
