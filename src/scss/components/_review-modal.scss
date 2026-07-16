@@ -1,0 +1,491 @@
+// ============================================
+// REVIEW MODAL COMPONENT
+// ============================================
+
+@use "../abstracts" as *;
+
+.review-modal {
+  background-color: $blue-900 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px !important; // As per specification Property 1
+  padding: 40px !important;
+  width: 620px;
+  max-width: 100%;
+  color: $white;
+  font-family: 'Mont', sans-serif;
+  box-sizing: border-box;
+  
+  @media (max-width: 640px) {
+    padding: 24px 16px !important;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 41px;
+    color: $white;
+    margin: 0;
+
+    @media (max-width: 480px) {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &__close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: $blue-800;
+    border-radius: 100px;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    padding: 0;
+
+    svg {
+      width: 12px;
+      height: 12px;
+      stroke: currentColor;
+    }
+
+    &:hover {
+      background-color: $blue-700;
+      transform: scale(1.05);
+    }
+  }
+
+  &__rating-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  &__rating-label {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    color: $white;
+    text-align: left;
+    margin: 0;
+    display: block;
+    width: 100%;
+  }
+
+  &__stars {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__star-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+
+    svg {
+      width: 60px;
+      height: 60px;
+      fill: none;
+      stroke: $white;
+      stroke-width: 1.5;
+      transition: fill 0.2s ease, stroke 0.2s ease;
+
+      @media (max-width: 480px) {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &.is-hovered svg,
+    &.is-active svg {
+      fill: $yellow-500;
+      stroke: $yellow-500;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__label {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: $white;
+    margin: 0;
+  }
+
+  &__input-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    border: 1px solid $white;
+    border-radius: 8px;
+    color: $white;
+    font-family: 'Mont', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      border-color: $blue-300;
+      box-shadow: 0 0 0 2px rgba($blue-300, 0.2);
+    }
+
+    &.is-invalid {
+      border-color: $red-500 !important;
+    }
+
+    &.is-valid {
+      border-color: $green-400 !important;
+    }
+  }
+
+  &__textarea {
+    padding: 20px;
+    resize: vertical;
+    min-height: 80px;
+
+    &--large {
+      min-height: 120px;
+    }
+  }
+
+  &__input {
+    padding: 12px 20px;
+    height: 44px;
+
+    &.is-invalid,
+    &.is-valid {
+      padding-right: 48px;
+    }
+  }
+
+  &__validation-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    display: none;
+    pointer-events: none;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &--error {
+      color: $red-500;
+      svg {
+        stroke: $red-500;
+      }
+    }
+
+    &--success {
+      color: $green-400;
+      svg {
+        stroke: $green-400;
+      }
+    }
+
+    input.is-invalid ~ &--error {
+      display: block;
+    }
+
+    input.is-valid ~ &--success {
+      display: block;
+    }
+  }
+
+  &__form-row {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .review-modal__field {
+      flex: 1;
+    }
+  }
+
+  &__attachment-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    gap: 12px;
+    width: 100%;
+    min-height: 60px;
+    background-color: $blue-900;
+    border: 1px solid $white;
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    @media (max-width: 580px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+      padding: 16px;
+    }
+
+    &-left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    &-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-text {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      color: $white;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      
+      &--selected {
+        color: $green-400;
+        font-weight: 700;
+      }
+    }
+
+    &-input {
+      display: none;
+    }
+
+    &-btn {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 12px;
+      height: 34px;
+      background-color: $blue-900;
+      border: 1px solid $white;
+      border-radius: 4px;
+      color: $white;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease;
+
+      &:hover {
+        background-color: $white;
+        color: $blue-900;
+      }
+    }
+  }
+
+  &__video-input-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+    
+    input {
+      flex: 1;
+      height: 34px;
+      background-color: $blue-900;
+      border: 1px solid $white;
+      border-radius: 4px;
+      padding: 8px 12px;
+      color: $white;
+      font-family: 'Mont', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 18px;
+      outline: none;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      &:focus {
+        border-color: $blue-300;
+      }
+    }
+  }
+
+  &__rules-note {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: $white;
+    margin: 0;
+    text-align: left;
+
+    a {
+      color: $white;
+      text-decoration: underline;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 16px;
+
+    @media (max-width: 760px) {
+      flex-direction: column-reverse;
+      gap: 12px;
+      
+      .review-modal__btn {
+        width: 100% !important;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    box-sizing: border-box;
+
+    &--cancel {
+      width: 161px;
+      background-color: $blue-700;
+      border: none;
+      color: $white;
+
+      &:hover {
+        background-color: $blue-600;
+      }
+    }
+
+    &--submit {
+      width: 223px;
+      background-color: $blue-900;
+      border: 1px solid $white;
+      color: $white;
+
+      &:hover {
+        background-color: $white;
+        color: $blue-900;
+      }
+    }
+  }
+}
+
+// Override modal base to fit the review and reply modals beautifully
+.modal[data-modal="add-review"],
+.modal[data-modal="reply-comment"] {
+  .modal__content {
+    background-color: transparent !important;
+    padding: 0 !important;
+    border-radius: 12px !important;
+    overflow: visible !important;
+    max-height: 95vh;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .review-modal-scrollable {
+    max-height: calc(95vh - 20px);
+    overflow-y: auto;
+    border-radius: 12px;
+    
+    // Custom scrollbar matching styling requirements
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: $blue-800;
+      border-radius: 0 12px 12px 0;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: $white;
+      border: 1px solid $blue-700;
+      border-radius: 100px;
+    }
+  }
+}
