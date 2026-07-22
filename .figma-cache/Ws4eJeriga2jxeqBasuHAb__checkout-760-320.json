@@ -1,0 +1,3124 @@
+{
+  "metadata": {
+    "exportedAt": "2026-07-22T07:37:25.542Z",
+    "componentName": "shopping cart",
+    "totalElements": 156,
+    "nestingDepth": 11,
+    "plugin": "Figma to JSON Exporter"
+  },
+  "designTokens": {
+    "colors": {
+      "color-rgb(255, 255, 255)": "rgb(255, 255, 255)",
+      "color-rgb(108, 117, 125)": "rgb(108, 117, 125)",
+      "color-rgb(248, 249, 250)": "rgb(248, 249, 250)",
+      "color-rgb(17, 17, 17)": "rgb(17, 17, 17)",
+      "color-rgb(73, 80, 87)": "rgb(73, 80, 87)",
+      "color-rgb(245, 245, 245)": "rgb(245, 245, 245)",
+      "color-rgb(16, 44, 86)": "rgb(16, 44, 86)",
+      "color-rgb(0, 125, 86)": "rgb(0, 125, 86)",
+      "color-rgb(252, 6, 17)": "rgb(252, 6, 17)"
+    },
+    "fonts": {
+      "mont": {
+        "family": "Mont",
+        "sizes": {
+          "size-12": "12px",
+          "size-24": "24px",
+          "size-20": "20px",
+          "size-16": "16px",
+          "size-14": "14px"
+        },
+        "weights": {
+          "weight-400": "400",
+          "weight-600": "600"
+        }
+      },
+      "arial": {
+        "family": "Arial",
+        "sizes": {
+          "size-14": "14px",
+          "size-16": "16px"
+        },
+        "weights": {
+          "weight-400": "400"
+        }
+      }
+    },
+    "spacing": {
+      "padding-bottom-20": "20px",
+      "gap-60": "60px",
+      "padding-top-12": "12px",
+      "padding-right-16": "16px",
+      "padding-bottom-12": "12px",
+      "padding-left-16": "16px",
+      "padding-top-16": "16px",
+      "padding-right-8": "8px",
+      "padding-bottom-16": "16px",
+      "padding-left-8": "8px",
+      "gap-16": "16px",
+      "padding-top-8": "8px",
+      "padding-bottom-8": "8px",
+      "gap-8": "8px",
+      "gap-111": "111px",
+      "gap-24": "24px",
+      "gap-451": "451px",
+      "gap-10": "10px",
+      "gap-32": "32px",
+      "padding-top-4": "4px",
+      "padding-right-11": "11px",
+      "padding-bottom-4": "4px",
+      "padding-left-11": "11px",
+      "gap-5": "5px",
+      "gap-12": "12px",
+      "gap-614": "614px",
+      "padding-top-3": "3px",
+      "padding-right-4": "4px",
+      "padding-bottom-3": "3px",
+      "padding-left-4": "4px",
+      "gap-4": "4px",
+      "padding-top-1": "1px",
+      "padding-right-3": "3px",
+      "padding-bottom-1": "1px",
+      "padding-left-3": "3px",
+      "gap-7": "7px",
+      "padding-right-12": "12px",
+      "padding-left-12": "12px",
+      "padding-right-15": "15px",
+      "padding-left-15": "15px"
+    },
+    "effects": {}
+  },
+  "structure": {
+    "name": "shopping-cart",
+    "type": "FRAME",
+    "size": {
+      "w": 460,
+      "h": 2964
+    },
+    "styles": {
+      "bg": "rgb(255, 255, 255)",
+      "layout": {
+        "direction": "column",
+        "gap": 60,
+        "align": {
+          "main": "start",
+          "cross": "center"
+        },
+        "padding": [
+          0,
+          0,
+          20,
+          0
+        ]
+      }
+    },
+    "children": [
+      {
+        "name": "section_top",
+        "type": "FRAME",
+        "size": {
+          "w": 460,
+          "h": 138
+        },
+        "styles": {
+          "layout": {
+            "direction": "column",
+            "gap": 0,
+            "align": {
+              "main": "start",
+              "cross": "start"
+            }
+          }
+        },
+        "children": [
+          {
+            "name": "section_top",
+            "type": "FRAME",
+            "size": {
+              "w": 460,
+              "h": 138
+            },
+            "styles": {
+              "layout": {
+                "direction": "column",
+                "gap": 0,
+                "align": {
+                  "main": "start",
+                  "cross": "center"
+                }
+              }
+            },
+            "children": [
+              {
+                "name": "div_menu_960_760",
+                "type": "INSTANCE",
+                "size": {
+                  "w": 0,
+                  "h": 0
+                }
+              },
+              {
+                "name": "bread_crumps",
+                "type": "FRAME",
+                "size": {
+                  "w": 460,
+                  "h": 54
+                },
+                "styles": {
+                  "bg": "rgb(255, 255, 255)",
+                  "layout": {
+                    "direction": "row",
+                    "gap": 0,
+                    "align": {
+                      "main": "start",
+                      "cross": "start"
+                    },
+                    "padding": [
+                      12,
+                      16,
+                      12,
+                      16
+                    ]
+                  }
+                },
+                "children": [
+                  {
+                    "name": "----------------------------------------gt-racer-b---8995-blue-----------------------",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 428,
+                      "h": 30
+                    },
+                    "content": "Головна / Офысні крісла / Офісне кресло GT Racer B - 8995 Blue/ Оформлення замовлення",
+                    "styles": {
+                      "bg": "rgb(108, 117, 125)",
+                      "text": {
+                        "family": "Mont",
+                        "size": 12,
+                        "weight": "400",
+                        "align": "left"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "body_cart",
+        "type": "FRAME",
+        "size": {
+          "w": 460,
+          "h": 1660
+        },
+        "styles": {
+          "bg": "rgb(255, 255, 255)",
+          "layout": {
+            "direction": "column",
+            "gap": 0,
+            "align": {
+              "main": "start",
+              "cross": "start"
+            },
+            "padding": [
+              0,
+              16,
+              0,
+              16
+            ]
+          }
+        },
+        "children": [
+          {
+            "name": "oformlenya_shoping",
+            "type": "FRAME",
+            "size": {
+              "w": 428,
+              "h": 1660
+            },
+            "styles": {
+              "bg": "rgb(248, 249, 250)",
+              "radius": 8,
+              "layout": {
+                "direction": "column",
+                "gap": 16,
+                "align": {
+                  "main": "start",
+                  "cross": "center"
+                },
+                "padding": [
+                  16,
+                  8,
+                  16,
+                  8
+                ]
+              }
+            },
+            "children": [
+              {
+                "name": "---------------------",
+                "type": "TEXT",
+                "size": {
+                  "w": 320,
+                  "h": 36
+                },
+                "content": "Оформлення замовлення",
+                "styles": {
+                  "bg": "rgb(17, 17, 17)",
+                  "text": {
+                    "family": "Mont",
+                    "size": 24,
+                    "weight": "600",
+                    "align": "left"
+                  }
+                }
+              },
+              {
+                "name": "block_tovar",
+                "type": "FRAME",
+                "size": {
+                  "w": 412,
+                  "h": 578
+                },
+                "styles": {
+                  "bg": "rgb(255, 255, 255)",
+                  "radius": 8,
+                  "layout": {
+                    "direction": "column",
+                    "gap": 8,
+                    "align": {
+                      "main": "start",
+                      "cross": "start"
+                    },
+                    "padding": [
+                      8,
+                      8,
+                      8,
+                      8
+                    ]
+                  }
+                },
+                "children": [
+                  {
+                    "name": "block_tovar",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 396,
+                      "h": 562
+                    },
+                    "styles": {
+                      "bg": "rgb(255, 255, 255)",
+                      "radius": 8,
+                      "layout": {
+                        "direction": "column",
+                        "gap": 8,
+                        "align": {
+                          "main": "start",
+                          "cross": "start"
+                        },
+                        "padding": [
+                          8,
+                          8,
+                          8,
+                          8
+                        ]
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "----------",
+                        "type": "TEXT",
+                        "size": {
+                          "w": 380,
+                          "h": 26
+                        },
+                        "content": "Замовлення",
+                        "styles": {
+                          "bg": "rgb(73, 80, 87)",
+                          "text": {
+                            "family": "Mont",
+                            "size": 20,
+                            "weight": "600",
+                            "align": "left"
+                          }
+                        }
+                      },
+                      {
+                        "name": "block_tovar",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 380,
+                          "h": 148
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "column",
+                            "gap": 111,
+                            "align": {
+                              "main": "center",
+                              "cross": "start"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "more-vertical",
+                            "type": "FRAME",
+                            "size": {
+                              "w": 380,
+                              "h": 148
+                            },
+                            "styles": {
+                              "layout": {
+                                "direction": "column",
+                                "gap": 8,
+                                "align": {
+                                  "main": "center",
+                                  "cross": "start"
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "name": "tovar",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 380,
+                                  "h": 88
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 24,
+                                    "align": {
+                                      "main": "start",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "rectangle-44",
+                                    "type": "RECTANGLE",
+                                    "size": {
+                                      "w": 88,
+                                      "h": 88
+                                    },
+                                    "styles": {
+                                      "radius": 8
+                                    }
+                                  },
+                                  {
+                                    "name": "------------------gt-racer-x-5164-fabric-black",
+                                    "type": "TEXT",
+                                    "size": {
+                                      "w": 268,
+                                      "h": 40
+                                    },
+                                    "content": "Геймерське крісло GT Racer X-5164 Fabric Black",
+                                    "styles": {
+                                      "bg": "rgb(73, 80, 87)",
+                                      "text": {
+                                        "family": "Mont",
+                                        "size": 16,
+                                        "weight": "400",
+                                        "align": "left"
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "number_price",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 380,
+                                  "h": 52
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 451,
+                                    "align": {
+                                      "main": "space-between",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "tovar_kilkist_kalkuliator",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 130,
+                                      "h": 52
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 16,
+                                        "align": {
+                                          "main": "center",
+                                          "cross": "center"
+                                        },
+                                        "padding": [
+                                          8,
+                                          0,
+                                          8,
+                                          8
+                                        ]
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "minus",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 24,
+                                          "h": 24
+                                        },
+                                        "styles": {
+                                          "layout": {
+                                            "direction": "row",
+                                            "gap": 0,
+                                            "align": {
+                                              "main": "start",
+                                              "cross": "start"
+                                            }
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 14,
+                                              "h": 0
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "frame-23",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 42,
+                                          "h": 36
+                                        },
+                                        "styles": {
+                                          "bg": "rgb(245, 245, 245)",
+                                          "border": {
+                                            "width": 1,
+                                            "color": "rgb(173, 181, 189)"
+                                          },
+                                          "radius": 4,
+                                          "layout": {
+                                            "direction": "row",
+                                            "gap": 10,
+                                            "align": {
+                                              "main": "center",
+                                              "cross": "center"
+                                            },
+                                            "padding": [
+                                              8,
+                                              8,
+                                              8,
+                                              8
+                                            ]
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "100",
+                                            "type": "TEXT",
+                                            "size": {
+                                              "w": 26,
+                                              "h": 20
+                                            },
+                                            "content": "100",
+                                            "styles": {
+                                              "bg": "rgb(73, 80, 87)",
+                                              "text": {
+                                                "family": "Mont",
+                                                "size": 16,
+                                                "weight": "400",
+                                                "align": "left"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "plus",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 24,
+                                          "h": 24
+                                        },
+                                        "styles": {
+                                          "layout": {
+                                            "direction": "row",
+                                            "gap": 0,
+                                            "align": {
+                                              "main": "start",
+                                              "cross": "start"
+                                            }
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 0,
+                                              "h": 14
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 14,
+                                              "h": 0
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "frame-127",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 250,
+                                      "h": 24
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 32,
+                                        "align": {
+                                          "main": "end",
+                                          "cross": "center"
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "price",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 66,
+                                          "h": 20
+                                        },
+                                        "styles": {
+                                          "layout": {
+                                            "direction": "column",
+                                            "gap": 8,
+                                            "align": {
+                                              "main": "start",
+                                              "cross": "start"
+                                            }
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "50-000--",
+                                            "type": "TEXT",
+                                            "size": {
+                                              "w": 66,
+                                              "h": 18
+                                            },
+                                            "content": "50 000 ₴",
+                                            "styles": {
+                                              "bg": "rgb(73, 80, 87)",
+                                              "text": {
+                                                "family": "Arial",
+                                                "size": 14,
+                                                "weight": "400",
+                                                "align": "left"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "name": "20-000--",
+                                            "type": "TEXT",
+                                            "size": {
+                                              "w": 66,
+                                              "h": 20
+                                            },
+                                            "content": "20 000 ₴",
+                                            "styles": {
+                                              "bg": "rgb(73, 80, 87)",
+                                              "text": {
+                                                "family": "Mont",
+                                                "size": 16,
+                                                "weight": "600",
+                                                "align": "left"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "more-vertical",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 24,
+                                          "h": 24
+                                        },
+                                        "styles": {
+                                          "layout": {
+                                            "direction": "column",
+                                            "gap": 5,
+                                            "align": {
+                                              "main": "start",
+                                              "cross": "start"
+                                            },
+                                            "padding": [
+                                              4,
+                                              11,
+                                              4,
+                                              11
+                                            ]
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 2,
+                                              "h": 2
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 2,
+                                              "h": 2
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 2,
+                                              "h": 2
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "block_tovar",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 380,
+                          "h": 148
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "column",
+                            "gap": 111,
+                            "align": {
+                              "main": "center",
+                              "cross": "start"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "more-vertical",
+                            "type": "FRAME",
+                            "size": {
+                              "w": 380,
+                              "h": 148
+                            },
+                            "styles": {
+                              "layout": {
+                                "direction": "column",
+                                "gap": 8,
+                                "align": {
+                                  "main": "center",
+                                  "cross": "start"
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "name": "tovar",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 380,
+                                  "h": 88
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 24,
+                                    "align": {
+                                      "main": "start",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "rectangle-44",
+                                    "type": "RECTANGLE",
+                                    "size": {
+                                      "w": 88,
+                                      "h": 88
+                                    },
+                                    "styles": {
+                                      "radius": 8
+                                    }
+                                  },
+                                  {
+                                    "name": "------------------gt-racer-x-5164-fabric-black",
+                                    "type": "TEXT",
+                                    "size": {
+                                      "w": 268,
+                                      "h": 40
+                                    },
+                                    "content": "Геймерське крісло GT Racer X-5164 Fabric Black",
+                                    "styles": {
+                                      "bg": "rgb(73, 80, 87)",
+                                      "text": {
+                                        "family": "Mont",
+                                        "size": 16,
+                                        "weight": "400",
+                                        "align": "left"
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "number_price",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 380,
+                                  "h": 52
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 451,
+                                    "align": {
+                                      "main": "space-between",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "tovar_kilkist_kalkuliator",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 130,
+                                      "h": 52
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 16,
+                                        "align": {
+                                          "main": "center",
+                                          "cross": "center"
+                                        },
+                                        "padding": [
+                                          8,
+                                          0,
+                                          8,
+                                          8
+                                        ]
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "minus",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 24,
+                                          "h": 24
+                                        },
+                                        "styles": {
+                                          "layout": {
+                                            "direction": "row",
+                                            "gap": 0,
+                                            "align": {
+                                              "main": "start",
+                                              "cross": "start"
+                                            }
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 14,
+                                              "h": 0
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "frame-23",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 42,
+                                          "h": 36
+                                        },
+                                        "styles": {
+                                          "bg": "rgb(245, 245, 245)",
+                                          "border": {
+                                            "width": 1,
+                                            "color": "rgb(173, 181, 189)"
+                                          },
+                                          "radius": 4,
+                                          "layout": {
+                                            "direction": "row",
+                                            "gap": 10,
+                                            "align": {
+                                              "main": "center",
+                                              "cross": "center"
+                                            },
+                                            "padding": [
+                                              8,
+                                              8,
+                                              8,
+                                              8
+                                            ]
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "100",
+                                            "type": "TEXT",
+                                            "size": {
+                                              "w": 26,
+                                              "h": 20
+                                            },
+                                            "content": "100",
+                                            "styles": {
+                                              "bg": "rgb(73, 80, 87)",
+                                              "text": {
+                                                "family": "Mont",
+                                                "size": 16,
+                                                "weight": "400",
+                                                "align": "left"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "plus",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 24,
+                                          "h": 24
+                                        },
+                                        "styles": {
+                                          "layout": {
+                                            "direction": "row",
+                                            "gap": 0,
+                                            "align": {
+                                              "main": "start",
+                                              "cross": "start"
+                                            }
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 0,
+                                              "h": 14
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 14,
+                                              "h": 0
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "frame-127",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 250,
+                                      "h": 24
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 32,
+                                        "align": {
+                                          "main": "end",
+                                          "cross": "center"
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "price",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 66,
+                                          "h": 20
+                                        },
+                                        "styles": {
+                                          "layout": {
+                                            "direction": "column",
+                                            "gap": 8,
+                                            "align": {
+                                              "main": "start",
+                                              "cross": "start"
+                                            }
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "50-000--",
+                                            "type": "TEXT",
+                                            "size": {
+                                              "w": 66,
+                                              "h": 18
+                                            },
+                                            "content": "50 000 ₴",
+                                            "styles": {
+                                              "bg": "rgb(73, 80, 87)",
+                                              "text": {
+                                                "family": "Arial",
+                                                "size": 14,
+                                                "weight": "400",
+                                                "align": "left"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "name": "20-000--",
+                                            "type": "TEXT",
+                                            "size": {
+                                              "w": 66,
+                                              "h": 20
+                                            },
+                                            "content": "20 000 ₴",
+                                            "styles": {
+                                              "bg": "rgb(73, 80, 87)",
+                                              "text": {
+                                                "family": "Mont",
+                                                "size": 16,
+                                                "weight": "600",
+                                                "align": "left"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "more-vertical",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 24,
+                                          "h": 24
+                                        },
+                                        "styles": {
+                                          "layout": {
+                                            "direction": "column",
+                                            "gap": 5,
+                                            "align": {
+                                              "main": "start",
+                                              "cross": "start"
+                                            },
+                                            "padding": [
+                                              4,
+                                              11,
+                                              4,
+                                              11
+                                            ]
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 2,
+                                              "h": 2
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 2,
+                                              "h": 2
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 2,
+                                              "h": 2
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "block_tovar",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 380,
+                          "h": 148
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "column",
+                            "gap": 111,
+                            "align": {
+                              "main": "center",
+                              "cross": "start"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "more-vertical",
+                            "type": "FRAME",
+                            "size": {
+                              "w": 380,
+                              "h": 148
+                            },
+                            "styles": {
+                              "layout": {
+                                "direction": "column",
+                                "gap": 8,
+                                "align": {
+                                  "main": "center",
+                                  "cross": "start"
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "name": "tovar",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 380,
+                                  "h": 88
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 24,
+                                    "align": {
+                                      "main": "start",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "rectangle-44",
+                                    "type": "RECTANGLE",
+                                    "size": {
+                                      "w": 88,
+                                      "h": 88
+                                    },
+                                    "styles": {
+                                      "radius": 8
+                                    }
+                                  },
+                                  {
+                                    "name": "------------------gt-racer-x-5164-fabric-black",
+                                    "type": "TEXT",
+                                    "size": {
+                                      "w": 268,
+                                      "h": 40
+                                    },
+                                    "content": "Геймерське крісло GT Racer X-5164 Fabric Black",
+                                    "styles": {
+                                      "bg": "rgb(73, 80, 87)",
+                                      "text": {
+                                        "family": "Mont",
+                                        "size": 16,
+                                        "weight": "400",
+                                        "align": "left"
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "number_price",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 380,
+                                  "h": 52
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 451,
+                                    "align": {
+                                      "main": "space-between",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "tovar_kilkist_kalkuliator",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 130,
+                                      "h": 52
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 16,
+                                        "align": {
+                                          "main": "center",
+                                          "cross": "center"
+                                        },
+                                        "padding": [
+                                          8,
+                                          0,
+                                          8,
+                                          8
+                                        ]
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "minus",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 24,
+                                          "h": 24
+                                        },
+                                        "styles": {
+                                          "layout": {
+                                            "direction": "row",
+                                            "gap": 0,
+                                            "align": {
+                                              "main": "start",
+                                              "cross": "start"
+                                            }
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 14,
+                                              "h": 0
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "frame-23",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 42,
+                                          "h": 36
+                                        },
+                                        "styles": {
+                                          "bg": "rgb(245, 245, 245)",
+                                          "border": {
+                                            "width": 1,
+                                            "color": "rgb(173, 181, 189)"
+                                          },
+                                          "radius": 4,
+                                          "layout": {
+                                            "direction": "row",
+                                            "gap": 10,
+                                            "align": {
+                                              "main": "center",
+                                              "cross": "center"
+                                            },
+                                            "padding": [
+                                              8,
+                                              8,
+                                              8,
+                                              8
+                                            ]
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "100",
+                                            "type": "TEXT",
+                                            "size": {
+                                              "w": 26,
+                                              "h": 20
+                                            },
+                                            "content": "100",
+                                            "styles": {
+                                              "bg": "rgb(73, 80, 87)",
+                                              "text": {
+                                                "family": "Mont",
+                                                "size": 16,
+                                                "weight": "400",
+                                                "align": "left"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "plus",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 24,
+                                          "h": 24
+                                        },
+                                        "styles": {
+                                          "layout": {
+                                            "direction": "row",
+                                            "gap": 0,
+                                            "align": {
+                                              "main": "start",
+                                              "cross": "start"
+                                            }
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 0,
+                                              "h": 14
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 14,
+                                              "h": 0
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "frame-127",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 250,
+                                      "h": 24
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 32,
+                                        "align": {
+                                          "main": "end",
+                                          "cross": "center"
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "price",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 66,
+                                          "h": 20
+                                        },
+                                        "styles": {
+                                          "layout": {
+                                            "direction": "column",
+                                            "gap": 8,
+                                            "align": {
+                                              "main": "start",
+                                              "cross": "start"
+                                            }
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "50-000--",
+                                            "type": "TEXT",
+                                            "size": {
+                                              "w": 66,
+                                              "h": 18
+                                            },
+                                            "content": "50 000 ₴",
+                                            "styles": {
+                                              "bg": "rgb(73, 80, 87)",
+                                              "text": {
+                                                "family": "Arial",
+                                                "size": 14,
+                                                "weight": "400",
+                                                "align": "left"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "name": "20-000--",
+                                            "type": "TEXT",
+                                            "size": {
+                                              "w": 66,
+                                              "h": 20
+                                            },
+                                            "content": "20 000 ₴",
+                                            "styles": {
+                                              "bg": "rgb(73, 80, 87)",
+                                              "text": {
+                                                "family": "Mont",
+                                                "size": 16,
+                                                "weight": "600",
+                                                "align": "left"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "more-vertical",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 24,
+                                          "h": 24
+                                        },
+                                        "styles": {
+                                          "layout": {
+                                            "direction": "column",
+                                            "gap": 5,
+                                            "align": {
+                                              "main": "start",
+                                              "cross": "start"
+                                            },
+                                            "padding": [
+                                              4,
+                                              11,
+                                              4,
+                                              11
+                                            ]
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 2,
+                                              "h": 2
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 2,
+                                              "h": 2
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 2,
+                                              "h": 2
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "user",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 380,
+                          "h": 44
+                        },
+                        "styles": {
+                          "bg": "rgb(255, 255, 255)",
+                          "layout": {
+                            "direction": "column",
+                            "gap": 0,
+                            "align": {
+                              "main": "center",
+                              "cross": "center"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "button_edit",
+                            "type": "FRAME",
+                            "size": {
+                              "w": 208,
+                              "h": 44
+                            },
+                            "styles": {
+                              "bg": "rgb(255, 255, 255)",
+                              "border": {
+                                "width": 1,
+                                "color": "rgb(16, 44, 86)"
+                              },
+                              "radius": 8,
+                              "layout": {
+                                "direction": "column",
+                                "gap": 8,
+                                "align": {
+                                  "main": "center",
+                                  "cross": "center"
+                                },
+                                "padding": [
+                                  12,
+                                  16,
+                                  12,
+                                  16
+                                ]
+                              }
+                            },
+                            "children": [
+                              {
+                                "name": "------------------",
+                                "type": "TEXT",
+                                "size": {
+                                  "w": 176,
+                                  "h": 20
+                                },
+                                "content": "Продовжити покупки",
+                                "styles": {
+                                  "bg": "rgb(16, 44, 86)",
+                                  "text": {
+                                    "family": "Mont",
+                                    "size": 16,
+                                    "weight": "600",
+                                    "align": "left"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "section_chenge",
+                "type": "FRAME",
+                "size": {
+                  "w": 412,
+                  "h": 922
+                },
+                "styles": {
+                  "layout": {
+                    "direction": "column",
+                    "gap": 12,
+                    "align": {
+                      "main": "start",
+                      "cross": "start"
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "name": "block_contact",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 412,
+                      "h": 104
+                    },
+                    "styles": {
+                      "bg": "rgb(255, 255, 255)",
+                      "radius": 8,
+                      "layout": {
+                        "direction": "column",
+                        "gap": 8,
+                        "align": {
+                          "main": "start",
+                          "cross": "start"
+                        },
+                        "padding": [
+                          8,
+                          8,
+                          8,
+                          8
+                        ]
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "imput_name",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 396,
+                          "h": 88
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "column",
+                            "gap": 12,
+                            "align": {
+                              "main": "start",
+                              "cross": "start"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "-------------------",
+                            "type": "TEXT",
+                            "size": {
+                              "w": 204,
+                              "h": 26
+                            },
+                            "content": "Ваші контактні дані",
+                            "styles": {
+                              "bg": "rgb(73, 80, 87)",
+                              "text": {
+                                "family": "Mont",
+                                "size": 20,
+                                "weight": "600",
+                                "align": "left"
+                              }
+                            }
+                          },
+                          {
+                            "name": "imput_name",
+                            "type": "FRAME",
+                            "size": {
+                              "w": 396,
+                              "h": 50
+                            },
+                            "styles": {
+                              "bg": "rgb(255, 255, 255)",
+                              "border": {
+                                "width": 1,
+                                "color": "rgb(173, 181, 189)"
+                              },
+                              "radius": 8,
+                              "layout": {
+                                "direction": "row",
+                                "gap": 614,
+                                "align": {
+                                  "main": "space-between",
+                                  "cross": "center"
+                                },
+                                "padding": [
+                                  4,
+                                  16,
+                                  4,
+                                  16
+                                ]
+                              }
+                            },
+                            "children": [
+                              {
+                                "name": "user_name",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 127,
+                                  "h": 24
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 12,
+                                    "align": {
+                                      "main": "start",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "user",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 24,
+                                      "h": 24
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "column",
+                                        "gap": 4,
+                                        "align": {
+                                          "main": "start",
+                                          "cross": "center"
+                                        },
+                                        "padding": [
+                                          3,
+                                          4,
+                                          3,
+                                          4
+                                        ]
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "vector",
+                                        "type": "VECTOR",
+                                        "size": {
+                                          "w": 8,
+                                          "h": 8
+                                        },
+                                        "styles": {
+                                          "border": {
+                                            "width": 2,
+                                            "color": "rgb(73, 80, 87)"
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "name": "vector",
+                                        "type": "VECTOR",
+                                        "size": {
+                                          "w": 16,
+                                          "h": 6
+                                        },
+                                        "styles": {
+                                          "border": {
+                                            "width": 2,
+                                            "color": "rgb(73, 80, 87)"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "----------",
+                                    "type": "TEXT",
+                                    "size": {
+                                      "w": 91,
+                                      "h": 20
+                                    },
+                                    "content": "Шульга Іна",
+                                    "styles": {
+                                      "bg": "rgb(73, 80, 87)",
+                                      "text": {
+                                        "family": "Mont",
+                                        "size": 16,
+                                        "weight": "400",
+                                        "align": "left"
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "edit",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 24,
+                                  "h": 24
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 0,
+                                    "align": {
+                                      "main": "center",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "vector",
+                                    "type": "VECTOR",
+                                    "size": {
+                                      "w": 20,
+                                      "h": 20
+                                    },
+                                    "styles": {
+                                      "border": {
+                                        "width": 2,
+                                        "color": "rgb(73, 80, 87)"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "block_location",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 412,
+                      "h": 66
+                    },
+                    "styles": {
+                      "bg": "rgb(255, 255, 255)",
+                      "radius": 8,
+                      "layout": {
+                        "direction": "column",
+                        "gap": 8,
+                        "align": {
+                          "main": "start",
+                          "cross": "start"
+                        },
+                        "padding": [
+                          8,
+                          8,
+                          8,
+                          8
+                        ]
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "imput_name",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 396,
+                          "h": 50
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "column",
+                            "gap": 12,
+                            "align": {
+                              "main": "start",
+                              "cross": "start"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "imput_location",
+                            "type": "FRAME",
+                            "size": {
+                              "w": 396,
+                              "h": 50
+                            },
+                            "styles": {
+                              "layout": {
+                                "direction": "column",
+                                "gap": 12,
+                                "align": {
+                                  "main": "start",
+                                  "cross": "start"
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "name": "imput_name",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 396,
+                                  "h": 50
+                                },
+                                "styles": {
+                                  "bg": "rgb(255, 255, 255)",
+                                  "border": {
+                                    "width": 1,
+                                    "color": "rgb(173, 181, 189)"
+                                  },
+                                  "radius": 8,
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 614,
+                                    "align": {
+                                      "main": "space-between",
+                                      "cross": "center"
+                                    },
+                                    "padding": [
+                                      4,
+                                      16,
+                                      4,
+                                      16
+                                    ]
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "user_name",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 184,
+                                      "h": 24
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 12,
+                                        "align": {
+                                          "main": "start",
+                                          "cross": "center"
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "map-pin",
+                                        "type": "FRAME",
+                                        "size": {
+                                          "w": 24,
+                                          "h": 24
+                                        },
+                                        "styles": {
+                                          "layout": {
+                                            "direction": "row",
+                                            "gap": 10,
+                                            "align": {
+                                              "main": "space-between",
+                                              "cross": "center"
+                                            },
+                                            "padding": [
+                                              1,
+                                              3,
+                                              1,
+                                              3
+                                            ]
+                                          }
+                                        },
+                                        "children": [
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 18,
+                                              "h": 22
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "name": "vector",
+                                            "type": "VECTOR",
+                                            "size": {
+                                              "w": 6,
+                                              "h": 6
+                                            },
+                                            "styles": {
+                                              "border": {
+                                                "width": 2,
+                                                "color": "rgb(73, 80, 87)"
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "name": "------------------",
+                                        "type": "TEXT",
+                                        "size": {
+                                          "w": 148,
+                                          "h": 20
+                                        },
+                                        "content": "Київ, Киівська обл",
+                                        "styles": {
+                                          "bg": "rgb(73, 80, 87)",
+                                          "text": {
+                                            "family": "Mont",
+                                            "size": 16,
+                                            "weight": "400",
+                                            "align": "left"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "edit",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 24,
+                                      "h": 24
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 0,
+                                        "align": {
+                                          "main": "center",
+                                          "cross": "center"
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "vector",
+                                        "type": "VECTOR",
+                                        "size": {
+                                          "w": 20,
+                                          "h": 20
+                                        },
+                                        "styles": {
+                                          "border": {
+                                            "width": 2,
+                                            "color": "rgb(73, 80, 87)"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "block_location",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 412,
+                      "h": 158
+                    },
+                    "styles": {
+                      "bg": "rgb(255, 255, 255)",
+                      "radius": 8,
+                      "layout": {
+                        "direction": "column",
+                        "gap": 12,
+                        "align": {
+                          "main": "start",
+                          "cross": "start"
+                        },
+                        "padding": [
+                          8,
+                          8,
+                          8,
+                          8
+                        ]
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "imput_telef_mail",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 396,
+                          "h": 142
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "column",
+                            "gap": 12,
+                            "align": {
+                              "main": "start",
+                              "cross": "start"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "imput_street",
+                            "type": "FRAME",
+                            "size": {
+                              "w": 396,
+                              "h": 65
+                            },
+                            "styles": {
+                              "layout": {
+                                "direction": "column",
+                                "gap": 7,
+                                "align": {
+                                  "main": "start",
+                                  "cross": "start"
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "name": "-------",
+                                "type": "TEXT",
+                                "size": {
+                                  "w": 396,
+                                  "h": 18
+                                },
+                                "content": "Телефон",
+                                "styles": {
+                                  "bg": "rgb(73, 80, 87)",
+                                  "text": {
+                                    "family": "Mont",
+                                    "size": 14,
+                                    "weight": "400",
+                                    "align": "left"
+                                  }
+                                }
+                              },
+                              {
+                                "name": "imput_street",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 396,
+                                  "h": 40
+                                },
+                                "styles": {
+                                  "bg": "rgb(255, 255, 255)",
+                                  "border": {
+                                    "width": 1,
+                                    "color": "rgb(73, 80, 87)"
+                                  },
+                                  "radius": 8,
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 0,
+                                    "align": {
+                                      "main": "start",
+                                      "cross": "center"
+                                    },
+                                    "padding": [
+                                      4,
+                                      12,
+                                      4,
+                                      12
+                                    ]
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "-38-093--666-66-66",
+                                    "type": "TEXT",
+                                    "size": {
+                                      "w": 138,
+                                      "h": 20
+                                    },
+                                    "content": "+38(093) 666 66 66",
+                                    "styles": {
+                                      "bg": "rgb(73, 80, 87)",
+                                      "text": {
+                                        "family": "Mont",
+                                        "size": 16,
+                                        "weight": "400",
+                                        "align": "left"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "name": "imput_street",
+                            "type": "FRAME",
+                            "size": {
+                              "w": 396,
+                              "h": 65
+                            },
+                            "styles": {
+                              "layout": {
+                                "direction": "column",
+                                "gap": 7,
+                                "align": {
+                                  "main": "start",
+                                  "cross": "start"
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "name": "e---mail",
+                                "type": "TEXT",
+                                "size": {
+                                  "w": 396,
+                                  "h": 18
+                                },
+                                "content": "e - mail",
+                                "styles": {
+                                  "bg": "rgb(73, 80, 87)",
+                                  "text": {
+                                    "family": "Mont",
+                                    "size": 14,
+                                    "weight": "400",
+                                    "align": "left"
+                                  }
+                                }
+                              },
+                              {
+                                "name": "imput_street",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 396,
+                                  "h": 40
+                                },
+                                "styles": {
+                                  "bg": "rgb(255, 255, 255)",
+                                  "border": {
+                                    "width": 1,
+                                    "color": "rgb(73, 80, 87)"
+                                  },
+                                  "radius": 8,
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 0,
+                                    "align": {
+                                      "main": "start",
+                                      "cross": "center"
+                                    },
+                                    "padding": [
+                                      4,
+                                      12,
+                                      4,
+                                      12
+                                    ]
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "thisismymail-gmail-com",
+                                    "type": "TEXT",
+                                    "size": {
+                                      "w": 201,
+                                      "h": 20
+                                    },
+                                    "content": "thisismymail@gmail.com",
+                                    "styles": {
+                                      "bg": "rgb(73, 80, 87)",
+                                      "text": {
+                                        "family": "Mont",
+                                        "size": 16,
+                                        "weight": "400",
+                                        "align": "left"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "block_location",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 412,
+                      "h": 226
+                    },
+                    "styles": {
+                      "bg": "rgb(255, 255, 255)",
+                      "radius": 8,
+                      "layout": {
+                        "direction": "column",
+                        "gap": 12,
+                        "align": {
+                          "main": "start",
+                          "cross": "start"
+                        },
+                        "padding": [
+                          16,
+                          16,
+                          16,
+                          16
+                        ]
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "imput_name",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 380,
+                          "h": 194
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "column",
+                            "gap": 12,
+                            "align": {
+                              "main": "start",
+                              "cross": "start"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "--------",
+                            "type": "TEXT",
+                            "size": {
+                              "w": 101,
+                              "h": 26
+                            },
+                            "content": "Доставка",
+                            "styles": {
+                              "bg": "rgb(73, 80, 87)",
+                              "text": {
+                                "family": "Mont",
+                                "size": 20,
+                                "weight": "600",
+                                "align": "left"
+                              }
+                            }
+                          },
+                          {
+                            "name": "delivery",
+                            "type": "FRAME",
+                            "size": {
+                              "w": 380,
+                              "h": 156
+                            },
+                            "styles": {
+                              "bg": "rgb(255, 255, 255)",
+                              "radius": 8,
+                              "layout": {
+                                "direction": "column",
+                                "gap": 12,
+                                "align": {
+                                  "main": "start",
+                                  "cross": "start"
+                                },
+                                "padding": [
+                                  16,
+                                  15,
+                                  16,
+                                  15
+                                ]
+                              }
+                            },
+                            "children": [
+                              {
+                                "name": "samovuviz",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 350,
+                                  "h": 60
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 16,
+                                    "align": {
+                                      "main": "start",
+                                      "cross": "start"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "delivery_samovuviz",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 225,
+                                      "h": 60
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 16,
+                                        "align": {
+                                          "main": "start",
+                                          "cross": "start"
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "check_box_click",
+                                        "type": "INSTANCE",
+                                        "size": {
+                                          "w": 0,
+                                          "h": 0
+                                        }
+                                      },
+                                      {
+                                        "name": "------------------------------------------9-12-----------15-00---20-00",
+                                        "type": "TEXT",
+                                        "size": {
+                                          "w": 249,
+                                          "h": 60
+                                        },
+                                        "content": "Самовивіз з нашого магазину\nвул. Сирецька 9 \n12 вересня з 15:00 - 20:00",
+                                        "styles": {
+                                          "bg": "rgb(73, 80, 87)",
+                                          "text": {
+                                            "family": "Arial",
+                                            "size": 16,
+                                            "weight": "400",
+                                            "align": "left"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "-----------",
+                                    "type": "TEXT",
+                                    "size": {
+                                      "w": 109,
+                                      "h": 20
+                                    },
+                                    "content": "Безкоштовно",
+                                    "styles": {
+                                      "bg": "rgb(0, 125, 86)",
+                                      "text": {
+                                        "family": "Mont",
+                                        "size": 16,
+                                        "weight": "600",
+                                        "align": "left"
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "samovuviz",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 350,
+                                  "h": 20
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 16,
+                                    "align": {
+                                      "main": "start",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "delivery_samovuviz",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 117,
+                                      "h": 20
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 16,
+                                        "align": {
+                                          "main": "start",
+                                          "cross": "center"
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "check_box",
+                                        "type": "INSTANCE",
+                                        "size": {
+                                          "w": 0,
+                                          "h": 0
+                                        }
+                                      },
+                                      {
+                                        "name": "-----------------------",
+                                        "type": "TEXT",
+                                        "size": {
+                                          "w": 206,
+                                          "h": 20
+                                        },
+                                        "content": "Самовивіз з Нової пошти",
+                                        "styles": {
+                                          "bg": "rgb(73, 80, 87)",
+                                          "text": {
+                                            "family": "Mont",
+                                            "size": 16,
+                                            "weight": "400",
+                                            "align": "left"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "-----------------------",
+                                    "type": "TEXT",
+                                    "size": {
+                                      "w": 217,
+                                      "h": 20
+                                    },
+                                    "content": "За тарифами перевізника",
+                                    "styles": {
+                                      "bg": "rgb(252, 6, 17)",
+                                      "text": {
+                                        "family": "Mont",
+                                        "size": 16,
+                                        "weight": "600",
+                                        "align": "left"
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "samovuviz",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 350,
+                                  "h": 20
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 16,
+                                    "align": {
+                                      "main": "start",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "delivery_samovuviz",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 117,
+                                      "h": 20
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 16,
+                                        "align": {
+                                          "main": "start",
+                                          "cross": "center"
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "check_box",
+                                        "type": "INSTANCE",
+                                        "size": {
+                                          "w": 0,
+                                          "h": 0
+                                        }
+                                      },
+                                      {
+                                        "name": "----------------------------------",
+                                        "type": "TEXT",
+                                        "size": {
+                                          "w": 319,
+                                          "h": 20
+                                        },
+                                        "content": "Курьєрська доставка на вашу адресу",
+                                        "styles": {
+                                          "bg": "rgb(73, 80, 87)",
+                                          "text": {
+                                            "family": "Mont",
+                                            "size": 16,
+                                            "weight": "400",
+                                            "align": "left"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "-----------------------",
+                                    "type": "TEXT",
+                                    "size": {
+                                      "w": 217,
+                                      "h": 20
+                                    },
+                                    "content": "За тарифами перевізника",
+                                    "styles": {
+                                      "bg": "rgb(252, 6, 17)",
+                                      "text": {
+                                        "family": "Mont",
+                                        "size": 16,
+                                        "weight": "600",
+                                        "align": "left"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "block_location",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 412,
+                      "h": 320
+                    },
+                    "styles": {
+                      "bg": "rgb(255, 255, 255)",
+                      "radius": 8,
+                      "layout": {
+                        "direction": "column",
+                        "gap": 12,
+                        "align": {
+                          "main": "start",
+                          "cross": "start"
+                        },
+                        "padding": [
+                          16,
+                          16,
+                          16,
+                          16
+                        ]
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "imput_name",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 380,
+                          "h": 288
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "column",
+                            "gap": 12,
+                            "align": {
+                              "main": "start",
+                              "cross": "start"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "------",
+                            "type": "TEXT",
+                            "size": {
+                              "w": 80,
+                              "h": 26
+                            },
+                            "content": "Оплата",
+                            "styles": {
+                              "bg": "rgb(73, 80, 87)",
+                              "text": {
+                                "family": "Mont",
+                                "size": 20,
+                                "weight": "600",
+                                "align": "left"
+                              }
+                            }
+                          },
+                          {
+                            "name": "delivery",
+                            "type": "FRAME",
+                            "size": {
+                              "w": 380,
+                              "h": 250
+                            },
+                            "styles": {
+                              "bg": "rgb(255, 255, 255)",
+                              "radius": 8,
+                              "layout": {
+                                "direction": "column",
+                                "gap": 12,
+                                "align": {
+                                  "main": "start",
+                                  "cross": "start"
+                                },
+                                "padding": [
+                                  16,
+                                  15,
+                                  16,
+                                  15
+                                ]
+                              }
+                            },
+                            "children": [
+                              {
+                                "name": "samovuviz",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 350,
+                                  "h": 20
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 16,
+                                    "align": {
+                                      "main": "start",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "delivery_samovuviz",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 350,
+                                      "h": 20
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 16,
+                                        "align": {
+                                          "main": "start",
+                                          "cross": "center"
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "check_box_click",
+                                        "type": "INSTANCE",
+                                        "size": {
+                                          "w": 0,
+                                          "h": 0
+                                        }
+                                      },
+                                      {
+                                        "name": "------------------------",
+                                        "type": "TEXT",
+                                        "size": {
+                                          "w": 318,
+                                          "h": 20
+                                        },
+                                        "content": "Під час отримання товару",
+                                        "styles": {
+                                          "bg": "rgb(73, 80, 87)",
+                                          "text": {
+                                            "family": "Mont",
+                                            "size": 16,
+                                            "weight": "400",
+                                            "align": "left"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "samovuviz",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 350,
+                                  "h": 20
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 16,
+                                    "align": {
+                                      "main": "start",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "delivery_samovuviz",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 350,
+                                      "h": 20
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 16,
+                                        "align": {
+                                          "main": "start",
+                                          "cross": "center"
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "check_box",
+                                        "type": "INSTANCE",
+                                        "size": {
+                                          "w": 0,
+                                          "h": 0
+                                        }
+                                      },
+                                      {
+                                        "name": "------------",
+                                        "type": "TEXT",
+                                        "size": {
+                                          "w": 318,
+                                          "h": 20
+                                        },
+                                        "content": "Оплата зараз",
+                                        "styles": {
+                                          "bg": "rgb(73, 80, 87)",
+                                          "text": {
+                                            "family": "Mont",
+                                            "size": 16,
+                                            "weight": "400",
+                                            "align": "left"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "samovuviz",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 350,
+                                  "h": 83
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 16,
+                                    "align": {
+                                      "main": "start",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "delivery_samovuviz",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 350,
+                                      "h": 83
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 16,
+                                        "align": {
+                                          "main": "start",
+                                          "cross": "center"
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "check_box",
+                                        "type": "INSTANCE",
+                                        "size": {
+                                          "w": 0,
+                                          "h": 0
+                                        }
+                                      },
+                                      {
+                                        "name": "--------------------------------------------------------------------------------------------",
+                                        "type": "TEXT",
+                                        "size": {
+                                          "w": 318,
+                                          "h": 83
+                                        },
+                                        "content": "Безготівкова оплата для юридичних осіб\nОплата для юридичних осіб через розрахунковий рахунок",
+                                        "styles": {
+                                          "text": {
+                                            "family": "Mont",
+                                            "size": 16,
+                                            "weight": "400",
+                                            "align": "left"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "samovuviz",
+                                "type": "FRAME",
+                                "size": {
+                                  "w": 350,
+                                  "h": 59
+                                },
+                                "styles": {
+                                  "layout": {
+                                    "direction": "row",
+                                    "gap": 16,
+                                    "align": {
+                                      "main": "start",
+                                      "cross": "center"
+                                    }
+                                  }
+                                },
+                                "children": [
+                                  {
+                                    "name": "delivery_samovuviz",
+                                    "type": "FRAME",
+                                    "size": {
+                                      "w": 350,
+                                      "h": 59
+                                    },
+                                    "styles": {
+                                      "layout": {
+                                        "direction": "row",
+                                        "gap": 16,
+                                        "align": {
+                                          "main": "start",
+                                          "cross": "center"
+                                        }
+                                      }
+                                    },
+                                    "children": [
+                                      {
+                                        "name": "check_box",
+                                        "type": "INSTANCE",
+                                        "size": {
+                                          "w": 0,
+                                          "h": 0
+                                        }
+                                      },
+                                      {
+                                        "name": "------------------------------------------------------------------------------------------",
+                                        "type": "TEXT",
+                                        "size": {
+                                          "w": 318,
+                                          "h": 59
+                                        },
+                                        "content": "Безготівкова оплата для фізичних осіб\nОплата для фізичних осіб через розрахунковий рахунок",
+                                        "styles": {
+                                          "text": {
+                                            "family": "Mont",
+                                            "size": 16,
+                                            "weight": "400",
+                                            "align": "left"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "button_",
+                "type": "FRAME",
+                "size": {
+                  "w": 225,
+                  "h": 44
+                },
+                "styles": {
+                  "bg": "rgb(248, 249, 250)",
+                  "border": {
+                    "width": 1,
+                    "color": "rgb(16, 44, 86)"
+                  },
+                  "radius": 8,
+                  "layout": {
+                    "direction": "row",
+                    "gap": 10,
+                    "align": {
+                      "main": "center",
+                      "cross": "center"
+                    },
+                    "padding": [
+                      12,
+                      16,
+                      12,
+                      16
+                    ]
+                  }
+                },
+                "children": [
+                  {
+                    "name": "-------------------",
+                    "type": "TEXT",
+                    "size": {
+                      "w": 193,
+                      "h": 20
+                    },
+                    "content": "Оформити замовлення",
+                    "styles": {
+                      "bg": "rgb(16, 44, 86)",
+                      "text": {
+                        "family": "Mont",
+                        "size": 16,
+                        "weight": "600",
+                        "align": "left"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "section_footer_760",
+        "type": "INSTANCE",
+        "size": {
+          "w": 0,
+          "h": 0
+        }
+      }
+    ]
+  },
+  "summary": {
+    "components": 0,
+    "instances": 9,
+    "frames": 84,
+    "texts": 36,
+    "hasAutoLayout": true,
+    "hasEffects": false
+  }
+}

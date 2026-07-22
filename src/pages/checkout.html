@@ -4,18 +4,234 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Оформлення замовлення - Galef</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/scss/main.scss">
 </head>
 <body>
-  <div class="page-wrapper">
-    <main class="main-content">
-      <div class="container">
-        <h1>Оформлення замовлення</h1>
-      </div>
-    </main>
-  </div>
+  <load src="/parts/header.html" />
+
+  <main class="page-wrapper checkout">
+    <div class="container checkout__container">
+      <nav class="checkout__breadcrumbs" aria-label="Breadcrumb">
+        <a href="/galef/" class="checkout__breadcrumb-link">Головна</a>
+        <span class="checkout__breadcrumb-separator">/</span>
+        <a href="/galef/pages/catalog.html" class="checkout__breadcrumb-link">Офісні крісла</a>
+        <span class="checkout__breadcrumb-separator">/</span>
+        <a href="/galef/pages/product.html" class="checkout__breadcrumb-link">Офісне крісло GT Racer B - 8995 Blue</a>
+        <span class="checkout__breadcrumb-separator">/</span>
+        <span class="checkout__breadcrumb-current" aria-current="page">Оформлення замовлення</span>
+      </nav>
+
+      <form class="checkout__paper" action="/galef/pages/order-success.html">
+        <h1 class="checkout__title">Оформлення замовлення</h1>
+
+        <div class="checkout__form">
+          <section class="checkout__section checkout__section--order" id="checkout-order">
+            <h2 class="checkout__section-title">Замовлення</h2>
+
+            <div class="checkout__cart-items">
+              <article class="checkout__cart-item">
+                <img src="/assets/images/chair.png" alt="Геймерське крісло GT Racer X-5164 Fabric Black" class="checkout__cart-img">
+                <h3 class="checkout__cart-name">Геймерське крісло GT Racer X-5164 Fabric Black</h3>
+                <div class="checkout__cart-qty" aria-label="Кількість товару">
+                  <button class="checkout__qty-btn" type="button" data-action="decrease" aria-label="Зменшити кількість">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="7.25" width="12" height="1.5" rx="0.75" fill="currentColor"/></svg>
+                  </button>
+                  <input type="text" value="100" class="checkout__qty-input" aria-label="Кількість">
+                  <button class="checkout__qty-btn" type="button" data-action="increase" aria-label="Збільшити кількість">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="7.25" y="2" width="1.5" height="12" rx="0.75" fill="currentColor"/><rect x="2" y="7.25" width="12" height="1.5" rx="0.75" fill="currentColor"/></svg>
+                  </button>
+                </div>
+                <div class="checkout__cart-price-col">
+                  <div class="checkout__cart-price">20 000 ₴</div>
+                </div>
+                <button class="checkout__cart-dots" type="button" aria-label="Дії з товаром">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="12" cy="5" r="1.5" fill="currentColor"/>
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="12" cy="19" r="1.5" fill="currentColor"/>
+                  </svg>
+                </button>
+              </article>
+
+              <article class="checkout__cart-item">
+                <img src="/assets/images/chair.png" alt="Геймерське крісло GT Racer X-5164 Fabric Black" class="checkout__cart-img">
+                <h3 class="checkout__cart-name">Геймерське крісло GT Racer X-5164 Fabric Black</h3>
+                <div class="checkout__cart-qty" aria-label="Кількість товару">
+                  <button class="checkout__qty-btn" type="button" data-action="decrease" aria-label="Зменшити кількість">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="7.25" width="12" height="1.5" rx="0.75" fill="currentColor"/></svg>
+                  </button>
+                  <input type="text" value="100" class="checkout__qty-input" aria-label="Кількість">
+                  <button class="checkout__qty-btn" type="button" data-action="increase" aria-label="Збільшити кількість">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="7.25" y="2" width="1.5" height="12" rx="0.75" fill="currentColor"/><rect x="2" y="7.25" width="12" height="1.5" rx="0.75" fill="currentColor"/></svg>
+                  </button>
+                </div>
+                <div class="checkout__cart-price-col">
+                  <div class="checkout__cart-old-price">50 000 ₴</div>
+                  <div class="checkout__cart-price checkout__cart-price--sale">20 000 ₴</div>
+                </div>
+                <button class="checkout__cart-dots" type="button" aria-label="Дії з товаром">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="12" cy="5" r="1.5" fill="currentColor"/>
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="12" cy="19" r="1.5" fill="currentColor"/>
+                  </svg>
+                </button>
+              </article>
+
+              <article class="checkout__cart-item">
+                <img src="/assets/images/chair.png" alt="Геймерське крісло GT Racer X-5164 Fabric Black" class="checkout__cart-img">
+                <h3 class="checkout__cart-name">Геймерське крісло GT Racer X-5164 Fabric Black</h3>
+                <div class="checkout__cart-qty" aria-label="Кількість товару">
+                  <button class="checkout__qty-btn" type="button" data-action="decrease" aria-label="Зменшити кількість">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="7.25" width="12" height="1.5" rx="0.75" fill="currentColor"/></svg>
+                  </button>
+                  <input type="text" value="100" class="checkout__qty-input" aria-label="Кількість">
+                  <button class="checkout__qty-btn" type="button" data-action="increase" aria-label="Збільшити кількість">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="7.25" y="2" width="1.5" height="12" rx="0.75" fill="currentColor"/><rect x="2" y="7.25" width="12" height="1.5" rx="0.75" fill="currentColor"/></svg>
+                  </button>
+                </div>
+                <div class="checkout__cart-price-col">
+                  <div class="checkout__cart-old-price">50 000 ₴</div>
+                  <div class="checkout__cart-price checkout__cart-price--sale">20 000 ₴</div>
+                </div>
+                <button class="checkout__cart-dots" type="button" aria-label="Дії з товаром">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="12" cy="5" r="1.5" fill="currentColor"/>
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                    <circle cx="12" cy="19" r="1.5" fill="currentColor"/>
+                  </svg>
+                </button>
+              </article>
+            </div>
+
+            <div class="checkout__continue-wrap">
+              <a class="btn btn--outline checkout__small-btn" href="/galef/pages/catalog.html">Продовжити покупки</a>
+            </div>
+          </section>
+
+          <section class="checkout__section checkout__section--contact" id="checkout-contacts">
+            <h2 class="checkout__section-title">Ваші контактні дані</h2>
+
+            <div class="checkout__edit-field">
+              <svg class="checkout__field-icon" width="24" height="24" aria-hidden="true"><use href="#icon-user"></use></svg>
+              <input type="text" value="Шульга Іна" class="checkout__edit-input" aria-label="Ім'я">
+              <button class="checkout__edit-btn" type="button" aria-label="Редагувати ім'я">
+                <svg width="24" height="24" aria-hidden="true"><use href="#icon-pencil"></use></svg>
+              </button>
+            </div>
+          </section>
+
+          <section class="checkout__section checkout__section--compact" aria-label="Місто доставки">
+            <div class="checkout__edit-field">
+              <svg class="checkout__field-icon" width="24" height="24" aria-hidden="true"><use href="#icon-location"></use></svg>
+              <input type="text" value="Київ, Київська обл" class="checkout__edit-input" aria-label="Місто">
+              <button class="checkout__edit-btn" type="button" aria-label="Редагувати місто">
+                <svg width="24" height="24" aria-hidden="true"><use href="#icon-pencil"></use></svg>
+              </button>
+            </div>
+          </section>
+
+          <section class="checkout__section checkout__section--compact" aria-label="Телефон та електронна пошта">
+            <div class="checkout__contacts-row">
+              <label class="checkout__field">
+                <span class="checkout__label">Телефон<span class="checkout__label-required">*</span></span>
+                <input type="tel" value="+38(093) 666 66 66" class="checkout__input" autocomplete="tel">
+              </label>
+              <label class="checkout__field">
+                <span class="checkout__label">e - mail<span class="checkout__label-required">*</span></span>
+                <input type="email" value="thisismymail@gmail.com" class="checkout__input" autocomplete="email">
+              </label>
+            </div>
+          </section>
+
+          <section class="checkout__section checkout__section--delivery" id="checkout-delivery">
+            <h2 class="checkout__section-title">Доставка</h2>
+
+            <div class="checkout__radio-group">
+              <label class="checkout__radio-item" for="delivery-pickup">
+                <input type="radio" id="delivery-pickup" name="delivery" checked class="checkout__radio-input">
+                <span class="checkout__radio-mark"></span>
+                <span class="checkout__radio-content">
+                  <span class="checkout__radio-title">Самовивіз з нашого магазину<br><span class="checkout__radio-title-bold">вул. Сирецька 9</span><br><span class="checkout__radio-title-bold">12 вересня з 15:00 - 20:00</span></span>
+                </span>
+                <span class="checkout__radio-price checkout__radio-price--free">Безкоштовно</span>
+              </label>
+
+              <label class="checkout__radio-item" for="delivery-nova">
+                <input type="radio" id="delivery-nova" name="delivery" class="checkout__radio-input">
+                <span class="checkout__radio-mark"></span>
+                <span class="checkout__radio-content">
+                  <span class="checkout__radio-title">Самовивіз з Нової пошти</span>
+                </span>
+                <span class="checkout__radio-price checkout__radio-price--adaptive">
+                  <span class="checkout__radio-price-desktop">Безкоштовно</span>
+                  <span class="checkout__radio-price-tablet">За тарифами перевізника</span>
+                </span>
+              </label>
+
+              <label class="checkout__radio-item" for="delivery-courier">
+                <input type="radio" id="delivery-courier" name="delivery" class="checkout__radio-input">
+                <span class="checkout__radio-mark"></span>
+                <span class="checkout__radio-content">
+                  <span class="checkout__radio-title">Кур'єрська доставка на вашу адресу<span class="checkout__delivery-city">&nbsp; по м. Київ</span></span>
+                </span>
+                <span class="checkout__radio-price checkout__radio-price--adaptive">
+                  <span class="checkout__radio-price-desktop">Безкоштовно</span>
+                  <span class="checkout__radio-price-tablet">За тарифами перевізника</span>
+                </span>
+              </label>
+            </div>
+          </section>
+
+          <section class="checkout__section checkout__section--payment" id="checkout-payment">
+            <h2 class="checkout__section-title">Оплата</h2>
+
+            <div class="checkout__radio-group checkout__radio-group--payment">
+              <label class="checkout__radio-item checkout__radio-item--payment" for="payment-on-receipt">
+                <input type="radio" id="payment-on-receipt" name="payment" checked class="checkout__radio-input">
+                <span class="checkout__radio-mark"></span>
+                <span class="checkout__radio-content">
+                  <span class="checkout__radio-title">Під час отримання товару</span>
+                </span>
+              </label>
+
+              <label class="checkout__radio-item checkout__radio-item--payment" for="payment-now">
+                <input type="radio" id="payment-now" name="payment" class="checkout__radio-input">
+                <span class="checkout__radio-mark"></span>
+                <span class="checkout__radio-content">
+                  <span class="checkout__radio-title">Оплата зараз</span>
+                </span>
+              </label>
+
+              <label class="checkout__radio-item checkout__radio-item--payment" for="payment-legal">
+                <input type="radio" id="payment-legal" name="payment" class="checkout__radio-input">
+                <span class="checkout__radio-mark"></span>
+                <span class="checkout__radio-content">
+                  <span class="checkout__radio-title">Безготівкова оплата для юридичних осіб</span>
+                  <span class="checkout__radio-desc">Оплата для юридичних осіб через розрахунковий рахунок</span>
+                </span>
+              </label>
+
+              <label class="checkout__radio-item checkout__radio-item--payment" for="payment-physical">
+                <input type="radio" id="payment-physical" name="payment" class="checkout__radio-input">
+                <span class="checkout__radio-mark"></span>
+                <span class="checkout__radio-content">
+                  <span class="checkout__radio-title">Безготівкова оплата для фізичних осіб</span>
+                  <span class="checkout__radio-desc">Оплата для фізичних осіб через розрахунковий рахунок</span>
+                </span>
+              </label>
+            </div>
+          </section>
+        </div>
+
+        <div class="checkout__submit-wrap">
+          <button class="btn btn--outline checkout__small-btn" type="submit" id="btn-place-order">Оформити замовлення</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <load src="/parts/footer.html" />
   <script type="module" src="/js/main.js"></script>
 </body>
 </html>

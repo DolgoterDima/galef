@@ -9,6 +9,7 @@ import { initPreloader } from './modules/preloader.js';
 import { initMobileMenu } from './modules/mobile-menu.js';
 import { initAccordions } from './modules/accordion.js';
 import { initModals } from './modules/modal.js';
+import { initCheckoutQty } from './modules/checkout-qty.js';
 
 import { initHeroSlider } from './modules/hero-slider.js';
 import { initProductSlider } from './modules/product-slider.js';
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductSpecifications();
   initProductReviews();
   initProductReviewModal();
+  initCheckoutQty();
 
   // Initialize sort dropdowns trigger text with the active item
   document.querySelectorAll('.sort-dropdown').forEach(dropdown => {

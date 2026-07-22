@@ -44,6 +44,11 @@
       min-width: 0;
       position: relative;
     }
+
+    @media (min-width: 960px) and (max-width: 1439px) {
+      align-self: flex-start;
+      aspect-ratio: 1 / 1;
+    }
   }
 
   // Right side: Details
@@ -249,40 +254,11 @@
     align-items: center;
     padding: 0;
     gap: 12px;
-    width: 76px;
-    height: 32px;
     margin: 0;
+  }
 
-    .icon-btn {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 8px;
-      width: 32px;
-      height: 32px;
-      border-radius: 4px;
-      background-color: transparent;
-      border: none;
-      
-      &:hover {
-        background-color: $neutral-50;
-      }
-
-      svg {
-        width: 24px;
-        height: 24px;
-        fill: currentColor;
-      }
-
-      &:first-child {
-        color: #FF3637;
-      }
-
-      &:last-child {
-        color: #6C6D74;
-      }
-    }
+  &__action-btn--favorite {
+    color: #FF3637;
   }
 
   &__buy-actions {
@@ -406,6 +382,10 @@
     strong {
       font-weight: $font-weight-bold;
     }
+
+    span {
+      font-weight: $font-weight-semibold;
+    }
   }
 
   &__delivery {
@@ -502,10 +482,31 @@
     border-radius: 3px;
     color: #102C56;
     cursor: pointer;
-    transition: background-color $transition-fast;
+    transition:
+      background-color $transition-fast,
+      border-color $transition-fast,
+      color $transition-fast;
 
     &:hover {
-      background-color: darken(#F8F9FA, 5%);
+      background-color: #325C9B;
+      border-color: #325C9B;
+      color: #FFFFFF;
+    }
+
+    &:active,
+    &:focus-visible {
+      background-color: #102C56;
+      border-color: #102C56;
+      color: #FFFFFF;
+    }
+
+    &:disabled,
+    &.is-disabled,
+    &[aria-disabled='true'] {
+      background-color: #DEE2E6;
+      border-color: #DEE2E6;
+      color: #ADB5BD;
+      cursor: not-allowed;
     }
 
     svg {
@@ -529,10 +530,31 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
-    transition: background-color $transition-fast;
+    transition:
+      background-color $transition-fast,
+      border-color $transition-fast,
+      color $transition-fast;
 
     &:hover {
-      background-color: darken(#F8F9FA, 5%);
+      background-color: #325C9B;
+      border-color: #325C9B;
+      color: #FFFFFF;
+    }
+
+    &:active,
+    &:focus-visible {
+      background-color: #102C56;
+      border-color: #102C56;
+      color: #FFFFFF;
+    }
+
+    &.is-disabled,
+    &[aria-disabled='true'] {
+      background-color: #DEE2E6;
+      border-color: #DEE2E6;
+      color: #ADB5BD;
+      cursor: not-allowed;
+      pointer-events: none;
     }
 
     svg {
@@ -560,13 +582,30 @@
     color: #000000;
     text-decoration: none;
     font-family: $font-family-base;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 16px;
     line-height: 20px;
-    transition: background-color $transition-fast;
+    transition:
+      background-color $transition-fast,
+      border-color $transition-fast,
+      color $transition-fast;
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: #000000;
+      color: #000000;
+    }
 
     &:hover {
-      background-color: $neutral-50;
+      background-color: rgba(50, 92, 155, 0.1);
+      border-color: #325C9B;
+    }
+
+    &:active {
+      background-color: rgba(16, 44, 86, 0.1);
+      border-color: #325C9B;
     }
 
     svg {
@@ -598,6 +637,7 @@
 }
 
 .product-gallery-main {
+  position: relative;
   width: 100%;
   background-color: transparent;
   flex-grow: 1;
@@ -701,7 +741,17 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  z-index: 5;
+  width: 100%;
+  transform: translateX(-50%);
+  pointer-events: none;
+
+  @media (min-width: 960px) {
+    bottom: 10px;
+  }
 }
 
 .product-gallery-thumbs {
@@ -710,6 +760,7 @@
   margin-left: 0 !important;
   margin-right: 0 !important;
   overflow: hidden;
+  pointer-events: auto;
 
   .swiper-slide {
     width: 60px;
@@ -776,6 +827,7 @@
   border: none;
   color: $blue-900;
   cursor: pointer;
+  pointer-events: auto;
   transition: background-color $transition-fast, color $transition-fast, opacity $transition-fast;
 
   &.swiper-button-lock {
