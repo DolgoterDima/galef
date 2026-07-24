@@ -72,6 +72,21 @@ langSelectors.forEach(selector => {
 
 // Filter logic
 document.addEventListener('click', (event) => {
+  const favoriteBtn = event.target.closest('.product-hero__action-btn--favorite');
+  if (favoriteBtn) {
+    const isActive = favoriteBtn.classList.toggle('is-active');
+    favoriteBtn.setAttribute('aria-pressed', String(isActive));
+  }
+
+  const compareBtn = event.target.closest('.product-hero__action-btn--compare');
+  if (compareBtn) {
+    const isActive = compareBtn.classList.toggle('is-active');
+    const iconUse = compareBtn.querySelector('use');
+
+    compareBtn.setAttribute('aria-pressed', String(isActive));
+    iconUse?.setAttribute('href', isActive ? '#icon-scaleCheck' : '#icon-scale');
+  }
+
   const filterHeader = event.target.closest('.filter__header');
   
   if (filterHeader) {
