@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список порівнянь - Galef</title>
+</head>
+<body>
+  <load src="/parts/header.html" />
+
+  <div class="page-wrapper comparison">
+    <main class="comparison__main">
+      <div class="comparison__container">
+        <nav class="comparison__breadcrumbs" aria-label="Breadcrumb">
+          <a href="/galef/" class="comparison__breadcrumb-link">Головна</a>
+          <span class="comparison__breadcrumb-separator">/</span>
+          <span class="comparison__breadcrumb-current" aria-current="page">Список порівнянь</span>
+        </nav>
+
+        <section class="comparison__section" aria-labelledby="comparison-title">
+          <div class="comparison__header">
+            <h1 class="comparison__title" id="comparison-title">Порівнюємо офісні крісла</h1>
+            <label class="comparison__toggle">
+              <input class="comparison__toggle-input" type="checkbox" data-comparison-toggle>
+              <span class="comparison__toggle-box" aria-hidden="true"></span>
+              <span class="comparison__toggle-text">Показувати тільки відмінності</span>
+            </label>
+          </div>
+
+          <div class="comparison__scroll comparison__scroll--top" aria-hidden="true">
+            <div class="comparison__scroll-spacer"></div>
+          </div>
+
+          <div class="comparison__scroll comparison__scroll--bottom" data-comparison-scroll-main tabindex="0" aria-label="Порівняльна таблиця товарів">
+            <div class="comparison__board">
+              <div class="comparison__products">
+                <article class="comparison-card">
+                  <button class="comparison-card__delete" type="button" aria-label="Видалити товар з порівняння">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M3.5 5h13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      <path d="M7.5 8.5v5M12.5 8.5v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      <path d="M5 5l.75 11A1.5 1.5 0 0 0 7.25 17.4h5.5A1.5 1.5 0 0 0 14.25 16L15 5M7.5 5V3.75A1.75 1.75 0 0 1 9.25 2h1.5a1.75 1.75 0 0 1 1.75 1.75V5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <div class="comparison-card__image-wrap">
+                    <img class="comparison-card__image" src="/assets/images/compare-chair-1.png" alt="Офісне крісло Galef B-2115 Beige/Brown">
+                  </div>
+                  <div class="comparison-card__content">
+                    <div class="comparison-card__status">В наявності</div>
+                    <h2 class="comparison-card__name">Офісне крісло Galef B-2115 Beige/Brown (leather)</h2>
+                    <div class="comparison-card__meta">
+                      <span class="comparison-card__rating">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                          <path d="M8 1.5l1.86 3.77 4.16.6-3.01 2.94.71 4.14L8 10.99 4.28 12.95l.71-4.14-3.01-2.94 4.16-.6L8 1.5z" fill="currentColor"/>
+                        </svg>
+                        5
+                      </span>
+                      <span class="comparison-card__reviews">
+                        <svg width="16" height="16" aria-hidden="true"><use href="#icon-comment"></use></svg>
+                        300
+                      </span>
+                    </div>
+                    <div class="comparison-card__prices">
+                      <span class="comparison-card__price">10 599 ₴</span>
+                      <span class="comparison-card__old-price">13 999 ₴</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="comparison-card">
+                  <div class="comparison-card__image-wrap">
+                    <img class="comparison-card__image" src="/assets/images/compare-chair-2.png" alt="Офісне крісло Galef B-338 Black">
+                  </div>
+                  <div class="comparison-card__content">
+                    <div class="comparison-card__status">В наявності</div>
+                    <h2 class="comparison-card__name">Офісне крісло Galef B-338 Black</h2>
+                    <div class="comparison-card__meta">
+                      <span class="comparison-card__rating">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                          <path d="M8 1.5l1.86 3.77 4.16.6-3.01 2.94.71 4.14L8 10.99 4.28 12.95l.71-4.14-3.01-2.94 4.16-.6L8 1.5z" fill="currentColor"/>
+                        </svg>
+                        5
+                      </span>
+                      <span class="comparison-card__reviews">
+                        <svg width="16" height="16" aria-hidden="true"><use href="#icon-comment"></use></svg>
+                        300
+                      </span>
+                    </div>
+                    <div class="comparison-card__prices">
+                      <span class="comparison-card__price">10 599 ₴</span>
+                      <span class="comparison-card__old-price">13 999 ₴</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="comparison-card">
+                  <div class="comparison-card__image-wrap">
+                    <img class="comparison-card__image" src="/assets/images/compare-chair-3.png" alt="Офісне крісло Galef B-3371 Gray">
+                  </div>
+                  <div class="comparison-card__content">
+                    <div class="comparison-card__status">В наявності</div>
+                    <h2 class="comparison-card__name">Офісне крісло Galef B-3371 Gray</h2>
+                    <div class="comparison-card__meta">
+                      <span class="comparison-card__rating">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                          <path d="M8 1.5l1.86 3.77 4.16.6-3.01 2.94.71 4.14L8 10.99 4.28 12.95l.71-4.14-3.01-2.94 4.16-.6L8 1.5z" fill="currentColor"/>
+                        </svg>
+                        5
+                      </span>
+                      <span class="comparison-card__reviews">
+                        <svg width="16" height="16" aria-hidden="true"><use href="#icon-comment"></use></svg>
+                        300
+                      </span>
+                    </div>
+                    <div class="comparison-card__prices">
+                      <span class="comparison-card__price">10 599 ₴</span>
+                      <span class="comparison-card__old-price">13 999 ₴</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="comparison-card">
+                  <div class="comparison-card__image-wrap">
+                    <img class="comparison-card__image" src="/assets/images/compare-chair-4.png" alt="Офісне крісло Galef B-717A Black">
+                  </div>
+                  <div class="comparison-card__content">
+                    <div class="comparison-card__status">В наявності</div>
+                    <h2 class="comparison-card__name">Офісне крісло Galef B-717A Black</h2>
+                    <div class="comparison-card__meta">
+                      <span class="comparison-card__rating">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                          <path d="M8 1.5l1.86 3.77 4.16.6-3.01 2.94.71 4.14L8 10.99 4.28 12.95l.71-4.14-3.01-2.94 4.16-.6L8 1.5z" fill="currentColor"/>
+                        </svg>
+                        5
+                      </span>
+                      <span class="comparison-card__reviews">
+                        <svg width="16" height="16" aria-hidden="true"><use href="#icon-comment"></use></svg>
+                        300
+                      </span>
+                    </div>
+                    <div class="comparison-card__prices">
+                      <span class="comparison-card__price">10 599 ₴</span>
+                      <span class="comparison-card__old-price">13 999 ₴</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="comparison__table" role="table" aria-label="Характеристики товарів">
+                <div class="comparison__spec-group" role="rowgroup">
+                  <div class="comparison__spec-title" role="rowheader">Матеріал обивки</div>
+                  <div class="comparison__spec-row" role="row">
+                    <div class="comparison__spec-cell" role="cell">Сітка</div>
+                    <div class="comparison__spec-cell" role="cell">Сітка</div>
+                    <div class="comparison__spec-cell" role="cell">Тканина</div>
+                    <div class="comparison__spec-cell" role="cell">Сітка</div>
+                  </div>
+                </div>
+
+                <div class="comparison__spec-group" role="rowgroup">
+                  <div class="comparison__spec-title" role="rowheader">Підлокітники</div>
+                  <div class="comparison__spec-row" role="row">
+                    <div class="comparison__spec-cell" role="cell">2D підлокітники</div>
+                    <div class="comparison__spec-cell" role="cell">3D підлокітники</div>
+                    <div class="comparison__spec-cell" role="cell">3D підлокітники</div>
+                    <div class="comparison__spec-cell" role="cell">4D підлокітники</div>
+                  </div>
+                </div>
+
+                <div class="comparison__spec-group" role="rowgroup">
+                  <div class="comparison__spec-title" role="rowheader">Спинка</div>
+                  <div class="comparison__spec-row comparison__spec-row--tall" role="row">
+                    <div class="comparison__spec-cell" role="cell">Нахил спинки від 115° до 140°</div>
+                    <div class="comparison__spec-cell" role="cell">Нахил спинки від 130° до 180°</div>
+                    <div class="comparison__spec-cell" role="cell">Нахил спинки від 135° до 160°</div>
+                    <div class="comparison__spec-cell" role="cell">Нахил спинки від 115° до 140°</div>
+                  </div>
+                </div>
+
+                <div class="comparison__spec-group" role="rowgroup">
+                  <div class="comparison__spec-title" role="rowheader">Підголівник</div>
+                  <div class="comparison__spec-row" role="row">
+                    <div class="comparison__spec-cell" role="cell">Регулюється</div>
+                    <div class="comparison__spec-cell" role="cell">Не регулюється</div>
+                    <div class="comparison__spec-cell" role="cell">Не регулюється</div>
+                    <div class="comparison__spec-cell" role="cell">Регулюється</div>
+                  </div>
+                </div>
+
+                <div class="comparison__spec-group" role="rowgroup">
+                  <div class="comparison__spec-title" role="rowheader">Висувна підніжка</div>
+                  <div class="comparison__spec-row" role="row">
+                    <div class="comparison__spec-cell" role="cell">Є</div>
+                    <div class="comparison__spec-cell" role="cell">Немає</div>
+                    <div class="comparison__spec-cell" role="cell">Є</div>
+                    <div class="comparison__spec-cell" role="cell">Немає</div>
+                  </div>
+                </div>
+
+                <div class="comparison__spec-group" role="rowgroup" data-same="true">
+                  <div class="comparison__spec-title" role="rowheader">Механізм гойдання</div>
+                  <div class="comparison__spec-row" role="row">
+                    <div class="comparison__spec-cell" role="cell">Anyfix</div>
+                    <div class="comparison__spec-cell" role="cell">Anyfix</div>
+                    <div class="comparison__spec-cell" role="cell">Anyfix</div>
+                    <div class="comparison__spec-cell" role="cell">Anyfix</div>
+                  </div>
+                </div>
+
+                <div class="comparison__spec-group" role="rowgroup">
+                  <div class="comparison__spec-title" role="rowheader">Максимальне навантаження</div>
+                  <div class="comparison__spec-row" role="row">
+                    <div class="comparison__spec-cell" role="cell">150 кг</div>
+                    <div class="comparison__spec-cell" role="cell">120 кг</div>
+                    <div class="comparison__spec-cell" role="cell">150 кг</div>
+                    <div class="comparison__spec-cell" role="cell">110 кг</div>
+                  </div>
+                </div>
+
+                <div class="comparison__spec-group" role="rowgroup">
+                  <div class="comparison__spec-title" role="rowheader">Максимальний зріст</div>
+                  <div class="comparison__spec-row" role="row">
+                    <div class="comparison__spec-cell" role="cell">190 см</div>
+                    <div class="comparison__spec-cell" role="cell">170 см</div>
+                    <div class="comparison__spec-cell" role="cell">170 см</div>
+                    <div class="comparison__spec-cell" role="cell">180 см</div>
+                  </div>
+                </div>
+
+                <div class="comparison__spec-group" role="rowgroup">
+                  <div class="comparison__spec-title" role="rowheader">Колір</div>
+                  <div class="comparison__spec-row" role="row">
+                    <div class="comparison__spec-cell" role="cell">Сірий</div>
+                    <div class="comparison__spec-cell" role="cell">Чорний</div>
+                    <div class="comparison__spec-cell" role="cell">Сірий</div>
+                    <div class="comparison__spec-cell" role="cell">Чорний</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <load src="/parts/footer.html" />
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
