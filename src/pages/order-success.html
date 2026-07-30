@@ -4,18 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Замовлення підтверджено - Galef</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/scss/main.scss">
 </head>
 <body>
-  <div class="page-wrapper">
-    <main class="main-content">
-      <div class="container">
-        <h1>Замовлення підтверджено</h1>
-      </div>
-    </main>
-  </div>
+  <load src="/parts/header.html" />
+
+  <main class="page-wrapper order-success">
+    <div class="container order-success__container">
+      <nav class="order-success__breadcrumbs" aria-label="Breadcrumb">
+        <a href="/galef/" class="order-success__breadcrumb-link">Головна</a>
+        <span class="order-success__breadcrumb-separator">/</span>
+        <a href="/galef/pages/catalog.html" class="order-success__breadcrumb-link">Офісні крісла</a>
+        <span class="order-success__breadcrumb-separator">/</span>
+        <a href="/galef/pages/product.html" class="order-success__breadcrumb-link">Офісне крісло GT Racer B - 8995 Blue</a>
+        <span class="order-success__breadcrumb-separator">/</span>
+        <span class="order-success__breadcrumb-current" aria-current="page">Оформлення замовлення</span>
+      </nav>
+
+      <section class="order-success__content" aria-labelledby="order-success-title">
+        <img class="order-success__image" src="/assets/images/order-success.png" alt="Кур'єр доставляє замовлення">
+
+        <div class="order-success__summary">
+          <h1 class="order-success__title" id="order-success-title">
+            Твоє замовлення
+            <span>№ 3410548</span>
+          </h1>
+
+          <p class="order-success__text">
+            Ми надішлемо вам на 📩 електрону пошту, дані про ваше замовлення<br>
+            та інформацію про відстеження. Дякуємо, що ви з нами!<br>
+            Обробка та відправлення відбувається автоматично.<br>
+            У разі виникнення питань з вами звяжеться наш менеджер 👩‍💼.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <load src="/parts/footer.html" />
   <script type="module" src="/js/main.js"></script>
 </body>
 </html>

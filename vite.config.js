@@ -30,6 +30,7 @@ export default defineConfig({
         catalog: resolve(__dirname, "src/pages/catalog.html"),
         product: resolve(__dirname, "src/pages/product.html"),
         checkout: resolve(__dirname, "src/pages/checkout.html"),
+        comparison: resolve(__dirname, "src/pages/comparison.html"),
         "order-success": resolve(__dirname, "src/pages/order-success.html"),
         search: resolve(__dirname, "src/pages/search.html"),
         wishlist: resolve(__dirname, "src/pages/wishlist.html"),
