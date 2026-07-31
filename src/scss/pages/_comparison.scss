@@ -133,30 +133,17 @@
   &__scroll {
     width: 100%;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: visible;
     padding-bottom: 8px;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
     touch-action: pan-x;
     will-change: scroll-position;
-    scrollbar-width: thin;
-    scrollbar-color: #7692bc transparent;
-    scrollbar-gutter: stable;
+    scrollbar-width: none;
 
     &::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: #7692bc;
-      border: 2px solid transparent;
-      border-radius: 999px;
-      background-clip: content-box;
+      width: 0;
+      height: 0;
     }
   }
 
@@ -179,6 +166,10 @@
     display: grid;
     grid-template-columns: repeat(4, var(--comparison-card-width));
     gap: var(--comparison-card-gap);
+    position: sticky;
+    top: 85px;
+    z-index: 2;
+    background: $white;
   }
 
   &__table {
@@ -248,7 +239,8 @@
     --comparison-table-width: 100%;
 
     &__scroll {
-      overflow-x: hidden;
+      overflow-x: auto;
+      overflow-y: visible;
       padding-bottom: 0;
       scrollbar-width: none;
 
@@ -274,12 +266,16 @@
   }
 
   @media (max-width: 1200px) {
-    --comparison-products-width: 1120px;
-    --comparison-table-width: 1120px;
-    --comparison-card-width: 261px;
+    --comparison-products-width: calc((var(--comparison-card-width) * 4) + (var(--comparison-card-gap) * 3));
+    --comparison-table-width: var(--comparison-products-width);
+    --comparison-card-width: 300px;
 
     &__container {
       padding-bottom: 44px;
+    }
+
+    &__spec-row {
+      grid-template-columns: repeat(4, var(--comparison-card-width));
     }
 
     &__section {
@@ -288,9 +284,9 @@
   }
 
   @media (max-width: 960px) {
-    --comparison-products-width: 912px;
-    --comparison-table-width: 912px;
-    --comparison-card-width: 219px;
+    --comparison-products-width: calc((var(--comparison-card-width) * 4) + (var(--comparison-card-gap) * 3));
+    --comparison-table-width: var(--comparison-products-width);
+    --comparison-card-width: 300px;
     --comparison-card-gap: 12px;
 
     &__container {
@@ -309,9 +305,9 @@
   }
 
   @media (max-width: 760px) {
-    --comparison-products-width: 728px;
-    --comparison-table-width: 728px;
-    --comparison-card-width: 174px;
+    --comparison-products-width: calc((var(--comparison-card-width) * 4) + (var(--comparison-card-gap) * 3));
+    --comparison-table-width: var(--comparison-products-width);
+    --comparison-card-width: 300px;
     --comparison-card-gap: 10px;
 
     &__container {
@@ -327,7 +323,9 @@
 
 .comparison-card {
   position: relative;
-  min-height: 236px;
+  container-type: inline-size;
+  container-name: product-card;
+  min-height: 330px;
   padding: 8px 12px;
   display: flex;
   flex-direction: column;
@@ -432,45 +430,10 @@
     }
   }
 
-  &__prices {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px 12px;
-  }
-
-  &__price {
-    min-height: 32px;
-    padding: 0 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: $white;
-    background: #ff2630;
-    border-radius: 4px;
-    font-size: 24px;
-    font-weight: 900;
-    line-height: 1.32;
-    white-space: nowrap;
-  }
-
-  &__old-price {
-    color: #454545;
-    font-size: 16px;
-    font-weight: $font-weight-semibold;
-    line-height: 1.5;
-    white-space: nowrap;
-  }
-
   @media (max-width: 760px) {
-    min-height: 268px;
+    min-height: 330px;
     padding-right: 8px;
     padding-left: 8px;
-
-    &:first-child {
-      min-height: 291px;
-    }
 
     &__name {
       min-height: 69px;

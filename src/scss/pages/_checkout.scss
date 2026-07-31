@@ -372,6 +372,13 @@
     border: 0;
     cursor: pointer;
     flex: 0 0 auto;
+    transition: color $transition-fast;
+
+    &:hover,
+    &:focus-visible {
+      color: $brand-primary;
+      outline: none;
+    }
   }
 
   &__contacts-row {
