@@ -1,28 +1,29 @@
 export function initComparison() {
   const toggle = document.querySelector('[data-comparison-toggle]');
   const topScroll = document.querySelector('.comparison__scroll--top');
+  const productsScroll = document.querySelector('[data-comparison-scroll-products]');
   const mainScroll = document.querySelector('[data-comparison-scroll-main]');
   const scrollAreas = document.querySelectorAll('.comparison__scroll');
 
-  if (topScroll && mainScroll) {
-    let syncingFromTop = false;
-    let syncingFromMain = false;
+  const syncScrolls = [topScroll, productsScroll, mainScroll].filter(Boolean);
+  if (syncScrolls.length > 1) {
+    let isSyncing = false;
 
-    topScroll.addEventListener('scroll', () => {
-      if (syncingFromMain) return;
-      syncingFromTop = true;
-      mainScroll.scrollLeft = topScroll.scrollLeft;
-      syncingFromTop = false;
+    syncScrolls.forEach(source => {
+      source.addEventListener('scroll', () => {
+        if (isSyncing) return;
+        isSyncing = true;
+        syncScrolls.forEach(target => {
+          if (target !== source) target.scrollLeft = source.scrollLeft;
+        });
+        isSyncing = false;
+      });
     });
 
-    mainScroll.addEventListener('scroll', () => {
-      if (syncingFromTop) return;
-      syncingFromMain = true;
-      topScroll.scrollLeft = mainScroll.scrollLeft;
-      syncingFromMain = false;
+    const initialLeft = mainScroll?.scrollLeft ?? productsScroll?.scrollLeft ?? topScroll?.scrollLeft ?? 0;
+    syncScrolls.forEach(area => {
+      area.scrollLeft = initialLeft;
     });
-
-    topScroll.scrollLeft = mainScroll.scrollLeft;
   }
 
   const canScrollHorizontally = (element, deltaX) => {

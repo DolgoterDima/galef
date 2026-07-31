@@ -31,8 +31,8 @@
             <div class="comparison__scroll-spacer"></div>
           </div>
 
-          <div class="comparison__scroll comparison__scroll--bottom" data-comparison-scroll-main tabindex="0" aria-label="Порівняльна таблиця товарів">
-            <div class="comparison__board">
+          <div class="comparison__products-sticky">
+            <div class="comparison__scroll comparison__scroll--products" data-comparison-scroll-products tabindex="0" aria-label="Список товарів для порівняння">
               <div class="comparison__products">
                 <article class="comparison-card">
                   <button class="comparison-card__delete" type="button" aria-label="Видалити товар з порівняння">
@@ -157,7 +157,11 @@
                   </div>
                 </article>
               </div>
+            </div>
+          </div>
 
+          <div class="comparison__scroll comparison__scroll--bottom" data-comparison-scroll-main tabindex="0" aria-label="Порівняльна таблиця товарів">
+            <div class="comparison__board">
               <div class="comparison__table" role="table" aria-label="Характеристики товарів">
                 <div class="comparison__spec-group" role="rowgroup">
                   <div class="comparison__spec-title" role="rowheader">Матеріал обивки</div>

@@ -166,18 +166,29 @@
     display: grid;
     grid-template-columns: repeat(4, var(--comparison-card-width));
     gap: var(--comparison-card-gap);
+  }
+
+  &__products-sticky {
     position: sticky;
     top: 85px;
-    z-index: 2;
+    z-index: 4;
     background: $white;
   }
 
   &__table {
     width: var(--comparison-table-width);
-    margin-top: 24px;
     display: flex;
     flex-direction: column;
     gap: 1px;
+  }
+
+  &__scroll--products {
+    padding-bottom: 0;
+    margin-bottom: 24px;
+  }
+
+  &__scroll--bottom {
+    overflow-y: hidden;
   }
 
   &__spec-group {
@@ -325,7 +336,6 @@
   position: relative;
   container-type: inline-size;
   container-name: product-card;
-  min-height: 330px;
   padding: 8px 12px;
   display: flex;
   flex-direction: column;
@@ -431,7 +441,6 @@
   }
 
   @media (max-width: 760px) {
-    min-height: 330px;
     padding-right: 8px;
     padding-left: 8px;
 
