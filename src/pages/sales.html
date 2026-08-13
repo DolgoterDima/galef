@@ -4,17 +4,243 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Акції - Galef</title>
+  <meta name="description" content="Усі актуальні акції Galef">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <load src="/parts/header.html" />
+
   <div class="page-wrapper">
     <main class="main-content">
-      <div class="container">
-        <h1>Акції</h1>
-      </div>
+      <section class="sales-page">
+        <div class="container sales-page__container">
+          <nav class="breadcrumbs sales-page__breadcrumbs" aria-label="Breadcrumb">
+            <a href="/galef/" class="breadcrumbs__link">Головна</a>
+            <span class="breadcrumbs__current" aria-current="page">Акції</span>
+          </nav>
+
+          <header class="sales-page__header">
+            <h1 class="sales-page__title">Акції</h1>
+
+            <div class="sales-controls" aria-label="Фільтри та сортування акцій">
+              <div class="sales-controls__filters" aria-label="Тип акції">
+                <button class="sales-chip sales-chip--active" type="button">Всі акції</button>
+                <button class="sales-chip" type="button">Знижка</button>
+                <button class="sales-chip sales-chip--wide" type="button">Передзамовлення</button>
+                <button class="sales-chip sales-chip--wide" type="button">Комплектом дешевше</button>
+              </div>
+
+              <div class="sales-controls__sort" aria-label="Сортування">
+                <button class="sales-sort sales-sort--active" type="button">Спочатку нові</button>
+                <button class="sales-sort" type="button">Скоро закінчаться</button>
+                <button class="sales-sort" type="button">Популярні</button>
+              </div>
+            </div>
+          </header>
+
+          <div class="sales-grid">
+            <article class="sale-card sale-card--banner-blue">
+              <a class="sale-card__image-link" href="/galef/pages/catalog.html" aria-label="Святкуй на повну. Знижка -70%">
+                <img class="sale-card__image" src="/assets/images/prop_main.png" alt="Офісне крісло зі знижкою">
+              </a>
+              <div class="sale-card__body">
+                <h2 class="sale-card__title">Святкуй на повну. Знижка -70%</h2>
+                <div class="sale-card__bottom">
+                  <p class="sale-card__date">
+                    <span class="sale-card__date-label">
+                      <span class="sale-card__timer-icon" aria-hidden="true">⏰</span>
+                      Акція діє:
+                    </span>
+                    <strong>з 21.09 по 25.09</strong>
+                  </p>
+                  <a class="sale-card__button" href="/galef/pages/catalog.html">Докладніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="sale-card sale-card--chair-green">
+              <a class="sale-card__image-link" href="/galef/pages/catalog.html" aria-label="Святкуй на повну. Знижка -70%">
+                <img class="sale-card__image" src="/assets/images/prop_main.png" alt="Офісне крісло зі знижкою">
+              </a>
+              <div class="sale-card__body">
+                <h2 class="sale-card__title">Святкуй на повну. Знижка -70%</h2>
+                <div class="sale-card__bottom">
+                  <p class="sale-card__date">
+                    <span class="sale-card__date-label">
+                      <span class="sale-card__timer-icon" aria-hidden="true">⏰</span>
+                      Акція діє:
+                    </span>
+                    <strong>з 21.09 по 25.09</strong>
+                  </p>
+                  <a class="sale-card__button" href="/galef/pages/catalog.html">Докладніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="sale-card sale-card--chair-office">
+              <a class="sale-card__image-link" href="/galef/pages/catalog.html" aria-label="Святкуй на повну. Знижка -70%">
+                <img class="sale-card__image" src="/assets/images/prop_gaming.png" alt="Офісне крісло зі знижкою">
+              </a>
+              <div class="sale-card__body">
+                <h2 class="sale-card__title">Святкуй на повну. Знижка -70%</h2>
+                <div class="sale-card__bottom">
+                  <p class="sale-card__date">
+                    <span class="sale-card__date-label">
+                      <span class="sale-card__timer-icon" aria-hidden="true">⏰</span>
+                      Акція діє:
+                    </span>
+                    <strong>з 21.09 по 25.09</strong>
+                  </p>
+                  <a class="sale-card__button" href="/galef/pages/catalog.html">Докладніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="sale-card sale-card--banner-room">
+              <a class="sale-card__image-link" href="/galef/pages/catalog.html" aria-label="Святкуй на повну. Знижка -70%">
+                <img class="sale-card__image" src="/assets/images/banner_3.png" alt="Офісне крісло зі знижкою">
+              </a>
+              <div class="sale-card__body">
+                <h2 class="sale-card__title">Святкуй на повну. Знижка -70%</h2>
+                <div class="sale-card__bottom">
+                  <p class="sale-card__date">
+                    <span class="sale-card__date-label">
+                      <span class="sale-card__timer-icon" aria-hidden="true">⏰</span>
+                      Акція діє:
+                    </span>
+                    <strong>з 21.09 по 25.09</strong>
+                  </p>
+                  <a class="sale-card__button" href="/galef/pages/catalog.html">Докладніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="sale-card sale-card--chair-warm">
+              <a class="sale-card__image-link" href="/galef/pages/catalog.html" aria-label="Святкуй на повну. Знижка -70%">
+                <img class="sale-card__image" src="/assets/images/prop_office.png" alt="Офісне крісло зі знижкою">
+              </a>
+              <div class="sale-card__body">
+                <h2 class="sale-card__title">Святкуй на повну. Знижка -70%</h2>
+                <div class="sale-card__bottom">
+                  <p class="sale-card__date">
+                    <span class="sale-card__date-label">
+                      <span class="sale-card__timer-icon" aria-hidden="true">⏰</span>
+                      Акція діє:
+                    </span>
+                    <strong>з 21.09 по 25.09</strong>
+                  </p>
+                  <a class="sale-card__button" href="/galef/pages/catalog.html">Докладніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="sale-card sale-card--banner-creative">
+              <a class="sale-card__image-link" href="/galef/pages/catalog.html" aria-label="Святкуй на повну. Знижка -70%">
+                <img class="sale-card__image" src="/assets/images/banner_2.png" alt="Офісне крісло зі знижкою">
+              </a>
+              <div class="sale-card__body">
+                <h2 class="sale-card__title">Святкуй на повну. Знижка -70%</h2>
+                <div class="sale-card__bottom">
+                  <p class="sale-card__date">
+                    <span class="sale-card__date-label">
+                      <span class="sale-card__timer-icon" aria-hidden="true">⏰</span>
+                      Акція діє:
+                    </span>
+                    <strong>з 21.09 по 25.09</strong>
+                  </p>
+                  <a class="sale-card__button" href="/galef/pages/catalog.html">Докладніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="sale-card sale-card--banner-minimal">
+              <a class="sale-card__image-link" href="/galef/pages/catalog.html" aria-label="Святкуй на повну. Знижка -70%">
+                <img class="sale-card__image" src="/assets/images/banner_4.png" alt="Офісне крісло зі знижкою">
+              </a>
+              <div class="sale-card__body">
+                <h2 class="sale-card__title">Святкуй на повну. Знижка -70%</h2>
+                <div class="sale-card__bottom">
+                  <p class="sale-card__date">
+                    <span class="sale-card__date-label">
+                      <span class="sale-card__timer-icon" aria-hidden="true">⏰</span>
+                      Акція діє:
+                    </span>
+                    <strong>з 21.09 по 25.09</strong>
+                  </p>
+                  <a class="sale-card__button" href="/galef/pages/catalog.html">Докладніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="sale-card sale-card--banner-work">
+              <a class="sale-card__image-link" href="/galef/pages/catalog.html" aria-label="Святкуй на повну. Знижка -70%">
+                <img class="sale-card__image" src="/assets/images/banner_5.png" alt="Офісне крісло зі знижкою">
+              </a>
+              <div class="sale-card__body">
+                <h2 class="sale-card__title">Святкуй на повну. Знижка -70%</h2>
+                <div class="sale-card__bottom">
+                  <p class="sale-card__date">
+                    <span class="sale-card__date-label">
+                      <span class="sale-card__timer-icon" aria-hidden="true">⏰</span>
+                      Акція діє:
+                    </span>
+                    <strong>з 21.09 по 25.09</strong>
+                  </p>
+                  <a class="sale-card__button" href="/galef/pages/catalog.html">Докладніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="sale-card sale-card--loft">
+              <a class="sale-card__image-link" href="/galef/pages/catalog.html" aria-label="Святкуй на повну. Знижка -70%">
+                <img class="sale-card__image" src="/assets/images/banner_1.png" alt="Офісне крісло зі знижкою">
+              </a>
+              <div class="sale-card__body">
+                <h2 class="sale-card__title">Святкуй на повну. Знижка -70%</h2>
+                <div class="sale-card__bottom">
+                  <p class="sale-card__date">
+                    <span class="sale-card__date-label">
+                      <span class="sale-card__timer-icon" aria-hidden="true">⏰</span>
+                      Акція діє:
+                    </span>
+                    <strong>з 21.09 по 25.09</strong>
+                  </p>
+                  <a class="sale-card__button" href="/galef/pages/catalog.html">Докладніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="sale-card sale-card--extra">
+              <a class="sale-card__image-link" href="/galef/pages/catalog.html" aria-label="Святкуй на повну. Знижка -70%">
+                <img class="sale-card__image" src="/assets/images/prop_office.png" alt="Офісне крісло зі знижкою">
+              </a>
+              <div class="sale-card__body">
+                <h2 class="sale-card__title">Святкуй на повну. Знижка -70%</h2>
+                <div class="sale-card__bottom">
+                  <p class="sale-card__date">
+                    <span class="sale-card__date-label">
+                      <span class="sale-card__timer-icon" aria-hidden="true">⏰</span>
+                      Акція діє:
+                    </span>
+                    <strong>з 21.09 по 25.09</strong>
+                  </p>
+                  <a class="sale-card__button" href="/galef/pages/catalog.html">Докладніше</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="sales-more">
+            <p class="sales-more__status">Ви подивились 12 з 200 акцій</p>
+            <button class="sales-more__button" type="button">Завантажити ще більше акцій</button>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <load src="/parts/footer.html" />
   </div>
   <script type="module" src="/js/main.js"></script>
 </body>
