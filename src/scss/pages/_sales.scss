@@ -3,6 +3,10 @@
 .sales-page {
   padding-bottom: 40px;
 
+  @include breakpoint((max: $breakpoint-tablet)) {
+    padding-bottom: 16px;
+  }
+
   &,
   * {
     box-sizing: border-box;

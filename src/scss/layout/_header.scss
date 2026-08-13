@@ -176,7 +176,7 @@
     align-items: center;
     justify-content: space-between;
 
-    @include breakpoint($bp-tablet-lg-down) {
+    @include breakpoint((max: ($breakpoint-laptop - 1px))) {
       display: none;
     }
   }
@@ -186,7 +186,7 @@
     align-items: center;
     justify-content: space-between;
 
-    @include breakpoint($bp-tablet-lg-down) {
+    @include breakpoint((max: ($breakpoint-laptop - 1px))) {
       display: flex;
     }
   }
@@ -223,7 +223,7 @@
     transition: opacity 0.8s ease;
   }
 
-  @include breakpoint($bp-tablet-only) {
+  @include breakpoint((min: $breakpoint-tablet, max: $breakpoint-laptop)) {
     &__logo-compact {
       display: none;
     }

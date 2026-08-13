@@ -18,6 +18,7 @@ import { initProductGallery } from './modules/product-gallery.js';
 import { initProductSpecifications } from './modules/product-specifications.js';
 import { initProductReviews } from './modules/product-reviews.js';
 import { initProductReviewModal } from './modules/product-review-modal.js';
+import { initCountdowns } from './modules/countdown.js';
 
 // Initialize preloader as early as possible
 initPreloader();
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductReviewModal();
   initCheckoutQty();
   initComparison();
+  initCountdowns();
 
   // Initialize sort dropdowns trigger text with the active item
   document.querySelectorAll('.sort-dropdown').forEach(dropdown => {
