@@ -1,0 +1,124 @@
+@use '../abstracts' as *;
+
+.post-overview {
+  margin-top: -24px;
+  margin-bottom: 0;
+  padding-right: 40px;
+  padding-bottom: 32px;
+  padding-left: 40px;
+  color: $neutral-800;
+  font-family: 'YourFontName', $font-family-base;
+  background: $white;
+
+  &,
+  * {
+    box-sizing: border-box;
+  }
+
+  @include breakpoint((max: ($breakpoint-tablet - 1px))) {
+    margin-top: -12px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+  }
+
+  &__breadcrumbs {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 60px;
+    padding: 20px 0;
+    overflow: hidden;
+    color: $neutral-550;
+    font-family: Inter, $font-family-base;
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+    line-height: 19px;
+    white-space: nowrap;
+
+    .breadcrumbs__link,
+    .breadcrumbs__current {
+      flex: 0 0 auto;
+    }
+
+    .breadcrumbs__link::after {
+      margin: 0 4px;
+    }
+
+    @include breakpoint((max: ($breakpoint-tablet - 1px))) {
+      min-height: 35px;
+      padding: 8px 0;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  &__header {
+    width: 100%;
+    max-width: 980px;
+    margin: 32px auto;
+    padding: 1px 0;
+
+    @include breakpoint((max: ($breakpoint-tablet - 1px))) {
+      margin: 16px auto;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $neutral-850;
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+    line-height: 41px;
+    text-align: center;
+  }
+
+  &__body {
+    display: flow-root;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    color: $neutral-800;
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+    line-height: 24px;
+    overflow-wrap: break-word;
+
+    > * {
+      max-width: 100%;
+      margin: 0;
+    }
+
+    h2 {
+      color: inherit;
+      font-size: inherit;
+      font-weight: $font-weight-semibold;
+      line-height: inherit;
+    }
+
+    ul {
+      padding-left: 22px;
+      list-style-position: outside;
+    }
+
+    li {
+      margin: 0;
+      padding-left: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 400px;
+      margin: 24px 0 0;
+      border-radius: 12px;
+      object-fit: cover;
+      object-position: center;
+
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

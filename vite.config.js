@@ -37,6 +37,7 @@ export default defineConfig({
         sales: resolve(__dirname, "src/pages/sales.html"),
         sale: resolve(__dirname, "src/pages/sale.html"),
         blog: resolve(__dirname, "src/pages/blog.html"),
+        "post-overview": resolve(__dirname, "src/pages/post-overview.html"),
         "text-page": resolve(__dirname, "src/pages/text-page.html"),
         about: resolve(__dirname, "src/pages/about.html"),
         delivery: resolve(__dirname, "src/pages/delivery.html"),
