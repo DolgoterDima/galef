@@ -51,7 +51,7 @@
 
   &__banner {
     width: min(100%, 1280px);
-    height: 440px;
+    height: clamp(260px, 60vw, 440px);
     margin-right: auto;
     margin-bottom: 40px;
     margin-left: auto;
@@ -68,13 +68,97 @@
     position: relative;
     width: 100%;
     height: 100%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -1px;
+      bottom: -1px;
+      z-index: 1;
+      width: 320px;
+      height: 112px;
+      background: $white;
+      clip-path: path('M 320 0 V 112 H 0 Q 16 112 16 96 V 32 Q 16 16 32 16 H 304 Q 320 16 320 0 Z');
+      pointer-events: none;
+
+      @include breakpoint((max: ($breakpoint-tablet - 1px))) {
+        width: 324px;
+        height: 104px;
+        clip-path: path('M 324 0 V 104 H 0 Q 16 104 16 88 V 32 Q 16 16 32 16 H 308 Q 324 16 324 0 Z');
+      }
+
+      @include breakpoint((max: 560px)) {
+        width: 304px;
+        height: 100px;
+        clip-path: path('M 304 0 V 100 H 0 Q 16 100 16 84 V 32 Q 16 16 32 16 H 288 Q 304 16 304 0 Z');
+      }
+
+      @include breakpoint((max: 420px)) {
+        width: 332px;
+        height: 92px;
+        clip-path: path('M 332 0 V 92 H 0 Q 14 92 14 78 V 28 Q 14 14 28 14 H 318 Q 332 14 332 0 Z');
+      }
+
+      @include breakpoint((max: 360px)) {
+        width: 300px;
+        clip-path: path('M 300 0 V 92 H 0 Q 14 92 14 78 V 28 Q 14 14 28 14 H 286 Q 300 14 300 0 Z');
+      }
+    }
   }
 
   &__banner-image {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
+  }
+
+  &__banner-date {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: min(100%, 288px);
+    height: 80px;
+    margin: 0;
+    padding: 28px 20px 16px 28px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-radius: 12px;
+    background: $neutral-350;
+    color: $blue-900;
+    font-size: 16px;
+    font-weight: $font-weight-semibold;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+
+    @include breakpoint((max: ($breakpoint-tablet - 1px))) {
+      width: min(calc(100% - 32px), 292px);
+      height: 72px;
+      padding: 25px 16px 13px 24px;
+      font-size: 15px;
+    }
+
+    @include breakpoint((max: 560px)) {
+      width: min(calc(100% - 32px), 272px);
+      height: 68px;
+      padding: 24px 14px 12px 20px;
+      font-size: 14px;
+    }
+
+    @include breakpoint((max: 420px)) {
+      width: min(calc(100% - 20px), 300px);
+      height: 64px;
+      padding: 22px 12px 11px 16px;
+      font-size: 13px;
+    }
+
+    @include breakpoint((max: 360px)) {
+      width: min(calc(100% - 20px), 268px);
+      padding-left: 16px;
+    }
   }
 
   &__timer {
