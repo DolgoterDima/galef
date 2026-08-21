@@ -69,15 +69,207 @@
 
 <!-- Modals -->
 <div class="modal" data-modal="login">
-    <div class="modal__content">
-        <button aria-label="Закрити" class="modal__close" data-modal-close>&times;</button>
-        <!-- Login form content -->
+    <div class="modal__content modal__content--auth" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+        <div class="auth-modal">
+            <div class="auth-modal__media" aria-hidden="true">
+                <img class="auth-modal__image" src="/assets/images/prop_office.png" alt="">
+            </div>
+
+            <section class="auth-modal__panel">
+                <button class="auth-modal__close" type="button" data-modal-close aria-label="Закрити">
+                    <svg aria-hidden="true"><use href="#icon-x"></use></svg>
+                </button>
+
+                <form class="auth-modal__form" action="#" method="post" data-auth-form>
+                    <h2 class="auth-modal__title" id="login-modal-title">Увійти до Galef</h2>
+
+                    <div class="auth-modal__fields">
+                        <div class="input input--light auth-modal__field auth-modal__field--validated">
+                            <div class="input__inner">
+                                <input class="input__field input__field--lg" type="tel" name="login-phone" placeholder="+38 (093) 444 55 66*" autocomplete="tel" required data-auth-validate="phone">
+                                <div class="review-modal__validation-icon review-modal__validation-icon--error">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                                    </svg>
+                                </div>
+                                <div class="review-modal__validation-icon review-modal__validation-icon--success">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 11 12 14 22 4"></polyline>
+                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="input__error">Перевірте номер телефону</span>
+                        </div>
+
+                        <div class="input input--light auth-modal__field auth-modal__field--validated auth-modal__field--password">
+                            <div class="input__inner">
+                                <input class="input__field input__field--lg input__field--with-icon" type="password" name="login-password" placeholder="Введіть пароль*" autocomplete="current-password" required data-auth-validate="password">
+                                <div class="review-modal__validation-icon review-modal__validation-icon--error">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                                    </svg>
+                                </div>
+                                <div class="review-modal__validation-icon review-modal__validation-icon--success">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 11 12 14 22 4"></polyline>
+                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                    </svg>
+                                </div>
+                                <button type="button" class="icon-btn icon-btn--transparent input__btn js-password-toggle" aria-label="Показати пароль">
+                                    <svg class="icon-btn__icon" aria-hidden="true"><use href="#icon-eye"></use></svg>
+                                </button>
+                            </div>
+                            <span class="input__error">Пароль має містити щонайменше 6 символів</span>
+                        </div>
+                    </div>
+
+                    <div class="auth-modal__providers" aria-label="Швидкий вхід">
+                        <button class="auth-modal__provider" type="button">
+                            <svg class="auth-modal__provider-icon" aria-hidden="true"><use href="#icon-google"></use></svg>
+                            <span class="auth-modal__provider-text">Швидкий вхід</span>
+                        </button>
+                        <button class="auth-modal__provider" type="button">
+                            <svg class="auth-modal__provider-icon" aria-hidden="true"><use href="#icon-apple"></use></svg>
+                            <span class="auth-modal__provider-text">Швидкий вхід</span>
+                        </button>
+                        <button class="auth-modal__provider" type="button">
+                            <svg class="auth-modal__provider-icon" aria-hidden="true"><use href="#icon-facebook"></use></svg>
+                            <span class="auth-modal__provider-text">Швидкий вхід</span>
+                        </button>
+                    </div>
+
+                    <button class="auth-modal__account" type="button" data-modal-open="register">Ще не маєте аккаунту?</button>
+                </form>
+            </section>
+        </div>
     </div>
 </div>
 
 <div class="modal" data-modal="register">
-    <div class="modal__content">
-        <button aria-label="Закрити" class="modal__close" data-modal-close>&times;</button>
-        <!-- Register form content -->
+    <div class="modal__content modal__content--auth" role="dialog" aria-modal="true" aria-labelledby="register-modal-title">
+        <div class="auth-modal">
+            <div class="auth-modal__media" aria-hidden="true">
+                <img class="auth-modal__image" src="/assets/images/prop_office.png" alt="">
+            </div>
+
+            <section class="auth-modal__panel">
+                <button class="auth-modal__close" type="button" data-modal-close aria-label="Закрити">
+                    <svg aria-hidden="true"><use href="#icon-x"></use></svg>
+                </button>
+
+                <form class="auth-modal__form" action="#" method="post" data-auth-form>
+                    <h2 class="auth-modal__title" id="register-modal-title">Реєстрація</h2>
+
+                    <div class="auth-modal__fields">
+                        <div class="input input--light auth-modal__field auth-modal__field--validated">
+                            <div class="input__inner">
+                                <input class="input__field input__field--lg" type="text" name="name" placeholder="Карпенко Дмитро Осипович*" autocomplete="name" required data-auth-validate="name">
+                                <div class="review-modal__validation-icon review-modal__validation-icon--error">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                                    </svg>
+                                </div>
+                                <div class="review-modal__validation-icon review-modal__validation-icon--success">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 11 12 14 22 4"></polyline>
+                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="input__error">Вкажіть ім'я та прізвище</span>
+                        </div>
+                        <div class="input input--light auth-modal__field auth-modal__field--validated">
+                            <div class="input__inner">
+                                <input class="input__field input__field--lg" type="tel" name="phone" placeholder="+38 (093) 444 55 66*" autocomplete="tel" required data-auth-validate="phone">
+                                <div class="review-modal__validation-icon review-modal__validation-icon--error">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                                    </svg>
+                                </div>
+                                <div class="review-modal__validation-icon review-modal__validation-icon--success">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 11 12 14 22 4"></polyline>
+                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="input__error">Перевірте номер телефону</span>
+                        </div>
+
+                        <div class="input input--light auth-modal__field auth-modal__field--validated auth-modal__field--password">
+                            <div class="input__inner">
+                                <input class="input__field input__field--lg input__field--with-icon" type="password" name="password" placeholder="Введіть пароль*" autocomplete="new-password" required data-auth-validate="password">
+                                <div class="review-modal__validation-icon review-modal__validation-icon--error">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                                    </svg>
+                                </div>
+                                <div class="review-modal__validation-icon review-modal__validation-icon--success">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 11 12 14 22 4"></polyline>
+                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                    </svg>
+                                </div>
+                                <button type="button" class="icon-btn icon-btn--transparent input__btn js-password-toggle" aria-label="Показати пароль">
+                                    <svg class="icon-btn__icon" aria-hidden="true"><use href="#icon-eye"></use></svg>
+                                </button>
+                            </div>
+                            <span class="input__error">Пароль має містити щонайменше 6 символів</span>
+                        </div>
+
+                        <div class="input input--light auth-modal__field auth-modal__field--validated auth-modal__field--password">
+                            <div class="input__inner">
+                                <input class="input__field input__field--lg input__field--with-icon" type="password" name="password-confirm" placeholder="Введіть пароль*" autocomplete="new-password" required data-auth-validate="password-confirm">
+                                <div class="review-modal__validation-icon review-modal__validation-icon--error">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                                    </svg>
+                                </div>
+                                <div class="review-modal__validation-icon review-modal__validation-icon--success">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 11 12 14 22 4"></polyline>
+                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                    </svg>
+                                </div>
+                                <button type="button" class="icon-btn icon-btn--transparent input__btn js-password-toggle" aria-label="Показати пароль">
+                                    <svg class="icon-btn__icon" aria-hidden="true"><use href="#icon-eye"></use></svg>
+                                </button>
+                            </div>
+                            <span class="input__error">Паролі мають збігатися</span>
+                        </div>
+                    </div>
+
+                    <div class="auth-modal__providers" aria-label="Швидка реєстрація">
+                        <button class="auth-modal__provider" type="button">
+                            <svg class="auth-modal__provider-icon" aria-hidden="true"><use href="#icon-google"></use></svg>
+                            <span class="auth-modal__provider-text">Швидка реєстрація</span>
+                        </button>
+                        <button class="auth-modal__provider" type="button">
+                            <svg class="auth-modal__provider-icon" aria-hidden="true"><use href="#icon-apple"></use></svg>
+                            <span class="auth-modal__provider-text">Швидка реєстрація</span>
+                        </button>
+                        <button class="auth-modal__provider" type="button">
+                            <svg class="auth-modal__provider-icon" aria-hidden="true"><use href="#icon-facebook"></use></svg>
+                            <span class="auth-modal__provider-text">Швидка реєстрація</span>
+                        </button>
+                    </div>
+
+                    <button class="auth-modal__account" type="button" data-modal-open="login">Вже маєте аккаунт?</button>
+                </form>
+            </section>
+        </div>
     </div>
 </div>
