@@ -9,12 +9,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <load src="/parts/header.html" />
+
   <div class="page-wrapper">
     <main class="main-content">
-      <div class="container">
-        <h1>Список бажань</h1>
-      </div>
+      <section class="wishlist-page">
+        <div class="container wishlist-page__container">
+          <nav class="breadcrumbs wishlist-page__breadcrumbs" aria-label="Breadcrumb">
+            <a href="/galef/" class="breadcrumbs__link">Головна</a>
+            <span class="breadcrumbs__current" aria-current="page">Список бажань</span>
+          </nav>
+
+          <div class="wishlist-page__content">
+            <h1 class="wishlist-page__title">Товари, що ви додали в список бажань</h1>
+
+            <div class="wishlist-page__grid">
+              <div class="product-card-container">
+                <load src="/parts/product-card.html" />
+              </div>
+              <div class="product-card-container">
+                <load src="/parts/product-card.html" modifier="product-card--sale" />
+              </div>
+              <div class="product-card-container">
+                <load src="/parts/product-card.html" modifier="product-card--preorder" />
+              </div>
+              <div class="product-card-container">
+                <load src="/parts/product-card.html" />
+              </div>
+              <div class="product-card-container">
+                <load src="/parts/product-card.html" />
+              </div>
+              <div class="product-card-container">
+                <load src="/parts/product-card.html" modifier="product-card--sale" />
+              </div>
+              <div class="product-card-container">
+                <load src="/parts/product-card.html" modifier="product-card--preorder" />
+              </div>
+              <div class="product-card-container">
+                <load src="/parts/product-card.html" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <load src="/parts/footer.html" />
   </div>
   <script type="module" src="/js/main.js"></script>
 </body>

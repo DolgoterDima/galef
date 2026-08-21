@@ -1,0 +1,120 @@
+@use '../abstracts' as *;
+
+.wishlist-page {
+  padding-bottom: 40px;
+  background: $white;
+  color: $neutral-1000;
+  font-family: $font-family-base;
+
+  &,
+  * {
+    box-sizing: border-box;
+  }
+
+  &__container {
+    width: 100%;
+  }
+
+  &__breadcrumbs {
+    min-height: 60px;
+    padding: 20px 0;
+    font-family: Inter, $font-family-base;
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+    line-height: 19px;
+
+    @include breakpoint((max: ($breakpoint-tablet - 1px))) {
+      min-height: 35px;
+      padding: 8px 0;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 40px;
+  }
+
+  &__title {
+    margin: 0;
+    color: $neutral-1000;
+    font-size: 24px;
+    font-weight: $font-weight-semibold;
+    line-height: 36px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+
+    > .product-card-container {
+      min-width: 0;
+    }
+  }
+
+  .product-card__action-btn:first-child {
+    color: #FF2630;
+  }
+
+  .product-card__badge--top,
+  .product-card__badge--new {
+    display: none !important;
+  }
+
+  .product-card__badge--sale {
+    font-size: 0;
+
+    &::after {
+      content: 'Знижка -25%';
+      font-size: max(8px, 3.1055900621cqw);
+    }
+  }
+
+  @include breakpoint((max: ($breakpoint-laptop - 1px))) {
+    &__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @include breakpoint((max: ($breakpoint-tablet-lg - 1px))) {
+    padding-bottom: 24px;
+
+    &__content {
+      gap: 24px;
+      padding-top: 24px;
+    }
+
+    &__grid {
+      gap: 16px;
+    }
+  }
+
+  @include breakpoint((max: ($breakpoint-tablet - 1px))) {
+    padding-bottom: 16px;
+
+    &__content {
+      padding-top: 16px;
+    }
+
+    &__title {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+  }
+
+  @include breakpoint((max: ($breakpoint-mobile-lg - 1px))) {
+    &__title {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}
