@@ -360,8 +360,9 @@
     transition: color $transition-fast;
 
     &:hover,
-    &:focus-visible {
-      color: #cc0009;
+    &:focus-visible,
+    &:active {
+      color: #102C56;
       outline: none;
     }
   }
