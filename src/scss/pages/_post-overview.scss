@@ -7,7 +7,7 @@
   padding-bottom: 32px;
   padding-left: 40px;
   color: $neutral-800;
-  font-family: 'YourFontName', $font-family-base;
+  font-family: $font-family-base;
   background: $white;
 
   &,
@@ -80,7 +80,7 @@
     margin: 0 auto;
     color: $neutral-800;
     font-size: 16px;
-    font-weight: $font-weight-regular;
+    font-weight: 500;
     line-height: 24px;
     overflow-wrap: break-word;
 
