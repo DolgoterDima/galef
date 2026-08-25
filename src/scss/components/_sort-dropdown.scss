@@ -37,6 +37,10 @@
     }
   }
 
+  &__text {
+    font-weight: $font-weight-semibold;
+  }
+
   &:not([open]) &__trigger:hover {
     border-color: $blue-900;
     color: $blue-900;
@@ -77,6 +81,7 @@
     padding: 4px 8px;
     border-radius: $radius-xs;
     color: $neutral-1000;
+    font-weight: $font-weight-semibold;
     cursor: pointer;
     transition: $transition-base;
 

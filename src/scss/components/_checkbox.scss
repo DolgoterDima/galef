@@ -33,7 +33,7 @@
   &__box {
     width: 16px;
     height: 16px;
-    border: 1.5px solid $neutral-400;
+    border: 1px solid #3D3D3D;
     border-radius: $radius-xs;
     margin-right: 10px;
     display: flex;
@@ -42,7 +42,7 @@
     flex-shrink: 0;
     transition: all $transition-base;
     position: relative;
-    background-color: $surface-secondary;
+    background-color: transparent;
   }
 
   &__icon {
@@ -54,9 +54,10 @@
   }
 
   &__label {
-    font-size: $font-size-caption;
- 
-    color: $text-primary;
+    color: #3D3D3D;
+    font-size: 15px;
+    font-weight: $font-weight-semibold;
+    line-height: 20px;
     transition: color $transition-fast;
     user-select: none;
     white-space: nowrap;
@@ -65,7 +66,7 @@
     flex-grow: 1;
     min-width: 0;
     &:hover {
-      color: $btn-primary-hover;
+      color: $blue-900;
     }
   }
 }

@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const triggerText = dropdown.querySelector('.sort-dropdown__text');
     if (activeItem && triggerText) {
       triggerText.textContent = activeItem.textContent.trim();
+      dropdown.classList.add('sort-dropdown--selected');
     }
   });
 
@@ -120,6 +121,7 @@ document.addEventListener('click', (event) => {
     const dropdown = sortItem.closest('.sort-dropdown');
     dropdown.querySelector('.sort-dropdown__item--active')?.classList.remove('sort-dropdown__item--active');
     sortItem.classList.add('sort-dropdown__item--active');
+    dropdown.classList.add('sort-dropdown--selected');
     
     // Update trigger text with the chosen option
     const triggerText = dropdown.querySelector('.sort-dropdown__text');

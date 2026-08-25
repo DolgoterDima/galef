@@ -268,10 +268,6 @@
     margin-bottom: 12px;
     padding: 2px 0;
 
-    @include breakpoint((min: $breakpoint-tablet-lg, max: ($breakpoint-laptop - 1px))) {
-      display: none;
-    }
-
     @include breakpoint((max: ($breakpoint-tablet-lg - 1px))) {
       align-items: center;
       gap: 12px;
@@ -351,6 +347,116 @@
     }
   }
 
+  .sort-dropdown {
+    flex: 0 1 205px;
+    width: 205px;
+    min-width: 0;
+    font-size: 12px;
+
+    @include breakpoint((max: 420px)) {
+      flex-basis: calc((100% - 8px) / 2);
+      width: calc((100% - 8px) / 2);
+    }
+  }
+
+  .sort-dropdown__trigger {
+    width: 100%;
+    min-width: 0;
+    height: 24px;
+    min-height: 24px;
+    padding: 4px 8px;
+    justify-content: space-between;
+    gap: 8px;
+    border-color: $neutral-350;
+    background-color: $white;
+    color: $neutral-1000;
+    font-size: 12px;
+    font-weight: $font-weight-regular;
+    line-height: 16px;
+
+    @include breakpoint((max: ($breakpoint-tablet-lg - 1px))) {
+      height: 32px;
+      min-height: 32px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .sort-dropdown__text {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-weight: $font-weight-semibold;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sort-dropdown__arrow {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    color: inherit;
+  }
+
+  .sort-dropdown__menu {
+    right: 0;
+    left: 0;
+    width: 100%;
+    min-width: 100%;
+    border-color: $neutral-350;
+    background: $white;
+  }
+
+  .sort-dropdown__item {
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: $font-weight-semibold;
+    line-height: 16px;
+    color: $neutral-1000;
+    text-align: left;
+
+    @include breakpoint((max: ($breakpoint-tablet-lg - 1px))) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &:hover {
+      background-color: $blue-500;
+      color: $white;
+    }
+
+    &--active,
+    &:active {
+      background-color: $blue-800;
+      color: $white;
+    }
+  }
+
+  .sort-dropdown[open] {
+    .sort-dropdown__trigger {
+      border-color: $neutral-350;
+      background-color: $white;
+      color: $neutral-1000;
+    }
+
+    .sort-dropdown__arrow {
+      color: inherit;
+    }
+  }
+
+  .sort-dropdown--selected:not([open]) {
+    .sort-dropdown__trigger {
+      border-color: $blue-900;
+      background-color: $white;
+      color: $blue-900;
+    }
+
+    .sort-dropdown__arrow {
+      color: inherit;
+    }
+  }
+
   .page__sidebar {
     @include breakpoint((min: $breakpoint-tablet-lg)) {
       width: 100%;
@@ -359,15 +465,16 @@
 
   .filter-group {
     overflow: hidden;
-    border-color: $neutral-200;
-    border-radius: 8px;
-    background: $neutral-50;
+    border-color: $neutral-350;
+    border-radius: 4px;
+    background: $white;
   }
 
   .filter-group__header {
-    min-height: 32px;
-    padding: 4px 8px;
-    border-radius: 7px 7px 0 0;
+    margin: 8px;
+    min-height: 48px;
+    padding: 8px;
+    border-radius: 4px;
   }
 
   .filter-group__title {
@@ -377,22 +484,26 @@
   }
 
   .filter-group__icon {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
   }
 
   .filter-group__body {
-    padding: 8px 4px;
+    padding: 8px;
     gap: 8px;
+    background: $white;
   }
 
   .filter-group__footer {
-    padding: 16px 4px 8px;
+    padding: 16px 8px 8px;
+    background: $white;
   }
 
   .filter__header {
     height: 40px;
     padding: 10px 8px;
+    background: #F8F9FA;
+    color: $neutral-1000;
   }
 
   .filter__title {
@@ -402,21 +513,35 @@
   }
 
   .filter__item {
-    padding: 5px 8px 5px 12px;
+    padding: 5px 8px 5px 16px;
+    color: #3D3D3D;
   }
 
   .checkbox__label {
+    color: #3D3D3D;
     font-size: 15px;
+    font-weight: $font-weight-semibold;
     line-height: 20px;
   }
 
   .filter-group__footer .btn {
     height: 36px;
     padding: 8px;
+    border-color: $blue-900;
     border-radius: 4px;
+    background: $white;
+    color: $blue-900;
     font-size: 16px;
     font-weight: $font-weight-semibold;
     line-height: 20px;
     letter-spacing: 0;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      border-color: $blue-900;
+      background: $blue-900;
+      color: $white;
+    }
   }
 }

@@ -1,40 +1,71 @@
 @use '../abstracts' as *;
 
 .filter-group {
-  border: $border-width solid $neutral-200;
-  border-radius: $radius-md;
-  background-color: $surface-primary;
   width: 100%;
+  overflow: hidden;
+  border: $border-width solid $neutral-350;
+  border-radius: $radius-sm;
+  background-color: $white;
 
   &__header {
+    margin: 8px;
+    min-height: 48px;
+    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 16px;
-    background-color: $brand-primary;
+    background-color: $blue-900;
     color: $white;
-    border-radius: calc(#{$radius-md} - #{$border-width})
-      calc(#{$radius-md} - #{$border-width}) 0 0;
+    border-radius: $radius-sm;
+
+    @include breakpoint((max: ($breakpoint-tablet-lg - 1px))) {
+      display: none;
+    }
   }
 
   &__title {
-    font-size: $font-size-body;
+    font-size: 16px;
     font-weight: $font-weight-semibold;
+    line-height: 20px;
   }
 
   &__icon {
-    color: $white;
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
+    color: currentColor;
   }
 
   &__body {
-    padding: $spacing-sm;
+    padding: 8px;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    background: $white;
   }
+
   &__footer {
-    padding: 0 $spacing-sm $spacing-sm;
+    padding: 16px 8px 8px;
+    background: $white;
+  }
+
+  &__footer .btn {
+    height: 36px;
+    padding: 8px;
+    border-color: $blue-900;
+    border-radius: $radius-sm;
+    background: $white;
+    color: $blue-900;
+    font-size: 16px;
+    font-weight: $font-weight-semibold;
+    line-height: 20px;
+    letter-spacing: 0;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      border-color: $blue-900;
+      background: $blue-900;
+      color: $white;
+    }
   }
 }
