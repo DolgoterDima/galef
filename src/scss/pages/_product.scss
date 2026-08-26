@@ -71,7 +71,6 @@
   }
 
   &__title {
-    font-family: $font-family-base;
     font-weight: 700;
     line-height: 1.2;
     color: $black;
@@ -109,7 +108,6 @@
   }
 
   &__rating-title {
-    font-family: $font-family-base;
     font-size: 16px;
     font-weight: 600;
     color: $black;
@@ -135,7 +133,6 @@
   }
 
   &__reviews-link {
-    font-family: $font-family-base;
     font-size: 14px;
     font-weight: 600;
     color: $black;
@@ -149,7 +146,6 @@
   }
 
   &__colors-title {
-    font-family: $font-family-base;
     font-size: 16px;
     font-weight: 600;
     color: $black;
@@ -215,7 +211,6 @@
   }
 
   &__availability-status {
-    font-family: $font-family-base;
     font-size: 14px;
     font-weight: 600;
 
@@ -233,7 +228,6 @@
   &__price-old {
     display: inline-block;
     min-width: 75px;
-    font-family: $font-family-base;
     font-size: 14px;
     font-weight: 600;
     color: $neutral-550;
@@ -241,7 +235,6 @@
   }
 
   &__price-current {
-    font-family: $font-family-base;
     font-size: 24px;
     font-weight: 600;
     color: $red-700;
@@ -292,7 +285,6 @@
       gap: 8px;
       height: 33px;
       border-radius: 3px;
-      font-family: $font-family-base;
       font-weight: 600;
       font-size: 16px;
       line-height: 19px;
@@ -330,7 +322,6 @@
   }
 
   &__banks-title {
-    font-family: $font-family-base;
     font-size: 14px;
     font-weight: 600;
     color: $neutral-1000;
@@ -382,7 +373,6 @@
   }
 
   &__condition-item {
-    font-family: $font-family-base;
     font-size: $font-size-caption;
     line-height: 1.5;
     color: $neutral-1000;
@@ -409,7 +399,6 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: $font-family-base;
     font-size: 14px;
     color: $neutral-1000;
 
@@ -438,7 +427,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    font-family: $font-family-base;
     font-size: $font-size-caption;
     font-weight: $font-weight-semibold;
     color: $neutral-1000;
@@ -534,7 +522,6 @@
     border-radius: 3px;
     color: #102C56;
     text-decoration: none;
-    font-family: $font-family-base;
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
@@ -589,7 +576,6 @@
     border-radius: 8px;
     color: #000000;
     text-decoration: none;
-    font-family: $font-family-base;
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
@@ -881,7 +867,6 @@
   }
 
   &__title {
-    font-family: 'Mont', sans-serif;
     font-size: 32px;
     font-weight: 700;
     line-height: 1.2;
@@ -907,7 +892,6 @@
   }
 
   &__title {
-    font-family: $font-family-base;
     font-size: 32px;
     font-weight: 700;
     color: $neutral-1000;
@@ -999,7 +983,6 @@
   }
 
   &__subtitle {
-    font-family: 'Mont', sans-serif;
     font-size: 24px;
     font-weight: 700;
     line-height: 1.5;
@@ -1008,7 +991,6 @@
   }
 
   &__text {
-    font-family: 'Mont', sans-serif;
     font-size: 20px;
     font-weight: 500;
     line-height: 1.5;
@@ -1117,8 +1099,7 @@
 
     span {
       display: block;
-      font-family: 'Mont', sans-serif;
-      font-weight: 900;
+      font-weight: 700;
       font-size: 24px;
       color: #102C56;
       text-transform: uppercase;
@@ -1129,8 +1110,7 @@
     }
 
     h2 {
-      font-family: 'Mont', sans-serif;
-      font-weight: 900;
+      font-weight: 700;
       font-size: 60px;
       line-height: 1.2;
       color: #102C56;
@@ -1192,7 +1172,6 @@
     }
 
     h4 {
-      font-family: 'Mont', sans-serif;
       font-weight: 700;
       font-size: 32px;
       color: #FFFFFF;
@@ -1299,7 +1278,6 @@
   }
 
   &__title {
-    font-family: 'Mont', sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.5;
@@ -1332,7 +1310,6 @@
   }
 
   &__text {
-    font-family: 'Mont', sans-serif;
     font-weight: 700;
     font-size: 16px;
     color: #111111;
@@ -1354,7 +1331,6 @@
   }
 
   &__btn-text {
-    font-family: 'Mont', sans-serif;
     font-weight: 700;
     font-size: 16px;
     color: #FFFFFF;
@@ -1405,7 +1381,6 @@
 
   &__title {
     grid-area: title;
-    font-family: 'Mont', sans-serif;
     font-size: 32px;
     font-weight: 700;
     line-height: 1.2;
@@ -1460,7 +1435,6 @@
     }
 
     span {
-      font-family: 'Mont', sans-serif;
       font-size: 14px;
       font-weight: 700;
       line-height: 18px;
@@ -1523,7 +1497,6 @@
   }
 
   &__label {
-    font-family: 'Mont', sans-serif;
     font-size: 16px;
     font-weight: 700;
     line-height: 1.5;
@@ -1539,7 +1512,6 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    font-family: 'Mont', sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -1573,7 +1545,6 @@
   }
   
   &__link-all {
-    font-family: 'Mont', sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
@@ -1620,7 +1591,6 @@
   }
   
   &__title {
-    font-family: 'Mont', sans-serif;
     font-weight: 700;
     font-size: 32px;
     line-height: 41px;
@@ -1659,7 +1629,6 @@
     border: 1px solid #111111;
     border-radius: 8px;
     cursor: pointer;
-    font-family: 'Mont', sans-serif;
     color: #111111;
     transition: all 0.2s ease;
     
@@ -1705,7 +1674,6 @@
     background: #F2910E;
     border-radius: 8px;
     border: none;
-    font-family: 'Mont', sans-serif;
     font-weight: 700;
     font-size: 20px;
     line-height: 26px;
@@ -1732,7 +1700,6 @@
   }
 
   &__photos-title {
-    font-family: 'Mont', sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 1.5;
@@ -1860,7 +1827,6 @@
   }
 
   &__date {
-    font-family: 'Mont', sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -1891,7 +1857,6 @@
   }
 
   &__author {
-    font-family: 'Mont', sans-serif;
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
@@ -1906,7 +1871,6 @@
     padding: 4px 12px;
     background: #009B67;
     border-radius: 20px;
-    font-family: 'Mont', sans-serif;
     font-weight: 600;
     font-size: 10px;
     line-height: 13px;
@@ -1923,7 +1887,6 @@
   }
 
   &__text {
-    font-family: 'Mont', sans-serif;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.5;
@@ -1933,7 +1896,6 @@
 
   &__pros,
   &__cons {
-    font-family: 'Mont', sans-serif;
     font-size: 14px;
     line-height: 1.5;
     color: #111111;
@@ -1952,7 +1914,6 @@
     background: transparent;
     border: 2px solid transparent;
     padding: 0;
-    font-family: 'Mont', sans-serif;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.5;
@@ -2041,7 +2002,6 @@
   }
 
   &__title {
-    font-family: $font-family-base;
     font-size: 32px;
     font-weight: 700;
     color: $neutral-1000;

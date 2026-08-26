@@ -78,7 +78,6 @@
     }
 
     &-link {
-      font-family: $font-family-base;
       font-style: normal;
       font-weight: $font-weight-semibold; // 600
       font-size: $font-size-h6; // 20px
@@ -105,7 +104,6 @@
   }
 
   &__link {
-    font-family: $font-family-base;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -318,7 +316,6 @@
     border: 1px solid $blue-200; // #E3E5E8
     border-radius: 12px 0 0 12px;
     background: #FFFFFF;
-    font-family: $font-family-base;
     font-size: 24px;
     outline: none;
     

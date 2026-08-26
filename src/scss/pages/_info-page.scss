@@ -4,7 +4,6 @@
   max-width: 980px;
   margin: 0 auto;
   margin-bottom: 24px;
-  font-family: $font-family-base;
   color: $neutral-1000;
 
   @media (min-width: 961px) {
@@ -44,7 +43,6 @@
     }
 
     h2, h3 {
-      font-family: $font-family-base;
       font-weight: 700;
       color: $neutral-1000;
       margin-top: 36px;

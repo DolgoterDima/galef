@@ -2,7 +2,6 @@
 
 .page {
   margin-bottom: 24px;
-  font-family: $font-family-base;
 
   &__container {
     width: 100%;
@@ -29,7 +28,6 @@
   }
 
   &__title {
-    font-family: $font-family-base;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -128,7 +126,6 @@
     border-radius: 4px;
     border: none;
     color: #FFFFFF;
-    font-family: $font-family-base;
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;

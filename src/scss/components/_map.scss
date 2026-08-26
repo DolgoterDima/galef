@@ -93,7 +93,6 @@
   }
 
   &__title {
-    font-family: $font-family-base;
     font-weight: 700;
     font-size: 24px;
     line-height: 1.5;
@@ -102,7 +101,6 @@
   }
 
   &__address, &__subtitle {
-    font-family: $font-family-base;
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
@@ -124,7 +122,6 @@
   }
 
   &__day {
-    font-family: $font-family-base;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.5;
@@ -132,7 +129,6 @@
   }
 
   &__time {
-    font-family: $font-family-base;
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;

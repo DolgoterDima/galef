@@ -37,7 +37,6 @@ $base-desktop-width: 1120;
   }
 
   &__title {
-    font-family: $font-family-base;
     font-weight: $font-weight-bold;
     font-size: $font-size-h3; // 36px
     color: $text-primary;
@@ -233,7 +232,6 @@ $base-desktop-width: 1120;
     }
 
     &-title {
-      font-family: $font-family-base;
       font-weight: $font-weight-bold;
       font-size: desk-cqw(24);
       color: $text-primary;
@@ -304,7 +302,6 @@ $base-desktop-width: 1120;
     }
 
     &-title {
-      font-family: $font-family-base;
       font-weight: $font-weight-bold; // 700
       font-size: desk-cqw(24);
       line-height: 1.5;
@@ -336,7 +333,6 @@ $base-desktop-width: 1120;
     }
 
     &-desc {
-      font-family: $font-family-base;
       font-weight: $font-weight-semibold;
       font-size: desk-cqw(14);
       line-height: 1.5;

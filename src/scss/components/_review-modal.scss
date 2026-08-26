@@ -12,7 +12,6 @@
   width: 620px;
   max-width: 100%;
   color: $white;
-  font-family: 'Mont', sans-serif;
   box-sizing: border-box;
   
   @media (max-width: 640px) {
@@ -163,7 +162,6 @@
     border: 1px solid $white;
     border-radius: 8px;
     color: $white;
-    font-family: 'Mont', sans-serif;
     font-weight: 600;
     font-size: 15px;
     line-height: 19px;
@@ -366,7 +364,6 @@
       border-radius: 4px;
       padding: 8px 12px;
       color: $white;
-      font-family: 'Mont', sans-serif;
       font-weight: 600;
       font-size: 14px;
       line-height: 18px;

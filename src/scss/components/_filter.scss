@@ -3,7 +3,6 @@
 .filter {
   position: relative;
   width: 100%;
-  font-family: $font-family-base;
 
   &__header {
     display: flex;
@@ -19,7 +18,6 @@
     cursor: pointer;
     transition: all $transition-base;
     outline: none;
-    font-family: inherit;
 
     &:hover,
     &.filter__header--hover {

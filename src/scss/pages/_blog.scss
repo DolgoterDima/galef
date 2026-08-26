@@ -23,7 +23,6 @@
 
   &__breadcrumbs {
     margin-bottom: 58px;
-    font-family: Inter, $font-family-base;
     font-size: 16px;
     font-weight: $font-weight-regular;
     line-height: 19px;
@@ -57,7 +56,6 @@
   &__title {
     margin: 0;
     color: $neutral-850;
-    font-family: $font-family-base;
     font-size: 32px;
     font-weight: $font-weight-semibold;
     line-height: 41px;
@@ -87,7 +85,6 @@
   border-radius: 1000px;
   background: $white;
   color: $neutral-850;
-  font-family: $font-family-base;
   font-size: 14px;
   font-weight: $font-weight-semibold;
   line-height: 18px;
@@ -177,7 +174,6 @@
   &__title {
     margin: 0 0 16px;
     color: $neutral-1000;
-    font-family: $font-family-base;
     font-size: 20px;
     font-weight: $font-weight-semibold;
     line-height: 1.22;
@@ -197,7 +193,6 @@
   &__excerpt {
     margin: 0;
     color: $neutral-1000;
-    font-family: $font-family-base;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.35;
@@ -222,7 +217,6 @@
 
   &__date,
   &__link {
-    font-family: $font-family-base;
     font-size: 14px;
     font-weight: $font-weight-semibold;
     line-height: 18px;
@@ -269,7 +263,6 @@
   border-radius: 4px;
   background: $white;
   color: $blue-900;
-  font-family: $font-family-base;
   font-size: 24px;
   font-weight: $font-weight-semibold;
   line-height: 31px;
