@@ -177,7 +177,7 @@ $base-card-width: 322;
 
   &__title {
     font-size: cqw(15);
-    font-weight: 600;
+    font-weight: $font-weight-medium;
     line-height: 1.2;
     color: $neutral-1000;
     margin: 0;
@@ -225,7 +225,7 @@ $base-card-width: 322;
     flex-direction: row;
     align-items: center;
     gap: cqw(6);
-    font-weight: 700;
+    font-weight: $font-weight-medium;
     font-size: cqw(16);
     line-height: 1.5;
     color: $neutral-1000;

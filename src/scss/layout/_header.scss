@@ -79,7 +79,7 @@
 
     &-link {
       font-style: normal;
-      font-weight: $font-weight-semibold; // 600
+      font-weight: $font-weight-medium; // 500
       font-size: $font-size-h6; // 20px
       line-height: 150%;
       color: $text-primary;
@@ -105,7 +105,7 @@
 
   &__link {
     font-style: normal;
-    font-weight: 700;
+    font-weight: $font-weight-medium;
     font-size: 24px;
     line-height: 150%;
     text-decoration: none;

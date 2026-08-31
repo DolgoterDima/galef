@@ -37,7 +37,7 @@ $base-desktop-width: 1120;
   }
 
   &__title {
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-semibold;
     font-size: $font-size-h3; // 36px
     color: $text-primary;
     margin-bottom: $spacing-lg; // 24px
@@ -247,7 +247,7 @@ $base-desktop-width: 1120;
       }
 
       &--sm {
-        font-weight: $font-weight-semibold;
+        font-weight: $font-weight-medium;
         font-size: desk-cqw(14);
         
         @include breakpoint((max: $breakpoint-tablet)) {
@@ -302,7 +302,7 @@ $base-desktop-width: 1120;
     }
 
     &-title {
-      font-weight: $font-weight-bold; // 700
+      font-weight: $font-weight-semibold;
       font-size: desk-cqw(24);
       line-height: 1.5;
       color: $white;
@@ -310,7 +310,6 @@ $base-desktop-width: 1120;
       
       @include breakpoint((max: $breakpoint-tablet)) {
         font-size: prop-cqw(24);
-        font-weight: $font-weight-semibold;
       }
 
       @include breakpoint((max: $breakpoint-mobile-lg)) {
@@ -333,7 +332,7 @@ $base-desktop-width: 1120;
     }
 
     &-desc {
-      font-weight: $font-weight-semibold;
+      font-weight: $font-weight-medium;
       font-size: desk-cqw(14);
       line-height: 1.5;
       color: $white;
@@ -357,9 +356,9 @@ $base-desktop-width: 1120;
       color: $white;
       background: transparent;
       border-radius: 100px;
-   padding:  4px 8px;
+      padding:  4px 8px;
       font-size: 14px; 
-      font-weight: $font-weight-semibold;
+      font-weight: $font-weight-medium;
       line-height: 1.5;
       align-self: stretch;
       transition: $transition-base;

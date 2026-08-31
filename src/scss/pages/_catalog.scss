@@ -108,9 +108,126 @@
     align-items: center;
     gap: 12px;
     width: 100%;
+    min-height: 36px;
+    margin-bottom: 12px;
+    padding: 2px 0;
     
     @media (min-width: 960px) {
       justify-content: flex-end;
+    }
+
+    @include breakpoint((max: ($breakpoint-tablet-lg - 1px))) {
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .sort-dropdown {
+      flex: 0 1 205px;
+      width: 205px;
+      min-width: 0;
+      font-size: 12px;
+
+      @include breakpoint((max: ($breakpoint-tablet - 1px))) {
+        flex-basis: calc((100% - 12px) / 2);
+        width: calc((100% - 12px) / 2);
+      }
+    }
+
+    .sort-dropdown__trigger {
+      width: 100%;
+      min-width: 0;
+      height: 24px;
+      padding: 8px;
+      justify-content: space-between;
+      gap: 8px;
+      border-color: $neutral-350;
+      background-color: $white;
+      color: $neutral-1000;
+      font-size: 12px;
+      font-weight: $font-weight-regular;
+      line-height: 16px;
+
+      @include breakpoint((max: ($breakpoint-tablet-lg - 1px))) {
+        height: 32px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    .sort-dropdown__text {
+      flex: 1 1 auto;
+      min-width: 0;
+      font-weight: $font-weight-semibold;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sort-dropdown__arrow {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 16px;
+      color: inherit;
+    }
+
+    .sort-dropdown__menu {
+      right: 0;
+      left: 0;
+      width: 100%;
+      min-width: 100%;
+      border-color: $neutral-350;
+      background: $white;
+    }
+
+    .sort-dropdown__item {
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: $font-weight-semibold;
+      line-height: 16px;
+      color: $neutral-1000;
+      text-align: left;
+
+      @include breakpoint((max: ($breakpoint-tablet-lg - 1px))) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      &:hover {
+        background-color: $blue-500;
+        color: $white;
+      }
+
+      &--active,
+      &:active {
+        background-color: $blue-800;
+        color: $white;
+      }
+    }
+
+    .sort-dropdown[open] {
+      .sort-dropdown__trigger {
+        border-color: $neutral-350;
+        background-color: $white;
+        color: $neutral-1000;
+      }
+
+      .sort-dropdown__arrow {
+        color: inherit;
+      }
+    }
+
+    .sort-dropdown--selected:not([open]) {
+      .sort-dropdown__trigger {
+        border-color: $blue-900;
+        background-color: $white;
+        color: $blue-900;
+      }
+
+      .sort-dropdown__arrow {
+        color: inherit;
+      }
     }
   }
 
@@ -119,15 +236,19 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 4px 12px;
+    flex: 0 1 212px;
+    width: 212px;
+    min-width: 0;
+    padding: 4px 8px;
     gap: 12px;
     height: 32px;
-    background: #102C56;
+    background: $blue-900;
     border-radius: 4px;
     border: none;
     color: #FFFFFF;
-    font-weight: 700;
+    font-weight: $font-weight-semibold;
     font-size: 16px;
+    line-height: 20px;
     cursor: pointer;
     transition: background-color $transition-base;
 
@@ -137,6 +258,14 @@
 
     @media (min-width: 960px) {
       display: none;
+    }
+
+    @include breakpoint((max: ($breakpoint-tablet - 1px))) {
+      flex-basis: calc((100% - 12px) / 2);
+      width: calc((100% - 12px) / 2);
+      padding-right: 6px;
+      padding-left: 6px;
+      font-size: 14px;
     }
 
     svg {
@@ -150,7 +279,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    margin-bottom: 24px;
+    margin-bottom: 60px;
 
     @media (max-width: 320px) {
       grid-template-columns: repeat(2, 1fr);
@@ -177,7 +306,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 60px;
+    gap: 24px;
     margin-top: 0;
+  }
+
+  &__more-btn {
+    font-weight: $font-weight-medium;
   }
 }
