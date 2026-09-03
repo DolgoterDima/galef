@@ -307,6 +307,9 @@ $base-desktop-width: 1120;
       line-height: 1.5;
       color: $white;
       margin: 0;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
       
       @include breakpoint((max: $breakpoint-tablet)) {
         font-size: prop-cqw(24);
