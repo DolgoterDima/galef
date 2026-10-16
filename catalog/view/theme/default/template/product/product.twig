@@ -1,0 +1,646 @@
+{{ header }}
+<div id="product-product" class="page-wrapper opencart-product-page">
+  <main class="main-content">
+    <div class="product-page" data-product-id="{{ product_id }}">
+      <div class="container">
+        <div class="product-page__breadcrumbs">
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            {% for breadcrumb in breadcrumbs %}
+              {% if loop.first %}
+                <a href="{{ breadcrumb.href }}" class="breadcrumbs__link breadcrumbs__link--home" aria-label="{{ breadcrumb.text }}">
+                  <svg class="breadcrumbs__home-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M3 11.5 12 4l9 7.5"></path>
+                    <path d="M5.5 10.5V20h13v-9.5"></path>
+                    <path d="M9.5 20v-5.5h5V20"></path>
+                  </svg>
+                </a>
+              {% elseif loop.last %}
+                <span class="breadcrumbs__current" aria-current="page">{{ breadcrumb.text }}</span>
+              {% else %}
+                <a href="{{ breadcrumb.href }}" class="breadcrumbs__link">{{ breadcrumb.text }}</a>
+              {% endif %}
+            {% endfor %}
+          </nav>
+        </div>
+
+        <div class="product-hero">
+          <h1 class="product-hero__title product-hero__title--mobile">{{ heading_title }}</h1>
+
+          <div class="product-hero__gallery">
+            <div class="product-gallery">
+              {% if product_gallery %}
+                {% set primary_gallery_image = product_gallery[0] %}
+                <div class="swiper product-gallery-main js-product-gallery-main">
+                  <div class="swiper-wrapper">
+                    {% for gallery_image in product_gallery %}
+                      <div class="swiper-slide">
+                        <div class="product-gallery-main__img-wrapper">
+                          <img src="{{ gallery_image.popup }}" alt="{{ heading_title }} - фото {{ loop.index }}" class="product-gallery-main__img">
+                        </div>
+                      </div>
+                    {% endfor %}
+                    <div class="swiper-slide product-gallery-main__slide--video">
+                        <div class="product-gallery-main__video-wrapper">
+                          <div class="product-gallery-main__video-cover js-video-cover">
+                          <img src="{{ primary_gallery_image.popup }}" alt="Відеоогляд {{ heading_title }}" class="product-gallery-main__img">
+                          <button class="product-gallery-main__video-play-btn js-video-play-btn" type="button" aria-label="Дивитись відео" data-video-id="dQw4w9WgXcQ">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                              <path d="M8 5v14l11-7z"></path>
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="product-gallery-main__video-container js-video-container"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="product-gallery-thumbs-container">
+                  <button class="product-gallery-thumbs-btn product-gallery-thumbs-btn--prev js-product-gallery-prev" type="button" aria-label="Попередній слайд">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+                  </button>
+                  <div class="swiper product-gallery-thumbs js-product-gallery-thumbs">
+                    <div class="swiper-wrapper">
+                      {% for gallery_image in product_gallery %}
+                        <div class="swiper-slide{% if loop.first %} swiper-slide-thumb-active{% endif %}">
+                          <button class="product-gallery-thumbs__item" type="button" data-slide-index="{{ loop.index0 }}" aria-label="Фото {{ loop.index }}">
+                            <img src="{{ gallery_image.thumb }}" alt="{{ heading_title }} - фото {{ loop.index }}">
+                          </button>
+                        </div>
+                      {% endfor %}
+                      <div class="swiper-slide">
+                        <button class="product-gallery-thumbs__item product-gallery-thumbs__item--video" type="button" data-slide-index="{{ product_gallery|length }}" aria-label="Відео">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="product-gallery-thumbs__video-icon">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="product-gallery-thumbs-btn product-gallery-thumbs-btn--next js-product-gallery-next" type="button" aria-label="Наступний слайд">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+                  </button>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="product-hero__info">
+            <h1 class="product-hero__title product-hero__title--desktop">{{ heading_title }}</h1>
+
+            {% if review_status or color_variants %}
+              <div class="product-hero__rating-card">
+                {% if review_status %}
+                  <span class="product-hero__rating-title">Рейтинг вашої любові</span>
+                  <div class="product-hero__rating-stars">
+                    <div class="product-hero__stars-row" aria-label="Рейтинг {{ rating }} з 5">
+                      {% for i in 1..5 %}
+                        <svg class="product-hero__star{% if rating < i %} product-hero__star--empty{% endif %}"><use href="#icon-star"></use></svg>
+                      {% endfor %}
+                    </div>
+                    <a class="product-hero__reviews-link" href="#tab-reviews">{{ reviews }}</a>
+                  </div>
+                {% endif %}
+
+                {% if color_variants %}
+                  <div class="product-hero__colors">
+                    <span class="product-hero__colors-title">Кольори моделі:</span>
+                    <div class="product-hero__colors-list">
+                      {% for variant in color_variants %}
+                        {% if variant.active %}
+                          <span class="product-hero__color-btn product-hero__color-btn--active" title="{{ variant.color }}" aria-current="true">
+                        {% else %}
+                          <a class="product-hero__color-btn" href="{{ variant.href }}" title="{{ variant.color }}" aria-label="Обрати колір: {{ variant.color }}">
+                        {% endif %}
+                            <span class="product-hero__color-swatch" style="background-color: {{ variant.hex }};"></span>
+                        {% if variant.active %}
+                          </span>
+                        {% else %}
+                          </a>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <div class="product-hero__purchase-card">
+              <div class="product-hero__price-header">
+                <div class="product-hero__price-left">
+                  <div class="product-hero__availability">
+                    <span class="product-hero__availability-status product-hero__availability-status--{{ availability_class }}">{{ availability_text }}</span>
+                  </div>
+                  {% if price %}
+                    {% if special %}
+                      <span class="product-hero__price-old">{{ price }}</span>
+                      <span class="product-hero__price-current">{{ special }}</span>
+                    {% else %}
+                      <span class="product-hero__price-current">{{ price }}</span>
+                    {% endif %}
+                  {% endif %}
+                </div>
+
+                <div class="product-hero__actions">
+                  <button class="icon-btn icon-btn--transparent product-hero__action-btn--favorite" type="button" data-product-action="wishlist" data-product-id="{{ product_id }}" aria-label="{{ button_wishlist }}" aria-pressed="false" onclick="wishlist.add('{{ product_id }}', this);">
+                    <svg class="icon-btn__icon" fill="currentColor"><use href="#icon-heart"></use></svg>
+                  </button>
+                  <button class="icon-btn icon-btn--transparent product-hero__action-btn--compare" type="button" data-product-action="compare" data-product-id="{{ product_id }}" aria-label="{{ button_compare }}" aria-pressed="false" onclick="compare.add('{{ product_id }}', this);">
+                    <svg class="icon-btn__icon" fill="currentColor"><use href="#icon-scale"></use></svg>
+                  </button>
+                </div>
+              </div>
+
+              <form id="product" class="product-hero__order-form">
+                {% if options %}
+                  <div class="product-hero__options">
+                    <h3 class="product-hero__options-title">{{ text_option }}</h3>
+                    {% for option in options %}
+                      <div class="product-hero__option{% if option.required %} required{% endif %}" data-option-wrap="{{ option.product_option_id }}">
+                        {% if option.type == 'select' %}
+                          <label class="product-hero__option-label" for="input-option{{ option.product_option_id }}">{{ option.name }}</label>
+                          <select name="option[{{ option.product_option_id }}]" id="input-option{{ option.product_option_id }}" class="product-hero__field">
+                            <option value="">{{ text_select }}</option>
+                            {% for option_value in option.product_option_value %}
+                              <option value="{{ option_value.product_option_value_id }}">{{ option_value.name }}{% if option_value.price %} ({{ option_value.price_prefix }}{{ option_value.price }}){% endif %}</option>
+                            {% endfor %}
+                          </select>
+                        {% elseif option.type == 'radio' %}
+                          <span class="product-hero__option-label">{{ option.name }}</span>
+                          <div id="input-option{{ option.product_option_id }}" class="product-hero__option-list">
+                            {% for option_value in option.product_option_value %}
+                              <label class="product-hero__option-choice">
+                                <input type="radio" name="option[{{ option.product_option_id }}]" value="{{ option_value.product_option_value_id }}">
+                                {% if option_value.image %}<img src="{{ option_value.image }}" alt="{{ option_value.name }}">{% endif %}
+                                <span>{{ option_value.name }}{% if option_value.price %} ({{ option_value.price_prefix }}{{ option_value.price }}){% endif %}</span>
+                              </label>
+                            {% endfor %}
+                          </div>
+                        {% elseif option.type == 'checkbox' %}
+                          <span class="product-hero__option-label">{{ option.name }}</span>
+                          <div id="input-option{{ option.product_option_id }}" class="product-hero__option-list">
+                            {% for option_value in option.product_option_value %}
+                              <label class="product-hero__option-choice">
+                                <input type="checkbox" name="option[{{ option.product_option_id }}][]" value="{{ option_value.product_option_value_id }}">
+                                {% if option_value.image %}<img src="{{ option_value.image }}" alt="{{ option_value.name }}">{% endif %}
+                                <span>{{ option_value.name }}{% if option_value.price %} ({{ option_value.price_prefix }}{{ option_value.price }}){% endif %}</span>
+                              </label>
+                            {% endfor %}
+                          </div>
+                        {% elseif option.type == 'text' %}
+                          <label class="product-hero__option-label" for="input-option{{ option.product_option_id }}">{{ option.name }}</label>
+                          <input type="text" name="option[{{ option.product_option_id }}]" value="{{ option.value }}" placeholder="{{ option.name }}" id="input-option{{ option.product_option_id }}" class="product-hero__field">
+                        {% elseif option.type == 'textarea' %}
+                          <label class="product-hero__option-label" for="input-option{{ option.product_option_id }}">{{ option.name }}</label>
+                          <textarea name="option[{{ option.product_option_id }}]" rows="4" placeholder="{{ option.name }}" id="input-option{{ option.product_option_id }}" class="product-hero__field">{{ option.value }}</textarea>
+                        {% elseif option.type == 'file' %}
+                          <span class="product-hero__option-label">{{ option.name }}</span>
+                          <button type="button" id="button-upload{{ option.product_option_id }}" data-loading-text="{{ text_loading }}" class="btn btn--outline product-hero__upload-btn">{{ button_upload }}</button>
+                          <input type="hidden" name="option[{{ option.product_option_id }}]" value="" id="input-option{{ option.product_option_id }}">
+                        {% elseif option.type == 'date' %}
+                          <label class="product-hero__option-label" for="input-option{{ option.product_option_id }}">{{ option.name }}</label>
+                          <input type="date" name="option[{{ option.product_option_id }}]" value="{{ option.value }}" id="input-option{{ option.product_option_id }}" class="product-hero__field">
+                        {% elseif option.type == 'datetime' %}
+                          <label class="product-hero__option-label" for="input-option{{ option.product_option_id }}">{{ option.name }}</label>
+                          <input type="datetime-local" name="option[{{ option.product_option_id }}]" value="{{ option.value }}" id="input-option{{ option.product_option_id }}" class="product-hero__field">
+                        {% elseif option.type == 'time' %}
+                          <label class="product-hero__option-label" for="input-option{{ option.product_option_id }}">{{ option.name }}</label>
+                          <input type="time" name="option[{{ option.product_option_id }}]" value="{{ option.value }}" id="input-option{{ option.product_option_id }}" class="product-hero__field">
+                        {% endif %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                {% if recurrings %}
+                  <div class="product-hero__option required">
+                    <label class="product-hero__option-label" for="input-recurring">{{ text_payment_recurring }}</label>
+                    <select name="recurring_id" id="input-recurring" class="product-hero__field">
+                      <option value="">{{ text_select }}</option>
+                      {% for recurring in recurrings %}
+                        <option value="{{ recurring.recurring_id }}">{{ recurring.name }}</option>
+                      {% endfor %}
+                    </select>
+                    <div class="product-hero__recurring-description" id="recurring-description"></div>
+                  </div>
+                {% endif %}
+
+                <input type="hidden" name="quantity" value="{{ minimum }}" id="input-quantity">
+                <input type="hidden" name="product_id" value="{{ product_id }}">
+
+                <div class="product-hero__buy-actions">
+                  <button class="btn btn--primary product-hero__btn-buy" type="button" id="button-cart" data-loading-text="{{ text_loading }}"{% if availability_class == 'out-of-stock' %} disabled{% endif %}>
+                    <span>{{ cart_button_text }}</span>
+                    <svg><use href="#icon-cart"></use></svg>
+                  </button>
+                  <button class="btn btn--outline product-hero__btn-credit" type="button">
+                    <span>Купити в кредит</span>
+                  </button>
+                </div>
+
+                {% if minimum > 1 %}
+                  <div class="product-hero__notice">{{ text_minimum }}</div>
+                {% endif %}
+              </form>
+
+              <div class="product-hero__banks">
+                <div class="product-hero__banks-title">Оплата частинами:</div>
+                <div class="product-hero__banks-list">
+                  <div class="product-hero__bank-logo" title="Monobank"><img src="catalog/view/theme/default/image/payment/mono.svg" alt="Monobank" loading="lazy"></div>
+                  <div class="product-hero__bank-logo" title="Ощадбанк"><img src="catalog/view/theme/default/image/payment/oshad.svg" alt="Ощадбанк" loading="lazy"></div>
+                  <div class="product-hero__bank-logo" title="Raiffeisen Bank"><img src="catalog/view/theme/default/image/payment/raif.svg" alt="Raiffeisen Bank" loading="lazy"></div>
+                  <div class="product-hero__bank-logo" title="ПУМБ"><img src="catalog/view/theme/default/image/payment/pumb.svg" alt="ПУМБ" loading="lazy"></div>
+                  <div class="product-hero__bank-logo" title="Sense Bank"><img src="catalog/view/theme/default/image/payment/sense.svg" alt="Sense Bank" loading="lazy"></div>
+                  <div class="product-hero__bank-logo" title="Izi Bank"><img src="catalog/view/theme/default/image/payment/izi.svg" alt="Izi Bank" loading="lazy"></div>
+                  <div class="product-hero__bank-logo" title="Universal Bank"><img src="catalog/view/theme/default/image/payment/universal.svg" alt="Universal Bank" loading="lazy"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-hero__conditions">
+              <div class="product-hero__condition-item">
+                <strong>Оплата:</strong>
+                <span>Картою онлайн, Оплата під час отримання товару, Оплата карткою у відділенні, Apple Pay, Google Pay, Безготівковий розрахунок.</span>
+              </div>
+              <div class="product-hero__condition-item">
+                <strong>Гарантія:</strong>
+                <span>12 місяців. Обмін/повернення товару впродовж 14 днів.</span>
+              </div>
+            </div>
+
+            <div class="product-hero__delivery">
+              <div class="product-hero__delivery-header">
+                <svg class="product-hero__delivery-icon"><use href="#icon-file-text"></use></svg>
+                <strong>Доставка:</strong>
+              </div>
+              <ul class="product-hero__delivery-list">
+                <li class="product-hero__delivery-item"><span>Самовивіз з нашого магазину</span><strong class="free">Безкоштовно</strong></li>
+                <li class="product-hero__delivery-item"><span>Кур'єр на вашу адресу (м. Київ)</span><strong class="free">Безкоштовно</strong></li>
+                <li class="product-hero__delivery-item"><span>Самовивіз з Нової Пошти</span><strong class="free">Безкоштовно</strong></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="section-prev-tovar">
+            <div class="section-prev-tovar__left">
+              <button class="section-prev-tovar__video-btn js-scroll-to-video" type="button" aria-label="Play video">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                </svg>
+              </button>
+              {% if product_documents %}
+                <a href="{{ product_documents[0].href }}" class="section-prev-tovar__doc-btn" download>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                  <span>Інструкція 12 Мб</span>
+                </a>
+              {% endif %}
+            </div>
+            <div class="section-prev-tovar__right">
+              <a href="#tab-desc" class="section-prev-tovar__nav-btn">
+                <span>Опис товару</span>
+                <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.32842 12.3536C3.52368 12.5488 3.84027 12.5488 4.03553 12.3536L7.21751 9.17157C7.41277 8.97631 7.41277 8.65973 7.21751 8.46447C7.02225 8.2692 6.70567 8.2692 6.5104 8.46447L3.68198 11.2929L0.853549 8.46447C0.658287 8.2692 0.341704 8.2692 0.146442 8.46447C-0.0488202 8.65973 -0.0488202 8.97631 0.146442 9.17157L3.32842 12.3536ZM3.68198 0L3.18198 -2.18557e-08L3.18198 12L3.68198 12L4.18198 12L4.18198 2.18557e-08L3.68198 0Z" fill="currentColor"></path></svg>
+              </a>
+              {% if attribute_groups %}
+                <a href="#tab-specs" class="section-prev-tovar__nav-btn">
+                  <span>Характеристики</span>
+                  <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.32842 12.3536C3.52368 12.5488 3.84027 12.5488 4.03553 12.3536L7.21751 9.17157C7.41277 8.97631 7.41277 8.65973 7.21751 8.46447C7.02225 8.2692 6.70567 8.2692 6.5104 8.46447L3.68198 11.2929L0.853549 8.46447C0.658287 8.2692 0.341704 8.2692 0.146442 8.46447C-0.0488202 8.65973 -0.0488202 8.97631 0.146442 9.17157L3.32842 12.3536ZM3.68198 0L3.18198 -2.18557e-08L3.18198 12L3.68198 12L4.18198 12L4.18198 2.18557e-08L3.68198 0Z" fill="currentColor"></path></svg>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="product-content">
+          <div class="product-content__section" id="tab-desc">
+            {{ description }}
+          </div>
+
+          {% if attribute_groups %}
+            <div class="product-content__section" id="tab-specs">
+              <div class="product-specifications">
+                <h2 class="product-specifications__title">{{ tab_attribute }}</h2>
+                <button class="product-specifications__btn" type="button">
+                  <span>Читати опис повністю</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+                <div class="product-specifications__table">
+                  {% for attribute_group in attribute_groups %}
+                    {% for attribute in attribute_group.attribute %}
+                      <div class="product-specifications__row">
+                        <span class="product-specifications__label">{{ attribute.name }}</span>
+                        <span class="product-specifications__value">{{ attribute.text }}</span>
+                      </div>
+                    {% endfor %}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if product_gallery %}
+            {% set video_gallery = product_video_gallery ? product_video_gallery : product_gallery %}
+            <div class="product-content__section" id="video-review">
+              <div class="product-video-block">
+                <div class="product-video-main swiper js-video-main-swiper">
+                  <div class="swiper-wrapper">
+                    {% for gallery_image in video_gallery|slice(0, 8) %}
+                      <div class="swiper-slide product-video-main__slide">
+                        <div class="product-video-main__banner">
+                          <img src="{{ gallery_image.popup }}" alt="Відео {{ loop.index }} {{ heading_title }}">
+                        </div>
+                        <button class="product-video-main__play js-banner-video-play" type="button" data-video-id="dQw4w9WgXcQ" aria-label="Дивитись відео">
+                          <img src="catalog/view/theme/default/image/icons/youtube.svg" alt="Play" class="product-video-main__play-icon">
+                        </button>
+                        <div class="product-video-main__video-container js-banner-video-container"></div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+
+                <div class="product-video-slider">
+                  <button class="product-video-slider__nav product-video-slider__nav--prev js-video-prev" type="button" aria-label="Попереднє відео">
+                    <img src="catalog/view/theme/default/image/icons/chewron-left.svg" alt="Previous">
+                  </button>
+
+                  <div class="swiper js-video-slider-swiper" style="width: 100%; overflow: hidden;">
+                    <div class="product-video-slider__list swiper-wrapper js-video-slider-list">
+                      {% for gallery_image in video_gallery|slice(0, 8) %}
+                        <a href="#" class="product-video-item swiper-slide js-video-thumb-trigger{% if loop.first %} swiper-slide-thumb-active{% endif %}" data-slide-index="{{ loop.index0 }}" data-video-id="dQw4w9WgXcQ">
+                          <div class="product-video-item__preview">
+                            <img src="{{ gallery_image.thumb }}" alt="Відео {{ loop.index }}">
+                          </div>
+                          <div class="product-video-item__title">Дивитись повноцінний відеоогляд</div>
+                        </a>
+                      {% endfor %}
+                    </div>
+                  </div>
+
+                  <button class="product-video-slider__nav product-video-slider__nav--next js-video-next" type="button" aria-label="Наступне відео">
+                    <img src="catalog/view/theme/default/image/icons/chewron-right.svg" alt="Next">
+                  </button>
+                </div>
+
+                <div class="product-video-cta">
+                  <div class="product-video-cta__divider"></div>
+                  <div class="product-video-cta__content">
+                    <span class="product-video-cta__text">Підпишіться на наш канал</span>
+                    <a href="#" class="product-video-cta__btn">
+                      <span class="product-video-cta__btn-text">YouTube</span>
+                      <img src="catalog/view/theme/default/image/icons/youtube.svg" alt="YouTube" class="product-video-cta__btn-icon">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if review_status %}
+            <div class="product-content__section" id="tab-reviews">
+              <div class="reviews-section">
+                <div class="reviews-block">
+                  {% if review_total > 0 %}
+                    <div class="reviews-section__top">
+                      <a href="#review" class="reviews-section__link-all">Дивитись всі відгуки</a>
+                    </div>
+                  {% endif %}
+                  <div class="reviews-block__header">
+                    <h2 class="reviews-block__title">Відгуки і питання</h2>
+                    <div class="reviews-block__actions">
+                      <button class="reviews-block__tab reviews-block__tab--active" type="button">
+                        <span class="reviews-block__tab-text">Відгуки</span>
+                        <span class="reviews-block__tab-count">{{ reviews }}</span>
+                      </button>
+                      <button class="reviews-block__tab" type="button">
+                        <span class="reviews-block__tab-text">Питання</span>
+                        <span class="reviews-block__tab-count">0</span>
+                      </button>
+                      {% if review_guest %}
+                        <button class="reviews-block__btn-write js-review-form-toggle" type="button" data-modal-open="add-review">Залишити відгук</button>
+                      {% endif %}
+                    </div>
+                  </div>
+
+                  <div class="reviews-block__list" id="review"></div>
+
+                  {% if not review_guest %}
+                    <div class="reviews-block__login">{{ text_login }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+      </div>
+
+      {% if products %}
+        <section class="product-related">
+          <div class="product-related__header container">
+            <h2 class="product-related__title">Також вас може зацікавити</h2>
+          </div>
+
+          <div class="swiper product-slider js-related-products-slider">
+            <div class="swiper-wrapper">
+              {% for product in products %}
+                <div class="swiper-slide">
+                  {% include 'default/template/common/product_card.twig' %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+      {% endif %}
+    </div>
+  </main>
+
+  {% if review_status and review_guest %}
+    <div class="modal" data-modal="add-review" role="dialog" aria-modal="true" aria-labelledby="add-review-title">
+      <div class="modal__content">
+        <div class="review-modal-scrollable">
+          <div class="review-modal">
+            <div class="review-modal__header">
+              <h2 class="review-modal__title" id="add-review-title">Створити коментар</h2>
+              <button class="review-modal__close-btn" type="button" data-modal-close aria-label="Закрити">
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L11 11M1 11L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+              </button>
+            </div>
+
+            <form class="review-modal__form" id="form-review" novalidate>
+              <div class="review-modal__rating-block">
+                <h3 class="review-modal__rating-label">Постав п'ять зірочок 😍</h3>
+                <div class="review-modal__stars" id="rating-stars">
+                  {% for i in 1..5 %}
+                    <button type="button" class="review-modal__star-btn" data-rating="{{ i }}" aria-label="{{ i }} зірок">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    </button>
+                  {% endfor %}
+                </div>
+                <input type="hidden" name="rating" id="review-rating-value" value="">
+              </div>
+
+              <div class="review-modal__field">
+                <label class="review-modal__label" for="input-review">Коментар</label>
+                <textarea class="review-modal__textarea review-modal__textarea--large" id="input-review" name="text" placeholder="введіть текст відповіді сюди..." required></textarea>
+              </div>
+
+              <div class="review-modal__field">
+                <label class="review-modal__label" for="review-advantages">Переваги</label>
+                <textarea class="review-modal__textarea" id="review-advantages" name="advantages" placeholder="введіть текст відповіді сюди..."></textarea>
+              </div>
+
+              <div class="review-modal__field">
+                <label class="review-modal__label" for="review-disadvantages">Недоліки</label>
+                <textarea class="review-modal__textarea" id="review-disadvantages" name="disadvantages" placeholder="введіть текст відповіді сюди..."></textarea>
+              </div>
+
+              <div class="review-modal__form-row">
+                <div class="review-modal__field">
+                  <div class="review-modal__input-wrapper">
+                    <input type="text" class="review-modal__input" id="input-name" name="name" value="{{ customer_name }}" placeholder="Ім'я та Прізвище" required>
+                    <div class="review-modal__validation-icon review-modal__validation-icon--error">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                      </svg>
+                    </div>
+                    <div class="review-modal__validation-icon review-modal__validation-icon--success">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 11 12 14 22 4"></polyline>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="review-modal__field">
+                  <div class="review-modal__input-wrapper">
+                    <input type="email" class="review-modal__input" id="review-email" name="email" placeholder="електронна пошта" required>
+                    <div class="review-modal__validation-icon review-modal__validation-icon--error">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                      </svg>
+                    </div>
+                    <div class="review-modal__validation-icon review-modal__validation-icon--success">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 11 12 14 22 4"></polyline>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-modal__attachment-box">
+                <div class="review-modal__attachment-box-left">
+                  <div class="review-modal__attachment-box-icon">
+                    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="44" height="44" rx="8" fill="white"></rect>
+                      <path d="M12 28.6L19.4 21.2C19.8 20.8 20.4 20.8 20.8 21.2L32 32.4" stroke="#102C56" stroke-width="2" stroke-linecap="round"></path>
+                      <circle cx="19" cy="17" r="3" fill="#102C56"></circle>
+                      <path d="M30 14H14C12.9 14 12 14.9 12 16V28C12 29.1 12.9 30 14 30H30C31.1 30 32 29.1 32 28V16C32 14.9 31.1 14 30 14Z" stroke="#102C56" stroke-width="2"></path>
+                    </svg>
+                  </div>
+                  <span class="review-modal__attachment-box-text" id="photo-label">Додати фото, формат: .jpg, .gif, .png Розмір файлу до 5МБ</span>
+                </div>
+                <input type="file" id="review-photo" name="photo" class="review-modal__attachment-box-input" accept=".jpg,.jpeg,.gif,.png">
+                <label for="review-photo" class="review-modal__attachment-box-btn">Вибрати файл</label>
+              </div>
+
+              <div class="review-modal__attachment-box">
+                <div class="review-modal__attachment-box-left">
+                  <div class="review-modal__attachment-box-icon">
+                    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="44" height="44" rx="8" fill="white"></rect>
+                      <path d="M16 28V16L28 22L16 28Z" fill="#102C56"></path>
+                      <rect x="10" y="10" width="24" height="24" rx="4" stroke="#102C56" stroke-width="2"></rect>
+                    </svg>
+                  </div>
+                  <div class="review-modal__video-input-wrapper">
+                    <input type="url" id="review-video-url" name="video_url" placeholder="Додайте сюди посилання на відео">
+                  </div>
+                </div>
+                <button type="button" class="review-modal__attachment-box-btn" id="add-video-btn">Додати відео</button>
+              </div>
+
+              {{ captcha }}
+
+              <p class="review-modal__rules-note">
+                Щоб ваш відгук або коментар пройшов модерацію і був опублікований, ознайомтеся, будь ласка, з <a href="#">нашими правилами</a>
+              </p>
+
+              <div class="review-modal__actions">
+                <button type="button" class="review-modal__btn review-modal__btn--cancel" data-modal-close>Скасувати</button>
+                <button type="button" id="button-review" data-loading-text="{{ text_loading }}" class="review-modal__btn review-modal__btn--submit">Надіслати відгук</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if review_status and review_reply_allowed %}
+    <div class="modal" data-modal="reply-comment" role="dialog" aria-modal="true" aria-labelledby="reply-comment-title">
+      <div class="modal__content">
+        <div class="review-modal-scrollable">
+          <div class="review-modal review-modal--reply">
+            <div class="review-modal__header">
+              <h2 class="review-modal__title" id="reply-comment-title">Відповісти на коментар</h2>
+              <button class="review-modal__close-btn" type="button" data-modal-close aria-label="Закрити">
+                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L11 11M1 11L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+              </button>
+            </div>
+
+            <form class="review-modal__form" id="form-review-reply" novalidate>
+              <input type="hidden" name="review_id" id="reply-review-id" value="">
+
+              <p class="review-modal__context">Відповідь для <span id="reply-review-author"></span></p>
+
+              <div class="review-modal__field">
+                <label class="review-modal__label" for="reply-text">Відповідь</label>
+                <textarea class="review-modal__textarea review-modal__textarea--large" id="reply-text" name="text" placeholder="Напишіть відповідь..." required></textarea>
+              </div>
+
+              <div class="review-modal__actions">
+                <button type="button" class="review-modal__btn review-modal__btn--cancel" data-modal-close>Скасувати</button>
+                <button type="button" id="button-review-reply" data-loading-text="{{ text_loading }}" class="review-modal__btn review-modal__btn--submit">Надіслати відповідь</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="review-image-popup" data-review-image-popup aria-hidden="true">
+    <button class="review-image-popup__backdrop" type="button" data-review-image-popup-close aria-label="Close"></button>
+    <div class="review-image-popup__dialog" role="dialog" aria-modal="true" aria-label="Review photo">
+      <button class="review-image-popup__close" type="button" data-review-image-popup-close aria-label="Close">
+        <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+          <path d="M1 1L11 11M1 11L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <img class="review-image-popup__img" src="" alt="">
+    </div>
+  </div>
+</div>
+{{ footer }}
