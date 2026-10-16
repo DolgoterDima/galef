@@ -2,6 +2,10 @@
 // PRODUCT REVIEW MODAL MODULE
 // ============================================
 
+import { openModal } from './modal.js';
+
+const CUSTOMER_STORAGE_KEY = 'galefCustomer';
+
 export function initProductReviewModal() {
   const modal = document.querySelector('[data-modal="add-review"]');
   if (!modal) return;
@@ -84,6 +88,78 @@ export function initProductReviewModal() {
       input.classList.add('is-invalid');
       return false;
     }
+  }
+
+  function getFormattedDate() {
+    return new Intl.DateTimeFormat('uk-UA', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    }).format(new Date());
+  }
+
+  function getCurrentCustomer() {
+    if (window.galefCustomer?.isAuthenticated && window.galefCustomer.name) {
+      return window.galefCustomer;
+    }
+
+    try {
+      const customer = JSON.parse(localStorage.getItem(CUSTOMER_STORAGE_KEY));
+
+      if (customer?.isAuthenticated && customer.name) {
+        return customer;
+      }
+    } catch (error) {
+      return null;
+    }
+
+    return null;
+  }
+
+  function openLoginModal() {
+    const loginModal = document.querySelector('[data-modal="login"]');
+
+    if (loginModal) {
+      openModal(loginModal);
+    }
+  }
+
+  function addReplyToReview(reviewItem, author, text) {
+    const contentCol = reviewItem.querySelector('.review-item__content-col');
+    if (!contentCol) return;
+
+    let replies = contentCol.querySelector('.review-item__replies');
+
+    if (!replies) {
+      replies = document.createElement('div');
+      replies.className = 'review-item__replies';
+      contentCol.append(replies);
+    }
+
+    const reply = document.createElement('article');
+    reply.className = 'review-reply';
+
+    const header = document.createElement('div');
+    header.className = 'review-reply__header';
+
+    const authorNode = document.createElement('span');
+    authorNode.className = 'review-reply__author';
+    authorNode.textContent = author;
+
+    const dateNode = document.createElement('span');
+    dateNode.className = 'review-reply__date';
+    dateNode.textContent = getFormattedDate();
+
+    const textNode = document.createElement('p');
+    textNode.className = 'review-reply__text';
+    textNode.textContent = text;
+
+    header.append(authorNode, dateNode);
+    reply.append(header, textNode);
+    replies.append(reply);
+
+    const list = reviewItem.closest('.reviews-block__list');
+    list?.dispatchEvent(new CustomEvent('review:content-changed'));
   }
 
   // Real-time validation on input/blur
@@ -267,28 +343,29 @@ export function initProductReviewModal() {
   if (replyModal) {
     const replyForm = replyModal.querySelector('#reply-comment-form');
     const replyCommentInput = replyModal.querySelector('#reply-comment-text');
-    const replyAuthorInput = replyModal.querySelector('#reply-author');
-    const replyEmailInput = replyModal.querySelector('#reply-email');
     const replyCancelBtn = replyModal.querySelector('.review-modal__btn--cancel');
+    let activeReviewItem = null;
 
-    // Real-time validation on input/blur
-    if (replyAuthorInput) {
-      replyAuthorInput.addEventListener('input', () => {
-        validateInput(replyAuthorInput, replyAuthorInput.value.trim().length >= 2);
-      });
-      replyAuthorInput.addEventListener('blur', () => {
-        validateInput(replyAuthorInput, replyAuthorInput.value.trim().length >= 2);
-      });
-    }
+    document.addEventListener('click', (event) => {
+      const replyButton = event.target.closest('.review-item__reply-btn');
 
-    if (replyEmailInput) {
-      replyEmailInput.addEventListener('input', () => {
-        validateInput(replyEmailInput, emailRegex.test(replyEmailInput.value.trim()));
-      });
-      replyEmailInput.addEventListener('blur', () => {
-        validateInput(replyEmailInput, emailRegex.test(replyEmailInput.value.trim()));
-      });
-    }
+      if (!replyButton) return;
+
+      if (!getCurrentCustomer()) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        activeReviewItem = null;
+        openLoginModal();
+        return;
+      }
+
+      activeReviewItem = replyButton.closest('.review-item');
+
+      setTimeout(() => {
+        replyCommentInput?.focus();
+      }, 0);
+    }, true);
 
     if (replyCommentInput) {
       replyCommentInput.addEventListener('input', () => {
@@ -305,11 +382,22 @@ export function initProductReviewModal() {
         e.preventDefault();
 
         const isCommentValid = validateInput(replyCommentInput, replyCommentInput.value.trim().length > 0);
-        const isAuthorValid = validateInput(replyAuthorInput, replyAuthorInput.value.trim().length >= 2);
-        const isEmailValid = validateInput(replyEmailInput, emailRegex.test(replyEmailInput.value.trim()));
+        const customer = getCurrentCustomer();
 
-        if (isCommentValid && isAuthorValid && isEmailValid) {
-          alert("Дякуємо! Вашу відповідь надіслано на модерацію.");
+        if (!customer) {
+          openLoginModal();
+          return;
+        }
+
+        if (isCommentValid) {
+          if (activeReviewItem) {
+            addReplyToReview(
+              activeReviewItem,
+              customer.name,
+              replyCommentInput.value.trim(),
+            );
+          }
+
           resetReplyFormState();
           
           const closeBtn = replyModal.querySelector('[data-modal-close]');
@@ -320,12 +408,13 @@ export function initProductReviewModal() {
 
     function resetReplyFormState() {
       if (replyForm) replyForm.reset();
-      [replyCommentInput, replyAuthorInput, replyEmailInput].forEach(input => {
+      [replyCommentInput].forEach(input => {
         if (input) {
           input.classList.remove('is-invalid');
           input.classList.remove('is-valid');
         }
       });
+      activeReviewItem = null;
     }
 
     if (replyCancelBtn) {

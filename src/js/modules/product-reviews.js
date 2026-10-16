@@ -40,6 +40,8 @@ export const initProductReviews = () => {
     resizeTimeout = setTimeout(calculateHeight, 150);
   });
 
+  list.addEventListener('review:content-changed', calculateHeight);
+
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     const isExpanded = list.classList.contains('is-expanded');

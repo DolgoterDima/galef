@@ -2,6 +2,8 @@
 // Modal Module
 // ============================================
 
+const CUSTOMER_STORAGE_KEY = 'galefCustomer';
+
 export function initModals() {
   const triggers = document.querySelectorAll('[data-modal-open]');
   const closers = document.querySelectorAll('[data-modal-close]');
@@ -103,11 +105,44 @@ function initAuthValidation() {
       });
 
       if (isFormValid) {
+        const customer = createAuthenticatedCustomer(form);
+
+        persistCustomer(customer);
         form.reset();
         resetAuthForm(form);
+
+        const modal = form.closest('[data-modal]');
+        if (modal) {
+          closeModal(modal);
+        }
       }
     });
   });
+}
+
+function readStoredCustomer() {
+  try {
+    return JSON.parse(localStorage.getItem(CUSTOMER_STORAGE_KEY));
+  } catch (error) {
+    return null;
+  }
+}
+
+function createAuthenticatedCustomer(form) {
+  const nameInput = form.querySelector('input[name="name"]');
+  const storedCustomer = readStoredCustomer();
+  const name = nameInput?.value.trim() || storedCustomer?.name || 'Користувач';
+
+  return {
+    isAuthenticated: true,
+    name,
+  };
+}
+
+function persistCustomer(customer) {
+  window.galefCustomer = customer;
+  localStorage.setItem(CUSTOMER_STORAGE_KEY, JSON.stringify(customer));
+  window.dispatchEvent(new CustomEvent('galef:auth-changed', { detail: { customer } }));
 }
 
 function validateAuthInput(input, form) {
